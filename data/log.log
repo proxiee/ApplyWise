@@ -468,3 +468,108 @@
 [2025-06-20 22:39:23,856] [ERROR] IndeedScraperUSAEng: Job Software Engineer 2 and Software Engineer 2 share duplicate key_id: IndeedScraperUSAEng_0161dcf989f762e3
 [2025-06-20 22:39:23,862] [INFO] JobFunnel: Completed all scraping, found 620 new jobs.
 [2025-06-20 22:39:23,887] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv
+[2025-06-20 23:08:40,137] [INFO] JobFunnel: Scraping local providers with: ['IndeedScraperUSAEng']
+[2025-06-20 23:08:41,134] [INFO] IndeedScraperUSAEng: Found 30 pages of search results for query=Software Developer+Data Analyst+Project Manager
+[2025-06-20 23:08:45,061] [INFO] IndeedScraperUSAEng: Scraped 741 job listings from search results pages
+[2025-06-20 23:08:45,437] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-20 23:08:45,487] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Protocols and Senior Software Engineer - Protocols share duplicate key_id: IndeedScraperUSAEng_3c6eaf1ff142fce6
+[2025-06-20 23:08:45,487] [ERROR] IndeedScraperUSAEng: Job Senior Engine Programmer, Framework and Senior Engine Programmer, Framework share duplicate key_id: IndeedScraperUSAEng_adf5c2759a7a3cc5
+[2025-06-20 23:08:45,487] [ERROR] IndeedScraperUSAEng: Job DevOps Engineer and DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_0fae0fd4f75fdedf
+[2025-06-20 23:08:45,487] [ERROR] IndeedScraperUSAEng: Job Senior Cybersecurity Software Development Engineer and Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_a9604b995649b8f0
+[2025-06-20 23:08:45,487] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-20 23:08:45,487] [ERROR] IndeedScraperUSAEng: Job Senior Systems Engineer, Kubernetes and Senior Systems Engineer, Kubernetes share duplicate key_id: IndeedScraperUSAEng_1d26ea2a7a8f51a8
+[2025-06-20 23:08:45,487] [ERROR] IndeedScraperUSAEng: Job Northrop Grumman (DoD SkillBridge) Principal/Sr Principal DevOps Engineer (*TS/SCI req) and Northrop Grumman (DoD SkillBridge) Principal/Sr Principal DevOps Engineer (*TS/SCI req) share duplicate key_id: IndeedScraperUSAEng_e20e3aa6084f4f95
+[2025-06-20 23:08:45,487] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-20 23:08:45,487] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_083fcec48a12038c
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer - Java, Angular, Oracle and Full Stack Engineer - Java, Angular, Oracle share duplicate key_id: IndeedScraperUSAEng_cf069f93cb31852a
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Linux Kernel Developer and Linux Kernel Developer share duplicate key_id: IndeedScraperUSAEng_4329dbf1ed710ccc
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mid to Senior Cybersecurity Software Development Engineer and Mid to Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_c390c61dca3baf1f
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer and Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_e6c02560954a5709
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior React Native / iOS Developer and Senior React Native / iOS Developer share duplicate key_id: IndeedScraperUSAEng_2bbc07eea7a0b8f2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mobile Engineer (Android & iOS) and Mobile Engineer (Android & iOS) share duplicate key_id: IndeedScraperUSAEng_a716b4ba465bc18a
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Protocols and Senior Software Engineer - Protocols share duplicate key_id: IndeedScraperUSAEng_3c6eaf1ff142fce6
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Engine Programmer, Framework and Senior Engine Programmer, Framework share duplicate key_id: IndeedScraperUSAEng_adf5c2759a7a3cc5
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job DevOps Engineer and DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_0fae0fd4f75fdedf
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Cybersecurity Software Development Engineer and Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_a9604b995649b8f0
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Systems Engineer, Kubernetes and Senior Systems Engineer, Kubernetes share duplicate key_id: IndeedScraperUSAEng_1d26ea2a7a8f51a8
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Northrop Grumman (DoD SkillBridge) Principal/Sr Principal DevOps Engineer (*TS/SCI req) and Northrop Grumman (DoD SkillBridge) Principal/Sr Principal DevOps Engineer (*TS/SCI req) share duplicate key_id: IndeedScraperUSAEng_e20e3aa6084f4f95
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_083fcec48a12038c
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer - Java, Angular, Oracle and Full Stack Engineer - Java, Angular, Oracle share duplicate key_id: IndeedScraperUSAEng_cf069f93cb31852a
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Linux Kernel Developer and Linux Kernel Developer share duplicate key_id: IndeedScraperUSAEng_4329dbf1ed710ccc
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mid to Senior Cybersecurity Software Development Engineer and Mid to Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_c390c61dca3baf1f
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer and Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_e6c02560954a5709
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Protocols and Senior Software Engineer - Protocols share duplicate key_id: IndeedScraperUSAEng_106b55e811d8b995
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Java and Python/R - Computer Programmer and Java and Python/R - Computer Programmer share duplicate key_id: IndeedScraperUSAEng_e80be1139e3f11a5
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior React Native / iOS Developer and Senior React Native / iOS Developer share duplicate key_id: IndeedScraperUSAEng_2bbc07eea7a0b8f2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mobile Engineer (Android & iOS) and Mobile Engineer (Android & iOS) share duplicate key_id: IndeedScraperUSAEng_a716b4ba465bc18a
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Protocols and Senior Software Engineer - Protocols share duplicate key_id: IndeedScraperUSAEng_3c6eaf1ff142fce6
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Engine Programmer, Framework and Senior Engine Programmer, Framework share duplicate key_id: IndeedScraperUSAEng_adf5c2759a7a3cc5
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job DevOps Engineer and DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_0fae0fd4f75fdedf
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Cybersecurity Software Development Engineer and Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_a9604b995649b8f0
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Systems Engineer, Kubernetes and Senior Systems Engineer, Kubernetes share duplicate key_id: IndeedScraperUSAEng_1d26ea2a7a8f51a8
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Northrop Grumman (DoD SkillBridge) Principal/Sr Principal DevOps Engineer (*TS/SCI req) and Northrop Grumman (DoD SkillBridge) Principal/Sr Principal DevOps Engineer (*TS/SCI req) share duplicate key_id: IndeedScraperUSAEng_e20e3aa6084f4f95
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_083fcec48a12038c
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer - Java, Angular, Oracle and Full Stack Engineer - Java, Angular, Oracle share duplicate key_id: IndeedScraperUSAEng_cf069f93cb31852a
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Linux Kernel Developer and Linux Kernel Developer share duplicate key_id: IndeedScraperUSAEng_4329dbf1ed710ccc
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mid to Senior Cybersecurity Software Development Engineer and Mid to Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_c390c61dca3baf1f
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer and Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_e6c02560954a5709
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Protocols and Senior Software Engineer - Protocols share duplicate key_id: IndeedScraperUSAEng_106b55e811d8b995
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Java and Python/R - Computer Programmer and Java and Python/R - Computer Programmer share duplicate key_id: IndeedScraperUSAEng_e80be1139e3f11a5
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior React Native / iOS Developer and Senior React Native / iOS Developer share duplicate key_id: IndeedScraperUSAEng_2bbc07eea7a0b8f2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mobile Engineer (Android & iOS) and Mobile Engineer (Android & iOS) share duplicate key_id: IndeedScraperUSAEng_a716b4ba465bc18a
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Protocols and Senior Software Engineer - Protocols share duplicate key_id: IndeedScraperUSAEng_106b55e811d8b995
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Engine Programmer, Framework and Senior Engine Programmer, Framework share duplicate key_id: IndeedScraperUSAEng_adf5c2759a7a3cc5
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job DevOps Engineer and DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_0fae0fd4f75fdedf
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Cybersecurity Software Development Engineer and Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_a9604b995649b8f0
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Systems Engineer, Kubernetes and Senior Systems Engineer, Kubernetes share duplicate key_id: IndeedScraperUSAEng_1d26ea2a7a8f51a8
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Northrop Grumman (DoD SkillBridge) Principal/Sr Principal DevOps Engineer (*TS/SCI req) and Northrop Grumman (DoD SkillBridge) Principal/Sr Principal DevOps Engineer (*TS/SCI req) share duplicate key_id: IndeedScraperUSAEng_e20e3aa6084f4f95
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_083fcec48a12038c
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer - Java, Angular, Oracle and Full Stack Engineer - Java, Angular, Oracle share duplicate key_id: IndeedScraperUSAEng_cf069f93cb31852a
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Linux Kernel Developer and Linux Kernel Developer share duplicate key_id: IndeedScraperUSAEng_4329dbf1ed710ccc
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mid to Senior Cybersecurity Software Development Engineer and Mid to Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_c390c61dca3baf1f
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer and Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_e6c02560954a5709
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Protocols and Senior Software Engineer - Protocols share duplicate key_id: IndeedScraperUSAEng_106b55e811d8b995
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Java and Python/R - Computer Programmer and Java and Python/R - Computer Programmer share duplicate key_id: IndeedScraperUSAEng_e80be1139e3f11a5
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior React Native / iOS Developer and Senior React Native / iOS Developer share duplicate key_id: IndeedScraperUSAEng_2bbc07eea7a0b8f2
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Mobile Engineer (Android & iOS) and Mobile Engineer (Android & iOS) share duplicate key_id: IndeedScraperUSAEng_a716b4ba465bc18a
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Java and Python/R - Computer Programmer and Java and Python/R - Computer Programmer share duplicate key_id: IndeedScraperUSAEng_e80be1139e3f11a5
+[2025-06-20 23:08:45,501] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Protocols and Senior Software Engineer - Protocols share duplicate key_id: IndeedScraperUSAEng_3c6eaf1ff142fce6
+[2025-06-20 23:08:45,501] [INFO] JobFunnel: Completed all scraping, found 641 new jobs.
+[2025-06-20 23:08:45,516] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Job Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>My Job Feed</h1>
+        <table id="jobs-table">
+            <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Date Posted</th>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody id="jobs-tbody">
+                </tbody>
+        </table>
+        <div id="loading-spinner" class="spinner"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchJobs();
+        });
+
+        function fetchJobs() {
+            const tbody = document.getElementById('jobs-tbody');
+            const spinner = document.getElementById('loading-spinner');
+            spinner.style.display = 'block';
+
+            fetch('/get_all_jobs')
+                .then(response => response.json())
+                .then(jobs => {
+                    spinner.style.display = 'none';
+                    tbody.innerHTML = ''; 
+                    
+                    if (!jobs || jobs.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="5">No jobs found.</td></tr>';
+                        return;
+                    }
+
+                    jobs.forEach(job => {
+                        // --- START OF BULLETPROOF RENDERING ---
+                        try {
+                            const row = document.createElement('tr');
+                            row.id = `job-row-${job.id}`;
+                            
+                            // 1. Defensively create the source badge
+                            const source = job.source || 'N/A';
+                            const sourceBadge = source === 'LinkedIn' 
+                                ? `<span class="badge linkedin">LI</span>`
+                                : `<span class="badge indeed">IN</span>`;
+                            
+                            // 2. Defensively handle the date
+                            let displayDate = 'N/A';
+                            // The 'job.date' check prevents 'new Date(null)' or 'new Date("")' which can be invalid
+                            if (job.date && typeof job.date === 'string') {
+                                const parsedDate = new Date(job.date);
+                                // Check if the parsed date is valid
+                                if (!isNaN(parsedDate.getTime())) {
+                                    displayDate = parsedDate.toLocaleDateString();
+                                }
+                            }
+
+                            // 3. Provide default empty strings for all other data to prevent 'null' or 'undefined' from appearing
+                            const jobUrl = job.job_url || '#';
+                            const title = job.title || 'No Title';
+                            const company = job.company || 'No Company';
+                            const location = job.location || 'No Location';
+
+                            row.innerHTML = `
+                                <td>${sourceBadge}</td>
+                                <td>${displayDate}</td>
+                                <td><a href="${jobUrl}" target="_blank">${title}</a></td>
+                                <td>${company}</td>
+                                <td>${location}</td>
+                            `;
+                            tbody.appendChild(row);
+
+                        } catch (e) {
+                            // If a single row fails for any reason, log it and continue
+                            console.error("Failed to render a job row. Error:", e);
+                            console.error("Problematic job data:", job);
+                        }
+                        // --- END OF BULLETPROOF RENDERING ---
+                    });
+                })
+                .catch(error => {
+                    spinner.style.display = 'none';
+                    console.error('Error fetching jobs:', error);
+                    tbody.innerHTML = '<tr><td colspan="5">Failed to load jobs.</td></tr>';
+                });
+        }
+    </script>
+</body>
+</html>
