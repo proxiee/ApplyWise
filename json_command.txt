@@ -1,0 +1,26 @@
+Top-Level Keys: The main keys must be: name, phone, email, linkedin, github, summary, education, experience, projects, activities, and skills.
+
+education section:
+
+This must be a list of objects [].
+Each object must have the keys: university, location, degree, dates, and details.
+The details key must contain a list of strings [].
+experience section:
+
+This must be a list of objects [].
+Each object must have the keys: company, location, title, dates, and points.
+The points key must contain a list of strings [].
+projects section:
+
+This must be a list of objects [].
+Each object must have the keys: name, dates, and points.
+The points key must contain a list of strings [].
+activities section:
+
+This must be a list of objects [].
+Each object must have the keys: organization, location, and roles.
+The roles key must contain a list of objects [], where each object has a title and dates.
+skills section:
+
+This must be a single object {}.
+Each key in the object will be the skill category (e.g., "Languages"), and its value will be a single string containing the list of skills.

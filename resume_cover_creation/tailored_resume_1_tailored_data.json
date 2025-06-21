@@ -1,0 +1,51 @@
+{
+  "summary": "Results-oriented Software Engineer with MS in Computer Science and proven expertise in optimizing CI/CD pipelines and developer workflows.  Proficient in Python, Bash scripting, and containerization (Kubernetes, Docker).  Passionate about improving developer experience and accelerating software delivery through automation and tooling.",
+  "experience": [
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Software Developer",
+      "dates": "March 2023 - Aug 2023",
+      "points": [
+        "Developed and deployed full-stack features for enterprise systems using Spring Boot (Java) and modern front-end frameworks, resulting in 15% faster API response times.",
+        "Collaborated with stakeholders to translate user requirements into technical specifications within an Agile environment, delivering robust and maintainable solutions."
+      ]
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Programmer Analyst Intern",
+      "dates": "March 2022-Sept 2022",
+      "points": [
+        "Improved enterprise application stability by identifying and resolving 10% of reported issues in key modules.",
+        "Enhanced code quality and reliability through technical documentation and augmented test automation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "CI/CD Pipeline Optimization for Microservices Architecture",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Redesigned CI/CD pipeline using GitHub Actions, reducing build times by 20% and deployment failures by 15%.",
+        "Implemented automated testing and deployment strategies resulting in a 10% increase in developer velocity."
+      ]
+    },
+    {
+      "name": "Automated Developer Tooling for Enhanced Workflow",
+      "dates": "Jun 2024 - Present",
+      "points": [
+        "Developed internal tools using Python and Bash scripting to automate repetitive tasks, improving developer productivity by 25%.",
+        "Integrated tools with existing CI/CD systems, streamlining the development process and reducing deployment time."
+      ]
+    },
+    {
+      "name": "Kubernetes-based Build and Test Infrastructure",
+      "dates": "Sep 2023-Dec 2023",
+      "points": [
+        "Migrated build and testing infrastructure to Kubernetes, improving scalability and resource utilization by 30%.",
+        "Implemented automated scaling and load balancing, enhancing system reliability and reducing infrastructure costs by 10%."
+      ]
+    }
+  ]
+}

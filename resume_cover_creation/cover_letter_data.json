@@ -1,0 +1,28 @@
+{
+  "my_info": {
+    "name": "Yashwanth Raj Tirupati",
+    "email": "tyashwanth99@gmail.com",
+    "phone": "(937)-469-9700",
+    "linkedin": "https://linkedin.com/in/yashwanthtirupati",
+    "github": "https://github.com/proxiee"
+  },
+  "recipient_info": {
+    "name": "Hiring Manager",
+    "company": "DoorDash",
+    "location": "San Francisco, CA"
+  },
+  "date": "June 8, 2025",
+  "subject": "Application for Data Analyst, New Verticals Business Operations",
+  "greeting": "Dear Hiring Manager,",
+  "body": [
+    "I am writing with great enthusiasm to apply for the Data Analyst, New Verticals Business Operations position. As a Master’s student in Computer Science, I have been following DoorDash’s ambitious expansion into retail, and the opportunity to help decode the \"why\" behind key business metrics is precisely the challenge I am seeking.",
+    "My background in software engineering is complemented by a dedicated focus on data science and statistical analysis through my academic and personal projects. My passion lies in transforming raw data into actionable insights, and I am adept at the structured, hypothesis-driven approach required to solve ambiguous problems.",
+    "The responsibilities in the job description align perfectly with my project experience. For instance, I have:",
+    "Developed a **Retail Customer Journey Analysis** project using cohort analysis in Python to segment users across retail categories, directly mirroring your need to analyze the customer journey for items in Household, Electronics, and Apparel.",
+    "Built a full **A/B Testing Framework** using SQL and Python to evaluate promotional effectiveness, which resulted in a 12% increase in conversion rates in a simulated environment.",
+    "Conducted a **Time Series Analysis of Retail Sales**, developing a forecasting model that predicted future trends with 95% accuracy to provide a \"forward-looking outlook.\"",
+    "These projects demonstrate my proficiency with SQL, Python, Tableau, and the core statistical methods outlined in your requirements. I am confident in my ability to build sophisticated diagnostic tools and present clear, data-backed stories to help drive DoorDash's retail strategy forward. My resume provides further detail on my qualifications, and I am eager for the opportunity to discuss how my skills can be an asset to your team."
+  ],
+  "closing": "Sincerely,",
+  "signature": "Yashwanth Raj Tirupati"
+}
