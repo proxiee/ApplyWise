@@ -15,7 +15,7 @@ BASE_LETTER_TEMPLATE_PATH = "cover_letter.tex"
 def setup_api():
     """Configures the Gemini API and handles missing API key."""
     if not GEMINI_API_KEY:
-        print("❌ Error: GEMINI_API_KEY not found in .env file.")
+        print("Error: GEMINI_API_KEY not found in .env file.")
         sys.exit(1)
     try:
         genai.configure(api_key=GEMINI_API_KEY)
@@ -72,7 +72,7 @@ def generate_tailored_cover_letter_latex(model, base_letter_content, resume_data
         # The response should be the raw LaTeX code
         return response.text.strip()
     except Exception as e:
-        print(f"❌ Error calling Gemini API: {e}")
+        print(f"Error calling Gemini API: {e}")
         print("--- Gemini's Raw Response ---")
         # Check if response object exists before trying to access .text
         if 'response' in locals() and hasattr(response, 'text'):
@@ -83,14 +83,14 @@ def main():
     """Main function to run the cover letter generation process."""
     print("--- Starting Cover Letter Generator (LaTeX Mode) ---")
     if len(sys.argv) != 3:
-        print("❌ Usage: python create_cover_letter.py <path_to_resume_data.json> <path_to_job_description.txt>")
+        print("Usage: python create_cover_letter.py <path_to_resume_data.json> <path_to_job_description.txt>")
         sys.exit(1)
 
     resume_data_path = sys.argv[1]
     job_desc_path = sys.argv[2]
     
     # --- Step 1: Load all necessary data ---
-    print("📄 Loading source files...")
+    print("Loading source files...")
     try:
         with open(resume_data_path, 'r', encoding='utf-8') as f:
             resume_data = json.load(f)
@@ -99,7 +99,7 @@ def main():
         with open(BASE_LETTER_TEMPLATE_PATH, 'r', encoding='utf-8') as f:
             base_cover_letter_content = f.read()
     except FileNotFoundError as e:
-        print(f"❌ Error: Could not find required file: {e.filename}")
+        print(f"Error: Could not find required file: {e.filename}")
         sys.exit(1)
 
      # --- ADD THIS BLOCK TO HANDLE THE DATE REPLACEMENT ---
@@ -107,7 +107,7 @@ def main():
     todays_date = datetime.now().strftime('%B %d, %Y')
     # Replace the placeholder in the template with today's date
     base_cover_letter_content = base_cover_letter_content.replace('{{TODAYS_DATE}}', todays_date)
-    print(f"✅ Set cover letter date to: {todays_date}")
+    print(f"Set cover letter date to: {todays_date}")
     # --- END OF BLOCK ---
 
     model = setup_api()
@@ -116,10 +116,10 @@ def main():
     final_latex_content = generate_tailored_cover_letter_latex(model, base_cover_letter_content, resume_data, job_description)
 
     if not final_latex_content:
-        print("❌ Halting due to error in AI generation step.")
+        print("Halting due to error in AI generation step.")
         sys.exit(1)
         
-    print("\n✨ AI has generated the tailored LaTeX content. ✨")
+    print("\nAI has generated the tailored LaTeX content.")
 
     # --- Step 3: Save and compile the final PDF ---
     base_output_name = os.path.basename(resume_data_path).replace('_tailored_data.json', '_cover_letter')
@@ -129,26 +129,26 @@ def main():
     
     with open(latex_filename, 'w', encoding='utf-8') as f:
         f.write(final_latex_content)
-    print(f"✅ Successfully created tailored LaTeX file: {latex_filename}")
+    print(f"Successfully created tailored LaTeX file: {latex_filename}")
 
-    print("📄 Compiling PDF from LaTeX...")
+    print("Compiling PDF from LaTeX...")
     # Run twice to ensure all references are correct
     for i in range(2): 
         process = subprocess.run(['pdflatex', '-interaction=nonstopmode', latex_filename], capture_output=True, text=True, encoding='utf-8')
 
     if process.returncode == 0:
-        print(f"✅ Successfully created PDF version: {pdf_filename}")
+        print(f"Successfully created PDF version: {pdf_filename}")
 
          # --- ADD THIS BLOCK TO OPEN THE PDF PREVIEW ---
-        print("🚀 Opening preview...")
-        try:
-            if sys.platform == "win32":
-                os.startfile(pdf_filename)
-            else:
-                opener = "open" if sys.platform == "darwin" else "xdg-open"
-                subprocess.run([opener, pdf_filename], check=True)
-        except Exception as e:
-            print(f"⚠️ Could not open PDF preview. Please open '{pdf_filename}' manually. Error: {e}")
+        # print("Opening preview...")
+        # try:
+        #     if sys.platform == "win32":
+        #         os.startfile(pdf_filename)
+        #     else:
+        #         opener = "open" if sys.platform == "darwin" else "xdg-open"
+        #         subprocess.run([opener, pdf_filename], check=True)
+        # except Exception as e:
+        #     print(f"Could not open PDF preview. Please open '{pdf_filename}' manually. Error: {e}")
         # --- END OF BLOCK ---
 
         # Clean up auxiliary files
@@ -159,7 +159,7 @@ def main():
                 pass
     else:
         log_file = f"{base_output_name}.log"
-        print(f"❌ Error: PDF compilation failed. Check '{log_file}' for details.")
+        print(f"Error: PDF compilation failed. Check '{log_file}' for details.")
         print("--- Compiler Output ---")
         print(process.stdout)
         print(process.stderr)

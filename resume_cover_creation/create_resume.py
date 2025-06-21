@@ -38,7 +38,7 @@ def sanitize_latex(text):
 def setup_api():
     """Configures the Gemini API and handles missing API key."""
     if not GEMINI_API_KEY:
-        print("❌ Error: GEMINI_API_KEY not found.")
+        print("Error: GEMINI_API_KEY not found.")
         print("Please ensure you have a .env file with the line: GEMINI_API_KEY=\"your-key\"")
         sys.exit(1)
     
@@ -51,7 +51,7 @@ def setup_api():
 
 def archive_old_json():
     """Moves the existing JSON data file to an archive folder with a timestamp."""
-    print("📂 Checking for existing JSON file to archive...")
+    print("Checking for existing JSON file to archive...")
     if not os.path.exists(ARCHIVE_FOLDER):
         os.makedirs(ARCHIVE_FOLDER)
         print(f"Created archive folder: '{ARCHIVE_FOLDER}'")
@@ -60,7 +60,7 @@ def archive_old_json():
         timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
         archive_path = os.path.join(ARCHIVE_FOLDER, f"resume_data_{timestamp}.json")
         os.rename(BASE_RESUME_PATH, archive_path)
-        print(f"✅ Safely archived previous data to '{archive_path}'")
+        print(f"Safely archived previous data to '{archive_path}'")
     else:
         print("No existing JSON file found to archive. Skipping.")
 
@@ -100,19 +100,19 @@ def update_json_from_template(model):
         with open(BASE_RESUME_PATH, 'w', encoding='utf-8') as f:
             json.dump(new_json_data, f, indent=2)
 
-        print(f"✅ Successfully created new '{BASE_RESUME_PATH}'.")
+        print(f"Successfully created new '{BASE_RESUME_PATH}'.")
         return True
 
     except FileNotFoundError as e:
-        print(f"❌ Error: Could not find required file for JSON update: {e.filename}")
+        print(f"Error: Could not find required file for JSON update: {e.filename}")
         return False
     except Exception as e:
-        print(f"❌ An error occurred during the JSON update process: {e}")
+        print(f"An error occurred during the JSON update process: {e}")
         return False
 
 def generate_tailored_content(model, base_resume, job_desc):
     """Sends a prompt to Gemini and gets tailored resume content back."""
-    print("🤖 Calling Gemini to tailor content for the job...")
+    print("Calling Gemini to tailor content for the job...")
 
     sections_to_tailor = {
         "summary": base_resume["summary"],
@@ -312,7 +312,7 @@ def main():
     print("\n--- Step 1 of 3: Archiving old data and syncing from template ---")
     archive_old_json()
     if not update_json_from_template(model):
-        print("❌ Halting due to error in JSON update step.")
+        print("Halting due to error in JSON update step.")
         sys.exit(1)
 
     # --- Step 2: Tailor content for the job description ---
@@ -321,7 +321,7 @@ def main():
         with open(BASE_RESUME_PATH, 'r', encoding='utf-8') as f:
             base_resume_data = json.load(f)
     except FileNotFoundError:
-        print(f"❌ Error: A new '{BASE_RESUME_PATH}' was not created. Cannot proceed.")
+        print(f"Error: A new '{BASE_RESUME_PATH}' was not created. Cannot proceed.")
         sys.exit(1)
 
     with open(JOB_DESCRIPTION_PATH, 'r', encoding='utf-8') as f:
@@ -330,10 +330,10 @@ def main():
     # Since there's no interactive prompt anymore, we default to tailoring all sections
     tailored_sections = generate_tailored_content(model, base_resume_data, job_description_text)
     if not tailored_sections:
-        print("❌ Exiting due to API error.")
+        print("Exiting due to API error.")
         return
         
-    print("\n✨ Here is the tailored content from the AI: ✨")
+    print("\nHere is the tailored content from the AI:")
     print(json.dumps(tailored_sections, indent=2))
 
     final_resume_data = base_resume_data.copy()
@@ -347,13 +347,13 @@ def main():
     output_json_file = f"{base_output_filename}_tailored_data.json"
 
     # Save the tailored sections to the new JSON file
-    print(f"📄 Saving tailored content to '{output_json_file}'...")
+    print(f"Saving tailored content to '{output_json_file}'...")
     with open(output_json_file, 'w', encoding='utf-8') as f:
         json.dump(tailored_sections, f, indent=2)
-    print(f"✅ Successfully saved tailored data.")
+    print(f"Successfully saved tailored data.")
     # --- END OF BLOCK 1 ---
     
-    print("\n📄 Building final LaTeX document from tailored data...")
+    print("\nBuilding final LaTeX document from tailored data...")
     final_latex = build_latex_from_data(final_resume_data)
     
     # output_latex_file, output_pdf_file = find_unique_filename(BASE_OUTPUT_NAME) # Moved up to before saving JSON
@@ -367,31 +367,31 @@ def main():
         process = subprocess.run(['pdflatex', '-interaction=nonstopmode', output_latex_file], capture_output=True, text=True, encoding='utf-8')
 
     if process.returncode == 0:
-        print(f"✅ Successfully created {output_pdf_file}")
+        print(f"Successfully created {output_pdf_file}")
         
         # --- NEW STEP: Convert the created PDF to a Word Document ---
         docx_file = output_pdf_file.replace('.pdf', '.docx')
-        print(f"📄 Converting to {docx_file}...")
+        print(f"Converting to {docx_file}...")
         try:
             cv = Converter(output_pdf_file)
             cv.convert(docx_file, start=0, end=None)
             cv.close()
-            print(f"✅ Successfully created {docx_file}!")
+            print(f"Successfully created {docx_file}!")
         except Exception as e:
-            print(f"❌ Could not convert PDF to DOCX. Error: {e}")
+            print(f"Could not convert PDF to DOCX. Error: {e}")
 
         # --- CORRECTED ORDER ---
         # 1. Open the resume preview first so you can see it immediately.
-        print("🚀 Opening resume preview...")
-        if sys.platform == "win32":
-            os.startfile(output_pdf_file)
-        else:
-            opener = "open" if sys.platform == "darwin" else "xdg-open"
-            subprocess.call([opener, output_pdf_file])
+        # print("Opening resume preview...")
+        # if sys.platform == "win32":
+        #     os.startfile(output_pdf_file)
+        # else:
+        #     opener = "open" if sys.platform == "darwin" else "xdg-open"
+        #     subprocess.call([opener, output_pdf_file])
 
         # 2. Then, proceed to the next step of generating the cover letter.
         # --- BLOCK 2: RUN THE COVER LETTER SCRIPT ---
-        print("\n🚀 Proceeding to cover letter generation...")
+        print("\nProceeding to cover letter generation...")
         try:
             # Command to execute: python create_cover_letter.py <path_to_json> <path_to_job_desc>
             command = [
@@ -403,17 +403,17 @@ def main():
             
             # Run the command
             subprocess.run(command, check=True)
-            print("✅ Cover letter script executed successfully.")
+            print("Cover letter script executed successfully.")
 
         except FileNotFoundError:
-            print("⚠️  Warning: 'create_cover_letter.py' not found. Skipping cover letter generation.")
+            print("Warning: 'create_cover_letter.py' not found. Skipping cover letter generation.")
         except subprocess.CalledProcessError as e:
-            print(f"❌ Error executing cover letter script: {e}")
+            print(f"Error executing cover letter script: {e}")
         # --- END OF BLOCK 2 ---
 
     else:
         log_file = os.path.basename(output_latex_file).replace('.tex', '.log')
-        print(f"❌ Error: PDF compilation failed. Check the '{log_file}' file for details.")
+        print(f"Error: PDF compilation failed. Check the '{log_file}' file for details.")
 
 if __name__ == "__main__":
     main()
