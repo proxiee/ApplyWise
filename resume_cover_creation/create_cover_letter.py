@@ -26,7 +26,7 @@ def setup_api():
 
 def generate_tailored_cover_letter_latex(model, base_letter_content, resume_data, job_desc):
     """Sends a prompt to Gemini to tailor the cover letter and return full LaTeX."""
-    print("🤖 Calling Gemini to rewrite the LaTeX cover letter...")
+    print("Calling Gemini to rewrite the LaTeX cover letter...")
 
     prompt = f"""
     You are an expert career advisor and LaTeX document editor. Your task is to take a base LaTeX cover letter template, a tailored resume, and a job description, and generate a new, complete, tailored LaTeX file as your output.

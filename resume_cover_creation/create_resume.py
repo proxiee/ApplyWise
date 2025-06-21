@@ -70,7 +70,7 @@ def update_json_from_template(model):
     Reads the LaTeX template and a rules file, then asks the AI to parse the
     template and create an updated resume_data.json file.
     """
-    print("🤖 Calling Gemini to parse template and create new JSON...")
+    print("Calling Gemini to parse template and create new JSON...")
     try:
         with open(LATEX_TEMPLATE_PATH, 'r', encoding='utf-8') as f:
             template_content = f.read()
