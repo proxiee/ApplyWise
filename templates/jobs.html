@@ -8,16 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header-container">
             <h1>My Job Feed</h1>
             <span id="job-count"></span>
         </div>
 
-        <!-- Stats -->
         <div id="stats-container" class="stats-container">Loading stats...</div>
 
-        <!-- Scrape Controls -->
         <div class="controls-container">
             <fieldset>
                 <legend>Scrape Controls</legend>
@@ -54,7 +51,6 @@
             </fieldset>
         </div>
 
-        <!-- Tabs -->
         <div class="tab-container">
             <button class="tab-link active" onclick="openTab('inbox')">Inbox</button>
             <button class="tab-link" onclick="openTab('want_to_apply')">Want to Apply</button>
@@ -64,7 +60,6 @@
             <a href="/dashboard" class="tab-link">Dashboard</a>
         </div>
 
-        <!-- Jobs -->
         <div id="jobs-content">
             <table id="jobs-table">
                 <thead>
@@ -223,17 +218,17 @@
                     } else if (status === 'archived') {
                         actionButtons += `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
                     } else if (status === 'applied') {
-                         actionButtons += `
-                            <select onchange="updateJobStatus(${job.id}, this.value)">
-                                <option value="applied" ${job.status === 'applied' ? 'selected' : ''}>Applied</option>
-                                <option value="interviewing" ${job.status === 'interviewing' ? 'selected' : ''}>Interviewing</option>
-                                <option value="offer" ${job.status === 'offer' ? 'selected' : ''}>Offer</option>
-                                <option value="rejected" ${job.status === 'rejected' ? 'selected' : ''}>Rejected</option>
-                                <option value="archived" ${job.status === 'archived' ? 'selected' : ''}>Archive</option>
-                            </select>
-                         `;
+                           actionButtons += `
+                               <select onchange="updateJobStatus(${job.id}, this.value)">
+                                   <option value="applied" ${job.status === 'applied' ? 'selected' : ''}>Applied</option>
+                                   <option value="interviewing" ${job.status === 'interviewing' ? 'selected' : ''}>Interviewing</option>
+                                   <option value="offer" ${job.status === 'offer' ? 'selected' : ''}>Offer</option>
+                                   <option value="rejected" ${job.status === 'rejected' ? 'selected' : ''}>Rejected</option>
+                                   <option value="archived" ${job.status === 'archived' ? 'selected' : ''}>Archive</option>
+                               </select>
+                             `;
                     } else {
-                         actionButtons += '<span>-</span>'; // For other statuses like 'interviewing', 'offer', 'rejected'
+                           actionButtons += '<span>-</span>'; // For other statuses like 'interviewing', 'offer', 'rejected'
                     }
 
 
@@ -271,8 +266,7 @@
                             <div class="company-name">${job.company || 'No Company'}</div>
                         </td>
                         <td>${job.location || 'No Location'}</td>
-                        <td>${applicationDateStr}</td> <!-- Display Application Date -->
-                        <td class="actions">${actionButtons}</td>
+                        <td>${applicationDateStr}</td> <td class="actions">${actionButtons}</td>
                     `;
                     tbody.appendChild(row);
                 });
@@ -297,6 +291,10 @@
                 row.style.opacity = '0';
                 setTimeout(() => fetchJobs(currentTab), 300);
             }
+            // --- ADDITION HERE ---
+            // Set a flag in session storage to tell the dashboard to refresh
+            sessionStorage.setItem('dashboardNeedsRefresh', 'true');
+            // --- END ADDITION ---
         })
         .catch(err => console.error('Error updating job status:', err));
     }
@@ -338,6 +336,10 @@
                     if (status.message.includes('complete')) {
                         openTab('inbox');
                         fetchStats();
+                        // --- ADDITION HERE ---
+                        // Set a flag in session storage to tell the dashboard to refresh
+                        sessionStorage.setItem('dashboardNeedsRefresh', 'true');
+                        // --- END ADDITION ---
                     }
                 }
             })
@@ -412,6 +414,10 @@
                     cvIframe.src = data.cover_letter_pdf_url;
                     pdfPreviewArea.style.display = 'block'; 
                     statusElement.textContent = 'Documents generated successfully!';
+                    // --- ADDITION HERE ---
+                    // Set a flag in session storage to tell the dashboard to refresh
+                    sessionStorage.setItem('dashboardNeedsRefresh', 'true');
+                    // --- END ADDITION ---
                 } else {
                     statusElement.textContent = `Error: ${data.error || 'Unknown error'} - ${data.details || ''}`;
                     console.error('Error generating documents:', data);

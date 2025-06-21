@@ -308,7 +308,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Initial data load
-    fetchDashboardData();
+    // Check if a refresh was requested from another page
+    if (sessionStorage.getItem('dashboardNeedsRefresh') === 'true') { // Check for 'true' string
+        console.log('Dashboard refresh requested from another page. Fetching fresh data.');
+        fetchDashboardData();
+        sessionStorage.removeItem('dashboardNeedsRefresh'); // Clear the flag after use
+    } else {
+        fetchDashboardData(); // Always fetch on load for the first visit or if no flag
+    }
     fetchMotivationalQuote();
 
     // Optional: Refresh data periodically

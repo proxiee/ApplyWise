@@ -379,20 +379,25 @@ def api_dashboard_stats():
     cursor.execute(query_total_applications, applied_statuses)
     stats['total_applications'] = cursor.fetchone()[0]
 
-    # Applications Today
+    # Applications Today - FIX APPLIED HERE
     today_start_str = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0).strftime('%Y-%m-%d %H:%M:%S')
     if has_application_date_column:
         cursor.execute(f"SELECT COUNT(*) FROM jobs WHERE status IN ({status_placeholders}) AND application_date >= ?", (*applied_statuses, today_start_str))
-    stats['applications_today'] = cursor.fetchone()[0] if cursor.fetchone() else 0 # Ensure default to 0 if no results
+        result_today = cursor.fetchone() # Fetch once
+        stats['applications_today'] = result_today[0] if result_today and result_today[0] is not None else 0
+    else:
+        stats['applications_today'] = 0
 
-    # Applications This Week
+    # Applications This Week - FIX APPLIED HERE
     today = date.today()
     start_of_week = today - timedelta(days=today.weekday()) # Monday
     start_of_week_str = datetime.combine(start_of_week, datetime.min.time()).strftime('%Y-%m-%d %H:%M:%S')
     if has_application_date_column:
         cursor.execute(f"SELECT COUNT(*) FROM jobs WHERE status IN ({status_placeholders}) AND application_date >= ?", (*applied_statuses, start_of_week_str))
-    stats['applications_this_week'] = cursor.fetchone()[0] if cursor.fetchone() else 0 # Ensure default to 0 if no results
-
+        result_this_week = cursor.fetchone() # Fetch once
+        stats['applications_this_week'] = result_this_week[0] if result_this_week and result_this_week[0] is not None else 0
+    else:
+        stats['applications_this_week'] = 0
 
     # Total Resumes Created
     cursor.execute("SELECT COUNT(*) FROM resume_generations")
