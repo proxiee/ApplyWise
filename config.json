@@ -1,0 +1,67 @@
+{
+  "app_settings": {
+    "db_path": "data/jobs.db",
+    "jobs_tablename": "jobs",
+    "filtered_jobs_tablename": "filtered_jobs",
+    "proxies": {},
+    "headers": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+    }
+  },
+  "openai_settings": {
+    "api_key": "",
+    "model": "gpt-4-turbo",
+    "resume_path": "full/local/path/to/your/resume.pdf"
+  },
+  "linkedin_settings": {
+    "search_queries": [
+      {
+        "keywords": "Python developer",
+        "location": "Los Angeles",
+        "f_WT": ""
+      },
+      {
+        "keywords": "Python developer",
+        "location": "USA",
+        "f_WT": "2"
+      }
+    ],
+    "timespan": "r84600",
+    "pages_to_scrape": 1,
+    "days_to_scrape": 10,
+    "title_include": ["python", "developer", "backend", "BE", "engineer"],
+    "title_exclude": ["frontend", "fron end", "game"],
+    "desc_exclude": [
+        "agriculture", "farm", "food safety", "manufacture", "manufacturing", "Bilingual", "chemistry", "FDA", "ICH Guideline", "21 CFR 210", "biological sciences", "clinical research", "clinical trials", "drug safety", "ISO 9001", "ISO9001", "Life Sciences", "Biotech", "safety standards", "gt.school", "degree in accounting", "degree in Finance", "ISQM", "ISQM1", "QA/QC", "Electrical Engineering", "IS09001"
+    ],
+    "company_exclude": ["ClickJobs.io"],
+    "languages": ["en"]
+  },
+  "indeed_settings": {
+    "master_csv_file": "data/indeed_results.csv",
+    "cache_folder": "data/cache",
+    "log_file": "data/log.log",
+    "block_list_file": "data/indeed_block_list.json",
+    "duplicates_list_file": "data/indeed_duplicates.json",
+    "search_config": {
+      "locale": "USA_ENGLISH",
+      "providers": ["INDEED"],
+      "province_or_state": "NC",
+      "city": "Chapel Hill",
+      "radius": 50,
+      "keywords": [
+        "Software Developer",
+        "Data Analyst",
+        "Project Manager"
+      ],
+      "max_listing_days": 14,
+      "remoteness": "ANY"
+    },
+    "delay_config": {
+      "algorithm": "LINEAR",
+      "max_duration": 5.0,
+      "min_duration": 1.0,
+      "random": false
+    }
+  }
+}
