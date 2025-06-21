@@ -29,7 +29,16 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            /* --- ADDITION HERE --- */
+            height: 400px; /* Give the chart container a fixed height */
+            /* --- END ADDITION --- */
         }
+        /* --- ADDITION HERE --- */
+        .chart-container canvas {
+            height: 100% !important; /* Make canvas fill its parent container */
+            width: 100% !important;
+        }
+        /* --- END ADDITION --- */
         #motivationalQuote {
             font-style: italic;
             text-align: center;

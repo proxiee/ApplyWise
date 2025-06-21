@@ -30,7 +30,7 @@
     "IndeedScraperUSAEng_0fdadb30215d1973": {
         "company": "University of North Carolina at Chapel Hill",
         "description": "Ability to communicate complex data insights in a clear and actionable manner. Analyze potential prospects’ performance data to prepare in-depth profi..",
-        "post_date": "2025-06-21",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Data Analyst"
     },
@@ -43,10 +43,24 @@
     },
     "IndeedScraperUSAEng_19d96ab2210cd2a9": {
         "company": "UBS",
-        "description": "United States - North Carolina Information Technology (IT) Group Functions Job Reference # 318250BR City Raleigh Job Type Full Time Your role Are you ..",
+        "description": "Help with revision & implementation of Silver Publisher User Stories e.g. Interfaces, Reports. Implement according to approved solution design. Comple..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Service Now Developer"
+    },
+    "IndeedScraperUSAEng_1bfefb562fa41cb5": {
+        "company": "Ameriprise Financial",
+        "description": "Participate in code reviews, testing, and debugging to ensure software quality. Collaborate with UI/UX designers, backend developers, and product team..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Mobile App Developer (Remote)"
+    },
+    "IndeedScraperUSAEng_2630cfff6d3e1d8f": {
+        "company": "State of North Carolina - Administrative Office of the Courts",
+        "description": "Determine requirements and business needs for projects. Knowledge of: project plan development; project implementation; digital and web technologies, ..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Web Specialist"
     },
     "IndeedScraperUSAEng_302f3ddcbe8fca52": {
         "company": "Piper Companies",
@@ -72,7 +86,7 @@
     "IndeedScraperUSAEng_4923b8df9d9c515a": {
         "company": "Piper Companies",
         "description": "Keywords: Senior Java Developer, Java 17, Spring Boot, Microservices, RESTful APIs, API orchestration, Docker, Kubernetes, AWS, Cloud technologies, Ja..",
-        "post_date": "2025-06-21",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Senior Java Developer"
     },
@@ -85,14 +99,14 @@
     },
     "IndeedScraperUSAEng_4fa75ee61a248937": {
         "company": "Piper Companies",
-        "description": "Piper Companies is seeking a Full Stack Software Engineer to work a hybrid schedule in Durham, NC for an Insurance company that specializes in retirem..",
+        "description": "Investigate, troubleshoot, and resolve software bugs and technical issues across the stack. Build and maintain scalable RESTful APIs and intuitive use..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Full Stack Engineer"
     },
     "IndeedScraperUSAEng_5716ecfdb9faaaf7": {
         "company": "Piper Companies",
-        "description": "Piper Companies is seeking a Full Stack engineer who can develop and maintain web applications while collaborating on platform architecture and team i..",
+        "description": "A deep understanding of database design and data modeling principles. Investigate and resolve software bugs to ensure a stable and reliable user exper..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Full Stack engineer"
@@ -146,6 +160,20 @@
         "status": "NEW",
         "title": "Software Engineer"
     },
+    "IndeedScraperUSAEng_8a8f68cf025906f0": {
+        "company": "State of North Carolina",
+        "description": "Knowledge of: project plan development; project implementation; digital and web technologies, development, and best practices; mobile and web-based ap..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Web Specialist"
+    },
+    "IndeedScraperUSAEng_9a1b1c61453f2331": {
+        "company": "Accenture",
+        "description": "System Architecture and Environment Sizing: Utilize software vendor software guidelines to define the hardware and software components needed to suppo..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Industry X - Engineering Digitization & PLM - Teamcenter Architect"
+    },
     "IndeedScraperUSAEng_a0134c048dc9d5af": {
         "company": "School of Government Services",
         "description": "Progressive to extensive SQL programming skills and knowledge of data analysis tools to optimize query and process performance while maintaining data ..",
@@ -155,8 +183,8 @@
     },
     "IndeedScraperUSAEng_a5edeab05db12eaa": {
         "company": "Piper Companies",
-        "description": "Piper Companies is hiring a Full Stack Engineer for a small company located in Durham, NC. The Full Stack Engineer will need to sit on site Tuesday - ..",
-        "post_date": "2025-06-21",
+        "description": "Deep understanding of SQL and relational databases for data management. Keywords: Full Stack Engineer, Node.js, Java 8+, SQL, relational databases, Re..",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Full Stack Engineer - Hybrid"
     },
@@ -176,7 +204,7 @@
     },
     "IndeedScraperUSAEng_b25baf51c2d1d035": {
         "company": "Truist Bank",
-        "description": "Deep knowledge and experience with two or more of the following: Solid foundation in data structures, algorithms, and software design with strong anal..",
+        "description": "Ability to lead complex projects. Deep knowledge and experience with two or more of the following: Solid foundation in data structures, algorithms, an..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Software Engineer IV"
@@ -187,6 +215,13 @@
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Java Engineer"
+    },
+    "IndeedScraperUSAEng_c2c570189ee21b15": {
+        "company": "Provectus",
+        "description": "Staffing & Resource Management: Manage project staffing, collaborate with talent acquisition, and optimize resource utilization across projects. Quali..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Python Full stack Practice Leader/ Engineering manager"
     },
     "IndeedScraperUSAEng_cb78f7f273293f5d": {
         "company": "Piper Companies",
@@ -204,10 +239,24 @@
     },
     "IndeedScraperUSAEng_dd3bc7f537a137fa": {
         "company": "Piper Companies",
-        "description": "Piper Companies is hiring a Full Stack Engineer for a large Financial Services Company located in Cary, NC. The Full Stack Engineer will be responsibl..",
-        "post_date": "2025-06-21",
+        "description": "Apply project management methodologies and system development lifecycle processes to complex IT projects. Elicit requirements from stakeholders to ens..",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Full Stack Engineer"
+    },
+    "IndeedScraperUSAEng_e0ee2ca1458efa60": {
+        "company": "UBS",
+        "description": "10+ years of experience building large-scale software applications. UBS is the world’s largest and the only truly global wealth manager. Develop new f..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Full Stack Java Engineer"
+    },
+    "IndeedScraperUSAEng_e724276a47ed0ca9": {
+        "company": "State of North Carolina - Adult Correction",
+        "description": "This position will perform any other duties as assigned by a manager. Ability to assist the supervisor in training, overseeing work, and special proje..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Release Management Specialist"
     },
     "IndeedScraperUSAEng_f436649bb31be4c1": {
         "company": "Xsolla",
@@ -218,14 +267,14 @@
     },
     "IndeedScraperUSAEng_f56d8609ecb17a6b": {
         "company": "Piper Companies",
-        "description": "Piper Companies is seeking a Senior Java Engineer who can collaborate with business stakeholders and implement solutions based off data algorithms. Th..",
+        "description": "Leverage knowledge of algorithms, complexity, and data structure to write efficient and optimized code. Piper Companies is seeking a Senior Java Engin..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Senior Java Engineer"
     },
     "IndeedScraperUSAEng_f73e7405c793fcc9": {
         "company": "Piper Companies",
-        "description": "Piper Companies is seeking a well experienced Senior Front-End Engineer who can build, remediate, and test the accessibility for web and mobile device..",
+        "description": "Background in DevOps or software development. Understands user needs and user facing projects. Keywords: Front end, frontend, front-end, developer, de..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Senior Front-end Engineer"
