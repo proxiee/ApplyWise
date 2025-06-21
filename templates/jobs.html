@@ -61,6 +61,7 @@
             <button class="tab-link" onclick="openTab('applied')">Applied</button>
             <button class="tab-link" onclick="openTab('archived')">Archived</button>
             <button class="tab-link" onclick="openResumeCreatorTab()">Create Resume/CV</button>
+            <a href="/dashboard" class="tab-link">Dashboard</a>
         </div>
 
         <!-- Jobs -->
@@ -74,6 +75,7 @@
                         <th>Date Scraped</th>
                         <th>Title & Company</th>
                         <th>Location</th>
+                        <th>Applied Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -83,7 +85,9 @@
         </div>
         <div id="resume-creator-content" style="display: none;">
             <h2>Create Resume and Cover Letter</h2>
-            <textarea id="job-description-input" placeholder="Paste job description here..." style="width: 98%; height: 150px; margin-bottom: 10px;"></textarea>
+            <input type="hidden" id="resume-job-id" value="">
+            <div><small>Job to tailor for: <span id="resume-job-title-display">None selected. Select a job from the 'Inbox' or 'Want to Apply' tabs and click 'Generate Resume/CV' on that job row.</span></small></div>
+            <textarea id="job-description-input" placeholder="Job description will be auto-filled if you use 'Generate Resume/CV' from a job row." style="width: 98%; height: 150px; margin-bottom: 10px;"></textarea>
             <button id="generate-resume-cv-button">Generate Documents</button>
             <div id="resume-creator-status" style="margin-top: 10px; margin-bottom: 10px;"></div>
             <div id="pdf-preview-area" style="display: none; margin-top: 10px;">
@@ -148,21 +152,35 @@
         fetchJobs(status);
     }
 
-    function openResumeCreatorTab() {
+    function openResumeCreatorTab(jobId = null, jobTitle = null, jobDescription = null) {
         currentTab = 'resume_creator'; // Make sure currentTab is declared globally
 
         // Hide other content sections
         document.getElementById('jobs-content').style.display = 'none';
         document.getElementById('stats-container').style.display = 'none';
         document.querySelector('.controls-container').style.display = 'none';
-        // Add any other general content sections that need hiding
 
         // Show resume creator section
         document.getElementById('resume-creator-content').style.display = 'block';
 
         // Update tab active states
         document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
-        document.querySelector('.tab-link[onclick="openResumeCreatorTab()"]').classList.add('active');
+        const resumeTabButton = Array.from(document.querySelectorAll('.tab-link')).find(el => el.textContent.includes('Create Resume/CV'));
+        if (resumeTabButton) {
+            resumeTabButton.classList.add('active');
+        }
+
+        // Pre-fill if job details are provided
+        if (jobId && jobDescription) {
+            document.getElementById('resume-job-id').value = jobId;
+            document.getElementById('job-description-input').value = jobDescription;
+            document.getElementById('resume-job-title-display').textContent = jobTitle || `Job ID: ${jobId}`;
+        } else {
+            document.getElementById('resume-job-id').value = '';
+            document.getElementById('job-description-input').value = ''; // Clear if no specific job
+            document.getElementById('resume-job-title-display').textContent = 'None selected. Paste job description below or select a job.';
+        }
+
 
         // Clear any previous status and hide PDF preview
         document.getElementById('resume-creator-status').textContent = '';
@@ -193,15 +211,31 @@
                     row.id = `job-row-${job.id}`;
 
                     let actionButtons = '';
-                    if (status === 'inbox') {
-                        actionButtons = `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
-                    } else if (status === 'want_to_apply') {
-                        actionButtons = `<button class="action-btn applied" onclick="updateJobStatus(${job.id}, 'applied')">Mark Applied</button>`;
-                    } else if (status === 'archived') {
-                        actionButtons = `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
-                    } else if (status === 'applied') {
-                        actionButtons = '<span>-</span>';
+                    // Add a "Generate Resume" button for 'inbox' and 'want_to_apply' statuses
+                    if (status === 'inbox' || status === 'want_to_apply') {
+                        actionButtons += `<button class="action-btn generate-resume" onclick="openResumeCreatorTab(${job.id}, '${job.title.replace(/'/g, "\\'")}', '${job.job_description.replace(/'/g, "\\'").replace(/\n/g, '\\n')}')">Generate Resume/CV</button>`;
                     }
+
+                    if (status === 'inbox') {
+                        actionButtons += `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
+                    } else if (status === 'want_to_apply') {
+                        actionButtons += `<button class="action-btn applied" onclick="updateJobStatus(${job.id}, 'applied')">Mark Applied</button>`;
+                    } else if (status === 'archived') {
+                        actionButtons += `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
+                    } else if (status === 'applied') {
+                         actionButtons += `
+                            <select onchange="updateJobStatus(${job.id}, this.value)">
+                                <option value="applied" ${job.status === 'applied' ? 'selected' : ''}>Applied</option>
+                                <option value="interviewing" ${job.status === 'interviewing' ? 'selected' : ''}>Interviewing</option>
+                                <option value="offer" ${job.status === 'offer' ? 'selected' : ''}>Offer</option>
+                                <option value="rejected" ${job.status === 'rejected' ? 'selected' : ''}>Rejected</option>
+                                <option value="archived" ${job.status === 'archived' ? 'selected' : ''}>Archive</option>
+                            </select>
+                         `;
+                    } else {
+                         actionButtons += '<span>-</span>'; // For other statuses like 'interviewing', 'offer', 'rejected'
+                    }
+
 
                     const sourceBadge = job.source === 'LinkedIn' ? '<span class="badge linkedin">LI</span>' : '<span class="badge indeed">IN</span>';
                     let displayDate = 'N/A';
@@ -218,6 +252,14 @@
                             scrapedDate = parsedScrapedDate.toLocaleString();
                         }
                     }
+                    let applicationDateStr = 'N/A';
+                    if (job.application_date) {
+                        const parsedAppDate = new Date(job.application_date);
+                        if (!isNaN(parsedAppDate)) {
+                            applicationDateStr = parsedAppDate.toLocaleDateString();
+                        }
+                    }
+
 
                     row.innerHTML = `
                         <td class="index-col">${index + 1}</td>
@@ -229,6 +271,7 @@
                             <div class="company-name">${job.company || 'No Company'}</div>
                         </td>
                         <td>${job.location || 'No Location'}</td>
+                        <td>${applicationDateStr}</td> <!-- Display Application Date -->
                         <td class="actions">${actionButtons}</td>
                     `;
                     tbody.appendChild(row);
@@ -316,6 +359,7 @@
             const pdfPreviewArea = document.getElementById('pdf-preview-area');
             const resumeIframe = document.getElementById('resume-preview-iframe');
             const cvIframe = document.getElementById('cv-preview-iframe');
+            const jobId = document.getElementById('resume-job-id').value; // Get the job ID
 
             if (!jobDesc.trim()) {
                 statusElement.textContent = 'Please paste a job description first.';
@@ -328,12 +372,17 @@
             resumeIframe.src = 'about:blank';
             cvIframe.src = 'about:blank';
 
+            const payload = { job_description: jobDesc };
+            if (jobId) {
+                payload.job_id = parseInt(jobId, 10); // Ensure job_id is an integer if it exists
+            }
+
             fetch('/generate_documents', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ job_description: jobDesc }),
+                body: JSON.stringify(payload),
             })
             .then(response => {
                 if (!response.ok) {
