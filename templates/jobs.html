@@ -8,96 +8,306 @@
 </head>
 <body>
     <div class="container">
-        <h1>My Job Feed</h1>
-        <table id="jobs-table">
-            <thead>
-                <tr>
-                    <th>Source</th>
-                    <th>Date Posted</th>
-                    <th>Title</th>
-                    <th>Company</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody id="jobs-tbody">
-                </tbody>
-        </table>
-        <div id="loading-spinner" class="spinner"></div>
+        <div class="header-container">
+            <h1>My Job Feed</h1>
+            <span id="job-count"></span>
+        </div>
+
+        <div id="stats-container" class="stats-container">
+            Loading stats...
+        </div>
+
+        <div class="controls-container">
+            <fieldset>
+                <legend>Scrape Controls</legend>
+                <div class="controls-grid">
+                    <div class="control-group">
+                        <label for="source-select">Source:</label>
+                        <select id="source-select" onchange="updateTimeUnitOptions()">
+                            <option value="all" selected>All Sources</option>
+                            <option value="linkedin">LinkedIn Only</option>
+                            <option value="indeed">Indeed Only</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="time-value">Time Period:</label>
+                        <input type="number" id="time-value" value="7" min="1">
+                        <select id="time-unit"></select>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Scrape Mode:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="mode-add" name="scrape-mode" value="add" checked>
+                            <label for="mode-add">Add to Inbox</label>
+                            <input type="radio" id="mode-archive" name="scrape-mode" value="archive">
+                            <label for="mode-archive">Archive Inbox & Add</label>
+                            <input type="radio" id="mode-delete" name="scrape-mode" value="delete">
+                            <label for="mode-delete">Clear Inbox & Add</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="scrape-action-bar">
+                    <button id="scrape-button" onclick="startScrape()">Scrape New Jobs</button>
+                    <span id="scrape-status">Status: Idle</span>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="tab-container">
+            <button class="tab-link active" onclick="openTab('inbox')">Inbox</button>
+            <button class="tab-link" onclick="openTab('want_to_apply')">Want to Apply</button>
+            <button class="tab-link" onclick="openTab('applied')">Applied</button>
+        </div>
+
+        <div id="jobs-content">
+            <table id="jobs-table">
+                <thead>
+                    <tr>
+                        <th class="index-col">#</th>
+                        <th>Source</th>
+                        <th>Date Posted</th>
+                        <th>Title & Company</th>
+                        <th>Location</th>
+                        <th>Description Snippet</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="jobs-tbody"></tbody>
+            </table>
+            <div id="loading-spinner" class="spinner"></div>
+        </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetchJobs();
-        });
+<script>
+    let currentTab = 'inbox';
+    let statusInterval;
+    const timeUnitSelect = document.getElementById('time-unit');
 
-        function fetchJobs() {
-            const tbody = document.getElementById('jobs-tbody');
-            const spinner = document.getElementById('loading-spinner');
-            spinner.style.display = 'block';
+    const timeOptions = {
+        full: `
+            <option value="seconds">Seconds</option>
+            <option value="minutes">Minutes</option>
+            <option value="hours">Hours</option>
+            <option value="days" selected>Days</option>
+            <option value="weeks">Weeks</option>
+            <option value="months">Months</option>
+        `,
+        indeed: `
+            <option value="days" selected>Days</option>
+            <option value="weeks">Weeks</option>
+            <option value="months">Months</option>
+        `
+    };
 
-            fetch('/get_all_jobs')
-                .then(response => response.json())
-                .then(jobs => {
-                    spinner.style.display = 'none';
-                    tbody.innerHTML = ''; 
+    function updateTimeUnitOptions() {
+        const source = document.getElementById('source-select').value;
+        timeUnitSelect.innerHTML = (source === 'indeed') ? timeOptions.indeed : timeOptions.full;
+    }
+
+    function fetchStats() {
+        const statsContainer = document.getElementById('stats-container');
+        fetch('/get_stats')
+            .then(response => response.json())
+            .then(stats => {
+                statsContainer.innerHTML = `<strong>Jobs Scraped in Last 24 Hours:</strong> ${stats.jobs_last_24_hours}`;
+            })
+            .catch(error => {
+                statsContainer.innerHTML = 'Could not load stats.';
+                console.error('Error fetching stats:', error);
+            });
+    }
+
+    function openTab(status) {
+        currentTab = status;
+        document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+        document.querySelector(`.tab-link[onclick="openTab('${status}')"]`).classList.add('active');
+        fetchJobs(status);
+    }
+
+    function fetchJobs(status) {
+        const tbody = document.getElementById('jobs-tbody');
+        const spinner = document.getElementById('loading-spinner');
+        const jobCountSpan = document.getElementById('job-count');
+        
+        spinner.style.display = 'block';
+        tbody.innerHTML = '';
+        jobCountSpan.textContent = '';
+
+        fetch(`/get_jobs?status=${status}`)
+            .then(response => response.json())
+            .then(jobs => {
+                spinner.style.display = 'none';
+                jobCountSpan.textContent = `(${jobs.length} jobs)`;
+                if (!jobs || jobs.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7">No jobs in this category.</td></tr>';
+                    return;
+                }
+
+                jobs.forEach((job, index) => {
+                    const row = document.createElement('tr');
+                    row.id = `job-row-${job.id}`;
                     
-                    if (!jobs || jobs.length === 0) {
-                        tbody.innerHTML = '<tr><td colspan="5">No jobs found.</td></tr>';
-                        return;
+                    let actionButtons = '';
+                    if (status === 'inbox') {
+                        actionButtons = `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
+                    } else if (status === 'want_to_apply') {
+                        actionButtons = `<button class="action-btn applied" onclick="updateJobStatus(${job.id}, 'applied')">Mark Applied</button>`;
                     }
-
-                    jobs.forEach(job => {
-                        // --- START OF BULLETPROOF RENDERING ---
-                        try {
-                            const row = document.createElement('tr');
-                            row.id = `job-row-${job.id}`;
-                            
-                            // 1. Defensively create the source badge
-                            const source = job.source || 'N/A';
-                            const sourceBadge = source === 'LinkedIn' 
-                                ? `<span class="badge linkedin">LI</span>`
-                                : `<span class="badge indeed">IN</span>`;
-                            
-                            // 2. Defensively handle the date
-                            let displayDate = 'N/A';
-                            // The 'job.date' check prevents 'new Date(null)' or 'new Date("")' which can be invalid
-                            if (job.date && typeof job.date === 'string') {
-                                const parsedDate = new Date(job.date);
-                                // Check if the parsed date is valid
-                                if (!isNaN(parsedDate.getTime())) {
-                                    displayDate = parsedDate.toLocaleDateString();
-                                }
-                            }
-
-                            // 3. Provide default empty strings for all other data to prevent 'null' or 'undefined' from appearing
-                            const jobUrl = job.job_url || '#';
-                            const title = job.title || 'No Title';
-                            const company = job.company || 'No Company';
-                            const location = job.location || 'No Location';
-
-                            row.innerHTML = `
-                                <td>${sourceBadge}</td>
-                                <td>${displayDate}</td>
-                                <td><a href="${jobUrl}" target="_blank">${title}</a></td>
-                                <td>${company}</td>
-                                <td>${location}</td>
-                            `;
-                            tbody.appendChild(row);
-
-                        } catch (e) {
-                            // If a single row fails for any reason, log it and continue
-                            console.error("Failed to render a job row. Error:", e);
-                            console.error("Problematic job data:", job);
+                    
+                    const descriptionSnippet = (job.job_description || '').substring(0, 100) + '...';
+                    const sourceBadge = job.source === 'LinkedIn' ? `<span class="badge linkedin">LI</span>` : `<span class="badge indeed">IN</span>`;
+                    
+                    let displayDate = 'N/A';
+                    if (job.date && String(job.date).length > 0) {
+                        const parsedDate = new Date(job.date);
+                        if (!isNaN(parsedDate.getTime())) {
+                            displayDate = parsedDate.toLocaleDateString();
                         }
-                        // --- END OF BULLETPROOF RENDERING ---
-                    });
-                })
-                .catch(error => {
-                    spinner.style.display = 'none';
-                    console.error('Error fetching jobs:', error);
-                    tbody.innerHTML = '<tr><td colspan="5">Failed to load jobs.</td></tr>';
+                    }
+                    
+                    row.innerHTML = `
+                        <td class="index-col">${index + 1}</td>
+                        <td>${sourceBadge}</td>
+                        <td>${displayDate}</td>
+                        <td>
+                            <a href="${job.job_url || '#'}" target="_blank">${job.title || 'No Title'}</a>
+                            <div class="company-name">${job.company || 'No Company'}</div>
+                        </td>
+                        <td>${job.location || 'No Location'}</td>
+                        <td class="description-snippet">${descriptionSnippet}</td>
+                        <td class="actions">${actionButtons}</td>
+                    `;
+                    tbody.appendChild(row);
                 });
+            })
+            .catch(error => {
+                spinner.style.display = 'none';
+                console.error('Error fetching jobs:', error);
+                tbody.innerHTML = '<tr><td colspan="7">Failed to load jobs.</td></tr>';
+            });
+    }
+
+    function updateJobStatus(jobId, newStatus) {
+        fetch(`/update_job_status/${jobId}`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ status: newStatus }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.success);
+            const row = document.getElementById(`job-row-${jobId}`);
+            if (row) {
+                row.style.opacity = '0';
+                setTimeout(() => {
+                    row.remove();
+                    // After removing, we can optionally refresh the count for the current tab
+                    fetchJobs(currentTab);
+                }, 300);
+            }
+        })
+        .catch(error => console.error('Error updating job status:', error));
+    }
+
+    function startScrape() {
+        const managementOption = document.querySelector('input[name="scrape-mode"]:checked').value;
+        const source = document.getElementById('source-select').value;
+        const timeValue = parseInt(document.getElementById('time-value').value, 10);
+        const timeUnit = timeUnitSelect.value;
+        const timePeriodStr = `${timeValue} ${timeUnit}`;
+
+        let timespanInSeconds = 0;
+        let daysToScrape = 0;
+
+        switch (timeUnit) {
+            case 'seconds':
+                timespanInSeconds = timeValue;
+                daysToScrape = Math.ceil(timeValue / 86400) || 1;
+                break;
+            case 'minutes':
+                timespanInSeconds = timeValue * 60;
+                daysToScrape = Math.ceil(timeValue / 1440) || 1;
+                break;
+            case 'hours':
+                timespanInSeconds = timeValue * 3600;
+                daysToScrape = Math.ceil(timeValue / 24) || 1;
+                break;
+            case 'weeks':
+                daysToScrape = timeValue * 7;
+                timespanInSeconds = daysToScrape * 86400;
+                break;
+            case 'months':
+                daysToScrape = timeValue * 30;
+                timespanInSeconds = daysToScrape * 86400;
+                break;
+            case 'days':
+            default:
+                daysToScrape = timeValue;
+                timespanInSeconds = timeValue * 86400;
         }
-    </script>
+
+        document.getElementById('scrape-button').disabled = true;
+        document.getElementById('scrape-status').textContent = 'Status: Starting...';
+        
+        statusInterval = setInterval(checkScrapeStatus, 2000);
+
+        fetch('/scrape', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                source: source,
+                time_period_str: timePeriodStr,
+                timespan: timespanInSeconds,
+                days: daysToScrape,
+                management_option: managementOption
+            }),
+        })
+        .then(response => {
+            if (!response.ok) { return response.json().then(err => { throw new Error(err.error || 'Server error'); }); }
+            return response.json();
+        })
+        .then(data => console.log(data.message))
+        .catch(error => {
+            console.error('Error starting scrape:', error);
+            document.getElementById('scrape-status').textContent = `Error: ${error.message}`;
+            clearInterval(statusInterval);
+            document.getElementById('scrape-button').disabled = false;
+        });
+    }
+
+    function checkScrapeStatus() {
+        const scrapeButton = document.getElementById('scrape-button');
+        fetch('/scrape_status')
+            .then(response => response.json())
+            .then(status => {
+                document.getElementById('scrape-status').textContent = `Status: ${status.message}`;
+                if (status.is_running) {
+                    scrapeButton.disabled = true;
+                } else {
+                    if (scrapeButton.disabled) {
+                        clearInterval(statusInterval);
+                        scrapeButton.disabled = false;
+                        if (status.message.includes('complete')) {
+                           openTab(currentTab); // Refresh the current tab
+                           fetchStats(); // Refresh the stats
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                clearInterval(statusInterval);
+                scrapeButton.disabled = false;
+            });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        updateTimeUnitOptions();
+        openTab(currentTab);
+        fetchStats();
+    });
+</script>
+
 </body>
 </html>
