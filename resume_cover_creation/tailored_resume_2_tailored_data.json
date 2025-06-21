@@ -1,0 +1,54 @@
+{
+  "summary": "Results-oriented Software Engineer proficient in C++ and Qt, with a proven track record of debugging and troubleshooting system software anomalies.  Experienced in developing and deploying tools for manufacturing and field support, utilizing automated testing (e.g., Squish) and object-oriented programming principles to deliver high-quality, efficient solutions.",
+  "experience": [
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Software Developer",
+      "dates": "March 2023 - Aug 2023",
+      "points": [
+        "Developed and deployed full-stack features for enterprise systems using Spring Boot (Java) and modern front-end frameworks, ensuring extensible, maintainable, high-quality code.",
+        "Collaborated with stakeholders to translate user requirements into technical specifications within an Agile environment, improving API response times by 15%."
+      ]
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Programmer Analyst Intern",
+      "dates": "March 2022-Sept 2022",
+      "points": [
+        "Improved enterprise application stability by identifying and resolving bugs, resulting in a 10% reduction in reported issues.",
+        "Enhanced code quality and reliability by authoring technical documentation and augmenting test automation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Automated Testing Framework for Manufacturing Diagnostics",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Developed a Qt (C++) and QML-based framework for automated testing of manufacturing equipment, reducing testing time by 20% and improving diagnostic accuracy by 15%.",
+        "Implemented unit and functional tests using Squish, resulting in a 10% decrease in post-release bugs.",
+        "Successfully classified and categorized 500+ software anomalies, leading to improved troubleshooting efficiency."
+      ]
+    },
+    {
+      "name": "Qt-based Diagnostics Tool for Field Support",
+      "dates": "Jun 2024 - Present",
+      "points": [
+        "Designed and implemented a Qt (C++) application for field technicians to diagnose and troubleshoot system issues remotely, reducing onsite support calls by 25%.",
+        "Integrated the tool with a central database to collect diagnostic data, improving issue resolution time by 18%.",
+        "Utilized object-oriented programming principles to build a modular and maintainable application."
+      ]
+    },
+    {
+      "name": "Improved System Anomaly Classification Algorithm",
+      "dates": "Sep 2023-Dec 2023",
+      "points": [
+        "Developed a machine learning model to classify system anomalies with 95% accuracy, improving troubleshooting efficiency.",
+        "The algorithm processed 1000+ daily logs and reduced false-positive alerts by 30%.",
+        "Improved the accuracy of anomaly classification by 10% compared to the previous system."
+      ]
+    }
+  ]
+}

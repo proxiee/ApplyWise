@@ -1,44 +1,39 @@
-About HeyGen
+Senior System Software Engineer
+BayOne
+3.8
+3.8 out of 5 stars
+Raleigh, NC
+Simplify
+Finish Onboarding
 
-At HeyGen, our mission is to make visual storytelling accessible to all. Over the last decade, visual content has become the preferred method of information creation, consumption, and retention. But the ability to create such content, in particular videos, continues to be costly and challenging to scale. Our ambition is to build technology that equips more people with the power to reach, captivate, and inspire audiences.
-Learn more at www.heygen.com.  Visit our Mission and Culture doc here. 
+&nbsp;
+Profile insights
+Here’s how the job qualifications align with your profile.
+Skills
 
-Position Summary
+Software troubleshooting
+ (Required)
 
-As a Software Engineer, Dev Productivity, you’ll work at the intersection of software development, automation, and infrastructure. Your mission is to streamline engineering workflows, optimize CI/CD systems, build and testing infrastructure, and enhance developer tooling to accelerate software delivery.
+OOP
+ (Required)
 
-Key Responsibilities
+Manufacturing
+ (Required)
++ show more
 
-Design, build, and maintain high-performance CI/CD pipelines to improve development speed and reliability.
-Develop internal tools and automation to reduce friction in engineering workflows.
-Optimize build and test infrastructure for faster feedback loops.
-Work closely with engineering teams to identify and eliminate inefficiencies in the development process.
-Enhance and monitor developer environments to improve developer experience
-Advocate for best practices in software development, version control, and release management.
-Drive the adoption of automation and tooling that increase engineering efficiency.
-Key Qualifications
+Do you have experience in Software troubleshooting?
+&nbsp;
+Full job description
+Fully Onsite - no remote work option
 
-Strong experience with CI/CD tools like GitHub Actions, Jenkins, GitLab CI, Buildkite, or CircleCI.
-Experience with build systems (e.g., Bazel, CMake, Make, Gradle).
-Experience with python dependency management (e.g. poetry, uv)
-Knowledge of containerization and Kubernetes for scalable builds and testing.
-Strong problem-solving skills and a passion for improving developer experience.
-Proficiency in scripting and automation with Python, Bash, or Go.
-Excellent communication skills and ability to work across teams.
-Preferred Qualifications
+****MUST: Manager will ONLY consider resumes that demonstrate clearly the following experience:
 
-Experience with docker image build optimization
-Experience with bazel
-Experience with GPUs
-What HeyGen Offers
+Proven experience of debugging and troubleshooting system software anomalies (E.g., Reported by Device Help and Manufacturing)
+o Classify issues (E.g., hardware, software, use error)
 
-Competitive salary and benefits package.
-Dynamic and inclusive work environment.
-Opportunities for professional growth and advancement.
-Collaborative culture that values innovation and creativity.
-Access to the latest technologies and tools.
-Salary Range
-$180,000 – 240,000 annually
-Please note that the salary information is a general guideline only.  HeyGen considers factors such as scope and responsibilities of the position, candidate's work experience, education/training, key skills, and internal equity, as well as location, market and business considerations when extending an offer.  As part of our total rewards package, HeyGen offers comprehensive benefits including a 401k plan, health benefits, generous PTO, a parental leave program and emotional health resources.
+o Determine next steps (e.g., fix, escalate, monitor)
 
-HeyGen is an Equal Opportunity Employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.
+Proven experience of developing tools for supporting manufacturing and field support in Qt (C++) and QML
+Perform automated software testing (Develop unit test or functional test automation e.g., in SQUISH).
+Strong understanding of object-oriented programming (E.g., C++).
+Good problem-solving skills and attention to detail.

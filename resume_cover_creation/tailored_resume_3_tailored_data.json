@@ -1,0 +1,51 @@
+{
+  "summary": "Highly analytical System Software Engineer adept at debugging and troubleshooting system software anomalies, classifying issues (hardware, software, user error), and determining optimal resolution strategies (fix, escalation, monitoring).  Proven experience developing Qt (C++) and QML tools for manufacturing and field support, coupled with expertise in automated software testing (unit and functional test automation).  Strong OOP (C++) skills and meticulous attention to detail.",
+  "experience": [
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Software Developer",
+      "dates": "March 2023 - Aug 2023",
+      "points": [
+        "Developed and deployed full-stack features for enterprise systems using Spring Boot (Java) and modern front-end frameworks, emphasizing maintainable, high-quality code.",
+        "Collaborated with stakeholders to translate user requirements into technical specifications within an Agile environment, improving API response times by 15%."
+      ]
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Programmer Analyst Intern",
+      "dates": "March 2022-Sept 2022",
+      "points": [
+        "Improved enterprise application stability by identifying and resolving 10% of reported bugs in key modules.",
+        "Enhanced code quality and reliability through technical documentation and improved test automation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Automated Software Testing Framework for Manufacturing",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Developed a Qt (C++) based automated testing framework for manufacturing processes, resulting in a 20% reduction in testing time and a 15% increase in defect detection.",
+        "Implemented unit and functional test automation (Squish) to improve software quality and reduce manual testing efforts."
+      ]
+    },
+    {
+      "name": "Troubleshooting and Diagnostics Tool for Field Support",
+      "dates": "Jun 2024 - Present",
+      "points": [
+        "Designed and implemented a Qt (C++) and QML based diagnostic tool for field technicians, reducing average troubleshooting time by 30% and improving first-call resolution rates.",
+        "Integrated the tool with existing systems to provide real-time data analysis and remote support capabilities."
+      ]
+    },
+    {
+      "name": "System Anomaly Classification and Resolution System",
+      "dates": "Sep 2023-Dec 2023",
+      "points": [
+        "Developed a system to classify and categorize system anomalies reported by devices, achieving 95% accuracy in identifying the root cause (hardware, software, user error).",
+        "Implemented automated resolution procedures for common issues, reducing manual intervention by 40%."
+      ]
+    }
+  ]
+}
