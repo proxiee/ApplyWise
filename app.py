@@ -173,7 +173,7 @@ def commit_jobs_to_db(conn, df, history_id):
     return len(df_to_insert)
 
 
-def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scrape, management_option):
+def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scrape, management_option, location, keywords): # ADD location, keywords
     global scraping_status
     scraping_status['is_running'] = True
     
@@ -202,12 +202,39 @@ def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scr
         cursor.execute(f"SELECT job_url FROM jobs") # Assuming table name is 'jobs'
         existing_urls = {row[0] for row in cursor.fetchall()}
         
-        local_config = copy.deepcopy(config)
-        if 'linkedin_settings' in local_config:
-            local_config['linkedin_settings']['timespan'] = f"r{timespan_seconds}"
-            local_config['linkedin_settings']['days_to_scrape'] = days_to_scrape
-        if 'indeed_settings' in local_config and 'search_config' in local_config['indeed_settings']:
-            local_config['indeed_settings']['search_config']['max_listing_days'] = days_to_scrape
+        local_config = copy.deepcopy(config) # Ensure we modify a copy, not the global config
+
+        # --- ADDITION/MODIFICATION HERE: Apply location and keywords to local_config ---
+        # For LinkedIn
+        if source in ['linkedin', 'all']:
+            if 'linkedin_settings' in local_config:
+                if 'search_queries' not in local_config['linkedin_settings'] or not local_config['linkedin_settings']['search_queries']:
+                    local_config['linkedin_settings']['search_queries'] = [{}] # Ensure at least one query exists
+                
+                # Update the first search query with provided location and keywords if they exist
+                if keywords:
+                    local_config['linkedin_settings']['search_queries'][0]['keywords'] = keywords
+                if location:
+                    local_config['linkedin_settings']['search_queries'][0]['location'] = location
+                
+                # Also update timespan and days_to_scrape as before
+                local_config['linkedin_settings']['timespan'] = f"r{timespan_seconds}"
+                local_config['linkedin_settings']['days_to_scrape'] = days_to_scrape
+
+        # For Indeed
+        if source in ['indeed', 'all']:
+            if 'indeed_settings' in local_config and 'search_config' in local_config['indeed_settings']:
+                if keywords:
+                    # Split keywords by comma and strip whitespace for Indeed's list format
+                    local_config['indeed_settings']['search_config']['keywords'] = [k.strip() for k in keywords.split(',') if k.strip()]
+                if location:
+                    # For simplicity, mapping location directly to Indeed's city.
+                    # More advanced parsing might be needed for province_or_state.
+                    local_config['indeed_settings']['search_config']['city'] = location
+                
+                # Also update max_listing_days as before
+                local_config['indeed_settings']['search_config']['max_listing_days'] = days_to_scrape
+        # --- END ADDITION/MODIFICATION ---
 
         all_new_jobs_df_list = []
 
@@ -325,12 +352,16 @@ def scrape_jobs_route_main():
 
     data = request.get_json()
     source = data.get('source', 'all')
-    time_period_str = data.get('time_period_str', '7 Days')
-    timespan = data.get('timespan', 86400 * 7)
+    time_period_str = data.get('time_period_str', '7 Days') # This value isn't used by perform_scraping_task, might be for history only
+    timespan = data.get('timespan', 86400 * 7) # This isn't received from UI, `days` is used to calculate it
     days = data.get('days', 7)
     management_option = data.get('management_option', 'add')
+    # --- ADDITIONS HERE ---
+    location = data.get('location', '')
+    keywords = data.get('keywords', '')
+    # --- END ADDITIONS ---
 
-    thread = threading.Thread(target=perform_scraping_task, args=(source, time_period_str, timespan, days, management_option))
+    thread = threading.Thread(target=perform_scraping_task, args=(source, time_period_str, timespan, days, management_option, location, keywords)) # Pass new args
     thread.daemon = True
     thread.start()
     return jsonify({"message": "Scraping process initiated."}), 202

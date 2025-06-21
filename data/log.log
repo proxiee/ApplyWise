@@ -1548,3 +1548,714 @@
 [2025-06-21 10:59:36,529] [ERROR] IndeedScraperUSAEng: Job Senior Mobile Platform Programmer (iOS) and Senior Mobile Platform Programmer (iOS) share duplicate key_id: IndeedScraperUSAEng_bb24050b83844c0a
 [2025-06-21 10:59:36,545] [INFO] JobFunnel: Completed all scraping, found 628 new jobs.
 [2025-06-21 10:59:36,585] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv
+[2025-06-21 11:04:33,587] [INFO] JobFunnel: Scraping local providers with: ['IndeedScraperUSAEng']
+[2025-06-21 11:04:34,491] [INFO] IndeedScraperUSAEng: Found 50 pages of search results for query=AI
+[2025-06-21 11:04:42,259] [INFO] IndeedScraperUSAEng: Scraped 1230 job listings from search results pages
+[2025-06-21 11:04:43,201] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,264] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,471] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,487] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,495] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,503] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,519] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,535] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,551] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_0beb7532f3bf4930
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Warehouse Associate and Warehouse Associate share duplicate key_id: IndeedScraperUSAEng_c01bba763d50a601
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job CNA 11a - 11p FT EOW AV AI and CNA 11a - 11p FT EOW AV AI share duplicate key_id: IndeedScraperUSAEng_bdf72d81d19a2638
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Agentic (Autonomous) Systems Engineer and Agentic (Autonomous) Systems Engineer share duplicate key_id: IndeedScraperUSAEng_869e7020f4b32cda
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job PRODUCT OWNER- HYBRID and PRODUCT OWNER- HYBRID share duplicate key_id: IndeedScraperUSAEng_f900070a2ea279ce
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Technology Director - Customer Service Management and Technology Director - Customer Service Management share duplicate key_id: IndeedScraperUSAEng_a86e76b386ef6705
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_df285c8fe4e47737
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Compensation Advisor Associate Manager and Compensation Advisor Associate Manager share duplicate key_id: IndeedScraperUSAEng_723c0df5da351da4
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Protective Coatings Sales Specialist and Protective Coatings Sales Specialist share duplicate key_id: IndeedScraperUSAEng_2c26c7c2a704ef0d
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Principal Engineer and Principal Engineer share duplicate key_id: IndeedScraperUSAEng_50c6e4e27cecf8ae
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_fede9487e1833ccc
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Sr. HR Operations Analyst and Sr. HR Operations Analyst share duplicate key_id: IndeedScraperUSAEng_4e3993c1b351c00c
+[2025-06-21 11:04:43,567] [ERROR] IndeedScraperUSAEng: Job Director of Communications - Global Content Marketing North America & UK and Director of Communications - Global Content Marketing North America & UK share duplicate key_id: IndeedScraperUSAEng_3dda98b65b54c7f4
+[2025-06-21 11:04:43,578] [ERROR] IndeedScraperUSAEng: Job PRODUCT MANAGER- HYBRID and PRODUCT MANAGER- HYBRID share duplicate key_id: IndeedScraperUSAEng_9068030e1b1247fd
+[2025-06-21 11:04:43,578] [ERROR] IndeedScraperUSAEng: Job Spark NC Lab Leader and Spark NC Lab Leader share duplicate key_id: IndeedScraperUSAEng_7dc7dbd208359dfc
+[2025-06-21 11:04:43,578] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_83864172c4dac6d7
+[2025-06-21 11:04:43,578] [ERROR] IndeedScraperUSAEng: Job Solution Architect and Solution Architect share duplicate key_id: IndeedScraperUSAEng_c3074b9c45d834e7
+[2025-06-21 11:04:43,578] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:04:43,580] [ERROR] IndeedScraperUSAEng: Job Python Full stack Practice Leader/ Engineering manager and Python Full stack Practice Leader/ Engineering manager share duplicate key_id: IndeedScraperUSAEng_fe09f013b25149e3
+[2025-06-21 11:04:43,580] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,580] [ERROR] IndeedScraperUSAEng: Job Lead Test Automation Engineer and Lead Test Automation Engineer share duplicate key_id: IndeedScraperUSAEng_865a151e7ce83db9
+[2025-06-21 11:04:43,580] [ERROR] IndeedScraperUSAEng: Job Digital Marketing Strategist/Lead and Digital Marketing Strategist/Lead share duplicate key_id: IndeedScraperUSAEng_7b99f2232cd5c20c
+[2025-06-21 11:04:43,580] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,580] [ERROR] IndeedScraperUSAEng: Job Spark Teacher 1/2 Time and Spark Teacher 1/2 Time share duplicate key_id: IndeedScraperUSAEng_89e5b067960b7a7a
+[2025-06-21 11:04:43,580] [ERROR] IndeedScraperUSAEng: Job Senior Data Scientist and Senior Data Scientist share duplicate key_id: IndeedScraperUSAEng_1c473c1894b7b513
+[2025-06-21 11:04:43,580] [ERROR] IndeedScraperUSAEng: Job Artificial Intelligence Architect and Artificial Intelligence Architect share duplicate key_id: IndeedScraperUSAEng_f06640ef762f3d65
+[2025-06-21 11:04:43,580] [ERROR] IndeedScraperUSAEng: Job Manager, Creative and Manager, Creative share duplicate key_id: IndeedScraperUSAEng_10518344ea767eb1
+[2025-06-21 11:04:43,583] [INFO] JobFunnel: Completed all scraping, found 880 new jobs.
+[2025-06-21 11:04:43,631] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv
+[2025-06-21 11:06:23,564] [INFO] JobFunnel: Scraping local providers with: ['IndeedScraperUSAEng']
+[2025-06-21 11:06:24,670] [INFO] IndeedScraperUSAEng: Found 50 pages of search results for query=AI
+[2025-06-21 11:06:33,310] [INFO] IndeedScraperUSAEng: Scraped 1228 job listings from search results pages
+[2025-06-21 11:06:34,437] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,437] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,437] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,498] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,499] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,673] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,689] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,705] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,708] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer I and Senior Software Engineer I share duplicate key_id: IndeedScraperUSAEng_2e8d93ac520b74cd
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Director-Principal Architect and Senior Director-Principal Architect share duplicate key_id: IndeedScraperUSAEng_530447fd672758e5
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Development & Service Engineer and Development & Service Engineer share duplicate key_id: IndeedScraperUSAEng_a99b09dcef805761
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Integrated Planning Architecture Sr. Manager and Integrated Planning Architecture Sr. Manager share duplicate key_id: IndeedScraperUSAEng_24b55cc32232463b
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Campus Director of Financial Assistance and Campus Director of Financial Assistance share duplicate key_id: IndeedScraperUSAEng_48a81d3e28b8d823
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Enterprise Infrastructure Engineer and Senior Enterprise Infrastructure Engineer share duplicate key_id: IndeedScraperUSAEng_7c61fb23d7ac8701
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Director of Business Development and Director of Business Development share duplicate key_id: IndeedScraperUSAEng_17e9eafb1b5295fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_aafb1768b65f57c4
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Financial Crime Senior Manager and Financial Crime Senior Manager share duplicate key_id: IndeedScraperUSAEng_c80aed629a3e150f
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior Mendix Developer and Senior Mendix Developer share duplicate key_id: IndeedScraperUSAEng_5199a38e4394c1d6
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Cabin Road Endowed Professor of Artificial Intelligence and Cabin Road Endowed Professor of Artificial Intelligence share duplicate key_id: IndeedScraperUSAEng_069365c0a66869bc
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Senior .Net Software Engineer and Senior .Net Software Engineer share duplicate key_id: IndeedScraperUSAEng_63c951879279bf1e
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Glaucoma Specialist in Winston-Salem, NC and Glaucoma Specialist in Winston-Salem, NC share duplicate key_id: IndeedScraperUSAEng_8b49a85f57b40d0a
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Enterprise Architect - Hybrid Infrastructure and Enterprise Architect - Hybrid Infrastructure share duplicate key_id: IndeedScraperUSAEng_05869c17ca4ca60d
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job JAVA Full Stack Software Engineer and JAVA Full Stack Software Engineer share duplicate key_id: IndeedScraperUSAEng_a0054525c48981de
+[2025-06-21 11:06:34,721] [ERROR] IndeedScraperUSAEng: Job Manager, Oncology Operations and Manager, Oncology Operations share duplicate key_id: IndeedScraperUSAEng_92e43a8bb211e864
+[2025-06-21 11:06:34,737] [INFO] JobFunnel: Completed all scraping, found 878 new jobs.
+[2025-06-21 11:06:34,769] [WARNING] JobFilter: Skipping content-similarity filter because there are no incoming jobs
+[2025-06-21 11:06:34,769] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv

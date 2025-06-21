@@ -33,6 +33,14 @@
                         <select id="time-unit"></select>
                     </div>
                     <div class="control-group">
+                        <label for="scrape-location">Location:</label>
+                        <input type="text" id="scrape-location" placeholder="e.g., New York, NY or USA" />
+                    </div>
+                    <div class="control-group">
+                        <label for="scrape-keywords">Job Titles/Keywords:</label>
+                        <input type="text" id="scrape-keywords" placeholder="e.g., Python Developer, Data Analyst" />
+                    </div>
+                    <div class="control-group">
                         <label>Scrape Mode:</label>
                         <div class="radio-group">
                             <input type="radio" id="mode-add" name="scrape-mode" value="add" checked />
@@ -291,10 +299,7 @@
                 row.style.opacity = '0';
                 setTimeout(() => fetchJobs(currentTab), 300);
             }
-            // --- ADDITION HERE ---
-            // Set a flag in session storage to tell the dashboard to refresh
             sessionStorage.setItem('dashboardNeedsRefresh', 'true');
-            // --- END ADDITION ---
         })
         .catch(err => console.error('Error updating job status:', err));
     }
@@ -304,6 +309,10 @@
         const source = document.getElementById('source-select').value;
         const timeValue = parseInt(document.getElementById('time-value').value, 10);
         const timeUnit = timeUnitSelect.value;
+        // --- ADDITIONS HERE ---
+        const location = document.getElementById('scrape-location').value; // Get location input value
+        const keywords = document.getElementById('scrape-keywords').value; // Get keywords input value
+        // --- END ADDITIONS ---
 
         let daysToScrape = timeValue;
         if (timeUnit === 'weeks') daysToScrape *= 7;
@@ -316,7 +325,9 @@
         fetch('/scrape', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ source, days: daysToScrape, management_option: managementOption })
+            // --- MODIFIED BODY HERE ---
+            body: JSON.stringify({ source, days: daysToScrape, management_option: managementOption, location: location, keywords: keywords })
+            // --- END MODIFIED BODY ---
         })
         .catch(err => {
             document.getElementById('scrape-status').textContent = `Error: ${err.message}`;
@@ -336,10 +347,7 @@
                     if (status.message.includes('complete')) {
                         openTab('inbox');
                         fetchStats();
-                        // --- ADDITION HERE ---
-                        // Set a flag in session storage to tell the dashboard to refresh
                         sessionStorage.setItem('dashboardNeedsRefresh', 'true');
-                        // --- END ADDITION ---
                     }
                 }
             })
@@ -414,10 +422,7 @@
                     cvIframe.src = data.cover_letter_pdf_url;
                     pdfPreviewArea.style.display = 'block'; 
                     statusElement.textContent = 'Documents generated successfully!';
-                    // --- ADDITION HERE ---
-                    // Set a flag in session storage to tell the dashboard to refresh
                     sessionStorage.setItem('dashboardNeedsRefresh', 'true');
-                    // --- END ADDITION ---
                 } else {
                     statusElement.textContent = `Error: ${data.error || 'Unknown error'} - ${data.details || ''}`;
                     console.error('Error generating documents:', data);
