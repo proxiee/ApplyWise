@@ -253,7 +253,7 @@ def generate_documents():
         # Command to run: python create_resume.py job_description.txt
         # CWD will be RESUME_CREATION_FOLDER
         cmd = [sys.executable, 'create_resume.py', 'job_description.txt']
-
+        
         app.logger.info(f"Running command: {' '.join(cmd)} in CWD: {RESUME_CREATION_FOLDER}")
 
         process = subprocess.run(
@@ -274,7 +274,7 @@ def generate_documents():
             }), 500
 
         app.logger.info(f"Document generation script stdout: {process.stdout}")
-
+        
         resume_pdf_filename = None
         # Adjusted regex to be more flexible with output messages.
         # Example: "Successfully created tailored_resume_1.pdf and tailored_resume_1_cover_letter.pdf"
@@ -282,7 +282,7 @@ def generate_documents():
         match = re.search(r"Successfully created (tailored_resume(?:_\d+)?\.pdf)", process.stdout)
         if match:
             resume_pdf_filename = match.group(1)
-
+        
         if not resume_pdf_filename:
             app.logger.error(f"Could not determine resume PDF filename from script output: {process.stdout}")
             return jsonify({
@@ -292,7 +292,7 @@ def generate_documents():
 
         # Derive cover letter filename: e.g., tailored_resume_1.pdf -> tailored_resume_1_cover_letter.pdf
         cover_letter_pdf_filename = resume_pdf_filename.replace('.pdf', '_cover_letter.pdf')
-
+        
         # Verify that the generated files actually exist before returning success
         expected_resume_path = os.path.join(RESUME_CREATION_FOLDER, resume_pdf_filename)
         expected_cover_letter_path = os.path.join(RESUME_CREATION_FOLDER, cover_letter_pdf_filename)
@@ -300,7 +300,7 @@ def generate_documents():
         if not os.path.exists(expected_resume_path):
             app.logger.error(f"Generated resume PDF not found at: {expected_resume_path}")
             return jsonify({"error": "Resume PDF file not found after generation.", "details": resume_pdf_filename}), 500
-
+        
         # Cover letter might be optional depending on the script, so we don't strictly require it to exist
         # unless the script output explicitly states it was created.
         # For now, we assume if resume is made, cover letter should also be.

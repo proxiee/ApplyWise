@@ -361,7 +361,7 @@
                 if (data.success) {
                     resumeIframe.src = data.resume_pdf_url;
                     cvIframe.src = data.cover_letter_pdf_url;
-                    pdfPreviewArea.style.display = 'block';
+                    pdfPreviewArea.style.display = 'block'; 
                     statusElement.textContent = 'Documents generated successfully!';
                 } else {
                     statusElement.textContent = `Error: ${data.error || 'Unknown error'} - ${data.details || ''}`;
