@@ -1,6 +1,12 @@
 ```javascript
 document.addEventListener('DOMContentLoaded', function() {
-    const dailyGoal = 50;
+    // Goals are now passed from the template
+    const dailyGoalTargetElement = document.getElementById('dailyGoalTarget');
+    const weeklyGoalTargetElement = document.getElementById('weeklyGoalTarget');
+
+    const dailyGoal = dailyGoalTargetElement ? parseInt(dailyGoalTargetElement.textContent) : 10;
+    const weeklyGoal = weeklyGoalTargetElement ? parseInt(weeklyGoalTargetElement.textContent) : 50;
+
     let applicationsOverTimeChartInstance = null;
     let applicationsBySourceChartInstance = null;
     let applicationStatusChartInstance = null;
@@ -40,19 +46,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data) {
                     updateKPIs(data);
                     updateCharts(data);
-                    updateDailyGoal(data.applications_today);
+                    updateDailyGoal(data.applications_today, dailyGoal);
+                    updateWeeklyGoal(data.applications_this_week, weeklyGoal);
                 } else {
                     console.error('No data received from /api/dashboard_stats');
                     setDefaultKPIs();
                     setDefaultCharts();
-                    updateDailyGoal(0);
+                    updateDailyGoal(0, dailyGoal);
+                    updateWeeklyGoal(0, weeklyGoal);
                 }
             })
             .catch(error => {
                 console.error('Error fetching dashboard stats:', error);
                 setDefaultKPIs();
                 setDefaultCharts();
-                updateDailyGoal(0);
+                updateDailyGoal(0, dailyGoal);
+                updateWeeklyGoal(0, weeklyGoal);
                 document.getElementById('motivationalQuote').textContent = 'Error loading dashboard data. Please try again later.';
             });
     }
@@ -86,6 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('totalApplications').textContent = '0';
         document.getElementById('resumesCreatedToday').textContent = '0';
         document.getElementById('totalResumesCreated').textContent = '0';
+        document.getElementById('coverLettersCreatedToday').textContent = '0';
+        document.getElementById('totalCoverLettersCreated').textContent = '0';
+        document.getElementById('jobsToBeApplied').textContent = '0';
     }
 
     function updateKPIs(data) {
@@ -93,30 +105,61 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('applicationsToday').textContent = data.applications_today !== undefined ? data.applications_today : 0;
         document.getElementById('applicationsThisWeek').textContent = data.applications_this_week !== undefined ? data.applications_this_week : 0;
         document.getElementById('totalApplications').textContent = data.total_applications !== undefined ? data.total_applications : 0;
+
+        // Calculate Jobs to be Applied
+        let jobsToBeAppliedCount = 0;
+        if (data.application_status_breakdown) {
+            jobsToBeAppliedCount += data.application_status_breakdown['inbox'] || 0;
+            jobsToBeAppliedCount += data.application_status_breakdown['want_to_apply'] || 0;
+        }
+        document.getElementById('jobsToBeApplied').textContent = jobsToBeAppliedCount;
         document.getElementById('resumesCreatedToday').textContent = data.resumes_created_today !== undefined ? data.resumes_created_today : 0;
         document.getElementById('totalResumesCreated').textContent = data.resumes_created_total !== undefined ? data.resumes_created_total : 0;
+        document.getElementById('coverLettersCreatedToday').textContent = data.cover_letters_created_today !== undefined ? data.cover_letters_created_today : 0;
+        document.getElementById('totalCoverLettersCreated').textContent = data.cover_letters_created_total !== undefined ? data.cover_letters_created_total : 0;
+        // Update weekly goal counter display
+        document.getElementById('appliedThisWeekCount').textContent = data.applications_this_week !== undefined ? data.applications_this_week : 0;
     }
 
-    function updateDailyGoal(appliedToday) {
-        const appliedCountElement = document.getElementById('appliedTodayCount');
-        const progressBarElement = document.getElementById('dailyGoalProgress');
+    function updateGoalProgress(currentValue, goalValue, countElementId, progressBarId) {
+        const countElement = document.getElementById(countElementId);
+        const progressBarElement = document.getElementById(progressBarId);
 
-        appliedToday = appliedToday || 0;
-        appliedCountElement.textContent = appliedToday;
-
-        const percentage = Math.min((appliedToday / dailyGoal) * 100, 100);
-        progressBarElement.style.width = percentage + '%';
-        progressBarElement.setAttribute('aria-valuenow', appliedToday);
-        progressBarElement.textContent = `${Math.round(percentage)}%`;
-
-        progressBarElement.classList.remove('bg-success', 'bg-warning', 'bg-info');
-        if (percentage >= 100) {
-            progressBarElement.classList.add('bg-success');
-        } else if (percentage >= 50) {
-            progressBarElement.classList.add('bg-warning');
-        } else {
-            progressBarElement.classList.add('bg-info');
+        currentValue = currentValue || 0;
+        if (countElement) {
+            countElement.textContent = currentValue;
         }
+
+        if (progressBarElement && goalValue > 0) {
+            const percentage = Math.min((currentValue / goalValue) * 100, 100);
+            progressBarElement.style.width = percentage + '%';
+            progressBarElement.setAttribute('aria-valuenow', currentValue);
+            progressBarElement.textContent = `${Math.round(percentage)}%`;
+
+            progressBarElement.classList.remove('bg-success', 'bg-warning', 'bg-info', 'bg-danger');
+            if (percentage >= 100) {
+                progressBarElement.classList.add('bg-success');
+            } else if (percentage >= 75) {
+                progressBarElement.classList.add('bg-info');
+            } else if (percentage >= 50) {
+                progressBarElement.classList.add('bg-warning');
+            } else {
+                progressBarElement.classList.add('bg-danger');
+            }
+        } else if (progressBarElement) { // Goal is 0 or not set, show 0%
+            progressBarElement.style.width = '0%';
+            progressBarElement.setAttribute('aria-valuenow', 0);
+            progressBarElement.textContent = `0%`;
+            progressBarElement.classList.add('bg-secondary');
+        }
+    }
+
+    function updateDailyGoal(appliedToday, goal) {
+        updateGoalProgress(appliedToday, goal, 'appliedTodayCount', 'dailyGoalProgress');
+    }
+
+    function updateWeeklyGoal(appliedThisWeek, goal) {
+        updateGoalProgress(appliedThisWeek, goal, 'appliedThisWeekCount', 'weeklyGoalProgress');
     }
 
     const defaultChartOptions = {

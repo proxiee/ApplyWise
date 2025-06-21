@@ -122,6 +122,16 @@ def initialize_database():
             FOREIGN KEY (job_id) REFERENCES jobs(id)
         )
     """)
+
+    # Create cover_letter_generations table
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS cover_letter_generations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            job_id INTEGER,
+            generation_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (job_id) REFERENCES jobs(id)
+        )
+    """)
     conn.commit()
     conn.close()
     print("Database initialized successfully.")
@@ -244,7 +254,10 @@ def home():
 
 @app.route('/dashboard')
 def dashboard_page():
-    return render_template('dashboard.html')
+    dash_config = config.get('dashboard_settings', {})
+    daily_goal = dash_config.get('daily_application_goal', 10) # Default to 10 if not set
+    weekly_goal = dash_config.get('weekly_application_goal', 50) # Default to 50 if not set
+    return render_template('dashboard.html', daily_goal=daily_goal, weekly_goal=weekly_goal)
 
 @app.route('/get_jobs')
 def get_jobs():
@@ -392,6 +405,14 @@ def api_dashboard_stats():
     cursor.execute("SELECT COUNT(*) FROM resume_generations WHERE generation_timestamp >= ?", (today_start_str,))
     stats['resumes_created_today'] = cursor.fetchone()[0]
 
+    # Total Cover Letters Created
+    cursor.execute("SELECT COUNT(*) FROM cover_letter_generations")
+    stats['cover_letters_created_total'] = cursor.fetchone()[0]
+
+    # Cover Letters Created Today
+    cursor.execute("SELECT COUNT(*) FROM cover_letter_generations WHERE generation_timestamp >= ?", (today_start_str,))
+    stats['cover_letters_created_today'] = cursor.fetchone()[0]
+
     # Application Status Breakdown
     cursor.execute("SELECT status, COUNT(*) as count FROM jobs GROUP BY status")
     stats['application_status_breakdown'] = {row['status']: row['count'] for row in cursor.fetchall()}
@@ -486,14 +507,23 @@ def generate_documents():
         
         conn = get_db_connection()
         try:
+            # Log resume generation
             conn.execute("INSERT INTO resume_generations (job_id, generation_timestamp) VALUES (?, CURRENT_TIMESTAMP)",
                          (job_id,)) # job_id can be None, which SQLite handles as NULL
             conn.commit()
             if hasattr(app, 'logger') and app.logger:
                 app.logger.info(f"Logged resume generation for job_id: {job_id if job_id else 'N/A'}")
+
+            # Log cover letter generation
+            conn.execute("INSERT INTO cover_letter_generations (job_id, generation_timestamp) VALUES (?, CURRENT_TIMESTAMP)",
+                         (job_id,)) # job_id can be None, which SQLite handles as NULL
+            conn.commit()
+            if hasattr(app, 'logger') and app.logger:
+                app.logger.info(f"Logged cover letter generation for job_id: {job_id if job_id else 'N/A'}")
+
         except Exception as e_db:
             if hasattr(app, 'logger') and app.logger:
-                app.logger.error(f"Error logging resume generation: {e_db}")
+                app.logger.error(f"Error logging document generation: {e_db}")
         finally:
             conn.close()
 

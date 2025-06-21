@@ -50,6 +50,10 @@
                 <div class="kpi-label">Jobs Scraped (Last 24h)</div>
             </div>
             <div class="card kpi-card">
+                <div class="kpi-value" id="jobsToBeApplied">0</div>
+                <div class="kpi-label">Pending Applications</div>
+            </div>
+            <div class="card kpi-card">
                 <div class="kpi-value" id="applicationsToday">0</div>
                 <div class="kpi-label">Applications Today</div>
             </div>
@@ -69,6 +73,14 @@
                 <div class="kpi-value" id="totalResumesCreated">0</div>
                 <div class="kpi-label">Total Resumes Created</div>
             </div>
+            <div class="card kpi-card">
+                <div class="kpi-value" id="coverLettersCreatedToday">0</div>
+                <div class="kpi-label">Cover Letters Created Today</div>
+            </div>
+            <div class="card kpi-card">
+                <div class="kpi-value" id="totalCoverLettersCreated">0</div>
+                <div class="kpi-label">Total Cover Letters Created</div>
+            </div>
         </div>
 
         <div class="dashboard-container mt-4">
@@ -87,12 +99,27 @@
                 <h5>Application Status Breakdown</h5>
                 <canvas id="applicationStatusChart"></canvas>
             </div>
-             <div class="card chart-container">
-                <h5>Daily Application Goal</h5>
-                <div id="dailyGoalGauge">
-                    <p>Applied Today: <span id="appliedTodayCount">0</span> / 50</p>
-                    <div class="progress">
-                        <div id="dailyGoalProgress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50"></div>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Daily Application Goal</h5>
+                        <p>Applied Today: <span id="appliedTodayCount">0</span> / <span id="dailyGoalTarget">{{ daily_goal }}</span></p>
+                        <div class="progress">
+                            <div id="dailyGoalProgress" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ daily_goal }}">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weekly Application Goal</h5>
+                        <p>Applied This Week: <span id="appliedThisWeekCount">0</span> / <span id="weeklyGoalTarget">{{ weekly_goal }}</span></p>
+                        <div class="progress">
+                            <div id="weeklyGoalProgress" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ weekly_goal }}">0%</div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
