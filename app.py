@@ -5,9 +5,12 @@ import threading
 import time
 import copy
 import pandas as pd
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, send_from_directory
 from flask_cors import CORS
 from datetime import datetime, timedelta
+import subprocess
+import sys
+import re
 
 # Import the scraper functions directly
 from scrapers.linkedin_scraper import scrape_linkedin
@@ -18,6 +21,9 @@ scraping_status = {
     "is_running": False,
     "message": "Idle"
 }
+
+# --- Constants ---
+RESUME_CREATION_FOLDER = 'resume_cover_creation'
 
 def load_config(file_name="config.json"):
     with open(file_name) as f:
@@ -57,6 +63,11 @@ def initialize_database():
     conn.commit()
     conn.close()
     print("Database initialized successfully.")
+
+    # Ensure the 'resume_cover_creation' directory exists
+    if not os.path.exists(RESUME_CREATION_FOLDER):
+        os.makedirs(RESUME_CREATION_FOLDER)
+        print(f"Created directory: {RESUME_CREATION_FOLDER}")
 
 # --- CORE SCRAPING AND DATABASE LOGIC ---
 
@@ -223,6 +234,98 @@ def get_stats():
     stats['jobs_last_24_hours'] = result if result is not None else 0
     conn.close()
     return jsonify(stats)
+
+
+@app.route('/generate_documents', methods=['POST'])
+def generate_documents():
+    try:
+        data = request.get_json()
+        job_description = data.get('job_description')
+
+        if not job_description:
+            return jsonify({"error": "Job description is required"}), 400
+
+        job_desc_file_path = os.path.join(RESUME_CREATION_FOLDER, 'job_description.txt')
+
+        with open(job_desc_file_path, 'w', encoding='utf-8') as f:
+            f.write(job_description)
+
+        # Command to run: python create_resume.py job_description.txt
+        # CWD will be RESUME_CREATION_FOLDER
+        cmd = [sys.executable, 'create_resume.py', 'job_description.txt']
+
+        app.logger.info(f"Running command: {' '.join(cmd)} in CWD: {RESUME_CREATION_FOLDER}")
+
+        process = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            cwd=RESUME_CREATION_FOLDER,
+            encoding='utf-8' # Ensure consistent encoding
+        )
+
+        if process.returncode != 0:
+            app.logger.error(f"Error generating documents. Return code: {process.returncode}")
+            app.logger.error(f"Stderr: {process.stderr}")
+            app.logger.error(f"Stdout: {process.stdout}") # Log stdout as well for more context
+            return jsonify({
+                "error": "Failed to generate documents",
+                "details": process.stderr if process.stderr else "Unknown error, check logs."
+            }), 500
+
+        app.logger.info(f"Document generation script stdout: {process.stdout}")
+
+        resume_pdf_filename = None
+        # Adjusted regex to be more flexible with output messages.
+        # Example: "Successfully created tailored_resume_1.pdf and tailored_resume_1_cover_letter.pdf"
+        # Or: "Successfully created tailored_resume.pdf" (if only resume is mentioned first)
+        match = re.search(r"Successfully created (tailored_resume(?:_\d+)?\.pdf)", process.stdout)
+        if match:
+            resume_pdf_filename = match.group(1)
+
+        if not resume_pdf_filename:
+            app.logger.error(f"Could not determine resume PDF filename from script output: {process.stdout}")
+            return jsonify({
+                "error": "Could not determine resume PDF filename from script output.",
+                "details": process.stdout # Send stdout for debugging on client side if needed
+            }), 500
+
+        # Derive cover letter filename: e.g., tailored_resume_1.pdf -> tailored_resume_1_cover_letter.pdf
+        cover_letter_pdf_filename = resume_pdf_filename.replace('.pdf', '_cover_letter.pdf')
+
+        # Verify that the generated files actually exist before returning success
+        expected_resume_path = os.path.join(RESUME_CREATION_FOLDER, resume_pdf_filename)
+        expected_cover_letter_path = os.path.join(RESUME_CREATION_FOLDER, cover_letter_pdf_filename)
+
+        if not os.path.exists(expected_resume_path):
+            app.logger.error(f"Generated resume PDF not found at: {expected_resume_path}")
+            return jsonify({"error": "Resume PDF file not found after generation.", "details": resume_pdf_filename}), 500
+
+        # Cover letter might be optional depending on the script, so we don't strictly require it to exist
+        # unless the script output explicitly states it was created.
+        # For now, we assume if resume is made, cover letter should also be.
+
+        return jsonify({
+            "success": True,
+            "resume_pdf_url": f"/serve_pdf/{resume_pdf_filename}",
+            "cover_letter_pdf_url": f"/serve_pdf/{cover_letter_pdf_filename}"
+        })
+
+    except Exception as e:
+        app.logger.exception("Error in /generate_documents") # This will log the full traceback
+        return jsonify({"error": "An unexpected error occurred", "details": str(e)}), 500
+
+
+@app.route('/serve_pdf/<path:filename>')
+def serve_pdf(filename):
+    # Security: Ensure filename is safe and only serves from the intended directory
+    # os.path.normpath helps prevent directory traversal, but send_from_directory is generally safe.
+    safe_filename = os.path.normpath(filename)
+    if os.path.isabs(safe_filename) or safe_filename.startswith(".."): # Basic check
+        return jsonify({"error": "Invalid filename"}), 400
+    app.logger.info(f"Serving PDF: {safe_filename} from {RESUME_CREATION_FOLDER}")
+    return send_from_directory(RESUME_CREATION_FOLDER, safe_filename, as_attachment=False)
+
 
 if __name__ == "__main__":
     initialize_database()

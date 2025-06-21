@@ -53,3 +53,93 @@
     color: #6c757d;
     white-space: nowrap; /* Prevents the date from wrapping to a new line */
 }
+
+/* Resume Creator Tab Styles */
+#resume-creator-content {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    border-radius: 6px; /* Consistent with other containers */
+}
+
+#resume-creator-content h2 {
+    margin-top: 0;
+    margin-bottom: 15px; /* Add some space below the header */
+    color: #333;
+    font-size: 1.5rem; /* Adjust size as needed */
+}
+
+#job-description-input {
+    width: 100%; /* Takes full width of parent #resume-creator-content */
+    height: 150px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 0.9rem; /* Slightly smaller font for textarea */
+    line-height: 1.4;
+}
+
+#generate-resume-cv-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out; /* Smooth transition */
+}
+
+#generate-resume-cv-button:hover {
+    background-color: #0056b3;
+}
+
+#generate-resume-cv-button:disabled {
+    background-color: #ccc;
+    color: #666; /* Darker text for disabled state */
+    cursor: not-allowed;
+}
+
+#resume-creator-status {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px 15px; /* More padding */
+    border-radius: 4px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/*
+   Optional classes for status messages if JS is used to set them.
+   Example: statusElement.className = 'status-success';
+*/
+.status-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+.status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+
+#pdf-preview-area {
+    margin-top: 15px;
+    /* Inline styles for the child div (flex container) are kept in HTML for now */
+}
+
+#pdf-preview-area iframe {
+    /* Inline styles for width, height, border will take precedence
+       unless overridden with !important.
+       Current inline: width: 49%; height: 100%; border: 1px solid #ccc; */
+    box-sizing: border-box; /* Ensure padding/border are included in width/height */
+    box-shadow: 0 0 8px rgba(0,0,0,0.1); /* Add a subtle shadow */
+}

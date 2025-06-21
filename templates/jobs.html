@@ -60,6 +60,7 @@
             <button class="tab-link" onclick="openTab('want_to_apply')">Want to Apply</button>
             <button class="tab-link" onclick="openTab('applied')">Applied</button>
             <button class="tab-link" onclick="openTab('archived')">Archived</button>
+            <button class="tab-link" onclick="openResumeCreatorTab()">Create Resume/CV</button>
         </div>
 
         <!-- Jobs -->
@@ -79,6 +80,18 @@
                 <tbody id="jobs-tbody"></tbody>
             </table>
             <div id="loading-spinner" class="spinner"></div>
+        </div>
+        <div id="resume-creator-content" style="display: none;">
+            <h2>Create Resume and Cover Letter</h2>
+            <textarea id="job-description-input" placeholder="Paste job description here..." style="width: 98%; height: 150px; margin-bottom: 10px;"></textarea>
+            <button id="generate-resume-cv-button">Generate Documents</button>
+            <div id="resume-creator-status" style="margin-top: 10px; margin-bottom: 10px;"></div>
+            <div id="pdf-preview-area" style="display: none; margin-top: 10px;">
+                <div style="display: flex; justify-content: space-between; height: 600px;">
+                    <iframe id="resume-preview-iframe" style="width: 49%; height: 100%; border: 1px solid #ccc;"></iframe>
+                    <iframe id="cv-preview-iframe" style="width: 49%; height: 100%; border: 1px solid #ccc;"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -121,9 +134,39 @@
 
     function openTab(status) {
         currentTab = status;
+
+        // Hide resume creator section
+        document.getElementById('resume-creator-content').style.display = 'none';
+
+        // Show other content sections
+        document.getElementById('jobs-content').style.display = 'block'; // Or 'table' if it's a table
+        document.getElementById('stats-container').style.display = 'block'; // Or its original display type
+        document.querySelector('.controls-container').style.display = 'block'; // Or its original display type
+
         document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
         document.querySelector(`.tab-link[onclick="openTab('${status}')"]`).classList.add('active');
         fetchJobs(status);
+    }
+
+    function openResumeCreatorTab() {
+        currentTab = 'resume_creator'; // Make sure currentTab is declared globally
+
+        // Hide other content sections
+        document.getElementById('jobs-content').style.display = 'none';
+        document.getElementById('stats-container').style.display = 'none';
+        document.querySelector('.controls-container').style.display = 'none';
+        // Add any other general content sections that need hiding
+
+        // Show resume creator section
+        document.getElementById('resume-creator-content').style.display = 'block';
+
+        // Update tab active states
+        document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+        document.querySelector('.tab-link[onclick="openResumeCreatorTab()"]').classList.add('active');
+
+        // Clear any previous status and hide PDF preview
+        document.getElementById('resume-creator-status').textContent = '';
+        document.getElementById('pdf-preview-area').style.display = 'none';
     }
 
     function fetchJobs(status) {
@@ -265,6 +308,74 @@
         updateTimeUnitOptions();
         fetchStats();
         openTab(currentTab);
+
+        document.getElementById('generate-resume-cv-button').addEventListener('click', function() {
+            const jobDesc = document.getElementById('job-description-input').value;
+            const statusElement = document.getElementById('resume-creator-status');
+            const generateButton = document.getElementById('generate-resume-cv-button');
+            const pdfPreviewArea = document.getElementById('pdf-preview-area');
+            const resumeIframe = document.getElementById('resume-preview-iframe');
+            const cvIframe = document.getElementById('cv-preview-iframe');
+
+            if (!jobDesc.trim()) {
+                statusElement.textContent = 'Please paste a job description first.';
+                return;
+            }
+
+            statusElement.textContent = 'Generating documents... Please wait.';
+            generateButton.disabled = true;
+            pdfPreviewArea.style.display = 'none';
+            resumeIframe.src = 'about:blank';
+            cvIframe.src = 'about:blank';
+
+            fetch('/generate_documents', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ job_description: jobDesc }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    // Try to get detailed error from backend if it sends JSON error
+                    return response.json()
+                        .then(errData => {
+                            // Include details if available
+                            let errorMessage = errData.error || `Server responded with status: ${response.status}`;
+                            if (errData.details) {
+                                errorMessage += ` - ${errData.details}`;
+                            }
+                            throw new Error(errorMessage);
+                        })
+                        .catch(parsingError => { // Fallback if backend error isn't JSON or parsing fails
+                            console.error('Error parsing JSON error response:', parsingError);
+                            // Try to get text response as a fallback
+                            return response.text().then(textData => {
+                                throw new Error(textData || `Server responded with status: ${response.status}`);
+                            });
+                        });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    resumeIframe.src = data.resume_pdf_url;
+                    cvIframe.src = data.cover_letter_pdf_url;
+                    pdfPreviewArea.style.display = 'block';
+                    statusElement.textContent = 'Documents generated successfully!';
+                } else {
+                    statusElement.textContent = `Error: ${data.error || 'Unknown error'} - ${data.details || ''}`;
+                    console.error('Error generating documents:', data);
+                }
+            })
+            .catch(error => {
+                statusElement.textContent = `Request failed: ${error.message}`;
+                console.error('Fetch error:', error);
+            })
+            .finally(() => {
+                generateButton.disabled = false;
+            });
+        });
     });
 </script>
 </body>
