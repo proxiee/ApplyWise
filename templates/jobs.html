@@ -1,196 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unified Job Board</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-</head>
-<body>
-    <div class="container">
-        <div class="header-container">
-            <h1>My Job Feed</h1>
-            <span id="job-count"></span>
+{% extends "base.html" %}
+
+{% block title %}My Job Feed{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="header-container d-flex justify-content-between align-items-center mb-3">
+        <h1>My Job Feed</h1>
+        <span id="job-count" class="badge bg-secondary fs-5"></span>
+    </div>
+
+    <div class="controls-container card mb-4">
+        <div class="card-header">
+            Scrape Controls
         </div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-3">
+                    <label for="source-select" class="form-label">Source:</label>
+                    <select id="source-select" class="form-select" onchange="updateTimeUnitOptions()">
+                        <option value="all" selected>All Sources</option>
+                        <option value="linkedin">LinkedIn Only</option>
+                        <option value="indeed">Indeed Only</option>
+                    </select>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <label for="time-value" class="form-label">Time Period:</label>
+                    <div class="input-group">
+                        <input type="number" id="time-value" value="7" min="1" class="form-control" />
+                        <select id="time-unit" class="form-select"></select>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <label for="scrape-location" class="form-label">Location:</label>
+                    <input type="text" id="scrape-location" class="form-control" placeholder="e.g., New York, NY" />
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <label for="scrape-keywords" class="form-label">Keywords:</label>
+                    <input type="text" id="scrape-keywords" class="form-control" placeholder="e.g., Python Developer" />
+                </div>
+            </div>
+            <div class="row g-3 mt-3">
+                <div class="col-12">
+                    <label class="form-label">Scrape Mode:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="mode-add" name="scrape-mode" value="add" checked />
+                        <label class="form-check-label" for="mode-add">Add to Inbox</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="mode-archive" name="scrape-mode" value="archive" />
+                        <label class="form-check-label" for="mode-archive">Archive Inbox & Add</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="mode-delete" name="scrape-mode" value="delete" />
+                        <label class="form-check-label" for="mode-delete">Clear Inbox & Add</label>
+                    </div>
+                </div>
+            </div>
+            <div class="scrape-action-bar text-center mt-3">
+                <button id="scrape-button" class="btn btn-primary" onclick="startScrape()">Scrape New Jobs</button>
+                <span id="scrape-status" class="ms-3">Status: Idle</span>
+            </div>
+        </div>
+    </div>
+    
+    <ul class="nav nav-tabs mb-3" id="main-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" id="inbox-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="inbox">Inbox</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="want-to-apply-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="want_to_apply">Want to Apply</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="applied-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="applied">Applied</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="archived-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="archived">Archived</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="resume-creator-tab" data-bs-toggle="tab" data-bs-target="#resume-creator-pane" type="button" role="tab">Create Resume/CV</button></li>
+    </ul>
 
-        <div id="stats-container" class="stats-container">Loading stats...</div>
-
-        <div class="controls-container">
-            <fieldset>
-                <legend>Scrape Controls</legend>
-                <div class="controls-grid">
-                    <div class="control-group">
-                        <label for="source-select">Source:</label>
-                        <select id="source-select" onchange="updateTimeUnitOptions()">
-                            <option value="all" selected>All Sources</option>
-                            <option value="linkedin">LinkedIn Only</option>
-                            <option value="indeed">Indeed Only</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="time-value">Time Period:</label>
-                        <input type="number" id="time-value" value="7" min="1" />
-                        <select id="time-unit"></select>
-                    </div>
-                    <div class="control-group">
-                        <label for="scrape-location">Location:</label>
-                        <input type="text" id="scrape-location" placeholder="e.g., New York, NY or USA" />
-                    </div>
-                    <div class="control-group">
-                        <label for="scrape-keywords">Job Titles/Keywords:</label>
-                        <input type="text" id="scrape-keywords" placeholder="e.g., Python Developer, Data Analyst" />
-                    </div>
-                    <div class="control-group">
-                        <label>Scrape Mode:</label>
-                        <div class="radio-group">
-                            <input type="radio" id="mode-add" name="scrape-mode" value="add" checked />
-                            <label for="mode-add">Add to Inbox</label>
-                            <input type="radio" id="mode-archive" name="scrape-mode" value="archive" />
-                            <label for="mode-archive">Archive Inbox & Add</label>
-                            <input type="radio" id="mode-delete" name="scrape-mode" value="delete" />
-                            <label for="mode-delete">Clear Inbox & Add</label>
+    <div class="tab-content" id="main-tab-content">
+        <div class="tab-pane fade show active" id="jobs-pane" role="tabpanel">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Source</th>
+                            <th>Date Posted</th>
+                            <th>Title & Company</th>
+                            <th>Experience Snippet</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jobs-tbody"></tbody>
+                </table>
+            </div>
+            <div id="loading-spinner" class="spinner-border text-primary" role="status" style="display: none;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        
+        <div class="tab-pane fade" id="resume-creator-pane" role="tabpanel">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Create Resume and Cover Letter</h2>
+                    <input type="hidden" id="resume-job-id" value="">
+                    <div class="mb-2"><small>Job to tailor for: <span id="resume-job-title-display" class="fw-bold">None selected. Select a job and click 'Generate'.</span></small></div>
+                    <textarea id="job-description-input" class="form-control mb-3" placeholder="Job description will be auto-filled here." rows="8"></textarea>
+                    <button id="generate-resume-cv-button" class="btn btn-success">Generate Documents</button>
+                    <div id="resume-creator-status" class="mt-3"></div>
+                    <div id="pdf-preview-area" class="mt-3" style="display: none;">
+                        <div class="row" style="height: 600px;">
+                            <div class="col-md-6 h-100"><iframe id="resume-preview-iframe" class="w-100 h-100 border"></iframe></div>
+                            <div class="col-md-6 h-100"><iframe id="cv-preview-iframe" class="w-100 h-100 border"></iframe></div>
                         </div>
                     </div>
-                </div>
-                <div class="scrape-action-bar">
-                    <button id="scrape-button" onclick="startScrape()">Scrape New Jobs</button>
-                    <span id="scrape-status">Status: Idle</span>
-                </div>
-            </fieldset>
-        </div>
-
-        <div class="tab-container">
-            <button class="tab-link active" onclick="openTab('inbox')">Inbox</button>
-            <button class="tab-link" onclick="openTab('want_to_apply')">Want to Apply</button>
-            <button class="tab-link" onclick="openTab('applied')">Applied</button>
-            <button class="tab-link" onclick="openTab('archived')">Archived</button>
-            <button class="tab-link" onclick="openResumeCreatorTab()">Create Resume/CV</button>
-            <a href="/dashboard" class="tab-link">Dashboard</a>
-        </div>
-
-        <div id="jobs-content">
-            <table id="jobs-table">
-                <thead>
-                    <tr>
-                        <th class="index-col">#</th>
-                        <th>Source</th>
-                        <th>Date Posted</th>
-                        <th>Date Scraped</th>
-                        <th>Title & Company</th>
-                        <th>Description</th>
-                        <th>JD Experience Snippet</th> <th>Location</th>
-                        <th>Applied Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="jobs-tbody"></tbody>
-            </table>
-            <div id="loading-spinner" class="spinner"></div>
-        </div>
-        <div id="resume-creator-content" style="display: none;">
-            <h2>Create Resume and Cover Letter</h2>
-            <input type="hidden" id="resume-job-id" value="">
-            <div><small>Job to tailor for: <span id="resume-job-title-display">None selected. Select a job from the 'Inbox' or 'Want to Apply' tabs and click 'Generate Resume/CV' on that job row.</span></small></div>
-            <textarea id="job-description-input" placeholder="Job description will be auto-filled if you use 'Generate Resume/CV' from a job row." style="width: 98%; height: 150px; margin-bottom: 10px;"></textarea>
-            <button id="generate-resume-cv-button">Generate Documents</button>
-            <div id="resume-creator-status" style="margin-top: 10px; margin-bottom: 10px;"></div>
-            <div id="pdf-preview-area" style="display: none;">
-                <div style="display: flex; justify-content: space-between; height: 600px;">
-                    <iframe id="resume-preview-iframe" style="width: 49%; height: 100%; border: 1px solid #ccc;"></iframe>
-                    <iframe id="cv-preview-iframe" style="width: 49%; height: 100%; border: 1px solid #ccc;"></iframe>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 <script>
-    let currentTab = 'inbox';
+    let currentJobStatus = 'inbox';
     let statusInterval;
     const timeUnitSelect = document.getElementById('time-unit');
-    let loadedJobsData = [];
-
     const timeOptions = {
-        full: `
-            <option value="seconds">Seconds</option>
-            <option value="minutes">Minutes</option>
-            <option value="hours">Hours</option>
-            <option value="days" selected>Days</option>
-            <option value="weeks">Weeks</option>
-            <option value="months">Months</option>
-        `,
-        indeed: `
-            <option value="days" selected>Days</option>
-            <option value="weeks">Weeks</option>
-            <option value="months">Months</option>
-        `
+        full: `<option value="seconds">Seconds</option><option value="minutes">Minutes</option><option value="hours">Hours</option><option value="days" selected>Days</option><option value="weeks">Weeks</option><option value="months">Months</option>`,
+        indeed: `<option value="days" selected>Days</option><option value="weeks">Weeks</option><option value="months">Months</option>`
     };
+
     function updateTimeUnitOptions() {
         const source = document.getElementById('source-select').value;
         timeUnitSelect.innerHTML = (source === 'indeed') ? timeOptions.indeed : timeOptions.full;
     }
 
-    function fetchStats() {
-        fetch('/get_stats')
-            .then(res => res.json())
-            .then(stats => {
-                document.getElementById('stats-container').innerHTML = `<strong>Jobs Scraped in Last 24 Hours:</strong> ${stats.jobs_last_24_hours}`;
-            })
-            .catch(err => {
-                document.getElementById('stats-container').textContent = 'Could not load stats.';
-                console.error('Error fetching stats:', err);
-            });
-    }
-
-    function openTab(status) {
-        currentTab = status;
-
-        document.getElementById('resume-creator-content').style.display = 'none';
-        document.getElementById('jobs-content').style.display = 'block';
-        document.getElementById('stats-container').style.display = 'block';
-        document.querySelector('.controls-container').style.display = 'block';
-
-        document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
-        document.querySelector(`.tab-link[onclick="openTab('${status}')"]`).classList.add('active');
-        fetchJobs(status);
-    }
-
-    function openResumeCreatorTab(jobId = null, jobTitle = null, jobDescription = null) {
-        currentTab = 'resume_creator';
-
-        document.getElementById('jobs-content').style.display = 'none';
-        document.getElementById('stats-container').style.display = 'none';
-        document.querySelector('.controls-container').style.display = 'none';
-
-        document.getElementById('resume-creator-content').style.display = 'block';
-
-        document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
-        const resumeTabButton = Array.from(document.querySelectorAll('.tab-link')).find(el => el.textContent.includes('Create Resume/CV'));
-        if (resumeTabButton) {
-            resumeTabButton.classList.add('active');
-        }
-
-        if (jobId && jobDescription) {
-            document.getElementById('resume-job-id').value = jobId;
-            document.getElementById('job-description-input').value = jobDescription;
-            document.getElementById('resume-job-title-display').textContent = jobTitle || `Job ID: ${jobId}`;
-        } else {
-            document.getElementById('resume-job-id').value = '';
-            document.getElementById('job-description-input').value = '';
-            document.getElementById('resume-job-title-display').textContent = 'None selected. Paste job description below or select a job.';
-        }
-
+    function openResumeCreatorTab(jobId, jobTitle, jobDescription) {
+        document.getElementById('resume-job-id').value = jobId;
+        document.getElementById('job-description-input').value = jobDescription;
+        document.getElementById('resume-job-title-display').textContent = jobTitle || `Job ID: ${jobId}`;
         document.getElementById('resume-creator-status').textContent = '';
         document.getElementById('pdf-preview-area').style.display = 'none';
+        const tab = new bootstrap.Tab(document.getElementById('resume-creator-tab'));
+        tab.show();
     }
-
+    
     function getHighlightedDescription(fullDescription) {
         if (!fullDescription) return 'No full description available.';
-        const keyword = 'experience';
-        let textToHighlight = fullDescription;
-
-        const highlightedText = textToHighlight.replace(new RegExp(keyword, 'gi'), `<span class="highlight-keyword">${keyword}</span>`);
-        
-        return highlightedText;
+        return fullDescription.replace(/\n/g, '<br>');
     }
 
     function fetchJobs(status) {
@@ -205,134 +156,89 @@
         fetch(`/get_jobs?status=${status}`)
             .then(res => res.json())
             .then(jobs => {
-                loadedJobsData = jobs;
                 spinner.style.display = 'none';
-                jobCountSpan.textContent = `(${jobs.length} jobs)`;
-                
-                // Total number of columns after removing 'Experience Required'
-                const totalTableColumns = 10; // (old 11 - 1 removed)
+                jobCountSpan.textContent = `(${jobs.length})`;
+                const totalTableColumns = 7;
 
                 if (!jobs || jobs.length === 0) {
-                    tbody.innerHTML = `<tr><td colspan="${totalTableColumns}">No jobs in this category.</td></tr>`;
+                    tbody.innerHTML = `<tr><td colspan="${totalTableColumns}" class="text-center">No jobs in this category.</td></tr>`;
                     return;
                 }
 
                 jobs.forEach((job, index) => {
-                    // Main Job Row
                     const mainRow = document.createElement('tr');
-                    mainRow.id = `job-row-${job.id}`;
-                    mainRow.classList.add('job-main-row');
+                    mainRow.style.cursor = 'pointer';
 
-                    mainRow.onclick = function() {
-                        const descriptionRow = document.getElementById(`job-description-row-${job.id}`);
-                        if (descriptionRow) {
-                            descriptionRow.style.display = descriptionRow.style.display === 'table-row' ? 'none' : 'table-row';
-                        }
+                    const descriptionRow = document.createElement('tr');
+                    descriptionRow.id = `job-description-row-${job.id}`;
+                    descriptionRow.style.display = 'none';
+
+                    mainRow.onclick = function(event) {
+                        if (event.target.closest('.actions')) return;
+                        descriptionRow.style.display = descriptionRow.style.display === 'table-row' ? 'none' : 'table-row';
                     };
 
-                    let actionButtons = '';
-                    if (status === 'inbox' || status === 'want_to_apply') {
-                        const sanitizedJobDescriptionForResume = job.job_description.replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/"/g, '&quot;');
-                        actionButtons += `<button class="action-btn generate-resume" onclick="openResumeCreatorTab(${job.id}, '${job.title.replace(/'/g, "\\'")}', '${sanitizedJobDescriptionForResume}')">Generate Resume/CV</button>`;
-                    }
+                    const sanitizedJobDescription = (job.job_description || '').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/"/g, '&quot;');
+                    const sanitizedJobTitle = (job.title || 'No Title').replace(/'/g, "\\'");
+                    
+                    let actionButtons = `<button class="btn btn-sm btn-outline-primary" onclick="event.stopPropagation(); openResumeCreatorTab(${job.id}, '${sanitizedJobTitle}', '${sanitizedJobDescription}')">Generate</button>`;
 
                     if (status === 'inbox') {
-                        actionButtons += `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
+                        actionButtons += `<button class="btn btn-sm btn-secondary ms-1" onclick="event.stopPropagation(); updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
                     } else if (status === 'want_to_apply') {
-                        actionButtons += `<button class="action-btn applied" onclick="updateJobStatus(${job.id}, 'applied')">Mark Applied</button>`;
-                    } else if (status === 'archived') {
-                        actionButtons += `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
+                        actionButtons += `<button class="btn btn-sm btn-success ms-1" onclick="event.stopPropagation(); updateJobStatus(${job.id}, 'applied')">Mark Applied</button>`;
                     } else if (status === 'applied') {
-                           actionButtons += `
-                               <select onchange="updateJobStatus(${job.id}, this.value)">
-                                   <option value="applied" ${job.status === 'applied' ? 'selected' : ''}>Applied</option>
-                                   <option value="interviewing" ${job.status === 'interviewing' ? 'selected' : ''}>Interviewing</option>
-                                   <option value="offer" ${job.status === 'offer' ? 'selected' : ''}>Offer</option>
-                                   <option value="rejected" ${job.status === 'rejected' ? 'selected' : ''}>Rejected</option>
-                                   <option value="archived" ${job.status === 'archived' ? 'selected' : ''}>Archive</option>
-                               </select>
-                             `;
-                    } else {
-                           actionButtons += '<span>-</span>';
+                        actionButtons = `
+                            <select class="form-select form-select-sm" onclick="event.stopPropagation();" onchange="updateJobStatus(${job.id}, this.value)">
+                                <option value="applied" ${job.status === 'applied' ? 'selected' : ''}>Applied</option>
+                                <option value="interviewing" ${job.status === 'interviewing' ? 'selected' : ''}>Interviewing</option>
+                                <option value="offer" ${job.status === 'offer' ? 'selected' : ''}>Offer</option>
+                                <option value="rejected" ${job.status === 'rejected' ? 'selected' : ''}>Rejected</option>
+                                <option value="archived" ${job.status === 'archived' ? 'selected' : ''}>Archive</option>
+                            </select>` + actionButtons;
                     }
 
-                    const sourceBadge = job.source === 'LinkedIn' ? '<span class="badge linkedin">LI</span>' : '<span class="badge indeed">IN</span>';
+                    const sourceBadge = job.source === 'LinkedIn' ? '<span class="badge bg-primary">LI</span>' : '<span class="badge bg-info">IN</span>';
                     let displayDate = 'N/A';
-                    if (job.date) {
-                        const parsedDate = new Date(job.date);
-                        if (!isNaN(parsedDate)) {
-                            displayDate = parsedDate.toLocaleDateString();
-                        }
+                    if (job.date && !isNaN(new Date(job.date))) {
+                        displayDate = new Date(job.date).toLocaleDateString();
                     }
-                    let scrapedDate = 'N/A';
-                    if (job.date_loaded) {
-                        const parsedScrapedDate = new Date(job.date_loaded);
-                        if (!isNaN(parsedScrapedDate)) {
-                            scrapedDate = parsedScrapedDate.toLocaleString();
-                        }
-                    }
-                    let applicationDateStr = 'N/A';
-                    if (job.application_date) {
-                        const parsedAppDate = new Date(job.application_date);
-                        if (!isNaN(parsedAppDate)) {
-                            applicationDateStr = parsedAppDate.toLocaleDateString();
-                        }
-                    }
-
-                    const jobDescriptionSummary = job.job_description ?
-                        job.job_description.split('\n').slice(0, 2).join(' ').trim() :
-                        'No description provided.';
                     
-                    // Removed 'experienceRequiredText' as the column is gone
-                    
-                    function getExperienceSnippetForCell(jobDescription) {
-                        if (!jobDescription) return 'No description to search.';
-                        const keyword = 'experience';
+                    function getExperienceSnippet(jobDescription) {
+                        if (!jobDescription) return 'N/A';
+                        const keywords = ['experience', 'years of', 'bachelor', 'degree', 'master', 'phd'];
                         const lowerDesc = jobDescription.toLowerCase();
-                        const index = lowerDesc.indexOf(keyword);
-                        if (index === -1) {
-                            return 'Keyword not found';
+                        for (const keyword of keywords) {
+                            const index = lowerDesc.indexOf(keyword);
+                            if (index !== -1) {
+                                let start = Math.max(0, index - 15);
+                                let end = Math.min(jobDescription.length, index + keyword.length + 50);
+                                return '...' + jobDescription.substring(start, end) + '...';
+                            }
                         }
-                        const contextBefore = 20;
-                        const contextAfter = 50;
-                        let start = Math.max(0, index - contextBefore);
-                        let end = Math.min(jobDescription.length, index + keyword.length + contextAfter);
-                        let snippet = jobDescription.substring(start, end);
-                        if (start > 0) snippet = '...' + snippet;
-                        if (end < jobDescription.length) snippet = snippet + '...';
-                        snippet = snippet.replace(new RegExp(keyword, 'gi'), `<span class="highlight-keyword">${keyword}</span>`);
-                        return snippet;
+                        return jobDescription.substring(0, 70) + '...';
                     }
-                    const jdExperienceSnippet = getExperienceSnippetForCell(job.job_description);
+                    const jdExperienceSnippet = getExperienceSnippet(job.job_description);
 
                     mainRow.innerHTML = `
-                        <td class="index-col">${index + 1}</td>
+                        <td>${index + 1}</td>
                         <td>${sourceBadge}</td>
                         <td>${displayDate}</td>
-                        <td>${scrapedDate}</td>
                         <td>
-                            <a href="${job.job_url || '#'}" target="_blank">${job.title || 'No Title'}</a>
-                            <div class="company-name">${job.company || 'No Company'}</div>
+                            <a href="${job.job_url || '#'}" target="_blank" class="fw-bold" onclick="event.stopPropagation()">${job.title || 'No Title'}</a>
+                            <div class="text-muted">${job.company || 'No Company'}</div>
                         </td>
-                        <td><div class="job-description-summary">${jobDescriptionSummary}</div></td>
-                        <td><div class="jd-experience-snippet">${jdExperienceSnippet}</div></td> <td>${job.location || 'No Location'}</td>
-                        <td>${applicationDateStr}</td>
+                        <td><div class="jd-experience-snippet small">${jdExperienceSnippet}</div></td>
+                        <td>${job.location || 'No Location'}</td>
                         <td class="actions">${actionButtons}</td>
                     `;
                     tbody.appendChild(mainRow);
 
-                    const descriptionRow = document.createElement('tr');
-                    descriptionRow.id = `job-description-row-${job.id}`;
-                    descriptionRow.classList.add('job-description-detail-row');
-                    descriptionRow.style.display = 'none';
-
-                    const fullHighlightedDescription = getHighlightedDescription(job.job_description);
-
                     descriptionRow.innerHTML = `
                         <td colspan="${totalTableColumns}">
-                            <div class="full-job-description-content">
+                            <div class="p-3 bg-light border rounded">
                                 <h5>Full Job Description:</h5>
-                                <pre>${fullHighlightedDescription}</pre>
+                                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.9rem;">${getHighlightedDescription(job.job_description)}</pre>
                             </div>
                         </td>
                     `;
@@ -342,7 +248,7 @@
             .catch(err => {
                 spinner.style.display = 'none';
                 console.error('Error fetching jobs:', err);
-                tbody.innerHTML = `<tr><td colspan="${totalTableColumns}">Error fetching jobs.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="7" class="text-center">Error fetching jobs.</td></tr>`;
             });
     }
 
@@ -352,25 +258,20 @@
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ status: newStatus })
         })
-        .then(res => res.json())
         .then(() => {
-            fetchJobs(currentTab);
-            sessionStorage.setItem('dashboardNeedsRefresh', 'true');
+            fetchJobs(currentJobStatus);
         })
         .catch(err => console.error('Error updating job status:', err));
     }
 
     function startScrape() {
-        const managementOption = document.querySelector('input[name="scrape-mode"]:checked').value;
-        const source = document.getElementById('source-select').value;
-        const timeValue = parseInt(document.getElementById('time-value').value, 10);
-        const timeUnit = timeUnitSelect.value;
-        const location = document.getElementById('scrape-location').value;
-        const keywords = document.getElementById('scrape-keywords').value;
-
-        let daysToScrape = timeValue;
-        if (timeUnit === 'weeks') daysToScrape *= 7;
-        if (timeUnit === 'months') daysToScrape *= 30;
+        const payload = {
+            source: document.getElementById('source-select').value,
+            days: parseInt(document.getElementById('time-value').value, 10),
+            management_option: document.querySelector('input[name="scrape-mode"]:checked').value,
+            location: document.getElementById('scrape-location').value,
+            keywords: document.getElementById('scrape-keywords').value
+        };
 
         document.getElementById('scrape-button').disabled = true;
         document.getElementById('scrape-status').textContent = 'Status: Starting...';
@@ -379,9 +280,8 @@
         fetch('/scrape', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ source, days: daysToScrape, management_option: managementOption, location: location, keywords: keywords })
-        })
-        .catch(err => {
+            body: JSON.stringify(payload)
+        }).catch(err => {
             document.getElementById('scrape-status').textContent = `Error: ${err.message}`;
             document.getElementById('scrape-button').disabled = false;
             clearInterval(statusInterval);
@@ -397,89 +297,64 @@
                     clearInterval(statusInterval);
                     document.getElementById('scrape-button').disabled = false;
                     if (status.message.includes('complete')) {
-                        openTab('inbox');
-                        fetchStats();
-                        sessionStorage.setItem('dashboardNeedsRefresh', 'true');
+                        document.querySelector('#main-tabs .nav-link.active').click();
                     }
                 }
-            })
-            .catch(() => {
-                clearInterval(statusInterval);
-                document.getElementById('scrape-button').disabled = false;
             });
     }
 
     document.addEventListener('DOMContentLoaded', function() {
         updateTimeUnitOptions();
-        fetchStats();
-        openTab(currentTab);
+
+        document.querySelectorAll('#main-tabs .nav-link[data-bs-toggle="tab"]').forEach(tab => {
+            if (tab.dataset.status) {
+                tab.addEventListener('shown.bs.tab', event => {
+                    currentJobStatus = event.target.dataset.status;
+                    fetchJobs(currentJobStatus);
+                });
+            }
+        });
+        
+        fetchJobs(currentJobStatus);
 
         document.getElementById('generate-resume-cv-button').addEventListener('click', function() {
             const jobDesc = document.getElementById('job-description-input').value;
             const statusElement = document.getElementById('resume-creator-status');
-            const generateButton = document.getElementById('generate-resume-cv-button');
+            const generateButton = this;
             const pdfPreviewArea = document.getElementById('pdf-preview-area');
-            const resumeIframe = document.getElementById('resume-preview-iframe');
-            const cvIframe = document.getElementById('cv-preview-iframe');
             const jobId = document.getElementById('resume-job-id').value;
 
             if (!jobDesc.trim()) {
-                statusElement.textContent = 'Please paste a job description first.';
+                statusElement.textContent = 'Job description is required.';
+                statusElement.className = 'alert alert-warning mt-3';
                 return;
             }
 
-            statusElement.textContent = 'Generating documents... Please wait.';
+            statusElement.textContent = 'Generating documents... This may take up to 30 seconds.';
+            statusElement.className = 'alert alert-info mt-3';
             generateButton.disabled = true;
             pdfPreviewArea.style.display = 'none';
-            resumeIframe.src = 'about:blank';
-            cvIframe.src = 'about:blank';
-
-            const payload = { job_description: jobDesc };
-            if (jobId) {
-                payload.job_id = parseInt(jobId, 10);
-            }
 
             fetch('/generate_documents', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(payload),
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ job_description: jobDesc, job_id: jobId ? parseInt(jobId, 10) : null }),
             })
-            .then(response => {
-                if (!response.ok) {
-                    return response.json()
-                        .then(errData => {
-                            let errorMessage = errData.error || `Server responded with status: ${response.status}`;
-                            if (errData.details) {
-                                errorMessage += ` - ${errData.details}`;
-                            }
-                            throw new Error(errorMessage);
-                        })
-                        .catch(parsingError => {
-                            console.error('Error parsing JSON error response:', parsingError);
-                            return response.text().then(textData => {
-                                throw new Error(textData || `Server responded with status: ${response.status}`);
-                            });
-                        });
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.success) {
-                    resumeIframe.src = data.resume_pdf_url;
-                    cvIframe.src = data.cover_letter_pdf_url;
+            .then(response => response.json().then(data => ({ ok: response.ok, data })))
+            .then(({ ok, data }) => {
+                if (ok && data.success) {
+                    document.getElementById('resume-preview-iframe').src = data.resume_pdf_url;
+                    document.getElementById('cv-preview-iframe').src = data.cover_letter_pdf_url;
                     pdfPreviewArea.style.display = 'block';
                     statusElement.textContent = 'Documents generated successfully!';
-                    sessionStorage.setItem('dashboardNeedsRefresh', 'true');
+                    statusElement.className = 'alert alert-success mt-3';
                 } else {
-                    statusElement.textContent = `Error: ${data.error || 'Unknown error'} - ${data.details || ''}`;
-                    console.error('Error generating documents:', data);
+                    throw new Error(data.details || data.error || 'An unknown error occurred.');
                 }
             })
             .catch(error => {
                 statusElement.textContent = `Request failed: ${error.message}`;
-                console.error('Fetch error:', error);
+                statusElement.className = 'alert alert-danger mt-3';
             })
             .finally(() => {
                 generateButton.disabled = false;
@@ -487,5 +362,4 @@
         });
     });
 </script>
-</body>
-</html>
+{% endblock %}

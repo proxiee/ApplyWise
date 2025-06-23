@@ -1,0 +1,65 @@
+{
+  "name": "sjdhfl;kjasdlj",
+  "email": "testing@gmail.com",
+  "phone": "9375678888",
+  "linkedin": "https://www.linkedin.com/feed/",
+  "github": "https://github.com/proxiee",
+  "summary": "Senior Developer with 7+ years' experience delivering business-critical software to large enterprises.  Proficient in Django/Flask, Power BI/PowerApps/Azure.  Expert in API specification, development, and long-term maintenance.  Seeking a challenging remote role.",
+  "education": [
+    {
+      "university": "sdhfkljsdahfjksha",
+      "location": "jhdkljfhkljshdfkj",
+      "degree": "jhdfjklhasjkhdfkljhasd",
+      "dates": "hkdjhfsha",
+      "details": [
+        "hjksdfhkjshdfkjhasdjkfhkjasdhfkjasdhfkljsdhakfbksdjahfjksdh"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Software Developer",
+      "company": "sdjhfasdhf",
+      "location": "sdkjahfsdhf",
+      "dates": "3874sdfh",
+      "points": [
+        "Developed and maintained 3 key features for a flagship product, resulting in a 15% increase in user engagement.",
+        "Led a team of 5 developers in the migration of a legacy system to a cloud-based architecture, reducing infrastructure costs by 20%.",
+        "Designed and implemented 5 new APIs, improving system scalability and reducing latency by 30%."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Enterprise Logistics Platform",
+      "dates": "2021-2023",
+      "points": [
+        "Developed a scalable Django-based platform for a Fortune 500 logistics company, handling 100M+ transactions annually.",
+        "Integrated Power BI dashboards for real-time performance monitoring and data-driven decision-making.",
+        "Utilized Azure cloud services for high availability and disaster recovery, ensuring 99.9% uptime."
+      ]
+    },
+    {
+      "name": "FinTech Transaction Processing System",
+      "dates": "2019-2021",
+      "points": [
+        "Built a high-throughput Flask application for processing financial transactions, achieving a 99.99% success rate.",
+        "Implemented robust security measures to protect sensitive data, exceeding industry compliance standards.",
+        "Improved system performance by 40% through code optimization and database tuning."
+      ]
+    },
+    {
+      "name": "Insurance Claims Processing System",
+      "dates": "2017-2019",
+      "points": [
+        "Designed and developed a new API for processing insurance claims, reducing processing time by 25%.",
+        "Created PowerApps solution for streamlined user interaction and claim submission.",
+        "Integrated the system with existing legacy systems, ensuring seamless data exchange."
+      ]
+    }
+  ],
+  "skills": {
+    "jksdfhjksadhfk": "hkjdfkjashdfjkhds"
+  },
+  "activities": []
+}

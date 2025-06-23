@@ -3,45 +3,75 @@ import json
 import os
 import subprocess
 import sys
+import sqlite3
+import argparse
 from dotenv import load_dotenv
-from datetime import datetime
-from pdf2docx import Converter # <-- Added for DOCX conversion
+from pdf2docx import Converter
 
-# --- CONFIGURATION ---
+# --- Configuration ---
 load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") 
-BASE_RESUME_PATH = "resume_data.json"
-LATEX_TEMPLATE_PATH = "template.tex"
-JSON_RULES_PATH = "json_command.txt"
-ARCHIVE_FOLDER = "json_archive"
-if len(sys.argv) < 2:
-    print("Usage: python create_resume.py <path_to_job_description.txt>")
-    sys.exit(1)
-JOB_DESCRIPTION_PATH = sys.argv[1]
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+DB_PATH = os.path.join('..', '..', 'data', 'jobs.db') # This is the corrected path
 BASE_OUTPUT_NAME = "tailored_resume"
 
+def get_db_connection():
+    """Connects to the SQLite database."""
+    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def get_user_data_from_db(user_id):
+    """Fetches the user's base resume data from the database."""
+    print(f"Fetching resume data for user_id: {user_id}...")
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM user_resume_data WHERE user_id = ?", (user_id,))
+        data_row = cursor.fetchone()
+        conn.close()
+
+        if not data_row:
+            print(f"Error: No resume data found for user_id {user_id}.")
+            sys.exit(1)
+
+        # Convert JSON strings back to Python objects
+        resume_data = {
+            'name': data_row['name'],
+            'email': data_row['email'],
+            'phone': data_row['phone'],
+            'linkedin': data_row['linkedin'],
+            'github': data_row['github'],
+            'summary': data_row['summary'],
+            'education': json.loads(data_row['education'] or '[]'),
+            'experience': json.loads(data_row['experience'] or '[]'),
+            'projects': json.loads(data_row['projects'] or '[]'),
+            'skills': json.loads(data_row['skills'] or '{}'),
+            'activities': json.loads(data_row['activities'] or '[]')
+        }
+        print("Successfully fetched and parsed user data.")
+        return resume_data
+    except Exception as e:
+        print(f"Database error while fetching user data: {e}")
+        sys.exit(1)
+
+# Keep your existing functions:
+# sanitize_latex(text)
+# setup_api()
+# generate_tailored_content(model, base_resume, job_desc)
+# build_latex_from_data(data)
+# find_unique_filename(base_name)
+
+# (Paste all those functions here from your original file)
+# ...
+# The following is a consolidated version of those functions
 def sanitize_latex(text):
-    """Sanitizes text to be safe for LaTeX."""
-    if not isinstance(text, str):
-        return text
-    text = text.replace('&', r'\&')
-    text = text.replace('%', r'\%')
-    text = text.replace('$', r'\$')
-    text = text.replace('#', r'\#')
-    text = text.replace('_', r'\_')
-    text = text.replace('{', r'\{')
-    text = text.replace('}', r'\}')
-    text = text.replace('~', r'\textasciitilde{}')
-    text = text.replace('^', r'\textasciicircum{}')
-    return text
+    if not isinstance(text, str): return text
+    return text.replace('&', r'\&').replace('%', r'\%').replace('$', r'\$').replace('#', r'\#').replace('_', r'\_').replace('{', r'\{').replace('}', r'\}').replace('~', r'\textasciitilde{}').replace('^', r'\textasciicircum{}')
 
 def setup_api():
-    """Configures the Gemini API and handles missing API key."""
     if not GEMINI_API_KEY:
         print("Error: GEMINI_API_KEY not found.")
-        print("Please ensure you have a .env file with the line: GEMINI_API_KEY=\"your-key\"")
         sys.exit(1)
-    
     try:
         genai.configure(api_key=GEMINI_API_KEY)
         return genai.GenerativeModel('gemini-1.5-flash')
@@ -49,82 +79,12 @@ def setup_api():
         print(f"Error configuring Gemini API: {e}")
         sys.exit(1)
 
-def archive_old_json():
-    """Moves the existing JSON data file to an archive folder with a timestamp."""
-    print("Checking for existing JSON file to archive...")
-    if not os.path.exists(ARCHIVE_FOLDER):
-        os.makedirs(ARCHIVE_FOLDER)
-        print(f"Created archive folder: '{ARCHIVE_FOLDER}'")
-
-    if os.path.exists(BASE_RESUME_PATH):
-        timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
-        archive_path = os.path.join(ARCHIVE_FOLDER, f"resume_data_{timestamp}.json")
-        os.rename(BASE_RESUME_PATH, archive_path)
-        print(f"Safely archived previous data to '{archive_path}'")
-    else:
-        print("No existing JSON file found to archive. Skipping.")
-
-
-def update_json_from_template(model):
-    """
-    Reads the LaTeX template and a rules file, then asks the AI to parse the
-    template and create an updated resume_data.json file.
-    """
-    print("Calling Gemini to parse template and create new JSON...")
-    try:
-        with open(LATEX_TEMPLATE_PATH, 'r', encoding='utf-8') as f:
-            template_content = f.read()
-        with open(JSON_RULES_PATH, 'r', encoding='utf-8') as f:
-            json_rules = f.read()
-
-        prompt = f"""
-        You are a highly precise data extraction tool. Your task is to read the content from a LaTeX file and convert it into a valid JSON object. You must strictly follow the formatting rules provided. Ensure all text content is extracted accurately.
-
-        **Rules for the JSON structure:**
-        ---
-        {json_rules}
-        ---
-
-        **LaTeX file content to parse:**
-        ```latex
-        {template_content}
-        ```
-
-        Your output must be ONLY the valid JSON object, with no other text, comments, or explanations.
-        """
-
-        response = model.generate_content(prompt)
-        cleaned_response = response.text.strip().lstrip("```json").rstrip("```").strip()
-        new_json_data = json.loads(cleaned_response)
-
-        with open(BASE_RESUME_PATH, 'w', encoding='utf-8') as f:
-            json.dump(new_json_data, f, indent=2)
-
-        print(f"Successfully created new '{BASE_RESUME_PATH}'.")
-        return True
-
-    except FileNotFoundError as e:
-        print(f"Error: Could not find required file for JSON update: {e.filename}")
-        return False
-    except Exception as e:
-        print(f"An error occurred during the JSON update process: {e}")
-        return False
-
 def generate_tailored_content(model, base_resume, job_desc):
-    """Sends a prompt to Gemini and gets tailored resume content back."""
     print("Calling Gemini to tailor content for the job...")
-
-    sections_to_tailor = {
-        "summary": base_resume["summary"],
-        "experience": base_resume["experience"],
-        "projects": base_resume["projects"]
-    }
-
+    sections_to_tailor = {"summary": base_resume["summary"], "experience": base_resume["experience"], "projects": base_resume["projects"]}
     original_summary_length = len(base_resume.get("summary", ""))
-
     prompt = f"""
     You are an expert resume writer. Your task is to take a base resume's summary, experience, and projects, and a target job description, then rewrite those sections to be perfectly tailored for the job, ensuring the final resume fits on a single page.
-
     **Instructions:**
     1.  Rewrite the 'summary' to be a powerful introduction that mirrors the language of the job description. The original summary is {original_summary_length} characters long. The new summary **MUST be very concise, approximately {original_summary_length - 40} to {original_summary_length} characters**, to ensure it fits within 3 lines on the final PDF.
     2.  For each job in 'experience', rewrite the 'points' to use strong action verbs and include quantifiable metrics that align with the job description. Be concise.
@@ -142,25 +102,18 @@ def generate_tailored_content(model, base_resume, job_desc):
     {job_desc}
     ```
 
-    Return ONLY the tailored JSON object.
-    """
-
+    Return ONLY the tailored JSON object. """
     try:
         response = model.generate_content(prompt)
         cleaned_response = response.text.strip().lstrip("```json").rstrip("```").strip()
         return json.loads(cleaned_response)
     except Exception as e:
         print(f"Error calling Gemini API or parsing JSON: {e}")
-        print("--- Gemini's Raw Response ---")
-        print(response.text)
         return None
 
 def build_latex_from_data(data):
-    """
-    Builds the entire LaTeX document from scratch using the provided data.
-    This function IS the template now, ensuring reliability.
-    """
-    
+    # This function should be exactly the same as your original one
+    # ... (omitted for brevity, but make sure it's here)
     latex_parts = [r"""
 \documentclass[letterpaper,11pt]{article}
 \usepackage{latexsym}
@@ -290,130 +243,91 @@ def build_latex_from_data(data):
     latex_parts.append(r"\end{document}")
     return "\n".join(latex_parts)
 
-
 def find_unique_filename(base_name):
     counter = 0
     while True:
-        if counter == 0:
-            tex_filename = f"{base_name}.tex"
-        else:
-            tex_filename = f"{base_name}_{counter}.tex"
+        tex_filename = f"{base_name}_{counter}.tex" if counter > 0 else f"{base_name}.tex"
         if not os.path.exists(tex_filename):
-            return tex_filename, tex_filename.replace('.tex', '.pdf')
+            return tex_filename
         counter += 1
 
 def main():
-    """Main function to run the resume generation process."""
-    print("--- Starting Resume Tailor ---")
+    parser = argparse.ArgumentParser(description="Generate a tailored resume.")
+    parser.add_argument("job_description_path", type=str, help="Path to the job description text file.")
+    parser.add_argument("--user-id", type=int, required=True, help="ID of the user to generate the resume for.")
+    args = parser.parse_args()
+
+    print(f"--- Starting Resume Tailor for User ID: {args.user_id} ---")
     
+    # Step 1: Get user's base resume data from the database
+    base_resume_data = get_user_data_from_db(args.user_id)
+    
+    # Step 2: Tailor content
+    print("\n--- Tailoring content for the job ---")
     model = setup_api()
-
-    # --- Step 1: Archive old JSON and create new one from template ---
-    print("\n--- Step 1 of 3: Archiving old data and syncing from template ---")
-    archive_old_json()
-    if not update_json_from_template(model):
-        print("Halting due to error in JSON update step.")
-        sys.exit(1)
-
-    # --- Step 2: Tailor content for the job description ---
-    print("\n--- Step 2 of 3: Tailoring content for the job ---")
-    try:
-        with open(BASE_RESUME_PATH, 'r', encoding='utf-8') as f:
-            base_resume_data = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: A new '{BASE_RESUME_PATH}' was not created. Cannot proceed.")
-        sys.exit(1)
-
-    with open(JOB_DESCRIPTION_PATH, 'r', encoding='utf-8') as f:
+    with open(args.job_description_path, 'r', encoding='utf-8') as f:
         job_description_text = f.read()
 
-    # Since there's no interactive prompt anymore, we default to tailoring all sections
     tailored_sections = generate_tailored_content(model, base_resume_data, job_description_text)
     if not tailored_sections:
         print("Exiting due to API error.")
-        return
+        sys.exit(1)
         
-    print("\nHere is the tailored content from the AI:")
-    print(json.dumps(tailored_sections, indent=2))
-
+    print("\nAI has generated the tailored content.")
     final_resume_data = base_resume_data.copy()
     final_resume_data.update(tailored_sections)
-
-    output_latex_file, output_pdf_file = find_unique_filename(BASE_OUTPUT_NAME)
-
-    # --- BLOCK 1: SAVE THE TAILORED JSON ---
-    # Create a unique filename for the tailored data JSON that matches the PDF
-    base_output_filename = output_latex_file.replace('.tex', '')
-    output_json_file = f"{base_output_filename}_tailored_data.json"
-
-    # Save the tailored sections to the new JSON file
-    print(f"Saving tailored content to '{output_json_file}'...")
-    with open(output_json_file, 'w', encoding='utf-8') as f:
-        json.dump(tailored_sections, f, indent=2)
-    print(f"Successfully saved tailored data.")
-    # --- END OF BLOCK 1 ---
     
-    print("\nBuilding final LaTeX document from tailored data...")
+    # Save tailored JSON for the cover letter script to use
+    output_json_file = f"{BASE_OUTPUT_NAME}_tailored_data.json"
+    with open(output_json_file, 'w', encoding='utf-8') as f:
+        # Save the full data so cover letter has access to name, etc.
+        json.dump(final_resume_data, f, indent=2) 
+    print(f"Saved tailored data for cover letter to '{output_json_file}'")
+
+    # Step 3: Build and Compile PDF
+    print("\n--- Compiling PDF and Word Document ---")
     final_latex = build_latex_from_data(final_resume_data)
     
-    # output_latex_file, output_pdf_file = find_unique_filename(BASE_OUTPUT_NAME) # Moved up to before saving JSON
-
+    output_latex_file = find_unique_filename(BASE_OUTPUT_NAME)
+    output_pdf_file = output_latex_file.replace('.tex', '.pdf')
+    
     with open(output_latex_file, 'w', encoding='utf-8') as f:
         f.write(final_latex)
 
-    # --- Step 3: Compile the final PDF ---
-    print(f"\n--- Step 3 of 3: Compiling PDF and Word Document ---")
-    for i in range(2): 
-        process = subprocess.run(['pdflatex', '-interaction=nonstopmode', output_latex_file], capture_output=True, text=True, encoding='utf-8')
+    process = subprocess.run(['pdflatex', '-interaction=nonstopmode', output_latex_file], capture_output=True, text=True, encoding='utf-8')
+    if process.returncode != 0:
+         # Run again to resolve references, even if the first run failed, to get a better log
+        subprocess.run(['pdflatex', '-interaction=nonstopmode', output_latex_file], capture_output=True, text=True, encoding='utf-8')
+        print(f"Error: PDF compilation failed. Check '{output_latex_file.replace('.tex', '.log')}'")
+        sys.exit(1)
 
-    if process.returncode == 0:
-        print(f"Successfully created {output_pdf_file}")
+    # Compile a second time to ensure table of contents/references are correct
+    subprocess.run(['pdflatex', '-interaction=nonstopmode', output_latex_file], capture_output=True, text=True, encoding='utf-8')
+    print(f"Successfully created {output_pdf_file}")
+
+    # Convert to DOCX
+    docx_file = output_pdf_file.replace('.pdf', '.docx')
+    print(f"Converting to {docx_file}...")
+    try:
+        cv = Converter(output_pdf_file)
+        cv.convert(docx_file, start=0, end=None)
+        cv.close()
+        print(f"Successfully created {docx_file}!")
+    except Exception as e:
+        print(f"Could not convert PDF to DOCX. Error: {e}")
         
-        # --- NEW STEP: Convert the created PDF to a Word Document ---
-        docx_file = output_pdf_file.replace('.pdf', '.docx')
-        print(f"Converting to {docx_file}...")
-        try:
-            cv = Converter(output_pdf_file)
-            cv.convert(docx_file, start=0, end=None)
-            cv.close()
-            print(f"Successfully created {docx_file}!")
-        except Exception as e:
-            print(f"Could not convert PDF to DOCX. Error: {e}")
-
-        # --- CORRECTED ORDER ---
-        # 1. Open the resume preview first so you can see it immediately.
-        # print("Opening resume preview...")
-        # if sys.platform == "win32":
-        #     os.startfile(output_pdf_file)
-        # else:
-        #     opener = "open" if sys.platform == "darwin" else "xdg-open"
-        #     subprocess.call([opener, output_pdf_file])
-
-        # 2. Then, proceed to the next step of generating the cover letter.
-        # --- BLOCK 2: RUN THE COVER LETTER SCRIPT ---
-        print("\nProceeding to cover letter generation...")
-        try:
-            # Command to execute: python create_cover_letter.py <path_to_json> <path_to_job_desc>
-            command = [
-                sys.executable,  # Use the same python interpreter
-                'create_cover_letter.py',
-                output_json_file,
-                JOB_DESCRIPTION_PATH
-            ]
-            
-            # Run the command
-            subprocess.run(command, check=True)
-            print("Cover letter script executed successfully.")
-
-        except FileNotFoundError:
-            print("Warning: 'create_cover_letter.py' not found. Skipping cover letter generation.")
-        except subprocess.CalledProcessError as e:
-            print(f"Error executing cover letter script: {e}")
-        # --- END OF BLOCK 2 ---
-
-    else:
-        log_file = os.path.basename(output_latex_file).replace('.tex', '.log')
-        print(f"Error: PDF compilation failed. Check the '{log_file}' file for details.")
+    # Step 4: Run the cover letter script
+    print("\n--- Proceeding to cover letter generation ---")
+    try:
+        command = [
+            sys.executable, 'create_cover_letter.py',
+            output_json_file, # Path to the tailored JSON we just saved
+            args.job_description_path,
+            '--user-id', str(args.user_id) # Pass user ID along
+        ]
+        subprocess.run(command, check=True)
+    except Exception as e:
+        print(f"Error executing cover letter script: {e}")
 
 if __name__ == "__main__":
     main()

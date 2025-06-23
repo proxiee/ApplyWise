@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.7)  21 JUN 2025 00:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.7)  23 JUN 2025 00:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,39 +401,15 @@ File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 35.
 
-! Missing number, treated as zero.
-<to be read again> 
-                   L
-l.51 ... if available, otherwise remove this line]
-                                                   \\
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   L
-l.51 ... if available, otherwise remove this line]
-                                                   \\
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.51 ... available, otherwise remove this line] \\
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+! Misplaced alignment tab character &.
+l.81 ...ovation.  In my "Real-time Hand Tracking &
+                                                   Gesture Recognition for A...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
 [1
 
@@ -452,17 +428,17 @@ changed.
 Here is how much of TeX's memory you used:
  12809 strings out of 474486
  226437 string characters out of 5743756
- 1933542 words of memory out of 5000000
+ 1936542 words of memory out of 5000000
  34978 multiletter control sequences out of 15000+600000
  570450 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,963b,448s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,79p,1033b,448s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
 b><C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
 ><C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb
 >
-Output written on tailored_resume_1_cover_letter.pdf (1 page, 94998 bytes).
+Output written on tailored_resume_1_cover_letter.pdf (1 page, 95049 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  2 named destinations out of 1000 (max. 500000)

@@ -3495,3 +3495,728 @@
 [2025-06-22 21:34:22,011] [ERROR] IndeedScraperUSAEng: Job Application Developer - AI Trainer and Application Developer - AI Trainer share duplicate key_id: IndeedScraperUSAEng_217ea5c9e88eece0
 [2025-06-22 21:34:22,027] [INFO] JobFunnel: Completed all scraping, found 46 new jobs.
 [2025-06-22 21:34:22,043] [WARNING] JobFunnel: No new jobs were added to CSV.
+[2025-06-22 23:48:41,489] [INFO] JobFunnel: Scraping local providers with: ['IndeedScraperUSAEng']
+[2025-06-22 23:48:42,670] [INFO] IndeedScraperUSAEng: Found 30 pages of search results for query=Software Developer+Data Analyst+Project Manager
+[2025-06-22 23:48:48,103] [INFO] IndeedScraperUSAEng: Scraped 741 job listings from search results pages
+[2025-06-22 23:48:48,934] [ERROR] IndeedScraperUSAEng: Job Software Engineer and Software Engineer share duplicate key_id: IndeedScraperUSAEng_05d59d41f8805c61
+[2025-06-22 23:48:48,936] [ERROR] IndeedScraperUSAEng: Job Power Platform Developer and Power Platform Developer share duplicate key_id: IndeedScraperUSAEng_9c2830ef680c4afa
+[2025-06-22 23:48:48,937] [ERROR] IndeedScraperUSAEng: Job Senior Java Developer and Senior Java Developer share duplicate key_id: IndeedScraperUSAEng_4923b8df9d9c515a
+[2025-06-22 23:48:48,937] [ERROR] IndeedScraperUSAEng: Job Software Engineer IV and Software Engineer IV share duplicate key_id: IndeedScraperUSAEng_6c73333040b45aa2
+[2025-06-22 23:48:48,937] [ERROR] IndeedScraperUSAEng: Job Sitefinity Web Portal Developer and Sitefinity Web Portal Developer share duplicate key_id: IndeedScraperUSAEng_db67b6cba30f0755
+[2025-06-22 23:48:48,937] [ERROR] IndeedScraperUSAEng: Job Senior Front-end Engineer and Senior Front-end Engineer share duplicate key_id: IndeedScraperUSAEng_f73e7405c793fcc9
+[2025-06-22 23:48:48,938] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer and Full Stack Engineer share duplicate key_id: IndeedScraperUSAEng_5c15c3f5590d4a4f
+[2025-06-22 23:48:48,938] [ERROR] IndeedScraperUSAEng: Job Java Engineer - AVP Level (Cary, NC) and Java Engineer - AVP Level (Cary, NC) share duplicate key_id: IndeedScraperUSAEng_5bc8aeafbbc72b3c
+[2025-06-22 23:48:48,938] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer and Full Stack Engineer share duplicate key_id: IndeedScraperUSAEng_dd3bc7f537a137fa
+[2025-06-22 23:48:48,938] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer and Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_03575b7820854b6a
+[2025-06-22 23:48:48,938] [ERROR] IndeedScraperUSAEng: Job Senior Java Engineer and Senior Java Engineer share duplicate key_id: IndeedScraperUSAEng_f56d8609ecb17a6b
+[2025-06-22 23:48:48,938] [ERROR] IndeedScraperUSAEng: Job Software Engineer and Software Engineer share duplicate key_id: IndeedScraperUSAEng_7b825fcaa77d831f
+[2025-06-22 23:48:48,939] [ERROR] IndeedScraperUSAEng: Job Deloitte Technology Product Engineering Fullstack Software Engineer Vision360 and Deloitte Technology Product Engineering Fullstack Software Engineer Vision360 share duplicate key_id: IndeedScraperUSAEng_c133006ae0af5de4
+[2025-06-22 23:48:48,939] [ERROR] IndeedScraperUSAEng: Job AVP Java Engineer and AVP Java Engineer share duplicate key_id: IndeedScraperUSAEng_b1616e7198b34d3d
+[2025-06-22 23:48:48,939] [ERROR] IndeedScraperUSAEng: Job Full Stack Java Engineer and Full Stack Java Engineer share duplicate key_id: IndeedScraperUSAEng_e0ee2ca1458efa60
+[2025-06-22 23:48:48,939] [ERROR] IndeedScraperUSAEng: Job DevOps Engineer and DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_f436649bb31be4c1
+[2025-06-22 23:48:48,939] [ERROR] IndeedScraperUSAEng: Job Java Backend Developer (GC & USC only) and Java Backend Developer (GC & USC only) share duplicate key_id: IndeedScraperUSAEng_6dfc705211fdb2f8
+[2025-06-22 23:48:48,939] [ERROR] IndeedScraperUSAEng: Job Principal Software Engineer and Principal Software Engineer share duplicate key_id: IndeedScraperUSAEng_3a74dbdd8b3f699b
+[2025-06-22 23:48:48,940] [ERROR] IndeedScraperUSAEng: Job Software Engineer 2 and Software Engineer 2 share duplicate key_id: IndeedScraperUSAEng_0161dcf989f762e3
+[2025-06-22 23:48:48,940] [ERROR] IndeedScraperUSAEng: Job Java Engineer and Java Engineer share duplicate key_id: IndeedScraperUSAEng_c1ae9257dfb9552d
+[2025-06-22 23:48:48,940] [ERROR] IndeedScraperUSAEng: Job Cyber Software Engineer and Cyber Software Engineer share duplicate key_id: IndeedScraperUSAEng_496f0556da0f54ec
+[2025-06-22 23:48:48,940] [ERROR] IndeedScraperUSAEng: Job Software Engineer and Software Engineer share duplicate key_id: IndeedScraperUSAEng_05d59d41f8805c61
+[2025-06-22 23:48:48,940] [ERROR] IndeedScraperUSAEng: Job Power Platform Developer and Power Platform Developer share duplicate key_id: IndeedScraperUSAEng_9c2830ef680c4afa
+[2025-06-22 23:48:48,941] [ERROR] IndeedScraperUSAEng: Job Senior Java Developer and Senior Java Developer share duplicate key_id: IndeedScraperUSAEng_4923b8df9d9c515a
+[2025-06-22 23:48:48,941] [ERROR] IndeedScraperUSAEng: Job Software Engineer IV and Software Engineer IV share duplicate key_id: IndeedScraperUSAEng_6c73333040b45aa2
+[2025-06-22 23:48:48,941] [ERROR] IndeedScraperUSAEng: Job Sitefinity Web Portal Developer and Sitefinity Web Portal Developer share duplicate key_id: IndeedScraperUSAEng_db67b6cba30f0755
+[2025-06-22 23:48:48,941] [ERROR] IndeedScraperUSAEng: Job Embedded Software Engineer and Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_302f3ddcbe8fca52
+[2025-06-22 23:48:48,941] [ERROR] IndeedScraperUSAEng: Job Senior Front-end Engineer and Senior Front-end Engineer share duplicate key_id: IndeedScraperUSAEng_f73e7405c793fcc9
+[2025-06-22 23:48:48,941] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer and Full Stack Engineer share duplicate key_id: IndeedScraperUSAEng_5c15c3f5590d4a4f
+[2025-06-22 23:48:48,942] [ERROR] IndeedScraperUSAEng: Job Java Engineer - AVP Level (Cary, NC) and Java Engineer - AVP Level (Cary, NC) share duplicate key_id: IndeedScraperUSAEng_5bc8aeafbbc72b3c
+[2025-06-22 23:48:48,942] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer and Full Stack Engineer share duplicate key_id: IndeedScraperUSAEng_dd3bc7f537a137fa
+[2025-06-22 23:48:48,942] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer and Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_03575b7820854b6a
+[2025-06-22 23:48:48,942] [ERROR] IndeedScraperUSAEng: Job Senior Java Engineer and Senior Java Engineer share duplicate key_id: IndeedScraperUSAEng_f56d8609ecb17a6b
+[2025-06-22 23:48:48,942] [ERROR] IndeedScraperUSAEng: Job Service Now Developer and Service Now Developer share duplicate key_id: IndeedScraperUSAEng_19d96ab2210cd2a9
+[2025-06-22 23:48:48,942] [ERROR] IndeedScraperUSAEng: Job Software Engineer and Software Engineer share duplicate key_id: IndeedScraperUSAEng_7b825fcaa77d831f
+[2025-06-22 23:48:48,943] [ERROR] IndeedScraperUSAEng: Job AVP Java Engineer and AVP Java Engineer share duplicate key_id: IndeedScraperUSAEng_b1616e7198b34d3d
+[2025-06-22 23:48:48,943] [ERROR] IndeedScraperUSAEng: Job Full Stack Java Engineer and Full Stack Java Engineer share duplicate key_id: IndeedScraperUSAEng_e0ee2ca1458efa60
+[2025-06-22 23:48:48,943] [ERROR] IndeedScraperUSAEng: Job DevOps Engineer and DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_f436649bb31be4c1
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Java Backend Developer (GC & USC only) and Java Backend Developer (GC & USC only) share duplicate key_id: IndeedScraperUSAEng_6dfc705211fdb2f8
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack UI and Java developer and Senior Full Stack UI and Java developer share duplicate key_id: IndeedScraperUSAEng_771cb8ccb1b67cc1
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Principal Software Engineer and Principal Software Engineer share duplicate key_id: IndeedScraperUSAEng_3a74dbdd8b3f699b
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Deloitte Technology Product Engineering Fullstack Software Engineer Vision360 and Deloitte Technology Product Engineering Fullstack Software Engineer Vision360 share duplicate key_id: IndeedScraperUSAEng_c133006ae0af5de4
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Java Engineer and Java Engineer share duplicate key_id: IndeedScraperUSAEng_c1ae9257dfb9552d
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Cyber Software Engineer and Cyber Software Engineer share duplicate key_id: IndeedScraperUSAEng_496f0556da0f54ec
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job CNO Software Developer and CNO Software Developer share duplicate key_id: IndeedScraperUSAEng_2c2c90e2dde81832
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Software Engineer and Software Engineer share duplicate key_id: IndeedScraperUSAEng_05d59d41f8805c61
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Power Platform Developer and Power Platform Developer share duplicate key_id: IndeedScraperUSAEng_9c2830ef680c4afa
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Senior Java Developer and Senior Java Developer share duplicate key_id: IndeedScraperUSAEng_4923b8df9d9c515a
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Software Engineer IV and Software Engineer IV share duplicate key_id: IndeedScraperUSAEng_6c73333040b45aa2
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Sitefinity Web Portal Developer and Sitefinity Web Portal Developer share duplicate key_id: IndeedScraperUSAEng_db67b6cba30f0755
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Embedded Software Engineer and Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_302f3ddcbe8fca52
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Senior Front-end Engineer and Senior Front-end Engineer share duplicate key_id: IndeedScraperUSAEng_f73e7405c793fcc9
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer and Full Stack Engineer share duplicate key_id: IndeedScraperUSAEng_5c15c3f5590d4a4f
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Software Engineer 2 and Software Engineer 2 share duplicate key_id: IndeedScraperUSAEng_0161dcf989f762e3
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer and Full Stack Engineer share duplicate key_id: IndeedScraperUSAEng_dd3bc7f537a137fa
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer and Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_03575b7820854b6a
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Senior Java Engineer and Senior Java Engineer share duplicate key_id: IndeedScraperUSAEng_f56d8609ecb17a6b
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Service Now Developer and Service Now Developer share duplicate key_id: IndeedScraperUSAEng_19d96ab2210cd2a9
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Software Engineer and Software Engineer share duplicate key_id: IndeedScraperUSAEng_7b825fcaa77d831f
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Deloitte Technology Product Engineering Fullstack Software Engineer Vision360 and Deloitte Technology Product Engineering Fullstack Software Engineer Vision360 share duplicate key_id: IndeedScraperUSAEng_c133006ae0af5de4
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job AVP Java Engineer and AVP Java Engineer share duplicate key_id: IndeedScraperUSAEng_b1616e7198b34d3d
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Full Stack Java Engineer and Full Stack Java Engineer share duplicate key_id: IndeedScraperUSAEng_e0ee2ca1458efa60
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job DevOps Engineer and DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_f436649bb31be4c1
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Java Backend Developer (GC & USC only) and Java Backend Developer (GC & USC only) share duplicate key_id: IndeedScraperUSAEng_6dfc705211fdb2f8
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack UI and Java developer and Senior Full Stack UI and Java developer share duplicate key_id: IndeedScraperUSAEng_771cb8ccb1b67cc1
+[2025-06-22 23:48:48,946] [ERROR] IndeedScraperUSAEng: Job Principal Software Engineer and Principal Software Engineer share duplicate key_id: IndeedScraperUSAEng_3a74dbdd8b3f699b
+[2025-06-22 23:48:48,951] [ERROR] IndeedScraperUSAEng: Job Embedded Software Engineer and Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_302f3ddcbe8fca52
+[2025-06-22 23:48:48,951] [ERROR] IndeedScraperUSAEng: Job Java Engineer and Java Engineer share duplicate key_id: IndeedScraperUSAEng_c1ae9257dfb9552d
+[2025-06-22 23:48:48,953] [ERROR] IndeedScraperUSAEng: Job Cyber Software Engineer and Cyber Software Engineer share duplicate key_id: IndeedScraperUSAEng_496f0556da0f54ec
+[2025-06-22 23:48:48,953] [ERROR] IndeedScraperUSAEng: Job CNO Software Developer and CNO Software Developer share duplicate key_id: IndeedScraperUSAEng_2c2c90e2dde81832
+[2025-06-22 23:48:48,953] [ERROR] IndeedScraperUSAEng: Job Software Engineer and Software Engineer share duplicate key_id: IndeedScraperUSAEng_05d59d41f8805c61
+[2025-06-22 23:48:48,953] [ERROR] IndeedScraperUSAEng: Job CNO Software Developer and CNO Software Developer share duplicate key_id: IndeedScraperUSAEng_2c2c90e2dde81832
+[2025-06-22 23:48:48,953] [ERROR] IndeedScraperUSAEng: Job Senior Java Developer and Senior Java Developer share duplicate key_id: IndeedScraperUSAEng_4923b8df9d9c515a
+[2025-06-22 23:48:48,953] [ERROR] IndeedScraperUSAEng: Job Software Engineer IV and Software Engineer IV share duplicate key_id: IndeedScraperUSAEng_6c73333040b45aa2
+[2025-06-22 23:48:48,954] [ERROR] IndeedScraperUSAEng: Job Sitefinity Web Portal Developer and Sitefinity Web Portal Developer share duplicate key_id: IndeedScraperUSAEng_db67b6cba30f0755
+[2025-06-22 23:48:48,954] [ERROR] IndeedScraperUSAEng: Job Embedded Software Engineer and Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_302f3ddcbe8fca52
+[2025-06-22 23:48:48,954] [ERROR] IndeedScraperUSAEng: Job Senior Front-end Engineer and Senior Front-end Engineer share duplicate key_id: IndeedScraperUSAEng_f73e7405c793fcc9
+[2025-06-22 23:48:48,954] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer and Full Stack Engineer share duplicate key_id: IndeedScraperUSAEng_5c15c3f5590d4a4f
+[2025-06-22 23:48:48,954] [ERROR] IndeedScraperUSAEng: Job Java Engineer - AVP Level (Cary, NC) and Java Engineer - AVP Level (Cary, NC) share duplicate key_id: IndeedScraperUSAEng_5bc8aeafbbc72b3c
+[2025-06-22 23:48:48,954] [ERROR] IndeedScraperUSAEng: Job Full Stack Engineer and Full Stack Engineer share duplicate key_id: IndeedScraperUSAEng_dd3bc7f537a137fa
+[2025-06-22 23:48:48,955] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer and Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_03575b7820854b6a
+[2025-06-22 23:48:48,955] [ERROR] IndeedScraperUSAEng: Job Senior Java Engineer and Senior Java Engineer share duplicate key_id: IndeedScraperUSAEng_f56d8609ecb17a6b
+[2025-06-22 23:48:48,955] [ERROR] IndeedScraperUSAEng: Job Service Now Developer and Service Now Developer share duplicate key_id: IndeedScraperUSAEng_19d96ab2210cd2a9
+[2025-06-22 23:48:48,955] [ERROR] IndeedScraperUSAEng: Job Software Engineer and Software Engineer share duplicate key_id: IndeedScraperUSAEng_7b825fcaa77d831f
+[2025-06-22 23:48:48,955] [ERROR] IndeedScraperUSAEng: Job Power Platform Developer and Power Platform Developer share duplicate key_id: IndeedScraperUSAEng_9c2830ef680c4afa
+[2025-06-22 23:48:48,956] [ERROR] IndeedScraperUSAEng: Job AVP Java Engineer and AVP Java Engineer share duplicate key_id: IndeedScraperUSAEng_b1616e7198b34d3d
+[2025-06-22 23:48:48,956] [ERROR] IndeedScraperUSAEng: Job Full Stack Java Engineer and Full Stack Java Engineer share duplicate key_id: IndeedScraperUSAEng_e0ee2ca1458efa60
+[2025-06-22 23:48:48,956] [ERROR] IndeedScraperUSAEng: Job DevOps Engineer and DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_f436649bb31be4c1
+[2025-06-22 23:48:48,956] [ERROR] IndeedScraperUSAEng: Job Java Backend Developer (GC & USC only) and Java Backend Developer (GC & USC only) share duplicate key_id: IndeedScraperUSAEng_6dfc705211fdb2f8
+[2025-06-22 23:48:48,956] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack UI and Java developer and Senior Full Stack UI and Java developer share duplicate key_id: IndeedScraperUSAEng_771cb8ccb1b67cc1
+[2025-06-22 23:48:48,956] [ERROR] IndeedScraperUSAEng: Job Principal Software Engineer and Principal Software Engineer share duplicate key_id: IndeedScraperUSAEng_3a74dbdd8b3f699b
+[2025-06-22 23:48:48,957] [ERROR] IndeedScraperUSAEng: Job Software Engineer 2 and Software Engineer 2 share duplicate key_id: IndeedScraperUSAEng_0161dcf989f762e3
+[2025-06-22 23:48:48,957] [ERROR] IndeedScraperUSAEng: Job Software Engineer 2 and Software Engineer 2 share duplicate key_id: IndeedScraperUSAEng_0161dcf989f762e3
+[2025-06-22 23:48:48,957] [ERROR] IndeedScraperUSAEng: Job Java Engineer and Java Engineer share duplicate key_id: IndeedScraperUSAEng_c1ae9257dfb9552d
+[2025-06-22 23:48:48,957] [ERROR] IndeedScraperUSAEng: Job Cyber Software Engineer and Cyber Software Engineer share duplicate key_id: IndeedScraperUSAEng_496f0556da0f54ec
+[2025-06-22 23:48:48,960] [ERROR] IndeedScraperUSAEng: Job CNO Software Developer and CNO Software Developer share duplicate key_id: IndeedScraperUSAEng_2c2c90e2dde81832
+[2025-06-22 23:48:48,960] [ERROR] IndeedScraperUSAEng: Job Java Engineer - AVP Level (Cary, NC) and Java Engineer - AVP Level (Cary, NC) share duplicate key_id: IndeedScraperUSAEng_5bc8aeafbbc72b3c
+[2025-06-22 23:48:48,960] [ERROR] IndeedScraperUSAEng: Job Service Now Developer and Service Now Developer share duplicate key_id: IndeedScraperUSAEng_19d96ab2210cd2a9
+[2025-06-22 23:48:48,960] [ERROR] IndeedScraperUSAEng: Job Deloitte Technology Product Engineering Fullstack Software Engineer Vision360 and Deloitte Technology Product Engineering Fullstack Software Engineer Vision360 share duplicate key_id: IndeedScraperUSAEng_c133006ae0af5de4
+[2025-06-22 23:48:48,960] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack UI and Java developer and Senior Full Stack UI and Java developer share duplicate key_id: IndeedScraperUSAEng_771cb8ccb1b67cc1
+[2025-06-22 23:48:48,967] [INFO] JobFunnel: Completed all scraping, found 641 new jobs.
+[2025-06-22 23:48:48,990] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv
+[2025-06-23 01:15:26,874] [INFO] JobFunnel: Scraping local providers with: ['IndeedScraperUSAEng']
+[2025-06-23 01:15:27,712] [INFO] IndeedScraperUSAEng: Found 30 pages of search results for query=Software Developer+Data Analyst+Project Manager
+[2025-06-23 01:15:33,378] [INFO] IndeedScraperUSAEng: Scraped 744 job listings from search results pages
+[2025-06-23 01:15:34,269] [ERROR] IndeedScraperUSAEng: Job Industry X - Engineering Digitization & PLM - Teamcenter Architect and Industry X - Engineering Digitization & PLM - Teamcenter Architect share duplicate key_id: IndeedScraperUSAEng_9a1b1c61453f2331
+[2025-06-23 01:15:34,306] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:15:34,307] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:15:34,307] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:15:34,307] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:15:34,307] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:15:34,307] [ERROR] IndeedScraperUSAEng: Job A/V Programmer III and A/V Programmer III share duplicate key_id: IndeedScraperUSAEng_95be79df537688fb
+[2025-06-23 01:15:34,307] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:15:34,307] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:15:34,308] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:15:34,308] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:15:34,308] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:15:34,308] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:15:34,308] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:15:34,308] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:15:34,308] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:15:34,309] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:15:34,309] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:15:34,309] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:15:34,309] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:15:34,309] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:15:34,309] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:15:34,309] [ERROR] IndeedScraperUSAEng: Job Workday Business Analyst and Workday Business Analyst share duplicate key_id: IndeedScraperUSAEng_e26f0d7e4fc0b21a
+[2025-06-23 01:15:34,309] [ERROR] IndeedScraperUSAEng: Job Industry X - Engineering Digitization & PLM - Teamcenter Architect and Industry X - Engineering Digitization & PLM - Teamcenter Architect share duplicate key_id: IndeedScraperUSAEng_9a1b1c61453f2331
+[2025-06-23 01:15:34,310] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:15:34,310] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:15:34,310] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:15:34,310] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:15:34,310] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:15:34,310] [ERROR] IndeedScraperUSAEng: Job A/V Programmer III and A/V Programmer III share duplicate key_id: IndeedScraperUSAEng_95be79df537688fb
+[2025-06-23 01:15:34,310] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:15:34,311] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:15:34,311] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:15:34,311] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:15:34,311] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:15:34,311] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:15:34,311] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:15:34,311] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:15:34,311] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:15:34,311] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:15:34,312] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:15:34,312] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:15:34,312] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:15:34,312] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:15:34,313] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:15:34,313] [ERROR] IndeedScraperUSAEng: Job Workday Business Analyst and Workday Business Analyst share duplicate key_id: IndeedScraperUSAEng_e26f0d7e4fc0b21a
+[2025-06-23 01:15:34,313] [ERROR] IndeedScraperUSAEng: Job Azure .Net Developer and Azure .Net Developer share duplicate key_id: IndeedScraperUSAEng_d66916705b2f4705
+[2025-06-23 01:15:34,313] [ERROR] IndeedScraperUSAEng: Job Industry X - Engineering Digitization & PLM - Teamcenter Architect and Industry X - Engineering Digitization & PLM - Teamcenter Architect share duplicate key_id: IndeedScraperUSAEng_9a1b1c61453f2331
+[2025-06-23 01:15:34,313] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:15:34,313] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:15:34,313] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:15:34,314] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:15:34,314] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:15:34,314] [ERROR] IndeedScraperUSAEng: Job A/V Programmer III and A/V Programmer III share duplicate key_id: IndeedScraperUSAEng_95be79df537688fb
+[2025-06-23 01:15:34,314] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:15:34,314] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:15:34,314] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:15:34,314] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:15:34,315] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:15:34,315] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:15:34,315] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:15:34,315] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:15:34,315] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:15:34,315] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:15:34,315] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:15:34,315] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:15:34,316] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:15:34,316] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:15:34,316] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:15:34,316] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:15:34,316] [ERROR] IndeedScraperUSAEng: Job Workday Business Analyst and Workday Business Analyst share duplicate key_id: IndeedScraperUSAEng_e26f0d7e4fc0b21a
+[2025-06-23 01:15:34,316] [ERROR] IndeedScraperUSAEng: Job Azure .Net Developer and Azure .Net Developer share duplicate key_id: IndeedScraperUSAEng_d66916705b2f4705
+[2025-06-23 01:15:34,317] [ERROR] IndeedScraperUSAEng: Job Azure .Net Developer and Azure .Net Developer share duplicate key_id: IndeedScraperUSAEng_d66916705b2f4705
+[2025-06-23 01:15:34,317] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:15:34,317] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:15:34,321] [INFO] JobFunnel: Completed all scraping, found 669 new jobs.
+[2025-06-23 01:15:34,352] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv
+[2025-06-23 01:16:06,671] [INFO] JobFunnel: Scraping local providers with: ['IndeedScraperUSAEng']
+[2025-06-23 01:16:07,516] [INFO] IndeedScraperUSAEng: Found 50 pages of search results for query=AI
+[2025-06-23 01:16:13,561] [INFO] IndeedScraperUSAEng: Scraped 1227 job listings from search results pages
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,270] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,276] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,277] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,278] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,279] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,280] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,283] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,284] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,285] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,286] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,287] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,288] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Registered Nurse (Bilingual - Japanese/English) - Remote and Registered Nurse (Bilingual - Japanese/English) - Remote share duplicate key_id: IndeedScraperUSAEng_c69710f1997c3f6e
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Programmatic Lead and Programmatic Lead share duplicate key_id: IndeedScraperUSAEng_a9b73622f53da0ce
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Shipping and Receiving and Shipping and Receiving share duplicate key_id: IndeedScraperUSAEng_19c56857731a7c3c
+[2025-06-23 01:16:14,289] [ERROR] IndeedScraperUSAEng: Job Performance Engineer - Athletics and Performance Engineer - Athletics share duplicate key_id: IndeedScraperUSAEng_e18471e34fdce2bb
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Operational Intelligence Engineer and Operational Intelligence Engineer share duplicate key_id: IndeedScraperUSAEng_9e09b955d9f74dce
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Architectural Designer and Architectural Designer share duplicate key_id: IndeedScraperUSAEng_59b0a1d0579a06db
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Inside Sales Lead and Inside Sales Lead share duplicate key_id: IndeedScraperUSAEng_d86dfd9e46f213c1
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Business Assurance Security Manager and Business Assurance Security Manager share duplicate key_id: IndeedScraperUSAEng_4c843fc6b72486d0
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Sr. Accountant and Sr. Accountant share duplicate key_id: IndeedScraperUSAEng_4933e67ac807a2e3
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Assistant/Associate/Full Professor of Statistics and Assistant/Associate/Full Professor of Statistics share duplicate key_id: IndeedScraperUSAEng_b6255f3f766772fc
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_64548af98508ded7
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job TEMPORARY Corporate Attorney – Technology & Privacy Transactions and TEMPORARY Corporate Attorney – Technology & Privacy Transactions share duplicate key_id: IndeedScraperUSAEng_bfefe90471d75365
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Windchill Solution Architect and Windchill Solution Architect share duplicate key_id: IndeedScraperUSAEng_40941d1f064cd862
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Registered Nurse Researcher (Bilingual - Arabic/English) - Remote and Registered Nurse Researcher (Bilingual - Arabic/English) - Remote share duplicate key_id: IndeedScraperUSAEng_dab2cbd1e7beb28e
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Software Engineering Group Head I- Head of Platform Optimization and Software Engineering Group Head I- Head of Platform Optimization share duplicate key_id: IndeedScraperUSAEng_b12bc60a806f2a9c
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Immigration Legal Assistant and Immigration Legal Assistant share duplicate key_id: IndeedScraperUSAEng_945097238b3834c1
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Senior Technical MES Lead and Senior Technical MES Lead share duplicate key_id: IndeedScraperUSAEng_b0b29c7f5af52354
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Sr. Manager, IT Support Services and Sr. Manager, IT Support Services share duplicate key_id: IndeedScraperUSAEng_bd0e6a5c69fbffe4
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Inbound Sales Team Lead and Inbound Sales Team Lead share duplicate key_id: IndeedScraperUSAEng_8d3212065e50e741
+[2025-06-23 01:16:14,290] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,291] [ERROR] IndeedScraperUSAEng: Job Stand up forklift operator and Stand up forklift operator share duplicate key_id: IndeedScraperUSAEng_6539301075826915
+[2025-06-23 01:16:14,291] [ERROR] IndeedScraperUSAEng: Job SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) and SENIOR DIRECTOR, SOFTWARE ENGINEERING - CHARLOTTE (HYBRID) share duplicate key_id: IndeedScraperUSAEng_1653edfa948fb186
+[2025-06-23 01:16:14,291] [ERROR] IndeedScraperUSAEng: Job Spanish Language Arts Curriculum Designer - Videos, Print & Instruction and Spanish Language Arts Curriculum Designer - Videos, Print & Instruction share duplicate key_id: IndeedScraperUSAEng_c10aa7ad4f293b53
+[2025-06-23 01:16:14,291] [ERROR] IndeedScraperUSAEng: Job Maintenance Technician and Maintenance Technician share duplicate key_id: IndeedScraperUSAEng_69b139d57618ade9
+[2025-06-23 01:16:14,291] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,291] [ERROR] IndeedScraperUSAEng: Job Senior Director, Cybersecurity Services and Senior Director, Cybersecurity Services share duplicate key_id: IndeedScraperUSAEng_25913c6821a0b3f5
+[2025-06-23 01:16:14,291] [ERROR] IndeedScraperUSAEng: Job Dining Service Chef and Dining Service Chef share duplicate key_id: IndeedScraperUSAEng_db299ec62d06359a
+[2025-06-23 01:16:14,294] [INFO] JobFunnel: Completed all scraping, found 877 new jobs.
+[2025-06-23 01:16:14,320] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv
+[2025-06-23 01:16:57,465] [INFO] JobFunnel: Scraping local providers with: ['IndeedScraperUSAEng']
+[2025-06-23 01:16:58,430] [INFO] IndeedScraperUSAEng: Found 30 pages of search results for query=Software Developer+Data Analyst+Project Manager
+[2025-06-23 01:17:02,931] [INFO] IndeedScraperUSAEng: Scraped 738 job listings from search results pages
+[2025-06-23 01:17:03,358] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:17:03,359] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:17:03,360] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:17:03,361] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:17:03,363] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:17:03,364] [ERROR] IndeedScraperUSAEng: Job A/V Programmer III and A/V Programmer III share duplicate key_id: IndeedScraperUSAEng_95be79df537688fb
+[2025-06-23 01:17:03,370] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:17:03,373] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:17:03,374] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:17:03,374] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:17:03,376] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:17:03,377] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:17:03,379] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:17:03,379] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:17:03,381] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:17:03,382] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:17:03,383] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:17:03,385] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:17:03,386] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:17:03,386] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:17:03,387] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:17:03,388] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:17:03,388] [ERROR] IndeedScraperUSAEng: Job Workday Business Analyst and Workday Business Analyst share duplicate key_id: IndeedScraperUSAEng_e26f0d7e4fc0b21a
+[2025-06-23 01:17:03,389] [ERROR] IndeedScraperUSAEng: Job Ruby Developer and Ruby Developer share duplicate key_id: IndeedScraperUSAEng_823349af73ea2a84
+[2025-06-23 01:17:03,389] [ERROR] IndeedScraperUSAEng: Job Technical Business Analyst - P&C Insurance and Technical Business Analyst - P&C Insurance share duplicate key_id: IndeedScraperUSAEng_6c4ebb24566d1e3a
+[2025-06-23 01:17:03,394] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:17:03,396] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:17:03,396] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:17:03,396] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:17:03,397] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:17:03,398] [ERROR] IndeedScraperUSAEng: Job A/V Programmer III and A/V Programmer III share duplicate key_id: IndeedScraperUSAEng_95be79df537688fb
+[2025-06-23 01:17:03,399] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:17:03,401] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:17:03,401] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:17:03,402] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Workday Business Analyst and Workday Business Analyst share duplicate key_id: IndeedScraperUSAEng_e26f0d7e4fc0b21a
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Ruby Developer and Ruby Developer share duplicate key_id: IndeedScraperUSAEng_823349af73ea2a84
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Technical Business Analyst - P&C Insurance and Technical Business Analyst - P&C Insurance share duplicate key_id: IndeedScraperUSAEng_6c4ebb24566d1e3a
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job A/V Programmer III and A/V Programmer III share duplicate key_id: IndeedScraperUSAEng_95be79df537688fb
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:17:03,403] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Workday Business Analyst and Workday Business Analyst share duplicate key_id: IndeedScraperUSAEng_e26f0d7e4fc0b21a
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Ruby Developer and Ruby Developer share duplicate key_id: IndeedScraperUSAEng_823349af73ea2a84
+[2025-06-23 01:17:03,404] [ERROR] IndeedScraperUSAEng: Job Technical Business Analyst - P&C Insurance and Technical Business Analyst - P&C Insurance share duplicate key_id: IndeedScraperUSAEng_6c4ebb24566d1e3a
+[2025-06-23 01:17:03,407] [INFO] JobFunnel: Completed all scraping, found 663 new jobs.
+[2025-06-23 01:17:03,429] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv
+[2025-06-23 01:24:46,625] [INFO] JobFunnel: Scraping local providers with: ['IndeedScraperUSAEng']
+[2025-06-23 01:24:47,805] [INFO] IndeedScraperUSAEng: Found 30 pages of search results for query=Software Developer+Data Analyst+Project Manager
+[2025-06-23 01:24:52,261] [INFO] IndeedScraperUSAEng: Scraped 728 job listings from search results pages
+[2025-06-23 01:24:52,681] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:24:52,683] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:24:52,685] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer, OpenShift Networking and Senior Software Engineer, OpenShift Networking share duplicate key_id: IndeedScraperUSAEng_85730f97e32ee715
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Ansible Automation Platform and Senior Software Engineer - Ansible Automation Platform share duplicate key_id: IndeedScraperUSAEng_fb37091857e8c164
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Mid to Senior Cybersecurity Software Development Engineer and Mid to Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_c390c61dca3baf1f
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Industry X - Engineering Digitization & PLM - Teamcenter Architect and Industry X - Engineering Digitization & PLM - Teamcenter Architect share duplicate key_id: IndeedScraperUSAEng_9a1b1c61453f2331
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Industry X - Engineering Digitization & PLM - Teamcenter Architect and Industry X - Engineering Digitization & PLM - Teamcenter Architect share duplicate key_id: IndeedScraperUSAEng_9a1b1c61453f2331
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Mid to Senior Cybersecurity Software Development Engineer and Mid to Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_c390c61dca3baf1f
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:24:52,686] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Ansible Automation Platform and Senior Software Engineer - Ansible Automation Platform share duplicate key_id: IndeedScraperUSAEng_fb37091857e8c164
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer, OpenShift Networking and Senior Software Engineer, OpenShift Networking share duplicate key_id: IndeedScraperUSAEng_85730f97e32ee715
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:24:52,687] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Industry X - Engineering Digitization & PLM - Teamcenter Architect and Industry X - Engineering Digitization & PLM - Teamcenter Architect share duplicate key_id: IndeedScraperUSAEng_9a1b1c61453f2331
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:24:52,688] [ERROR] IndeedScraperUSAEng: Job Mid to Senior Cybersecurity Software Development Engineer and Mid to Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_c390c61dca3baf1f
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Ansible Automation Platform and Senior Software Engineer - Ansible Automation Platform share duplicate key_id: IndeedScraperUSAEng_fb37091857e8c164
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer, OpenShift Networking and Senior Software Engineer, OpenShift Networking share duplicate key_id: IndeedScraperUSAEng_85730f97e32ee715
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager and Oracle Utilities Oracle Configuraton & Dev Release Delivery Manager share duplicate key_id: IndeedScraperUSAEng_94e46bab34959388
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) and Principal / Sr Principal DevOps Engineer: Product Owner (*Active TS/SCI required) share duplicate key_id: IndeedScraperUSAEng_d2666f1639986d83
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer and Senior Embedded Software Engineer share duplicate key_id: IndeedScraperUSAEng_dded62842ca9a87d
+[2025-06-23 01:24:52,689] [ERROR] IndeedScraperUSAEng: Job Senior Principal Software Systems Engineer (Relocation Assistance Provided) and Senior Principal Software Systems Engineer (Relocation Assistance Provided) share duplicate key_id: IndeedScraperUSAEng_d5f4c251b33d30a9
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Senior/Staff Software Engineer (Infrastructure) and Senior/Staff Software Engineer (Infrastructure) share duplicate key_id: IndeedScraperUSAEng_111779afd911ad5b
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Senior Physics Programmer and Senior Physics Programmer share duplicate key_id: IndeedScraperUSAEng_e5a3641b41f594de
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Systems Engineer (On-Site) and Senior Embedded Systems Engineer (On-Site) share duplicate key_id: IndeedScraperUSAEng_29fd4fcf5e82c5b0
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) and Principal / Sr Principal Software Engineer - Automated Testing (*Active TS/SCI & adj poly required) share duplicate key_id: IndeedScraperUSAEng_229040d58cd486f1
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_b58ff8e6bba89a4d
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Senior Full Stack Engineer - Angular, AWS, CICD and Senior Full Stack Engineer - Angular, AWS, CICD share duplicate key_id: IndeedScraperUSAEng_c8722f33be994058
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Embedded Systems Team Leader and Embedded Systems Team Leader share duplicate key_id: IndeedScraperUSAEng_a523458f2d8e98e6
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 and Senior Software Engineer - Java, Oracle :: Durham, North Carolina :: W2 share duplicate key_id: IndeedScraperUSAEng_46b7787015fa1f21
+[2025-06-23 01:24:52,690] [ERROR] IndeedScraperUSAEng: Job Mixed-Signal IP Firmware Engineer and Mixed-Signal IP Firmware Engineer share duplicate key_id: IndeedScraperUSAEng_548926aa95662a6b
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Senior Embedded Software Engineer \u007C Airborne Software and Senior Embedded Software Engineer \u007C Airborne Software share duplicate key_id: IndeedScraperUSAEng_01f80d47c800c4a2
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Platform and Senior Software Engineer - Platform share duplicate key_id: IndeedScraperUSAEng_237d5fe26619d42e
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Senior Ruby and Node Developer and Senior Ruby and Node Developer share duplicate key_id: IndeedScraperUSAEng_30ec25da8f51e737
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Industry X - Engineering Digitization & PLM - Teamcenter Architect and Industry X - Engineering Digitization & PLM - Teamcenter Architect share duplicate key_id: IndeedScraperUSAEng_9a1b1c61453f2331
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Mid to Senior Cybersecurity Software Development Engineer and Mid to Senior Cybersecurity Software Development Engineer share duplicate key_id: IndeedScraperUSAEng_c390c61dca3baf1f
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - Ansible Automation Platform and Senior Software Engineer - Ansible Automation Platform share duplicate key_id: IndeedScraperUSAEng_fb37091857e8c164
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer, OpenShift Networking and Senior Software Engineer, OpenShift Networking share duplicate key_id: IndeedScraperUSAEng_85730f97e32ee715
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Embedded Software Delivery Coordinator and Embedded Software Delivery Coordinator share duplicate key_id: IndeedScraperUSAEng_8c89495595acc28d
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Senior Software Engineer - V-Force and Senior Software Engineer - V-Force share duplicate key_id: IndeedScraperUSAEng_b4b48737100baed2
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Sr Principal Software Engineer - Power Systems and Sr Principal Software Engineer - Power Systems share duplicate key_id: IndeedScraperUSAEng_dc49ab21c15fad16
+[2025-06-23 01:24:52,691] [ERROR] IndeedScraperUSAEng: Job Senior DevOps Engineer and Senior DevOps Engineer share duplicate key_id: IndeedScraperUSAEng_576d53c693661962
+[2025-06-23 01:24:52,692] [ERROR] IndeedScraperUSAEng: Job Firmware Engineer 4 and Firmware Engineer 4 share duplicate key_id: IndeedScraperUSAEng_b6ca778f58d63d33
+[2025-06-23 01:24:52,695] [INFO] JobFunnel: Completed all scraping, found 628 new jobs.
+[2025-06-23 01:24:52,718] [INFO] JobFunnel: Done. View your current jobs in data/indeed_results.csv
