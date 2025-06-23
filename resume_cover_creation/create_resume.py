@@ -70,30 +70,45 @@ def setup_api():
         sys.exit(1)
 
 def generate_tailored_content(model, base_resume, job_desc):
-    """Generates tailored resume content."""
-    print("Calling Gemini to tailor resume content...")
+    """
+    Generates tailored resume content, respecting user-provided data.
+    If a field is empty, the AI generates content. If it's filled, the AI uses the existing content.
+    """
+    print("Calling Gemini to intelligently tailor resume content...")
     sections_to_tailor = {
         "summary": base_resume.get("summary", ""),
         "experience": base_resume.get("experience", []),
         "projects": base_resume.get("projects", [])
     }
-    original_summary_length = len(base_resume.get("summary", ""))
-    
+
+    # The prompt is updated to give the AI conditional instructions.
     prompt = f"""
-    You are an expert resume writer and JSON editor. Your task is to take a base resume's summary, experience, and projects, and a target job description, then rewrite specific parts of those sections.
+    You are an expert resume writer and a meticulous JSON editor. Your task is to intelligently process a resume's JSON data based on a job description. You must follow these rules precisely:
 
     **Instructions:**
-    1.  **Rewrite 'summary'**: Create a new, powerful 'summary' that mirrors the language of the job description. It must be concise, between {original_summary_length - 40} and {original_summary_length} characters.
-    
-    2.  **Rewrite 'experience' Bullet Points**: For each object in the 'experience' array, you MUST keep the existing 'company', 'location', 'title', and 'dates' keys and their original values. Your ONLY task is to rewrite the 'points' array to use strong action verbs and metrics aligned with the job description.
-    
-    3.  **Rewrite 'projects'**: Re-imagine the 'projects' section. The final output must have exactly 3 projects.
-        - If an existing project is relevant, keep its 'name' but make up dates along with months in the format "Month Year - Month Year" between the last three years(between 2025 to 2022 at most) for projects, the advanced one on the top to the botoom, and heavily rewrite its 'points' with keywords and metrics from the job description.
-        - If a project is not relevant, replace it with a new, plausible project that is a perfect fit, including a 'name', 'dates', and tailored 'points'.
 
-    4.  **Preserve Structure and Keys**: You MUST return ONLY a single, valid JSON object. It is critical that you maintain the original JSON structure perfectly. For 'experience' and 'projects', all original keys (like company, location, dates, etc.) must be present in your final output.
-    
-    5.  **Conciseness is Key**: Ensure all rewritten bullet points are concise to help the resume fit on a single page.
+    1.  **Handle the 'summary'**:
+        * **If the 'summary' field is NOT empty**: Refine the existing summary. Enhance it with keywords from the job description while keeping its original tone. The length should remain similar.
+        * **If the 'summary' field IS empty**: Write a compelling new summary from scratch, tailored perfectly to the job description using details from the experience and projects.
+
+    2.  **Handle the 'experience' array**:
+        * Iterate through each object in the 'experience' array.
+        * For each object, check its 'points' array.
+        * **If the 'points' array is NOT empty**: You MUST keep the existing bullet points exactly as they are. Do not change them.
+        * **If the 'points' array IS empty**: You MUST generate 3-4 strong, concise bullet points using action verbs and metrics that align the job title with the target job description.
+
+    3.  **Handle the 'projects' array to ensure a total of THREE**:
+        * Your primary goal is to return a 'projects' array containing exactly 3 projects.
+        * **First, preserve the user's projects**: Identify all complete projects in the provided `projects` array. A project is complete if its `name` and `points` are not empty. You MUST keep these user-provided projects in the final output. You may lightly refine their `points` to better align with the job description, but the core project must remain.
+        * **Then, count the user's projects and generate the remainder**: After preserving the user's projects, count them. If the count is less than 3, you MUST generate new, highly-relevant projects to make up the difference.
+            * If the user provided 2 projects, you generate 1 new one.
+            * If the user provided 1 project, you generate 2 new ones.
+            * If the user provided 0 projects, you generate 3 new ones.
+        * **Format for NEW projects**: Each newly generated project must have a plausible 'name', 'dates' (e.g., "Month Year - Month Year" within the last 3 years), and a detailed 'points' array showcasing skills from the job description.
+
+    4.  **Output Requirements**:
+        * You MUST return ONLY a single, valid JSON object containing the 'summary', 'experience', and 'projects' keys.
+        * Preserve the exact structure and all original keys for every object. For 'experience', this means 'company', 'location', 'title', and 'dates' must be returned untouched for every entry.
 
     **JSON to tailor:**
     ```json
@@ -105,7 +120,7 @@ def generate_tailored_content(model, base_resume, job_desc):
     {job_desc}
     ```
 
-    Return ONLY the tailored and complete JSON object.
+    Return ONLY the tailored and complete JSON object, following all instructions.
     """
     try:
         response = model.generate_content(prompt)
@@ -113,7 +128,6 @@ def generate_tailored_content(model, base_resume, job_desc):
         return json.loads(cleaned_response)
     except Exception as e:
         print(f"Error calling Gemini API or parsing JSON: {e}")
-        # Add this line to see what the AI is returning on an error
         print("--- Gemini's Raw Response ---")
         try:
             print(response.text)
@@ -260,6 +274,7 @@ def main():
         sys.exit(1)
         
     print("AI has generated the tailored content for the resume.")
+    # This simple merge now works because the AI was instructed to respect existing user data.
     final_resume_data = {**base_resume_data, **tailored_sections}
     
     output_json_file = os.path.join(args.output_dir, f"{BASE_OUTPUT_NAME}_tailored_data.json")

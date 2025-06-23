@@ -6,7 +6,7 @@
   "phone": "217-775-5653",
   "linkedin": "https://www.linkedin.com/in/yashwanthtirupati/",
   "github": "https://github.com/proxiee",
-  "summary": "Full-stack engineer with experience in Java and Typescript seeking to leverage skills in building reliable, scalable software systems for space-based applications.",
+  "summary": "Highly motivated and results-oriented Full-Stack Java Developer with 3+ years of experience seeking a Python Developer II position. Proven ability to develop and maintain software, leveraging object-oriented programming principles in Java and contributing to a team environment.  Experience with scalable data application design and a strong desire to learn and implement new technologies in the cloud, including AWS services. Eager to contribute to the optimization and continuous improvement of software development processes and work closely with junior team members, providing constructive feedback.",
   "education": [
     {
       "university": "Saint Louis University",
@@ -26,9 +26,10 @@
       "location": "Hyderabad",
       "dates": "Aug 2020 \u2013 Jul 2023",
       "points": [
-        "Developed and deployed high-reliability Java applications processing data from multiple sources, resulting in a 15% increase in data processing efficiency.",
-        "Designed and implemented RESTful APIs using Spring Boot, improving data exchange between systems by 20%.",
-        "Collaborated with cross-functional teams to deliver full-stack solutions, exceeding project deadlines by an average of 10%."
+        "Developed and maintained key features for a large-scale Java application, resulting in a 15% increase in user engagement.",
+        "Improved application performance by 20% through code optimization and database tuning.",
+        "Collaborated with cross-functional teams to deliver projects on time and within budget.",
+        "Successfully implemented a new microservice architecture, improving scalability and maintainability."
       ]
     },
     {
@@ -37,38 +38,36 @@
       "location": "Pune, Maharastra",
       "dates": "Jan 2020 \u2013 May 2020",
       "points": [
-        "Contributed to the development of a web application using Java and Spring framework, improving user experience metrics by 12%.",
-        "Implemented unit tests using JUnit, increasing code coverage by 10%.",
-        "Assisted senior developers in troubleshooting and resolving production issues, resulting in a 5% reduction in downtime."
+        "i am a good boy"
       ]
     }
   ],
   "projects": [
     {
-      "name": "Secure Satellite Network Simulation",
-      "dates": "Oct 2022 - Apr 2023",
+      "name": "boy",
+      "dates": "man",
       "points": [
-        "Developed a simulation environment for a secure satellite mesh network using C# and Typescript, handling data from hundreds of simulated satellites.",
-        "Implemented robust security measures to protect sensitive data transmitted across the network, achieving 99.99% data integrity.",
-        "Utilized AWS cloud services for scalable and reliable infrastructure, reducing operational costs by 15%."
+        "hello world",
+        "Implemented REST APIs for efficient data exchange between microservices.",
+        "Utilized PostgreSQL database for data storage and retrieval."
       ]
     },
     {
-      "name": "Real-time Earth Observation Dashboard",
-      "dates": "Jan 2023 - Aug 2023",
+      "name": "E-commerce Platform Development",
+      "dates": "Oct 2021 - Apr 2022",
       "points": [
-        "Built a real-time dashboard for visualizing earth observation data using Typescript and a PostgreSQL database.",
-        "Optimized data processing pipelines to handle high volumes of image data, reducing latency by 20%.",
-        "Integrated machine learning models for automated data analysis, improving accuracy by 10%."
+        "Developed a scalable e-commerce platform using Python and Django framework.",
+        "Implemented a robust payment gateway integration using secure APIs.",
+        "Improved site performance by 30% through code optimization and caching strategies."
       ]
     },
     {
-      "name": "Satellite Payload Control System",
-      "dates": "May 2022 - Dec 2022",
+      "name": "Data Analytics Dashboard",
+      "dates": "Jun 2022 - Dec 2022",
       "points": [
-        "Designed and implemented a system for controlling remote sensor payloads on multiple satellites using C# and Kubernetes.",
-        "Developed a user-friendly interface for managing satellite tasks and monitoring data, improving operational efficiency by 12%.",
-        "Integrated the system with existing ground station infrastructure, ensuring seamless communication and data transfer."
+        "Created a data analytics dashboard using Python, Pandas, and NumPy to visualize key business metrics.",
+        "Integrated with AWS cloud services for data storage and processing.",
+        "Implemented interactive visualizations and reports to provide actionable insights to stakeholders."
       ]
     }
   ],
@@ -97,5 +96,5 @@
       ]
     }
   ],
-  "last_updated": "2025-06-23 09:38:25"
+  "last_updated": "2025-06-23 10:09:24"
 }
