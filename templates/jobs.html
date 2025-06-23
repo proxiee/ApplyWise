@@ -77,7 +77,7 @@
                         <th>Date Posted</th>
                         <th>Date Scraped</th>
                         <th>Title & Company</th>
-                        <th>Location</th>
+                        <th>Description</th> <th>Location</th>
                         <th>Applied Date</th>
                         <th>Actions</th>
                     </tr>
@@ -146,9 +146,9 @@
         document.getElementById('resume-creator-content').style.display = 'none';
 
         // Show other content sections
-        document.getElementById('jobs-content').style.display = 'block'; // Or 'table' if it's a table
-        document.getElementById('stats-container').style.display = 'block'; // Or its original display type
-        document.querySelector('.controls-container').style.display = 'block'; // Or its original display type
+        document.getElementById('jobs-content').style.display = 'block';
+        document.getElementById('stats-container').style.display = 'block';
+        document.querySelector('.controls-container').style.display = 'block';
 
         document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
         document.querySelector(`.tab-link[onclick="openTab('${status}')"]`).classList.add('active');
@@ -156,7 +156,7 @@
     }
 
     function openResumeCreatorTab(jobId = null, jobTitle = null, jobDescription = null) {
-        currentTab = 'resume_creator'; // Make sure currentTab is declared globally
+        currentTab = 'resume_creator';
 
         // Hide other content sections
         document.getElementById('jobs-content').style.display = 'none';
@@ -184,7 +184,6 @@
             document.getElementById('resume-job-title-display').textContent = 'None selected. Paste job description below or select a job.';
         }
 
-
         // Clear any previous status and hide PDF preview
         document.getElementById('resume-creator-status').textContent = '';
         document.getElementById('pdf-preview-area').style.display = 'none';
@@ -205,7 +204,7 @@
                 spinner.style.display = 'none';
                 jobCountSpan.textContent = `(${jobs.length} jobs)`;
                 if (!jobs || jobs.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7">No jobs in this category.</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="9">No jobs in this category.</td></tr>'; // Changed colspan to 9
                     return;
                 }
 
@@ -214,9 +213,10 @@
                     row.id = `job-row-${job.id}`;
 
                     let actionButtons = '';
-                    // Add a "Generate Resume" button for 'inbox' and 'want_to_apply' statuses
                     if (status === 'inbox' || status === 'want_to_apply') {
-                        actionButtons += `<button class="action-btn generate-resume" onclick="openResumeCreatorTab(${job.id}, '${job.title.replace(/'/g, "\\'")}', '${job.job_description.replace(/'/g, "\\'").replace(/\n/g, '\\n')}')">Generate Resume/CV</button>`;
+                        // Sanitize job description for use in JS function call
+                        const sanitizedJobDescription = job.job_description.replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/"/g, '&quot;');
+                        actionButtons += `<button class="action-btn generate-resume" onclick="openResumeCreatorTab(${job.id}, '${job.title.replace(/'/g, "\\'")}', '${sanitizedJobDescription}')">Generate Resume/CV</button>`;
                     }
 
                     if (status === 'inbox') {
@@ -236,9 +236,8 @@
                                </select>
                              `;
                     } else {
-                           actionButtons += '<span>-</span>'; // For other statuses like 'interviewing', 'offer', 'rejected'
+                           actionButtons += '<span>-</span>';
                     }
-
 
                     const sourceBadge = job.source === 'LinkedIn' ? '<span class="badge linkedin">LI</span>' : '<span class="badge indeed">IN</span>';
                     let displayDate = 'N/A';
@@ -263,6 +262,11 @@
                         }
                     }
 
+                    // Prepare job description summary (first 2 lines)
+                    const jobDescriptionSummary = job.job_description ?
+                        job.job_description.split('\n').slice(0, 2).join(' ').trim() :
+                        'No description provided.';
+
 
                     row.innerHTML = `
                         <td class="index-col">${index + 1}</td>
@@ -273,8 +277,9 @@
                             <a href="${job.job_url || '#'}" target="_blank">${job.title || 'No Title'}</a>
                             <div class="company-name">${job.company || 'No Company'}</div>
                         </td>
-                        <td>${job.location || 'No Location'}</td>
-                        <td>${applicationDateStr}</td> <td class="actions">${actionButtons}</td>
+                        <td><div class="job-description-summary">${jobDescriptionSummary}</div></td> <td>${job.location || 'No Location'}</td>
+                        <td>${applicationDateStr}</td>
+                        <td class="actions">${actionButtons}</td>
                     `;
                     tbody.appendChild(row);
                 });
@@ -282,7 +287,7 @@
             .catch(err => {
                 spinner.style.display = 'none';
                 console.error('Error fetching jobs:', err);
-                tbody.innerHTML = '<tr><td colspan="7">Error fetching jobs.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="9">Error fetching jobs.</td></tr>'; // Changed colspan to 9
             });
     }
 
@@ -309,10 +314,8 @@
         const source = document.getElementById('source-select').value;
         const timeValue = parseInt(document.getElementById('time-value').value, 10);
         const timeUnit = timeUnitSelect.value;
-        // --- ADDITIONS HERE ---
-        const location = document.getElementById('scrape-location').value; // Get location input value
-        const keywords = document.getElementById('scrape-keywords').value; // Get keywords input value
-        // --- END ADDITIONS ---
+        const location = document.getElementById('scrape-location').value;
+        const keywords = document.getElementById('scrape-keywords').value;
 
         let daysToScrape = timeValue;
         if (timeUnit === 'weeks') daysToScrape *= 7;
@@ -325,9 +328,7 @@
         fetch('/scrape', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            // --- MODIFIED BODY HERE ---
             body: JSON.stringify({ source, days: daysToScrape, management_option: managementOption, location: location, keywords: keywords })
-            // --- END MODIFIED BODY ---
         })
         .catch(err => {
             document.getElementById('scrape-status').textContent = `Error: ${err.message}`;
@@ -369,7 +370,7 @@
             const pdfPreviewArea = document.getElementById('pdf-preview-area');
             const resumeIframe = document.getElementById('resume-preview-iframe');
             const cvIframe = document.getElementById('cv-preview-iframe');
-            const jobId = document.getElementById('resume-job-id').value; // Get the job ID
+            const jobId = document.getElementById('resume-job-id').value;
 
             if (!jobDesc.trim()) {
                 statusElement.textContent = 'Please paste a job description first.';
@@ -384,7 +385,7 @@
 
             const payload = { job_description: jobDesc };
             if (jobId) {
-                payload.job_id = parseInt(jobId, 10); // Ensure job_id is an integer if it exists
+                payload.job_id = parseInt(jobId, 10);
             }
 
             fetch('/generate_documents', {
@@ -396,19 +397,16 @@
             })
             .then(response => {
                 if (!response.ok) {
-                    // Try to get detailed error from backend if it sends JSON error
                     return response.json()
                         .then(errData => {
-                            // Include details if available
                             let errorMessage = errData.error || `Server responded with status: ${response.status}`;
                             if (errData.details) {
                                 errorMessage += ` - ${errData.details}`;
                             }
                             throw new Error(errorMessage);
                         })
-                        .catch(parsingError => { // Fallback if backend error isn't JSON or parsing fails
+                        .catch(parsingError => {
                             console.error('Error parsing JSON error response:', parsingError);
-                            // Try to get text response as a fallback
                             return response.text().then(textData => {
                                 throw new Error(textData || `Server responded with status: ${response.status}`);
                             });
@@ -420,7 +418,7 @@
                 if (data.success) {
                     resumeIframe.src = data.resume_pdf_url;
                     cvIframe.src = data.cover_letter_pdf_url;
-                    pdfPreviewArea.style.display = 'block'; 
+                    pdfPreviewArea.style.display = 'block';
                     statusElement.textContent = 'Documents generated successfully!';
                     sessionStorage.setItem('dashboardNeedsRefresh', 'true');
                 } else {

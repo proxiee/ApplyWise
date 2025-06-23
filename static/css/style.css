@@ -309,6 +309,22 @@ body {
     margin-top: 3px;
 }
 
+/* NEW: Job Description Summary Styling */
+.job-description-summary {
+    font-size: 0.85em;
+    color: #666;
+    max-height: 2.8em; /* Approximate 2 lines (1.4em line-height * 2) */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    word-wrap: break-word; /* Ensure long words wrap */
+    line-height: 1.4em; /* Define line height for consistent 2-line display */
+    margin-top: 5px; /* Small spacing from title/company */
+}
+
+
 /* Source Badges */
 .badge {
     display: inline-block;
@@ -444,7 +460,7 @@ select:focus {
 }
 
 #job-description-input {
-    width: calc(100% - 20px); /* Adjust for padding */
+    width: calc(100% - 20px);
     min-height: 200px;
     padding: 10px;
     border: 1px solid var(--border-color);
@@ -463,7 +479,7 @@ select:focus {
 }
 
 #generate-resume-cv-button {
-    background-color: #28a745; /* Green for generate */
+    background-color: #28a745;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -489,7 +505,7 @@ select:focus {
 #resume-creator-status {
     margin-top: 15px;
     font-size: 0.95em;
-    color: #D32F2F; /* Error color */
+    color: #D32F2F;
     font-weight: 500;
 }
 
@@ -503,18 +519,18 @@ select:focus {
 #pdf-preview-area > div {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Space between iframes */
-    height: 70vh; /* Make preview area taller */
-    max-height: 800px; /* Max height for iframe container */
+    gap: 20px;
+    height: 70vh;
+    max-height: 800px;
 }
 
 #resume-preview-iframe,
 #cv-preview-iframe {
-    width: 50%; /* Each takes half */
+    width: 50%;
     height: 100%;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    background-color: #f0f0f0; /* Light background while loading/empty */
+    background-color: #f0f0f0;
     box-shadow: 0 5px 15px var(--shadow-light);
 }
 
@@ -533,7 +549,7 @@ select:focus {
         font-size: 1.8em;
     }
     .controls-grid {
-        grid-template-columns: 1fr; /* Stack controls vertically */
+        grid-template-columns: 1fr;
     }
     .tab-container {
         flex-direction: column;
@@ -549,7 +565,7 @@ select:focus {
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     #jobs-table thead {
-        display: none; /* Hide header on small screens */
+        display: none;
     }
     #jobs-table tbody tr {
         display: block;
@@ -582,7 +598,7 @@ select:focus {
         border-bottom: none;
     }
     .index-col {
-        display: none; /* Hide index column in mobile rows */
+        display: none;
     }
     /* Add data-label attributes to your HTML <td> elements for this to work */
     /* Example: <td data-label="Source">{{ job.source }}</td> */
@@ -593,15 +609,15 @@ select:focus {
     }
     .action-btn {
         margin-right: 0 !important;
-        width: 100%; /* Make buttons full width */
+        width: 100%;
     }
     #pdf-preview-area > div {
-        flex-direction: column; /* Stack iframes vertically */
+        flex-direction: column;
         height: auto;
     }
     #resume-preview-iframe,
     #cv-preview-iframe {
         width: 100%;
-        height: 400px; /* Fixed height for stacked iframes */
+        height: 400px;
     }
 }
