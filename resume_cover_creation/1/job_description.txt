@@ -1,42 +1,54 @@
-Experience Remote done Right. Over 20 years of remote experience, all 600+ staff are 100% remote and we still grow vibrant relationships, provide exceptional opportunities for career growth while working with stellar clients on ambitious projects.
-What we're working on:
-Enterprise companies turn to us to help them launch innovative digital products that interact with hundreds of millions of customers, transactions and data points. The problems we solve every day are real and require creativity, grit and determination. We are building a culture that challenges norms while fostering experimentation and personal growth. In order to grasp the scale of problems we face, ideally, you have some exposure to Logistics, FinTech, Transportation, Insurance, Media or other complex multifactor industries.
-Requirements:
-- 7+ years experience in a senior developer role; ideally, you have delivered business-critical software to large enterprises
-- 4+ years hands-on experience with the Django or Flask framework
-- Experience with Power BI, PowerApps, and Azure
-- Ability to craft new API specifications and develop to provided specifications
-- Ability to think about long-term maintenance when creating or making changes
-- English fluency, verbal and written
-- Professional, empathic, team player
-- Problem solver, proactive, go-getter
-Why Lumenalta is an amazing place to work at:
-At Lumenalta, you can expect that you will:
-- Be 100% dedicated to one project at a time so that you can innovate and grow.
-- Be a part of a team of talented and friendly senior-level developers.
-- Work on projects that allow you to use leading tech.
-The result? We produce meaningful outcomes for our clients that break barriers in their industries.
-The Job is 100% remote; please ensure you have a comfortable office setup at your desired work location.
-Lumenalta is committed to hiring exceptional talent from a wide variety of diverse backgrounds. If you share our values and enthusiasm for digital transformation, we encourage you to apply.
-What's it like to work at Lumenalta?
+Make your mark at Comcast -- a Fortune 30 global media and technology company. From the connectivity and platforms we provide, to the content and experiences we create, we reach hundreds of millions of customers, viewers, and guests worldwide. Become part of our award-winning technology team that turns big ideas into cutting-edge products, platforms, and solutions that our customers love. We create space to innovate, and we recognize, reward, and invest in your ideas, while ensuring you can proudly bring your authentic self to the workplace. Join us. You’ll do the best work of your career right here at Comcast. (In most cases, Comcast prefers to have employees on-site collaborating unless the team has been designated as virtual due to the nature of their work. If a position is listed with both office locations and virtual offerings, Comcast may be willing to consider candidates who live greater than 100 miles from the office for the remote option.)
+Job Summary
+Responsible for planning and designing new software and SaaS applications. Analyzes, tests and assists with the integration of new applications. Oversees the documentation of all development activity. Assists with tracking performance metrics. Integrates knowledge of business and functional priorities. Acts as a key contributor in a complex and crucial environment. May lead projects and shares expertise. Reporting to the Cyber Analytics and Data Science Team Manager, you will be primarily responsible for developing multiple analytical microservices for DataBee, a SaaS security, risk and compliance platform that was developed internally and used inside Comcast’s SOC, and is now being made available for use by the Fortune 500 CISO customer base. You will work in a high pace, collaborative engineering environment to deliver value for DataBee customers. You also will be influential in creating a startup culture for the DataBee business unit, enabling and empowering your teammates to work in an agile fashion.
+Job Description
+Core Responsibilities
+- Work with engineering and product teams to understand new requirements.
+- Refine and estimate new deliverables.
+- Implement new services and automation tasks
+- Develops software programs, algorithms and automated processes to cleanse, integrate and evaluate large cyber datasets from multiple disparate sources.
+- Uses analytical rigor and statistical methods to analyze large amounts of data, extracting actionable insights using advanced techniques such as machine learning, large-language models, generative AI and statistical analysis
+- Understand platform usage and assist with production deployments and customer issue triage.
+- Develop security features as part of the development and embrace the DevSecOps culture.
+- Use and improve on tools to identify and mitigate production incidents.
+- Create re-usable software components or libraries that can be leveraged by multiple teams, where needed.
+- Create self-contained microservices or application programming interfaces to support the business logic.
+- Use content management systems as applicable and global design patterns and defined coding standards and practices established by the team.
+- Consistent exercise of independent judgment and discretion in matters of significance.
+- Other duties and responsibilities as assigned.
+Required Skills
+- 5 years of experience in Python development, with a focus on building scalable, maintainable code for data-driven applications.
+- Demonstrated expertise in developing and implementing microservices containing complex analytical logic.
+- Demonstrated expertise in working with cybersecurity data sets and applying machine learning techniques to aid in data engineering, security compliance and/or threat hunting.
+- Proficient in Agile Scrum development environments, contributing effectively to cross-functional teams.
+- Experience working with GitHub and Jira or similar technologies.
+- Skilled in using Docker for containerization and deployment.
+- Hands-on experience developing and maintaining SaaS products.
+Employees At All Levels Are Expected To
+- Understand our Operating Principles; make them the guidelines for how you do your job.
+- Own the customer experience - think and act in ways that put our customers first, give them seamless digital options at every touchpoint, and make them promoters of our products and services.
+- Know your stuff - be enthusiastic learners, users and advocates of our game-changing technology, products and services, especially our digital tools and experiences.
+- Win as a team - make big things happen by working together and being open to new ideas.
+- Be an active part of the Net Promoter System - a way of working that brings more employee and customer feedback into the company - by joining huddles, making call backs and helping us elevate opportunities to do better for our customers.
+- Drive results and growth.
+- Respect and promote inclusion & diversity.
+- Do what's right for each other, our customers, investors and our communities.
+Disclaimer
+- This information has been designed to indicate the general nature and level of work performed by employees in this role. It is not designed to contain or be interpreted as a comprehensive inventory of all duties, responsibilities and qualifications.
+Comcast is proud to be an equal opportunity workplace. We will consider all qualified applicants for employment without regard to race, color, religion, age, sex, sexual orientation, gender identity, national origin, disability, veteran status, genetic information, or any other basis protected by applicable law. Comcast will consider for employment applicants with arrest or conviction records in accordance with the requirements of applicable law, including the San Francisco Fair Chance Ordinance, the Los Angeles Fair Chance Initiative for Hiring Ordinance, the Los Angeles County Fair Chance Ordinance for Employers and the California Fair Chance Act. Please note that federal state, or local laws and regulations may restrict or prohibit Comcast from hiring individuals convicted of certain crimes. Additionally, an applicant’s criminal history may have a direct, adverse, and negative relationship on the job duties of this position, which may result in the withdrawal of a conditional offer of employment.
+Skills
+Software Engineering; SaaS Development; Python (Programming Language); Agile Methodology
 Salary
-Salary range: $55,000 - $100,000 annually, with final compensation determined by your qualifications, expertise, experience, and the role's scope.
-In addition to competitive pay, we offer a variety of benefits to support your professional and personal growth, including:
-- Flexible working hours in a remote environment.
-- Health insurance (medical and dental) for W2 Employees
-- 401K Contribution
-- A professional development fund to enhance your skills and knowledge.
-- 15 days of paid time off annually.
-- Access to soft-skill development courses to further your career.
-This is a 
-full-time position
- requiring a minimum of 
-40 hours per week
-, Monday through Friday.
-At 
-Lumenalta
-, we are committed to creating an environment that prioritizes growth, work-life balance, and the diverse needs of our team members.
-Ongoing recruitment – no set deadline.        
+National Pay Range: $81,865.19 USD-$191,871.54 USD
+Comcast intends to offer the selected candidate base pay within this range, dependent on job-related, non-discriminatory factors such as experience. The application window is 30 days from the date job is posted, unless the number of applicants requires it to close sooner or later.
+The application window is 30 days from the date job is posted, unless the number of applicants requires it to close sooner or later.
+Base pay is one part of the Total Rewards that Comcast provides to compensate and recognize employees for their work. Most sales positions are eligible for a Commission under the terms of an applicable plan, while most non-sales positions are eligible for a Bonus. Additionally, Comcast provides best-in-class Benefits to eligible employees. We believe that benefits should connect you to the support you need when it matters most, and should help you care for those who matter most. That’s why we provide an array of options, expert guidance and always-on tools, that are personalized to meet the needs of your reality – to help support you physically, financially and emotionally through the big milestones and in your everyday life. Please visit the compensation and benefits summary  on our careers site for more details.
+Education
+Bachelor's Degree
+While possessing the stated degree is preferred, Comcast also may consider applicants who hold some combination of coursework and experience, or who have extensive related professional experience.
+Relevant Work Experience
+2-5 Years
+                
             
                             
             

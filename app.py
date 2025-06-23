@@ -226,14 +226,14 @@ def commit_jobs_to_db(conn, df, history_id, user_id):
 def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scrape, management_option, location, keywords, user_id):
     global scraping_status
     scraping_status['is_running'] = True
-    print(f"\n--- Initiating scraping task for source: {source} for User ID: {user_id} ---") # 
-    try: # 
+    print(f"\n--- Initiating scraping task for source: {source} for User ID: {user_id} ---")
+    try:
         conn = get_db_connection()
 
         if management_option == 'archive':
             scraping_status['message'] = "Archiving old jobs..."
             conn.execute("UPDATE jobs SET status = 'archived' WHERE status = 'inbox' AND user_id = ?", (user_id,))
-            conn.commit() # 
+            conn.commit()
         elif management_option == 'delete':
             scraping_status['message'] = "Deleting old jobs..."
             conn.execute("DELETE FROM jobs WHERE status = 'inbox' AND user_id = ?", (user_id,))
@@ -241,28 +241,52 @@ def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scr
 
         scraping_status['message'] = "Creating scrape history record..."
         history_cursor = conn.cursor()
-        history_cursor.execute( # 
-            "INSERT INTO scrape_history (source_filter, time_period_scraped, new_jobs_found, user_id) VALUES (?, ?, ?, ?)", # 
-            (source, time_period_str, 0, user_id) # 
-        ) # 
+        history_cursor.execute(
+            "INSERT INTO scrape_history (source_filter, time_period_scraped, new_jobs_found, user_id) VALUES (?, ?, ?, ?)",
+            (source, time_period_str, 0, user_id)
+        )
         history_id = history_cursor.lastrowid
         conn.commit()
 
-        cursor = conn.cursor() # 
-        cursor.execute(f"SELECT job_url FROM jobs WHERE user_id = ?", (user_id,)) # 
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT job_url FROM jobs WHERE user_id = ?", (user_id,))
         existing_urls = {row[0] for row in cursor.fetchall()}
         print(f"Fetched {len(existing_urls)} existing URLs from DB for user {user_id}.")
 
         local_config = copy.deepcopy(config)
 
-        # (The rest of the scraper-calling logic remains the same) 
+        # --- FIX: ADD THIS LOGIC BLOCK BACK IN ---
+        # For LinkedIn
+        if source in ['linkedin', 'all']:
+            if 'linkedin_settings' in local_config:
+                if 'search_queries' not in local_config['linkedin_settings'] or not local_config['linkedin_settings']['search_queries']:
+                    local_config['linkedin_settings']['search_queries'] = [{}]
+                if keywords:
+                    local_config['linkedin_settings']['search_queries'][0]['keywords'] = keywords
+                if location:
+                    local_config['linkedin_settings']['search_queries'][0]['location'] = location
+                local_config['linkedin_settings']['timespan'] = f"r{timespan_seconds}"
+                local_config['linkedin_settings']['days_to_scrape'] = days_to_scrape
+                print(f"LinkedIn settings updated for scrape: {local_config['linkedin_settings']}")
+
+        # For Indeed
+        if source in ['indeed', 'all']:
+            if 'indeed_settings' in local_config and 'search_config' in local_config['indeed_settings']:
+                if keywords:
+                    local_config['indeed_settings']['search_config']['keywords'] = [k.strip() for k in keywords.split(',') if k.strip()]
+                if location:
+                    local_config['indeed_settings']['search_config']['city'] = location
+                local_config['indeed_settings']['search_config']['max_listing_days'] = days_to_scrape
+                print(f"Indeed settings updated for scrape: {local_config['indeed_settings']}")
+        # --- END OF FIX ---
+
         all_new_jobs_df_list = []
 
         if source in ['linkedin', 'all']:
             scraping_status['message'] = "Scraping LinkedIn..."
             linkedin_df = scrape_linkedin(local_config, existing_urls)
-            if not linkedin_df.empty: # 
-                all_new_jobs_df_list.append(linkedin_df) # 
+            if not linkedin_df.empty:
+                all_new_jobs_df_list.append(linkedin_df)
 
         if source in ['indeed', 'all']:
             scraping_status['message'] = "Scraping Indeed..."
@@ -270,18 +294,18 @@ def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scr
             if not indeed_df.empty:
                 all_new_jobs_df_list.append(indeed_df)
 
-        num_added = 0 # 
-        if all_new_jobs_df_list: # 
+        num_added = 0
+        if all_new_jobs_df_list:
             scraping_status['message'] = "Combining and saving new jobs..."
             final_df = pd.concat(all_new_jobs_df_list, ignore_index=True).drop_duplicates(subset=['job_url'])
             num_added = commit_jobs_to_db(conn, final_df, history_id, user_id)
         else:
-            print("No jobs found by any scraper to combine and save.") # 
+            print("No jobs found by any scraper to combine and save.")
 
-        conn.execute("UPDATE scrape_history SET new_jobs_found = ? WHERE id = ?", (num_added, history_id)) # 
+        conn.execute("UPDATE scrape_history SET new_jobs_found = ? WHERE id = ?", (num_added, history_id))
         conn.commit()
 
-        scraping_status['message'] = f"Scraping complete. Added {num_added} new jobs." # 
+        scraping_status['message'] = f"Scraping complete. Added {num_added} new jobs."
         conn.close()
         time.sleep(3)
 
@@ -294,7 +318,7 @@ def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scr
 
     finally:
         scraping_status['is_running'] = False
-        scraping_status['message'] = "Idle" # 
+        scraping_status['message'] = "Idle"
         print("Scraping task finished (idle).")
 
 # --- FLASK ROUTES ---
@@ -599,52 +623,61 @@ def get_motivational_quote():
 @login_required
 def generate_documents():
     try:
-        data = request.get_json() # 
+        data = request.get_json()
         job_description = data.get('job_description')
         job_id = data.get('job_id', None)
 
-        if not job_description: # 
+        if not job_description:
             return jsonify({"error": "Job description is required"}), 400
 
-        user_id_str = str(current_user.id) # 
+        user_id_str = str(current_user.id)
         user_generation_folder = os.path.join(RESUME_CREATION_FOLDER, user_id_str)
         if not os.path.exists(user_generation_folder):
             os.makedirs(user_generation_folder)
-
+        
         job_desc_filename = "job_description.txt"
         job_desc_file_path = os.path.join(user_generation_folder, job_desc_filename)
 
         with open(job_desc_file_path, 'w', encoding='utf-8') as f:
             f.write(job_description)
 
-        cmd = [ # 
-            sys.executable, # 
-            os.path.join('..', 'create_resume.py'), # 
-            job_desc_filename, # 
-            '--user-id', user_id_str # 
+        resume_script_path = os.path.join(RESUME_CREATION_FOLDER, 'create_resume.py')
+        
+        cmd = [
+            sys.executable, resume_script_path,
+            job_desc_file_path,
+            '--user-id', user_id_str,
+            '--output-dir', user_generation_folder
         ]
-
-        app.logger.info(f"Running command: {' '.join(cmd)} in CWD: {user_generation_folder}") # 
+        
+        app.logger.info(f"Running command: {' '.join(cmd)}")
 
         process = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            cwd=user_generation_folder,
-            encoding='utf-8', # 
-            errors='replace' # 
+            cmd, capture_output=True, text=True,
+            encoding='utf-8', errors='replace'
         )
 
         if process.returncode != 0:
-            app.logger.error(f"Error generating documents. Stderr: {process.stderr}") # 
-            return jsonify({
-                "error": "Failed to generate documents",
-                "details": process.stderr if process.stderr else "Unknown error."
-            }), 500
+            app.logger.error(f"Error generating documents. Stderr: {process.stderr}")
+            app.logger.error(f"Stdout: {process.stdout}")
+            return jsonify({"error": "Failed to generate documents", "details": process.stderr or process.stdout}), 500
 
-        app.logger.info(f"Document generation script stdout: {process.stdout}")
+        # --- THIS IS THE FIX: Read the exact filenames from the script's output ---
+        stdout = process.stdout
+        app.logger.info(f"Document generation script stdout: {stdout}")
 
-        conn = get_db_connection() # 
+        resume_pdf_match = re.search(r"Successfully created resume PDF: (.*\.pdf)", stdout)
+        cover_letter_pdf_match = re.search(r"Successfully created cover letter PDF: (.*\.pdf)", stdout)
+
+        if not resume_pdf_match or not cover_letter_pdf_match:
+            app.logger.error("Could not find generated filenames in script output.")
+            return jsonify({"error": "Could not determine generated filenames."}), 500
+
+        resume_filename = os.path.basename(resume_pdf_match.group(1))
+        cover_letter_filename = os.path.basename(cover_letter_pdf_match.group(1))
+        
+        # Log the generation to the database
+        conn = get_db_connection()
         try:
             conn.execute("INSERT INTO resume_generations (job_id, user_id) VALUES (?, ?)", (job_id, current_user.id))
             conn.execute("INSERT INTO cover_letter_generations (job_id, user_id) VALUES (?, ?)", (job_id, current_user.id))
@@ -652,18 +685,11 @@ def generate_documents():
         finally:
             conn.close()
 
-        match = re.search(r"Successfully created\s+([^\s]+\.pdf)", process.stdout) # 
-        if match:
-            resume_pdf_filename = match.group(1)
-            cover_letter_pdf_filename = resume_pdf_filename.replace('.pdf', '_cover_letter.pdf')
-
-            return jsonify({
-                 "success": True, # 
-                "resume_pdf_url": f"/serve_document/{user_id_str}/{resume_pdf_filename}",
-                "cover_letter_pdf_url": f"/serve_document/{user_id_str}/{cover_letter_pdf_filename}"
-            })
-        else:
-            return jsonify({"error": "Could not determine generated filename from script output."}), 500 # 
+        return jsonify({
+            "success": True,
+            "resume_pdf_url": f"/serve_document/{user_id_str}/{resume_filename}",
+            "cover_letter_pdf_url": f"/serve_document/{user_id_str}/{cover_letter_filename}"
+        })
 
     except Exception as e:
         app.logger.exception("Error in /generate_documents")

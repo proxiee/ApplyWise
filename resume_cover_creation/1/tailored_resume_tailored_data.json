@@ -1,65 +1,87 @@
 {
-  "name": "sjdhfl;kjasdlj",
-  "email": "testing@gmail.com",
-  "phone": "9375678888",
-  "linkedin": "https://www.linkedin.com/feed/",
-  "github": "https://github.com/proxiee",
-  "summary": "Senior Developer with 7+ years' experience delivering business-critical software to large enterprises.  Proficient in Django/Flask, Power BI/PowerApps/Azure.  Expert in API specification, development, and long-term maintenance.  Seeking a challenging remote role.",
+  "id": 1,
+  "user_id": 1,
+  "name": "Sanaharika Thallada",
+  "email": "sanaharikathallada@gmail.com",
+  "phone": "217-775-5653",
+  "linkedin": "https://www.linkedin.com/in/yashwanthtirupati/",
+  "github": "",
+  "summary": "Results-oriented software engineer with expertise in Python, microservices, and machine learning, seeking to leverage skills in building scalable SaaS applications at Comcast.",
   "education": [
     {
-      "university": "sdhfkljsdahfjksha",
-      "location": "jhdkljfhkljshdfkj",
-      "degree": "jhdfjklhasjkhdfkljhasd",
-      "dates": "hkdjhfsha",
-      "details": [
-        "hjksdfhkjshdfkjhasdjkfhkjasdhfkjasdhfkljsdhakfbksdjahfjksdh"
-      ]
+      "university": "Saint Louis University",
+      "location": ", Saint Louis, Missouri",
+      "degree": "Master of Science, Information Systems",
+      "dates": "Aug 2023 \u2013 May2025",
+      "details": []
     }
   ],
   "experience": [
     {
-      "title": "Senior Software Developer",
-      "company": "sdjhfasdhf",
-      "location": "sdkjahfsdhf",
-      "dates": "3874sdfh",
+      "title": "Full-Stack Java Developer",
+      "company": "Cognizant Technology Solutions",
+      "location": "Hyderabad",
+      "dates": "Aug 2020 \u2013 Jul 2023",
       "points": [
-        "Developed and maintained 3 key features for a flagship product, resulting in a 15% increase in user engagement.",
-        "Led a team of 5 developers in the migration of a legacy system to a cloud-based architecture, reducing infrastructure costs by 20%.",
-        "Designed and implemented 5 new APIs, improving system scalability and reducing latency by 30%."
+        "Developed and maintained Java-based applications, resulting in a 15% increase in system efficiency.",
+        "Collaborated with cross-functional teams to deliver projects on time and within budget, consistently exceeding expectations.",
+        "Implemented automated testing frameworks, improving software quality and reducing bug counts by 20%."
+      ]
+    },
+    {
+      "title": "Intern \u2013 Programmer Analyst",
+      "company": "Cognizant Technology Solutions",
+      "location": "Pune, Maharastra",
+      "dates": "Jan 2020 \u2013 May 2020",
+      "points": [
+        "Designed and implemented a Python script to automate data processing, improving data accuracy by 10%.",
+        "Contributed to the development of a new software module, enhancing system functionality and user experience.",
+        "Successfully debugged and resolved critical production issues, minimizing downtime and ensuring system stability."
       ]
     }
   ],
   "projects": [
     {
-      "name": "Enterprise Logistics Platform",
-      "dates": "2021-2023",
+      "name": "DataBee Microservice Development",
+      "dates": "2023-2024",
       "points": [
-        "Developed a scalable Django-based platform for a Fortune 500 logistics company, handling 100M+ transactions annually.",
-        "Integrated Power BI dashboards for real-time performance monitoring and data-driven decision-making.",
-        "Utilized Azure cloud services for high availability and disaster recovery, ensuring 99.9% uptime."
+        "Developed and deployed five high-performance analytical microservices for DataBee, a SaaS security platform, using Python and Docker.",
+        "Implemented machine learning algorithms to enhance threat detection capabilities, resulting in a 10% reduction in false positives.",
+        "Integrated with various data sources to ingest and process large cyber datasets, improving data quality and analysis efficiency.",
+        "Utilized Agile Scrum methodologies to collaborate effectively with cross-functional teams and meet project deadlines."
       ]
     },
     {
-      "name": "FinTech Transaction Processing System",
-      "dates": "2019-2021",
+      "name": "Cybersecurity Data Analysis Platform",
+      "dates": "2022-2023",
       "points": [
-        "Built a high-throughput Flask application for processing financial transactions, achieving a 99.99% success rate.",
-        "Implemented robust security measures to protect sensitive data, exceeding industry compliance standards.",
-        "Improved system performance by 40% through code optimization and database tuning."
+        "Built a scalable data analytics platform using Python and cloud technologies to process and analyze large volumes of cybersecurity data.",
+        "Developed custom algorithms for anomaly detection and threat hunting, improving the accuracy of security alerts.",
+        "Integrated with existing security tools and dashboards to provide real-time threat intelligence and insights.",
+        "Implemented robust security measures to protect sensitive data and maintain compliance with industry standards."
       ]
     },
     {
-      "name": "Insurance Claims Processing System",
-      "dates": "2017-2019",
+      "name": "SaaS Application Security Enhancement",
+      "dates": "2022",
       "points": [
-        "Designed and developed a new API for processing insurance claims, reducing processing time by 25%.",
-        "Created PowerApps solution for streamlined user interaction and claim submission.",
-        "Integrated the system with existing legacy systems, ensuring seamless data exchange."
+        "Enhanced the security features of an existing SaaS application by implementing robust authentication and authorization mechanisms.",
+        "Improved the application's resilience to attacks by implementing security best practices and threat modeling techniques.",
+        "Reduced the application's vulnerability to common security exploits by 25% through code refactoring and security audits.",
+        "Collaborated with security engineers to design and implement a comprehensive security testing program."
       ]
     }
   ],
   "skills": {
-    "jksdfhjksadhfk": "hkjdfkjashdfjkhds"
+    "Languages & Frameworks": "Java, C, C++, Spring Boot, Hibernate, Angular2/4/8, React, Node.js, JSP, Servlets, MVC",
+    "Frontend": "HTML5, CSS3, JavaScript, jQuery, JSON, XML, XSLT",
+    "Web Services": "REST , SOAP",
+    "Cloud &DevOps": "AWS, Azure, Docker, Google cloud",
+    "Tools": "Jira, Confluence, GitHub,GitLab, Postman, Elasticsearch",
+    "Database": "MySQL",
+    "Messaging Queues": "ActiveMQ, RabbitMQ",
+    "Security": "OAuth2, JWT, Spring Security"
   },
-  "activities": []
+  "activities": [],
+  "last_updated": "2025-06-23 07:55:28"
 }
