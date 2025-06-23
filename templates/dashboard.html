@@ -3,92 +3,74 @@
 {% block title %}Job Application Dashboard{% endblock %}
 
 {% block content %}
-<div class="container-fluid" id="dashboard-container" data-daily-goal="{{ daily_goal }}" data-weekly-goal="{{ weekly_goal }}">
+<div class="container-fluid" id="dashboard-container">
     <h1 class="mb-4 text-center">Job Application Dashboard</h1>
 
+    <!-- Motivational Quote -->
     <div id="motivationalQuote" class="mb-4 alert alert-info text-center" role="alert">
         Loading motivational quote...
     </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 mb-4 text-center">
+    <!-- KPI Cards Row -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mb-4 text-center">
+        <!-- Jobs Scraped (24h) -->
         <div class="col">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Jobs Scraped (24h)</h5>
-                    <p class="card-text fs-2 fw-bold text-primary" id="jobsScraped24h">0</p>
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-uppercase text-muted small">Jobs Scraped (24h)</h5>
+                    <p class="card-text fs-2 fw-bold text-primary mb-0" id="jobsScraped24h">0</p>
                 </div>
             </div>
         </div>
+        <!-- Pending Applications -->
         <div class="col">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Pending Apps</h5>
-                    <p class="card-text fs-2 fw-bold text-warning" id="jobsToBeApplied">0</p>
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-uppercase text-muted small">Pending Apps</h5>
+                    <p class="card-text fs-2 fw-bold text-warning mb-0" id="jobsToBeApplied">0</p>
                 </div>
             </div>
         </div>
+        <!-- Total Applications -->
         <div class="col">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Apps Today</h5>
-                    <p class="card-text fs-2 fw-bold text-info" id="applicationsToday">0</p>
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-uppercase text-muted small">Total Apps</h5>
+                    <p class="card-text fs-2 fw-bold text-secondary mb-0" id="totalApplications">0</p>
                 </div>
             </div>
         </div>
+        <!-- Total Resumes/CVs Generated -->
         <div class="col">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Apps This Week</h5>
-                    <p class="card-text fs-2 fw-bold text-success" id="applicationsThisWeek">0</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Total Apps</h5>
-                    <p class="card-text fs-2 fw-bold text-secondary" id="totalApplications">0</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mb-4">
-        <div class="col-md-6 mb-3 mb-md-0">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Daily Application Goal (<span id="appliedTodayCount">0</span> / {{ daily_goal }})</h5>
-                    <div class="progress" style="height: 30px;">
-                        <div id="dailyGoalProgress" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ daily_goal }}">0%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Weekly Application Goal (<span id="appliedThisWeekCount">0</span> / {{ weekly_goal }})</h5>
-                    <div class="progress" style="height: 30px;">
-                        <div id="weeklyGoalProgress" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ weekly_goal }}">0%</div>
-                    </div>
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-uppercase text-muted small">Total Resumes/CVs</h5>
+                    <p class="card-text fs-2 fw-bold text-success mb-0" id="totalDocumentsGenerated">0</p>
                 </div>
             </div>
         </div>
     </div>
     
+    <!-- Charts Row -->
     <div class="row g-4">
+        <!-- Application Status Chart -->
         <div class="col-lg-4">
             <div class="card h-100 shadow-sm">
+                <div class="card-header fw-bold">Application Status Breakdown</div>
                 <div class="card-body"><canvas id="applicationStatusChart"></canvas></div>
             </div>
         </div>
+        <!-- Applications by Source Chart -->
         <div class="col-lg-4">
             <div class="card h-100 shadow-sm">
+                <div class="card-header fw-bold">Applications by Source</div>
                 <div class="card-body"><canvas id="applicationsBySourceChart"></canvas></div>
             </div>
         </div>
+        <!-- Applications Over Time Chart -->
         <div class="col-lg-4">
             <div class="card h-100 shadow-sm">
+                <div class="card-header fw-bold">Applications (Last 7 Days)</div>
                 <div class="card-body"><canvas id="applicationsOverTimeChart"></canvas></div>
             </div>
         </div>
@@ -99,133 +81,8 @@
 
 {% block scripts %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Chart instances
-    let statusChart, sourceChart, timeChart;
-
-    const dashboardContainer = document.getElementById('dashboard-container');
-    const dailyGoal = parseInt(dashboardContainer.dataset.dailyGoal, 10) || 1;
-    const weeklyGoal = parseInt(dashboardContainer.dataset.weeklyGoal, 10) || 1;
-
-    // A more extensive color palette
-    const colorPalette = [
-        '#0d6efd', '#6c757d', '#198754', '#dc3545', '#ffc107', '#0dcaf0',
-        '#d63384', '#fd7e14', '#20c997', '#6610f2'
-    ];
-    
-    function createOrUpdateChart(chartInstance, context, type, data, options) {
-        if (chartInstance) {
-            chartInstance.destroy();
-        }
-        return new Chart(context, { type, data, options });
-    }
-    
-    async function fetchDashboardData() {
-        try {
-            // Fetch stats and quote in parallel
-            const [statsResponse, quoteResponse] = await Promise.all([
-                fetch('/api/dashboard_stats'),
-                fetch('/api/quote')
-            ]);
-
-            if (!statsResponse.ok || !quoteResponse.ok) {
-                 throw new Error('Network response was not ok.');
-            }
-
-            const stats = await statsResponse.json();
-            const quoteData = await quoteResponse.json();
-
-            // === Update UI ===
-
-            // Motivational Quote
-            document.getElementById('motivationalQuote').innerHTML = `"${quoteData.quote}" <br><em>- ${quoteData.author}</em>`;
-
-            // KPIs
-            document.getElementById('jobsScraped24h').textContent = stats.jobs_scraped_last_24_hours || 0;
-            const pendingApps = (stats.application_status_breakdown?.inbox || 0) + (stats.application_status_breakdown?.want_to_apply || 0);
-            document.getElementById('jobsToBeApplied').textContent = pendingApps;
-            document.getElementById('applicationsToday').textContent = stats.applications_today || 0;
-            document.getElementById('applicationsThisWeek').textContent = stats.applications_this_week || 0;
-            document.getElementById('totalApplications').textContent = stats.total_applications || 0;
-
-            // Progress Bars
-            const appsToday = stats.applications_today || 0;
-            const appsThisWeek = stats.applications_this_week || 0;
-            const dailyProgress = Math.min(100, (appsToday / dailyGoal) * 100) || 0;
-            const weeklyProgress = Math.min(100, (appsThisWeek / weeklyGoal) * 100) || 0;
-            
-            document.getElementById('appliedTodayCount').textContent = appsToday;
-            document.getElementById('appliedThisWeekCount').textContent = appsThisWeek;
-            
-            const dailyProgressBar = document.getElementById('dailyGoalProgress');
-            dailyProgressBar.style.width = dailyProgress + '%';
-            dailyProgressBar.setAttribute('aria-valuenow', dailyProgress);
-            dailyProgressBar.textContent = Math.round(dailyProgress) + '%';
-            
-            const weeklyProgressBar = document.getElementById('weeklyGoalProgress');
-            weeklyProgressBar.style.width = weeklyProgress + '%';
-            weeklyProgressBar.setAttribute('aria-valuenow', weeklyProgress);
-            weeklyProgressBar.textContent = Math.round(weeklyProgress) + '%';
-
-            // --- Charts ---
-            const baseChartOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-            };
-
-            // Status Breakdown Chart
-            const statusData = stats.application_status_breakdown || {};
-            const statusCtx = document.getElementById('applicationStatusChart').getContext('2d');
-            statusChart = createOrUpdateChart(statusChart, statusCtx, 'doughnut', {
-                labels: Object.keys(statusData),
-                datasets: [{ 
-                    data: Object.values(statusData), 
-                    backgroundColor: colorPalette
-                }]
-            }, { ...baseChartOptions, plugins: { legend: { position: 'top' }, title: { display: true, text: 'Application Status Breakdown' } } });
-
-            // Applications by Source Chart
-            const sourceData = stats.applications_by_source || {};
-            const sourceCtx = document.getElementById('applicationsBySourceChart').getContext('2d');
-            sourceChart = createOrUpdateChart(sourceChart, sourceCtx, 'pie', {
-                labels: Object.keys(sourceData),
-                datasets: [{
-                    data: Object.values(sourceData),
-                    backgroundColor: colorPalette.slice().reverse()
-                }]
-            }, { ...baseChartOptions, plugins: { legend: { position: 'top' }, title: { display: true, text: 'Applications by Source' } } });
-
-            // Applications Over Time Chart
-            const timeData = stats.applications_last_7_days || [];
-            const timeCtx = document.getElementById('applicationsOverTimeChart').getContext('2d');
-            // Ensure consistent date parsing by treating date string as UTC
-            const timeLabels = timeData.map(d => {
-                const [year, month, day] = d.date.split('-');
-                return new Date(Date.UTC(year, month - 1, day)).toLocaleDateString(undefined, { timeZone: 'UTC' });
-            });
-            timeChart = createOrUpdateChart(timeChart, timeCtx, 'line', {
-                labels: timeLabels,
-                datasets: [{ 
-                    label: 'Applications', 
-                    data: timeData.map(d => d.count), 
-                    borderColor: '#28a745', 
-                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
-                    tension: 0.1, 
-                    fill: true 
-                }]
-            }, { ...baseChartOptions, plugins: { legend: { display: false }, title: { display: true, text: 'Applications (Last 7 Days)' } } });
-
-        } catch (error) {
-            console.error('Failed to fetch dashboard data:', error);
-            document.getElementById('motivationalQuote').textContent = 'Could not load dashboard data. Please try again later.';
-            document.getElementById('motivationalQuote').classList.replace('alert-info', 'alert-danger');
-        }
-    }
-
-    fetchDashboardData();
-    // Optional: Refresh data every 60 seconds
-    // setInterval(fetchDashboardData, 60000); 
-});
-</script>
+<!-- Link to your external dashboard.js file or place the script from the canvas above here -->
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 {% endblock %}
+```
+I have now updated both the JavaScript logic and the corresponding HTML structure to reflect your request for a combined "Total Resumes/CVs" metr

@@ -3,6 +3,59 @@
 {% block title %}My Job Feed{% endblock %}
 
 {% block content %}
+{# Font Awesome is used for the magic wand icon. Ideally, place this in your base.html <head> tag. #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    /* Styles for the special "magical" tab */
+    .magic-tab {
+        position: relative;
+        overflow: hidden;
+        border-color: #9d78ff !important;
+        color: #fff !important;
+        font-weight: bold;
+        background: linear-gradient(45deg, #6a3093, #a044ff, #7c5cff, #a044ff, #6a3093);
+        background-size: 400% 400%;
+        animation: gradient-animation 8s ease infinite, pulse-glow 2.5s infinite ease-in-out;
+        transition: all 0.3s ease;
+    }
+
+    .magic-tab:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(160, 68, 255, 0.4);
+    }
+
+    @keyframes gradient-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes pulse-glow {
+        0% { box-shadow: 0 0 5px rgba(160, 68, 255, 0.2), 0 0 10px rgba(160, 68, 255, 0.1); }
+        50% { box-shadow: 0 0 20px rgba(160, 68, 255, 0.6), 0 0 30px rgba(160, 68, 255, 0.4); }
+        100% { box-shadow: 0 0 5px rgba(160, 68, 255, 0.2), 0 0 10px rgba(160, 68, 255, 0.1); }
+    }
+
+    /* Simple star/glitter effect */
+    .magic-tab::after {
+        content: '✨';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        font-size: 1.2rem;
+        opacity: 0;
+        animation: sparkle-up 3s infinite;
+        text-shadow: 0 0 5px #fff;
+    }
+
+    @keyframes sparkle-up {
+        0% { transform: translateY(20px) scale(0.5); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(-20px) scale(1.2) rotate(360deg); opacity: 0; }
+    }
+</style>
+
 <div class="container-fluid">
     <div class="header-container d-flex justify-content-between align-items-center mb-3">
         <h1>My Job Feed</h1>
@@ -65,10 +118,10 @@
     
     <ul class="nav nav-tabs mb-3" id="main-tabs" role="tablist">
         <li class="nav-item" role="presentation"><button class="nav-link active" id="inbox-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="inbox">Inbox</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" id="want-to-apply-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="want_to_apply">Want to Apply</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="want_to_apply-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="want_to_apply">Want to Apply</button></li>
         <li class="nav-item" role="presentation"><button class="nav-link" id="applied-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="applied">Applied</button></li>
         <li class="nav-item" role="presentation"><button class="nav-link" id="archived-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="archived">Archived</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" id="resume-creator-tab" data-bs-toggle="tab" data-bs-target="#resume-creator-pane" type="button" role="tab">Create Resume/CV</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link magic-tab" id="resume-creator-tab" data-bs-toggle="tab" data-bs-target="#resume-creator-pane" type="button" role="tab"><i class="fas fa-magic me-2"></i>Create Resume/CV</button></li>
     </ul>
 
     <div class="tab-content" id="main-tab-content">
@@ -114,8 +167,12 @@
         </div>
     </div>
 </div>
+{% endblock %}
 
+
+{% block scripts %}
 <script>
+    // Global variable to hold the current view's status
     let currentJobStatus = 'inbox';
     let statusInterval;
     const timeUnitSelect = document.getElementById('time-unit');
@@ -141,7 +198,10 @@
     
     function getHighlightedDescription(fullDescription) {
         if (!fullDescription) return 'No full description available.';
-        return fullDescription.replace(/\n/g, '<br>');
+        // Basic sanitization to prevent HTML injection from the description content
+        const a = document.createElement('a');
+        a.textContent = fullDescription;
+        return a.innerHTML.replace(/\n/g, '<br>');
     }
 
     function fetchJobs(status) {
@@ -167,6 +227,7 @@
 
                 jobs.forEach((job, index) => {
                     const mainRow = document.createElement('tr');
+                    mainRow.id = `job-main-row-${job.id}`;
                     mainRow.style.cursor = 'pointer';
 
                     const descriptionRow = document.createElement('tr');
@@ -177,7 +238,7 @@
                         if (event.target.closest('.actions')) return;
                         descriptionRow.style.display = descriptionRow.style.display === 'table-row' ? 'none' : 'table-row';
                     };
-
+                    
                     const sanitizedJobDescription = (job.job_description || '').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/"/g, '&quot;');
                     const sanitizedJobTitle = (job.title || 'No Title').replace(/'/g, "\\'");
                     
@@ -189,7 +250,7 @@
                         actionButtons += `<button class="btn btn-sm btn-success ms-1" onclick="event.stopPropagation(); updateJobStatus(${job.id}, 'applied')">Mark Applied</button>`;
                     } else if (status === 'applied') {
                         actionButtons = `
-                            <select class="form-select form-select-sm" onclick="event.stopPropagation();" onchange="updateJobStatus(${job.id}, this.value)">
+                            <select class="form-select form-select-sm" style="width: auto; display: inline-block;" onclick="event.stopPropagation();" onchange="updateJobStatus(${job.id}, this.value)">
                                 <option value="applied" ${job.status === 'applied' ? 'selected' : ''}>Applied</option>
                                 <option value="interviewing" ${job.status === 'interviewing' ? 'selected' : ''}>Interviewing</option>
                                 <option value="offer" ${job.status === 'offer' ? 'selected' : ''}>Offer</option>
@@ -198,7 +259,7 @@
                             </select>` + actionButtons;
                     }
 
-                    const sourceBadge = job.source === 'LinkedIn' ? '<span class="badge bg-primary">LI</span>' : '<span class="badge bg-info">IN</span>';
+                    const sourceBadge = job.source === 'LinkedIn' ? '<span class="badge bg-primary">LI</span>' : '<span class="badge bg-info text-dark">IN</span>';
                     let displayDate = 'N/A';
                     if (job.date && !isNaN(new Date(job.date))) {
                         displayDate = new Date(job.date).toLocaleDateString();
@@ -211,12 +272,12 @@
                         for (const keyword of keywords) {
                             const index = lowerDesc.indexOf(keyword);
                             if (index !== -1) {
-                                let start = Math.max(0, index - 15);
-                                let end = Math.min(jobDescription.length, index + keyword.length + 50);
-                                return '...' + jobDescription.substring(start, end) + '...';
+                                let start = Math.max(0, index - 20);
+                                let end = Math.min(jobDescription.length, index + keyword.length + 60);
+                                return '...' + jobDescription.substring(start, end).replace(/\n/g, ' ') + '...';
                             }
                         }
-                        return jobDescription.substring(0, 70) + '...';
+                        return jobDescription.substring(0, 80).replace(/\n/g, ' ') + '...';
                     }
                     const jdExperienceSnippet = getExperienceSnippet(job.job_description);
 
@@ -228,9 +289,9 @@
                             <a href="${job.job_url || '#'}" target="_blank" class="fw-bold" onclick="event.stopPropagation()">${job.title || 'No Title'}</a>
                             <div class="text-muted">${job.company || 'No Company'}</div>
                         </td>
-                        <td><div class="jd-experience-snippet small">${jdExperienceSnippet}</div></td>
+                        <td><div class="jd-experience-snippet small text-muted">${jdExperienceSnippet}</div></td>
                         <td>${job.location || 'No Location'}</td>
-                        <td class="actions">${actionButtons}</td>
+                        <td class="actions d-flex gap-1">${actionButtons}</td>
                     `;
                     tbody.appendChild(mainRow);
 
@@ -248,20 +309,55 @@
             .catch(err => {
                 spinner.style.display = 'none';
                 console.error('Error fetching jobs:', err);
-                tbody.innerHTML = `<tr><td colspan="7" class="text-center">Error fetching jobs.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="7" class="text-center">Error fetching jobs. Please check the console for details.</td></tr>`;
             });
     }
 
     function updateJobStatus(jobId, newStatus) {
+        const mainRow = document.getElementById(`job-main-row-${jobId}`);
+        const descriptionRow = document.getElementById(`job-description-row-${jobId}`);
+        
         fetch(`/update_job_status/${jobId}`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ status: newStatus })
         })
-        .then(() => {
-            fetchJobs(currentJobStatus);
+        .then(response => {
+            if (!response.ok) throw new Error('Server failed to update status');
+            return response.json();
         })
-        .catch(err => console.error('Error updating job status:', err));
+        .then(data => {
+            if (mainRow) {
+                mainRow.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+                mainRow.style.opacity = '0';
+                mainRow.style.transform = 'translateX(-30px)';
+                
+                if (descriptionRow) {
+                    descriptionRow.style.transition = 'opacity 0.4s ease-out';
+                    descriptionRow.style.opacity = '0';
+                }
+                
+                setTimeout(() => {
+                    mainRow.remove();
+                    if (descriptionRow) descriptionRow.remove();
+                    
+                    const jobCountSpan = document.getElementById('job-count');
+                    const tbody = document.getElementById('jobs-tbody');
+                    const remainingRows = tbody.querySelectorAll('tr[id^="job-main-row-"]').length;
+                    jobCountSpan.textContent = `(${remainingRows})`;
+                    
+                    if (remainingRows === 0) {
+                         tbody.innerHTML = `<tr><td colspan="7" class="text-center">No jobs in this category.</td></tr>`;
+                    }
+                }, 400);
+            } else {
+                fetchJobs(currentJobStatus);
+            }
+        })
+        .catch(err => {
+            console.error('Error updating job status:', err);
+            alert('Could not update job status. Please refresh the page and try again.');
+        });
     }
 
     function startScrape() {
@@ -270,7 +366,8 @@
             days: parseInt(document.getElementById('time-value').value, 10),
             management_option: document.querySelector('input[name="scrape-mode"]:checked').value,
             location: document.getElementById('scrape-location').value,
-            keywords: document.getElementById('scrape-keywords').value
+            keywords: document.getElementById('scrape-keywords').value,
+            time_period_str: `${document.getElementById('time-value').value} ${document.getElementById('time-unit').options[document.getElementById('time-unit').selectedIndex].text}`
         };
 
         document.getElementById('scrape-button').disabled = true;
@@ -297,7 +394,7 @@
                     clearInterval(statusInterval);
                     document.getElementById('scrape-button').disabled = false;
                     if (status.message.includes('complete')) {
-                        document.querySelector('#main-tabs .nav-link.active').click();
+                        fetchJobs(currentJobStatus); 
                     }
                 }
             });

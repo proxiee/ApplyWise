@@ -1,369 +1,156 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Goals are now passed from the template
-    const dailyGoalTargetElement = document.getElementById('dailyGoalTarget');
-    const weeklyGoalTargetElement = document.getElementById('weeklyGoalTarget');
+    // Chart instances
+    let statusChart, sourceChart, timeChart;
 
-    const dailyGoal = dailyGoalTargetElement ? parseInt(dailyGoalTargetElement.textContent) : 10;
-    const weeklyGoal = weeklyGoalTargetElement ? parseInt(weeklyGoalTargetElement.textContent) : 50;
-
-    let applicationsOverTimeChartInstance = null;
-    let applicationsBySourceChartInstance = null;
-    let applicationStatusChartInstance = null;
-
-    const chartColors = [
-        'rgba(255, 99, 132, 0.7)', // Red
-        'rgba(54, 162, 235, 0.7)', // Blue
-        'rgba(255, 206, 86, 0.7)', // Yellow
-        'rgba(75, 192, 192, 0.7)', // Green (used for line chart)
-        'rgba(153, 102, 255, 0.7)', // Purple
-        'rgba(255, 159, 64, 0.7)', // Orange
-        'rgba(199, 199, 199, 0.7)', // Grey for 'inbox' or 'archived'
-        'rgba(83, 102, 83, 0.7)'    // Dark Green
+    // A modern color palette
+    const colorPalette = [
+        '#0d6efd', '#198754', '#ffc107', '#dc3545', '#0dcaf0', '#6c757d',
+        '#d63384', '#fd7e14', '#20c997', '#6610f2'
     ];
-
-    const chartBorderColors = [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-        'rgba(199, 199, 199, 1)',
-        'rgba(83, 102, 83, 1)'
-    ];
-
-
-    function fetchDashboardData() {
-        fetch('/api/dashboard_stats')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Received dashboard data:', data); // Log the full data object
-                if (data) {
-                    updateKPIs(data);
-                    updateCharts(data);
-                    updateDailyGoal(data.applications_today, dailyGoal);
-                    updateWeeklyGoal(data.applications_this_week, weeklyGoal);
-                } else {
-                    console.error('No data received from /api/dashboard_stats');
-                    setDefaultKPIs();
-                    setDefaultCharts();
-                    updateDailyGoal(0, dailyGoal);
-                    updateWeeklyGoal(0, weeklyGoal);
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching dashboard stats:', error);
-                setDefaultKPIs();
-                setDefaultCharts();
-                updateDailyGoal(0, dailyGoal);
-                updateWeeklyGoal(0, weeklyGoal);
-                document.getElementById('motivationalQuote').textContent = 'Error loading dashboard data. Please try again later.';
-            });
-    }
-
-    function fetchMotivationalQuote() {
-        fetch('/api/quote')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const quoteElement = document.getElementById('motivationalQuote');
-                if (data.quote && data.author) {
-                    quoteElement.innerHTML = `"${data.quote}" - <em>${data.author}</em>`;
-                } else {
-                    quoteElement.textContent = 'Keep pushing, you are doing great!'; // Fallback
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching motivational quote:', error);
-                document.getElementById('motivationalQuote').textContent = 'Stay motivated! (Error fetching quote)'; // Fallback
-            });
-    }
-
-    function setDefaultKPIs() {
-        document.getElementById('jobsScraped24h').textContent = '0';
-        document.getElementById('applicationsToday').textContent = '0';
-        document.getElementById('applicationsThisWeek').textContent = '0';
-        document.getElementById('totalApplications').textContent = '0';
-        document.getElementById('resumesCreatedToday').textContent = '0';
-        document.getElementById('totalResumesCreated').textContent = '0';
-        document.getElementById('coverLettersCreatedToday').textContent = '0';
-        document.getElementById('totalCoverLettersCreated').textContent = '0';
-        document.getElementById('jobsToBeApplied').textContent = '0';
-    }
-
-    function updateKPIs(data) {
-        document.getElementById('jobsScraped24h').textContent = data.jobs_scraped_last_24_hours !== undefined ? data.jobs_scraped_last_24_hours : 0;
-        document.getElementById('applicationsToday').textContent = data.applications_today !== undefined ? data.applications_today : 0;
-        document.getElementById('applicationsThisWeek').textContent = data.applications_this_week !== undefined ? data.applications_this_week : 0;
-        document.getElementById('totalApplications').textContent = data.total_applications !== undefined ? data.total_applications : 0;
-
-        // Calculate Jobs to be Applied
-        let jobsToBeAppliedCount = 0;
-        if (data.application_status_breakdown) {
-            jobsToBeAppliedCount += data.application_status_breakdown['inbox'] || 0;
-            jobsToBeAppliedCount += data.application_status_breakdown['want_to_apply'] || 0;
+    
+    /**
+     * Creates a new Chart.js instance or updates an existing one.
+     * @param {Chart} chartInstance - The existing chart instance, if any.
+     * @param {CanvasRenderingContext2D} context - The canvas context to draw on.
+     * @param {string} type - The type of chart (e.g., 'doughnut', 'pie', 'line').
+     * @param {object} data - The chart data configuration.
+     * @param {object} options - The chart options configuration.
+     * @returns {Chart} The new or updated chart instance.
+     */
+    function createOrUpdateChart(chartInstance, context, type, data, options) {
+        if (chartInstance) {
+            chartInstance.destroy();
         }
-        document.getElementById('jobsToBeApplied').textContent = jobsToBeAppliedCount;
-        document.getElementById('resumesCreatedToday').textContent = data.resumes_created_today !== undefined ? data.resumes_created_today : 0;
-        document.getElementById('totalResumesCreated').textContent = data.resumes_created_total !== undefined ? data.resumes_created_total : 0;
-        document.getElementById('coverLettersCreatedToday').textContent = data.cover_letters_created_today !== undefined ? data.cover_letters_created_today : 0;
-        document.getElementById('totalCoverLettersCreated').textContent = data.cover_letters_created_total !== undefined ? data.cover_letters_created_total : 0;
-        // Update weekly goal counter display
-        document.getElementById('appliedThisWeekCount').textContent = data.applications_this_week !== undefined ? data.applications_this_week : 0;
+        return new Chart(context, { type, data, options });
     }
+    
+    /**
+     * Fetches all necessary data from the backend and updates the UI.
+     */
+    async function fetchDashboardData() {
+        try {
+            // Fetch stats and quote in parallel for faster loading
+            const [statsResponse, quoteResponse] = await Promise.all([
+                fetch('/api/dashboard_stats'),
+                fetch('/api/quote')
+            ]);
 
-    function updateGoalProgress(currentValue, goalValue, countElementId, progressBarId) {
-        const countElement = document.getElementById(countElementId);
-        const progressBarElement = document.getElementById(progressBarId);
-
-        currentValue = currentValue || 0;
-        if (countElement) {
-            countElement.textContent = currentValue;
-        }
-
-        if (progressBarElement && goalValue > 0) {
-            const percentage = Math.min((currentValue / goalValue) * 100, 100);
-            progressBarElement.style.width = percentage + '%';
-            progressBarElement.setAttribute('aria-valuenow', currentValue);
-            progressBarElement.textContent = `${Math.round(percentage)}%`;
-
-            progressBarElement.classList.remove('bg-success', 'bg-warning', 'bg-info', 'bg-danger');
-            if (percentage >= 100) {
-                progressBarElement.classList.add('bg-success');
-            } else if (percentage >= 75) {
-                progressBarElement.classList.add('bg-info');
-            } else if (percentage >= 50) {
-                progressBarElement.classList.add('bg-warning');
-            } else {
-                progressBarElement.classList.add('bg-danger');
+            if (!statsResponse.ok || !quoteResponse.ok) {
+                throw new Error('Network response was not ok.');
             }
-        } else if (progressBarElement) { // Goal is 0 or not set, show 0%
-            progressBarElement.style.width = '0%';
-            progressBarElement.setAttribute('aria-valuenow', 0);
-            progressBarElement.textContent = `0%`;
-            progressBarElement.classList.add('bg-secondary');
-        }
-    }
 
-    function updateDailyGoal(appliedToday, goal) {
-        updateGoalProgress(appliedToday, goal, 'appliedTodayCount', 'dailyGoalProgress');
-    }
+            const stats = await statsResponse.json();
+            const quoteData = await quoteResponse.json();
 
-    function updateWeeklyGoal(appliedThisWeek, goal) {
-        updateGoalProgress(appliedThisWeek, goal, 'appliedThisWeekCount', 'weeklyGoalProgress');
-    }
+            // === Update UI ===
 
-    const defaultChartOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: true,
-                position: 'top',
-            },
-            tooltip: {
-                enabled: true
-            }
-        }
-    };
+            // Motivational Quote
+            document.getElementById('motivationalQuote').innerHTML = `"${quoteData.quote}" <br><em>- ${quoteData.author}</em>`;
 
-    const noDataConfig = (label) => ({
-        labels: ['No Data'],
-        datasets: [{
-            label: label,
-            data: [1], // Chart.js needs at least one data point to render for pie/doughnut default
-            backgroundColor: ['rgba(200, 200, 200, 0.2)'],
-            borderColor: ['rgba(200, 200, 200, 1)'],
-            borderWidth: 1
-        }]
-    });
-
-    function updateCharts(data) {
-        // Applications Over Time Chart
-        const ctxTime = document.getElementById('applicationsOverTimeChart').getContext('2d');
-        let timeLabels = [];
-        let timeData = [];
-
-        if (data.applications_last_7_days && data.applications_last_7_days.length > 0) {
-            timeLabels = data.applications_last_7_days.map(item => item.date.substring(5)); // MM-DD format
-            timeData = data.applications_last_7_days.map(item => item.count);
-        } else {
-            // Provide empty arrays if no actual data to prevent drawing 'No Data' point
-            console.warn("No applications_last_7_days data found, chart will show empty lines.");
-            // Or you could set a placeholder:
-            // timeLabels = ['Today', 'Yesterday', '2 Days Ago', '3 Days Ago', '4 Days Ago', '5 Days Ago', '6 Days Ago'];
-            // timeData = [0, 0, 0, 0, 0, 0, 0];
-        }
-
-        console.log("Line Chart Labels:", timeLabels);
-        console.log("Line Chart Data:", timeData);
+            // KPIs
+            document.getElementById('jobsScraped24h').textContent = stats.jobs_scraped_last_24_hours || 0;
+            const pendingApps = (stats.application_status_breakdown?.inbox || 0) + (stats.application_status_breakdown?.want_to_apply || 0);
+            document.getElementById('jobsToBeApplied').textContent = pendingApps;
+            document.getElementById('totalApplications').textContent = stats.total_applications || 0;
+            
+            // Calculate and update the combined total for Resumes/CVs
+            const totalDocuments = (stats.resumes_created_total || 0) + (stats.cover_letters_created_total || 0);
+            document.getElementById('totalDocumentsGenerated').textContent = totalDocuments;
 
 
-        if (applicationsOverTimeChartInstance) {
-            applicationsOverTimeChartInstance.destroy();
-        }
-        applicationsOverTimeChartInstance = new Chart(ctxTime, {
-            type: 'line',
-            data: {
-                labels: timeLabels,
-                datasets: [{
-                    label: 'Applications per Day',
-                    data: timeData,
-                    borderColor: 'rgb(75, 192, 192)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    tension: 0.1,
-                    fill: true,
-                    // Hide the dataset if data is truly empty, Chart.js handles empty arrays gracefully
-                    hidden: timeData.length === 0
+            // --- Charts ---
+            const baseChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed;
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            };
+
+            const noDataAvailable = (dataObject) => !dataObject || Object.keys(dataObject).length === 0;
+
+            // Status Breakdown Chart (Doughnut)
+            const statusData = stats.application_status_breakdown;
+            const statusCtx = document.getElementById('applicationStatusChart').getContext('2d');
+            statusChart = createOrUpdateChart(statusChart, statusCtx, 'doughnut', {
+                labels: noDataAvailable(statusData) ? ['No Data'] : Object.keys(statusData),
+                datasets: [{ 
+                    data: noDataAvailable(statusData) ? [1] : Object.values(statusData), 
+                    backgroundColor: colorPalette,
+                    borderColor: '#fff',
+                    borderWidth: 2
                 }]
-            },
-            options: {
-                ...defaultChartOptions,
+            }, { ...baseChartOptions });
+
+            // Applications by Source Chart (Pie)
+            const sourceData = stats.applications_by_source;
+            const sourceCtx = document.getElementById('applicationsBySourceChart').getContext('2d');
+            sourceChart = createOrUpdateChart(sourceChart, sourceCtx, 'pie', {
+                labels: noDataAvailable(sourceData) ? ['No Data'] : Object.keys(sourceData),
+                datasets: [{
+                    data: noDataAvailable(sourceData) ? [1] : Object.values(sourceData),
+                    backgroundColor: colorPalette.slice().reverse(),
+                    borderColor: '#fff',
+                    borderWidth: 2
+                }]
+            }, { ...baseChartOptions });
+
+            // Applications Over Time Chart (Line)
+            const timeData = stats.applications_last_7_days || [];
+            const timeCtx = document.getElementById('applicationsOverTimeChart').getContext('2d');
+            const timeLabels = timeData.map(d => new Date(d.date + 'T00:00:00').toLocaleDateString(undefined, { weekday: 'short', month: 'numeric', day: 'numeric'}));
+            timeChart = createOrUpdateChart(timeChart, timeCtx, 'line', {
+                labels: timeLabels,
+                datasets: [{ 
+                    label: 'Applications', 
+                    data: timeData.map(d => d.count), 
+                    borderColor: '#198754', 
+                    backgroundColor: 'rgba(25, 135, 84, 0.1)',
+                    tension: 0.2, 
+                    fill: true,
+                    pointBackgroundColor: '#198754',
+                    pointRadius: 4
+                }]
+            }, { 
+                ...baseChartOptions, 
+                plugins: { legend: { display: false } },
                 scales: {
                     y: {
                         beginAtZero: true,
                         ticks: {
-                            stepSize: 1,
-                            precision: 0 // Ensure y-axis shows whole numbers for counts
-                        }
-                    },
-                    x: {
-                        // Ensure X-axis labels are always displayed, even if no data points
-                        grid: {
-                            display: false
+                            stepSize: 1
                         }
                     }
-                },
-                plugins: {
-                    legend: {
-                        display: timeLabels.length > 0 // Only show legend if there are actual labels
-                    },
-                    tooltip: {
-                        enabled: timeLabels.length > 0 // Only enable tooltip if there is actual data
-                    }
                 }
-            }
-        });
+            });
 
-        // Applications by Source Chart
-        const ctxSource = document.getElementById('applicationsBySourceChart').getContext('2d');
-        const sourceLabels = data.applications_by_source && Object.keys(data.applications_by_source).length > 0 ? Object.keys(data.applications_by_source) : ['No Data'];
-        const sourceData = data.applications_by_source && Object.keys(data.applications_by_source).length > 0 ? Object.values(data.applications_by_source) : [1];
-
-        if (applicationsBySourceChartInstance) {
-            applicationsBySourceChartInstance.destroy();
+        } catch (error) {
+            console.error('Failed to fetch dashboard data:', error);
+            const quoteElement = document.getElementById('motivationalQuote');
+            quoteElement.textContent = 'Could not load dashboard data. Please try again later.';
+            quoteElement.classList.replace('alert-info', 'alert-danger');
         }
-        applicationsBySourceChartInstance = new Chart(ctxSource, {
-            type: 'pie',
-            data: {
-                labels: sourceLabels,
-                datasets: [{
-                    label: 'Applications by Source',
-                    data: sourceData,
-                    backgroundColor: chartColors.slice(0, sourceLabels.length),
-                    borderColor: chartBorderColors.slice(0, sourceLabels.length),
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                ...defaultChartOptions,
-                plugins: {
-                    legend: {
-                        display: sourceLabels[0] !== 'No Data' // Hide legend if no data
-                    }
-                }
-            }
-        });
-
-        // Application Status Breakdown Chart
-        const ctxStatus = document.getElementById('applicationStatusChart').getContext('2d');
-        const statusLabels = data.application_status_breakdown && Object.keys(data.application_status_breakdown).length > 0 ? Object.keys(data.application_status_breakdown) : ['No Data'];
-        const statusData = data.application_status_breakdown && Object.keys(data.application_status_breakdown).length > 0 ? Object.values(data.application_status_breakdown) : [1];
-
-        if (applicationStatusChartInstance) {
-            applicationStatusChartInstance.destroy();
-        }
-        applicationStatusChartInstance = new Chart(ctxStatus, {
-            type: 'doughnut',
-            data: {
-                labels: statusLabels,
-                datasets: [{
-                    label: 'Application Status',
-                    data: statusData,
-                    backgroundColor: chartColors.slice(0, statusLabels.length),
-                    borderColor: chartBorderColors.slice(0, statusLabels.length),
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                ...defaultChartOptions,
-                plugins: {
-                    legend: {
-                        display: statusLabels[0] !== 'No Data' // Hide legend if no data
-                    }
-                }
-            }
-        });
     }
 
-    function setDefaultCharts() {
-        const ctxTime = document.getElementById('applicationsOverTimeChart').getContext('2d');
-        if (applicationsOverTimeChartInstance) applicationsOverTimeChartInstance.destroy();
-        applicationsOverTimeChartInstance = new Chart(ctxTime, {
-            type: 'line',
-            data: {
-                labels: ['Today', 'Yesterday', '2 Days Ago', '3 Days Ago', '4 Days Ago', '5 Days Ago', '6 Days Ago'],
-                datasets: [{
-                    label: 'Applications per Day',
-                    data: [0, 0, 0, 0, 0, 0, 0], // All zeros for default
-                    borderColor: 'rgb(75, 192, 192)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    tension: 0.1,
-                    fill: true,
-                    hidden: false // Ensure it's not hidden
-                }]
-            },
-            options: {
-                ...defaultChartOptions,
-                scales: {
-                    y: { beginAtZero: true, ticks: { stepSize: 1, precision: 0 }},
-                    x: { grid: { display: false }}
-                },
-                plugins: { legend: { display: true }, tooltip: { enabled: true } }
-            }
-        });
-
-        const ctxSource = document.getElementById('applicationsBySourceChart').getContext('2d');
-        if (applicationsBySourceChartInstance) applicationsBySourceChartInstance.destroy();
-        applicationsBySourceChartInstance = new Chart(ctxSource, { type: 'pie', data: noDataConfig('Applications by Source'), options: {...defaultChartOptions, plugins: { legend: { display: false }}} });
-
-        const ctxStatus = document.getElementById('applicationStatusChart').getContext('2d');
-        if (applicationStatusChartInstance) applicationStatusChartInstance.destroy();
-        applicationStatusChartInstance = new Chart(ctxStatus, { type: 'doughnut', data: noDataConfig('Application Status'), options: {...defaultChartOptions, plugins: { legend: { display: false }}} });
-    }
-
-
-    // Initial data load
-    // Check if a refresh was requested from another page
-    if (sessionStorage.getItem('dashboardNeedsRefresh') === 'true') { // Check for 'true' string
-        console.log('Dashboard refresh requested from another page. Fetching fresh data.');
-        fetchDashboardData();
-        sessionStorage.removeItem('dashboardNeedsRefresh'); // Clear the flag after use
-    } else {
-        fetchDashboardData(); // Always fetch on load for the first visit or if no flag
-    }
-    fetchMotivationalQuote();
-
-    // Optional: Refresh data periodically
-    // setInterval(fetchDashboardData, 60000); // Refresh every 60 seconds
-    // setInterval(fetchMotivationalQuote, 300000); // Refresh quote every 5 minutes
+    // Initial data load on page view
+    fetchDashboardData();
+    
+    // Optional: Refresh data periodically if desired
+    // setInterval(fetchDashboardData, 60000); // e.g., refresh every 60 seconds
 });

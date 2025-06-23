@@ -519,85 +519,63 @@ def scrape_status_endpoint():
     return jsonify(scraping_status)
 
 @app.route('/api/dashboard_stats')
+@login_required # Make sure this is present
 def api_dashboard_stats():
     stats = {}
     conn = get_db_connection()
-    cursor = conn.cursor() # 
+    cursor = conn.cursor()
+    user_id = current_user.id # Get the current user's ID
 
-    cursor.execute("PRAGMA table_info(jobs)") # 
-    job_columns = [column[1] for column in cursor.fetchall()]
-    has_application_date_column = 'application_date' in job_columns
-
+    # This query remains useful
     twenty_four_hours_ago_dt = datetime.now() - timedelta(hours=24)
     twenty_four_hours_ago_str = twenty_four_hours_ago_dt.strftime('%Y-%m-%d %H:%M:%S')
-    cursor.execute("SELECT SUM(new_jobs_found) FROM scrape_history WHERE scrape_timestamp >= ?", (twenty_four_hours_ago_str,)) # 
+    cursor.execute("SELECT SUM(new_jobs_found) FROM scrape_history WHERE scrape_timestamp >= ? AND user_id = ?", (twenty_four_hours_ago_str, user_id))
     result = cursor.fetchone()
     stats['jobs_scraped_last_24_hours'] = result[0] if result and result[0] is not None else 0
 
     applied_statuses = ('applied', 'interviewing', 'offer', 'rejected', 'rejected_after_interview', 'offer_declined')
-    status_placeholders = ', '.join(['?'] * len(applied_statuses)) # 
+    status_placeholders = ', '.join(['?'] * len(applied_statuses))
 
-    query_total_applications = f"SELECT COUNT(*) FROM jobs WHERE status IN ({status_placeholders})" # 
-    if has_application_date_column:
-        query_total_applications += " AND application_date IS NOT NULL"
-    cursor.execute(query_total_applications, applied_statuses)
+    # This query remains useful for Total Applications
+    query_total_applications = f"SELECT COUNT(*) FROM jobs WHERE status IN ({status_placeholders}) AND user_id = ?"
+    cursor.execute(query_total_applications, (*applied_statuses, user_id))
     stats['total_applications'] = cursor.fetchone()[0]
 
-    today_start_str = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0).strftime('%Y-%m-%d %H:%M:%S') # 
-    if has_application_date_column:
-        cursor.execute(f"SELECT COUNT(*) FROM jobs WHERE status IN ({status_placeholders}) AND application_date >= ?", (*applied_statuses, today_start_str)) # 
-        result_today = cursor.fetchone() # 
-        stats['applications_today'] = result_today[0] if result_today and result_today[0] is not None else 0 # 
-    else:
-        stats['applications_today'] = 0
+    # --- REMOVED: applications_today calculation ---
+    # --- REMOVED: applications_this_week calculation ---
 
-    today = date.today()
-    start_of_week = today - timedelta(days=today.weekday())
-    start_of_week_str = datetime.combine(start_of_week, datetime.min.time()).strftime('%Y-%m-%d %H:%M:%S') # 
-    if has_application_date_column:
-        cursor.execute(f"SELECT COUNT(*) FROM jobs WHERE status IN ({status_placeholders}) AND application_date >= ?", (*applied_statuses, start_of_week_str)) # 
-        result_this_week = cursor.fetchone() # 
-        stats['applications_this_week'] = result_this_week[0] if result_this_week and result_this_week[0] is not None else 0 # 
-    else:
-        stats['applications_this_week'] = 0
-
-    cursor.execute("SELECT COUNT(*) FROM resume_generations")
+    # This is your "total resume/cv generations" stat. It's already here.
+    cursor.execute("SELECT COUNT(*) FROM resume_generations WHERE user_id = ?", (user_id,))
     stats['resumes_created_total'] = cursor.fetchone()[0]
 
-    cursor.execute("SELECT COUNT(*) FROM resume_generations WHERE generation_timestamp >= ?", (today_start_str,)) # 
-    stats['resumes_created_today'] = cursor.fetchone()[0] # 
+    # This can remain if you want to show "today's" generations separately
+    today_start_str = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0).strftime('%Y-%m-%d %H:%M:%S')
+    cursor.execute("SELECT COUNT(*) FROM resume_generations WHERE generation_timestamp >= ? AND user_id = ?", (today_start_str, user_id))
+    stats['resumes_created_today'] = cursor.fetchone()[0]
 
-    cursor.execute("SELECT COUNT(*) FROM cover_letter_generations")
+    # Cover letter stats
+    cursor.execute("SELECT COUNT(*) FROM cover_letter_generations WHERE user_id = ?", (user_id,))
     stats['cover_letters_created_total'] = cursor.fetchone()[0]
-
-    cursor.execute("SELECT COUNT(*) FROM cover_letter_generations WHERE generation_timestamp >= ?", (today_start_str,))
+    cursor.execute("SELECT COUNT(*) FROM cover_letter_generations WHERE generation_timestamp >= ? AND user_id = ?", (today_start_str, user_id))
     stats['cover_letters_created_today'] = cursor.fetchone()[0]
 
-    cursor.execute("SELECT status, COUNT(*) as count FROM jobs GROUP BY status") # 
-    stats['application_status_breakdown'] = {row['status']: row['count'] for row in cursor.fetchall()} # 
-    if not stats['application_status_breakdown']:
-        stats['application_status_breakdown'] = {}
+    # Chart data (These queries should also be filtered by user_id)
+    cursor.execute("SELECT status, COUNT(*) as count FROM jobs WHERE user_id = ? GROUP BY status", (user_id,))
+    stats['application_status_breakdown'] = {row['status']: row['count'] for row in cursor.fetchall()}
 
-    query_apps_by_source = f"SELECT source, COUNT(*) as count FROM jobs WHERE status IN ({status_placeholders})" # 
-    if has_application_date_column:
-        query_apps_by_source += " AND application_date IS NOT NULL"
-    query_apps_by_source += " GROUP BY source"
-    cursor.execute(query_apps_by_source, applied_statuses)
+    query_apps_by_source = f"SELECT source, COUNT(*) as count FROM jobs WHERE status IN ({status_placeholders}) AND user_id = ? GROUP BY source"
+    cursor.execute(query_apps_by_source, (*applied_statuses, user_id))
     stats['applications_by_source'] = {row['source']: row['count'] for row in cursor.fetchall()}
-    if not stats['applications_by_source']: # 
-        stats['applications_by_source'] = {} # 
 
-    applications_per_day = [] # 
-    if has_application_date_column:
-        for i in range(6, -1, -1):
-            day_date = date.today() - timedelta(days=i) # 
-            day_start_str = datetime.combine(day_date, datetime.min.time()).strftime('%Y-%m-%d %H:%M:%S')
-            day_end_str = datetime.combine(day_date, datetime.max.time()).strftime('%Y-%m-%d %H:%M:%S')
-
-            query_apps_per_day = f"SELECT COUNT(*) FROM jobs WHERE status IN ({status_placeholders}) AND application_date >= ? AND application_date <= ?" # 
-            cursor.execute(query_apps_per_day, (*applied_statuses, day_start_str, day_end_str)) # 
-            count = cursor.fetchone()[0]
-            applications_per_day.append({'date': day_date.strftime('%Y-%m-%d'), 'count': count})
+    applications_per_day = []
+    for i in range(6, -1, -1):
+        day_date = date.today() - timedelta(days=i)
+        day_start_str = datetime.combine(day_date, datetime.min.time()).strftime('%Y-%m-%d %H:%M:%S')
+        day_end_str = datetime.combine(day_date, datetime.max.time()).strftime('%Y-%m-%d %H:%M:%S')
+        query_apps_per_day = f"SELECT COUNT(*) FROM jobs WHERE status IN ({status_placeholders}) AND application_date >= ? AND application_date <= ? AND user_id = ?"
+        cursor.execute(query_apps_per_day, (*applied_statuses, day_start_str, day_end_str, user_id))
+        count = cursor.fetchone()[0]
+        applications_per_day.append({'date': day_date.strftime('%Y-%m-%d'), 'count': count})
     stats['applications_last_7_days'] = applications_per_day
 
     conn.close()
