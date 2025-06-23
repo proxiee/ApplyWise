@@ -3,188 +3,196 @@
 {% block title %}My Resume Profile{% endblock %}
 
 {% block content %}
-<h1 class="mb-4">My Resume Profile</h1>
-<p class="text-muted">This information will be used to generate your tailored resumes and cover letters. Fill it out completely for the best results.</p>
-<hr>
+<div class="row">
+    <div class="col-lg-8">
+        <h1 class="mb-4">My Resume Profile</h1>
+        <p class="text-muted">This information will be used to generate your tailored resumes and cover letters. Fill it out completely for the best results.</p>
+        <hr>
 
-<form method="POST" action="{{ url_for('profile') }}" id="profile-form">
-    <!-- Personal Information Card -->
-    <div class="card mb-4">
-        <div class="card-header">
-            <h3>Personal Information</h3>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="name" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ data.name or '' }}">
+        <form method="POST" action="{{ url_for('profile') }}" id="profile-form">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3>Personal Information</h3>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ data.email or '' }}">
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="phone" class="form-label">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" value="{{ data.phone or '' }}">
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="linkedin" class="form-label">LinkedIn Profile URL</label>
-                    <input type="url" class="form-control" id="linkedin" name="linkedin" value="{{ data.linkedin or '' }}">
-                </div>
-                 <div class="col-md-6 mb-3">
-                    <label for="github" class="form-label">GitHub Profile URL</label>
-                    <input type="url" class="form-control" id="github" name="github" value="{{ data.github or '' }}">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Professional Summary Card -->
-    <div class="card mb-4">
-        <div class="card-header">
-            <h3>Professional Summary</h3>
-        </div>
-        <div class="card-body">
-            <label for="summary" class="form-label">Your summary is the foundation. The AI will tailor this for each job application.</label>
-            <textarea class="form-control" id="summary" name="summary" rows="4">{{ data.summary or '' }}</textarea>
-        </div>
-    </div>
-
-    <!-- Work Experience Card -->
-    <div class="card mb-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h3>Work Experience</h3>
-            <button type="button" class="btn btn-success btn-sm" onclick="addItem('experience')">Add Experience</button>
-        </div>
-        <div class="card-body" id="experience-container">
-            {% for item in data.experience %}
-            <div class="experience-item item-card card mb-3">
                 <div class="card-body">
-                    <div class="d-flex justify-content-end">
-                         <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
-                    </div>
                     <div class="row">
-                        <div class="col-md-6 mb-3"><label class="form-label">Job Title</label><input type="text" class="form-control" name="experience_title_{{ loop.index0 }}" value="{{ item.title or '' }}"></div>
-                        <div class="col-md-6 mb-3"><label class="form-label">Company</label><input type="text" class="form-control" name="experience_company_{{ loop.index0 }}" value="{{ item.company or '' }}"></div>
-                        <div class="col-md-6 mb-3"><label class="form-label">Location</label><input type="text" class="form-control" name="experience_location_{{ loop.index0 }}" value="{{ item.location or '' }}"></div>
-                        <div class="col-md-6 mb-3"><label class="form-label">Dates (e.g., Jan 2020 - Present)</label><input type="text" class="form-control" name="experience_dates_{{ loop.index0 }}" value="{{ item.dates or '' }}"></div>
-                        <div class="col-12 mb-3"><label class="form-label">Key Points (One per line)</label><textarea class="form-control" name="experience_points_{{ loop.index0 }}" rows="5">{{ (item.points | join('\n')) or '' }}</textarea></div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    
-    <!-- Projects Card -->
-    <div class="card mb-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h3>Projects</h3>
-            <button type="button" class="btn btn-success btn-sm" onclick="addItem('project')">Add Project</button>
-        </div>
-        <div class="card-body" id="project-container">
-             {% for item in data.projects %}
-            <div class="project-item item-card card mb-3">
-                <div class="card-body">
-                     <div class="d-flex justify-content-end">
-                         <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label class="form-label">Project Name</label><input type="text" class="form-control" name="project_name_{{ loop.index0 }}" value="{{ item.name or '' }}"></div>
-                        <div class="col-md-6 mb-3"><label class="form-label">Dates</label><input type="text" class="form-control" name="project_dates_{{ loop.index0 }}" value="{{ item.dates or '' }}"></div>
-                        <div class="col-12 mb-3"><label class="form-label">Key Points (One per line)</label><textarea class="form-control" name="project_points_{{ loop.index0 }}" rows="4">{{ (item.points | join('\n')) or '' }}</textarea></div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-
-    <!-- Education Card -->
-    <div class="card mb-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h3>Education</h3>
-            <button type="button" class="btn btn-success btn-sm" onclick="addItem('education')">Add Education</button>
-        </div>
-        <div class="card-body" id="education-container">
-            {% for item in data.education %}
-             <div class="education-item item-card card mb-3">
-                <div class="card-body">
-                    <div class="d-flex justify-content-end">
-                         <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label class="form-label">University/School</label><input type="text" class="form-control" name="education_university_{{ loop.index0 }}" value="{{ item.university or '' }}"></div>
-                        <div class="col-md-6 mb-3"><label class="form-label">Location</label><input type="text" class="form-control" name="education_location_{{ loop.index0 }}" value="{{ item.location or '' }}"></div>
-                        <div class="col-md-6 mb-3"><label class="form-label">Degree (e.g., Bachelor of Science)</label><input type="text" class="form-control" name="education_degree_{{ loop.index0 }}" value="{{ item.degree or '' }}"></div>
-                        <div class="col-md-6 mb-3"><label class="form-label">Dates</label><input type="text" class="form-control" name="education_dates_{{ loop.index0 }}" value="{{ item.dates or '' }}"></div>
-                        <div class="col-12 mb-3"><label class="form-label">Details (e.g., GPA: 3.8/4.0)</label><textarea class="form-control" name="education_details_{{ loop.index0 }}" rows="2">{{ (item.details | join('\n')) or '' }}</textarea></div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    
-    <!-- Skills Card -->
-    <div class="card mb-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h3>Skills</h3>
-             <button type="button" class="btn btn-success btn-sm" onclick="addItem('skill')">Add Skill Category</button>
-        </div>
-        <div class="card-body" id="skill-container">
-             {% for category, value in data.skills.items() %}
-             <div class="skill-item item-card row mb-3 align-items-center">
-                <div class="col-md-4">
-                    <label class="form-label">Category (e.g., Languages)</label>
-                    <input type="text" class="form-control" name="skill_category_{{ loop.index0 }}" value="{{ category }}">
-                </div>
-                <div class="col-md-7">
-                    <label class="form-label">Skills (e.g., Python, Java, SQL)</label>
-                    <input type="text" class="form-control" name="skill_value_{{ loop.index0 }}" value="{{ value }}">
-                </div>
-                <div class="col-md-1 d-flex align-items-end">
-                     <button type="button" class="btn btn-danger btn-sm w-100" onclick="removeItem(this)">X</button>
-                </div>
-            </div>
-             {% endfor %}
-        </div>
-    </div>
-
-    <!-- NEW: Custom Sections Card -->
-    <div class="card mb-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h3>Custom Sections</h3>
-            <button type="button" class="btn btn-success btn-sm" onclick="addItem('custom')">Add Custom Section</button>
-        </div>
-        <div class="card-body" id="custom-container">
-            {% for item in data.custom_sections %}
-            <div class="custom-item item-card card mb-3">
-                <div class="card-body">
-                    <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <label class="form-label">Section Title (e.g., Certifications, Awards)</label>
-                            <input type="text" class="form-control" name="custom_title_{{ loop.index0 }}" value="{{ item.title or '' }}">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ data.name or '' }}">
                         </div>
-                        <div class="col-12 mb-3">
-                            <label class="form-label">Content (One point per line)</label>
-                            <textarea class="form-control" name="custom_points_{{ loop.index0 }}" rows="3">{{ (item.points | join('\n')) or '' }}</textarea>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ data.email or '' }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" value="{{ data.phone or '' }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="linkedin" class="form-label">LinkedIn Profile URL</label>
+                            <input type="url" class="form-control" id="linkedin" name="linkedin" value="{{ data.linkedin or '' }}">
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label for="github" class="form-label">GitHub Profile URL</label>
+                            <input type="url" class="form-control" id="github" name="github" value="{{ data.github or '' }}">
                         </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3>Professional Summary</h3>
+                </div>
+                <div class="card-body">
+                    <label for="summary" class="form-label">Your summary is the foundation. The AI will tailor this for each job application.</label>
+                    <textarea class="form-control" id="summary" name="summary" rows="4" placeholder="Leave empty for AI to handle">{{ data.summary or '' }}</textarea>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>Work Experience</h3>
+                    <button type="button" class="btn btn-success btn-sm" onclick="addItem('experience')">Add Experience</button>
+                </div>
+                <div class="card-body" id="experience-container">
+                    {% for item in data.experience %}
+                    <div class="experience-item item-card card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-end">
+                                 <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3"><label class="form-label">Job Title</label><input type="text" class="form-control" name="experience_title_{{ loop.index0 }}" value="{{ item.title or '' }}"></div>
+                                <div class="col-md-6 mb-3"><label class="form-label">Company</label><input type="text" class="form-control" name="experience_company_{{ loop.index0 }}" value="{{ item.company or '' }}"></div>
+                                <div class="col-md-6 mb-3"><label class="form-label">Location</label><input type="text" class="form-control" name="experience_location_{{ loop.index0 }}" value="{{ item.location or '' }}"></div>
+                                <div class="col-md-6 mb-3"><label class="form-label">Dates (e.g., Jan 2020 - Present)</label><input type="text" class="form-control" name="experience_dates_{{ loop.index0 }}" value="{{ item.dates or '' }}"></div>
+                                <div class="col-12 mb-3"><label class="form-label">Key Points (One per line)</label><textarea class="form-control" name="experience_points_{{ loop.index0 }}" rows="5" placeholder="Leave empty for AI to handle">{{ (item.points | join('\n')) or '' }}</textarea></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>Projects</h3>
+                    <button type="button" class="btn btn-success btn-sm" onclick="addItem('project')">Add Project</button>
+                </div>
+                <div class="card-body" id="project-container">
+                     {% for item in data.projects %}
+                    <div class="project-item item-card card mb-3">
+                        <div class="card-body">
+                             <div class="d-flex justify-content-end">
+                                 <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3"><label class="form-label">Project Name</label><input type="text" class="form-control" name="project_name_{{ loop.index0 }}" value="{{ item.name or '' }}" placeholder="Leave empty for AI to handle"></div>
+                                <div class="col-md-6 mb-3"><label class="form-label">Dates</label><input type="text" class="form-control" name="project_dates_{{ loop.index0 }}" value="{{ item.dates or '' }}" placeholder="Leave empty for AI to handle"></div>
+                                <div class="col-12 mb-3"><label class="form-label">Key Points (One per line)</label><textarea class="form-control" name="project_points_{{ loop.index0 }}" rows="4" placeholder="Leave empty for AI to handle">{{ (item.points | join('\n')) or '' }}</textarea></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>Education</h3>
+                    <button type="button" class="btn btn-success btn-sm" onclick="addItem('education')">Add Education</button>
+                </div>
+                <div class="card-body" id="education-container">
+                    {% for item in data.education %}
+                     <div class="education-item item-card card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-end">
+                                 <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3"><label class="form-label">University/School</label><input type="text" class="form-control" name="education_university_{{ loop.index0 }}" value="{{ item.university or '' }}"></div>
+                                <div class="col-md-6 mb-3"><label class="form-label">Location</label><input type="text" class="form-control" name="education_location_{{ loop.index0 }}" value="{{ item.location or '' }}"></div>
+                                <div class="col-md-6 mb-3"><label class="form-label">Degree (e.g., Bachelor of Science)</label><input type="text" class="form-control" name="education_degree_{{ loop.index0 }}" value="{{ item.degree or '' }}"></div>
+                                <div class="col-md-6 mb-3"><label class="form-label">Dates</label><input type="text" class="form-control" name="education_dates_{{ loop.index0 }}" value="{{ item.dates or '' }}"></div>
+                                <div class="col-12 mb-3"><label class="form-label">Details (e.g., GPA: 3.8/4.0)</label><textarea class="form-control" name="education_details_{{ loop.index0 }}" rows="2">{{ (item.details | join('\n')) or '' }}</textarea></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>Skills</h3>
+                     <button type="button" class="btn btn-success btn-sm" onclick="addItem('skill')">Add Skill Category</button>
+                </div>
+                <div class="card-body" id="skill-container">
+                     {% for category, value in data.skills.items() %}
+                     <div class="skill-item item-card row mb-3 align-items-center">
+                        <div class="col-md-4">
+                            <label class="form-label">Category (e.g., Languages)</label>
+                            <input type="text" class="form-control" name="skill_category_{{ loop.index0 }}" value="{{ category }}">
+                        </div>
+                        <div class="col-md-7">
+                            <label class="form-label">Skills (e.g., Python, Java, SQL)</label>
+                            <input type="text" class="form-control" name="skill_value_{{ loop.index0 }}" value="{{ value }}">
+                        </div>
+                        <div class="col-md-1 d-flex align-items-end">
+                             <button type="button" class="btn btn-danger btn-sm w-100" onclick="removeItem(this)">X</button>
+                        </div>
+                    </div>
+                     {% endfor %}
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>Custom Sections <span class="text-muted small">(be mindful of space on resume)</span></h3>
+                    <button type="button" class="btn btn-success btn-sm" onclick="addItem('custom')">Add Custom Section</button>
+                </div>
+                <div class="card-body" id="custom-container">
+                    {% for item in data.custom_sections %}
+                    <div class="custom-item item-card card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Section Title (e.g., Certifications, Awards)</label>
+                                    <input type="text" class="form-control" name="custom_title_{{ loop.index0 }}" value="{{ item.title or '' }}">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Content (One point per line)</label>
+                                    <textarea class="form-control" name="custom_points_{{ loop.index0 }}" rows="3">{{ (item.points | join('\n')) or '' }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="d-grid mb-5">
+                <button type="submit" class="btn btn-primary btn-lg">Save Profile</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="position-sticky" style="top: 2rem;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Reference Sample</h5>
+                    <p class="card-text text-muted">Use this sample resume as a guide for the kind of information to include in your profile.</p>
+                    <img src="pic.png" alt="Reference Resume" class="img-fluid rounded shadow-sm">
+                </div>
+            </div>
         </div>
     </div>
-    
-    <div class="d-grid mb-5">
-        <button type="submit" class="btn btn-primary btn-lg">Save Profile</button>
-    </div>
-</form>
-
+</div>
 {% endblock %}
 
 {% block scripts %}
@@ -204,7 +212,7 @@ function getTemplate(section, index) {
                     <div class="col-md-6 mb-3"><label class="form-label">Company</label><input type="text" class="form-control" name="experience_company_${index}"></div>
                     <div class="col-md-6 mb-3"><label class="form-label">Location</label><input type="text" class="form-control" name="experience_location_${index}"></div>
                     <div class="col-md-6 mb-3"><label class="form-label">Dates</label><input type="text" class="form-control" name="experience_dates_${index}"></div>
-                    <div class="col-12 mb-3"><label class="form-label">Key Points (One per line)</label><textarea class="form-control" name="experience_points_${index}" rows="5"></textarea></div>
+                    <div class="col-12 mb-3"><label class="form-label">Key Points (One per line)</label><textarea class="form-control" name="experience_points_${index}" rows="5" placeholder="Leave empty for AI to handle"></textarea></div>
                 </div>
             </div>
         </div>`;
@@ -217,9 +225,9 @@ function getTemplate(section, index) {
                      <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 mb-3"><label class="form-label">Project Name</label><input type="text" class="form-control" name="project_name_${index}"></div>
-                    <div class="col-md-6 mb-3"><label class="form-label">Dates</label><input type="text" class="form-control" name="project_dates_${index}"></div>
-                    <div class="col-12 mb-3"><label class="form-label">Key Points (One per line)</label><textarea class="form-control" name="project_points_${index}" rows="4"></textarea></div>
+                    <div class="col-md-6 mb-3"><label class="form-label">Project Name</label><input type="text" class="form-control" name="project_name_${index}" placeholder="Leave empty for AI to handle"></div>
+                    <div class="col-md-6 mb-3"><label class="form-label">Dates</label><input type="text" class="form-control" name="project_dates_${index}" placeholder="Leave empty for AI to handle"></div>
+                    <div class="col-12 mb-3"><label class="form-label">Key Points (One per line)</label><textarea class="form-control" name="project_points_${index}" rows="4" placeholder="Leave empty for AI to handle"></textarea></div>
                 </div>
             </div>
         </div>`;
