@@ -1,53 +1,46 @@
-Make your mark at Comcast -- a Fortune 30 global media and technology company. From the connectivity and platforms we provide, to the content and experiences we create, we reach hundreds of millions of customers, viewers, and guests worldwide. Become part of our award-winning technology team that turns big ideas into cutting-edge products, platforms, and solutions that our customers love. We create space to innovate, and we recognize, reward, and invest in your ideas, while ensuring you can proudly bring your authentic self to the workplace. Join us. You’ll do the best work of your career right here at Comcast. (In most cases, Comcast prefers to have employees on-site collaborating unless the team has been designated as virtual due to the nature of their work. If a position is listed with both office locations and virtual offerings, Comcast may be willing to consider candidates who live greater than 100 miles from the office for the remote option.)
-Job Summary
-Responsible for planning and designing new software and SaaS applications. Analyzes, tests and assists with the integration of new applications. Oversees the documentation of all development activity. Assists with tracking performance metrics. Integrates knowledge of business and functional priorities. Acts as a key contributor in a complex and crucial environment. May lead projects and shares expertise. Reporting to the Cyber Analytics and Data Science Team Manager, you will be primarily responsible for developing multiple analytical microservices for DataBee, a SaaS security, risk and compliance platform that was developed internally and used inside Comcast’s SOC, and is now being made available for use by the Fortune 500 CISO customer base. You will work in a high pace, collaborative engineering environment to deliver value for DataBee customers. You also will be influential in creating a startup culture for the DataBee business unit, enabling and empowering your teammates to work in an agile fashion.
-Job Description
-Core Responsibilities
-- Work with engineering and product teams to understand new requirements.
-- Refine and estimate new deliverables.
-- Implement new services and automation tasks
-- Develops software programs, algorithms and automated processes to cleanse, integrate and evaluate large cyber datasets from multiple disparate sources.
-- Uses analytical rigor and statistical methods to analyze large amounts of data, extracting actionable insights using advanced techniques such as machine learning, large-language models, generative AI and statistical analysis
-- Understand platform usage and assist with production deployments and customer issue triage.
-- Develop security features as part of the development and embrace the DevSecOps culture.
-- Use and improve on tools to identify and mitigate production incidents.
-- Create re-usable software components or libraries that can be leveraged by multiple teams, where needed.
-- Create self-contained microservices or application programming interfaces to support the business logic.
-- Use content management systems as applicable and global design patterns and defined coding standards and practices established by the team.
-- Consistent exercise of independent judgment and discretion in matters of significance.
-- Other duties and responsibilities as assigned.
-Required Skills
-- 5 years of experience in Python development, with a focus on building scalable, maintainable code for data-driven applications.
-- Demonstrated expertise in developing and implementing microservices containing complex analytical logic.
-- Demonstrated expertise in working with cybersecurity data sets and applying machine learning techniques to aid in data engineering, security compliance and/or threat hunting.
-- Proficient in Agile Scrum development environments, contributing effectively to cross-functional teams.
-- Experience working with GitHub and Jira or similar technologies.
-- Skilled in using Docker for containerization and deployment.
-- Hands-on experience developing and maintaining SaaS products.
-Employees At All Levels Are Expected To
-- Understand our Operating Principles; make them the guidelines for how you do your job.
-- Own the customer experience - think and act in ways that put our customers first, give them seamless digital options at every touchpoint, and make them promoters of our products and services.
-- Know your stuff - be enthusiastic learners, users and advocates of our game-changing technology, products and services, especially our digital tools and experiences.
-- Win as a team - make big things happen by working together and being open to new ideas.
-- Be an active part of the Net Promoter System - a way of working that brings more employee and customer feedback into the company - by joining huddles, making call backs and helping us elevate opportunities to do better for our customers.
-- Drive results and growth.
-- Respect and promote inclusion & diversity.
-- Do what's right for each other, our customers, investors and our communities.
-Disclaimer
-- This information has been designed to indicate the general nature and level of work performed by employees in this role. It is not designed to contain or be interpreted as a comprehensive inventory of all duties, responsibilities and qualifications.
-Comcast is proud to be an equal opportunity workplace. We will consider all qualified applicants for employment without regard to race, color, religion, age, sex, sexual orientation, gender identity, national origin, disability, veteran status, genetic information, or any other basis protected by applicable law. Comcast will consider for employment applicants with arrest or conviction records in accordance with the requirements of applicable law, including the San Francisco Fair Chance Ordinance, the Los Angeles Fair Chance Initiative for Hiring Ordinance, the Los Angeles County Fair Chance Ordinance for Employers and the California Fair Chance Act. Please note that federal state, or local laws and regulations may restrict or prohibit Comcast from hiring individuals convicted of certain crimes. Additionally, an applicant’s criminal history may have a direct, adverse, and negative relationship on the job duties of this position, which may result in the withdrawal of a conditional offer of employment.
-Skills
-Software Engineering; SaaS Development; Python (Programming Language); Agile Methodology
-Salary
-National Pay Range: $81,865.19 USD-$191,871.54 USD
-Comcast intends to offer the selected candidate base pay within this range, dependent on job-related, non-discriminatory factors such as experience. The application window is 30 days from the date job is posted, unless the number of applicants requires it to close sooner or later.
-The application window is 30 days from the date job is posted, unless the number of applicants requires it to close sooner or later.
-Base pay is one part of the Total Rewards that Comcast provides to compensate and recognize employees for their work. Most sales positions are eligible for a Commission under the terms of an applicable plan, while most non-sales positions are eligible for a Bonus. Additionally, Comcast provides best-in-class Benefits to eligible employees. We believe that benefits should connect you to the support you need when it matters most, and should help you care for those who matter most. That’s why we provide an array of options, expert guidance and always-on tools, that are personalized to meet the needs of your reality – to help support you physically, financially and emotionally through the big milestones and in your everyday life. Please visit the compensation and benefits summary  on our careers site for more details.
-Education
-Bachelor's Degree
-While possessing the stated degree is preferred, Comcast also may consider applicants who hold some combination of coursework and experience, or who have extensive related professional experience.
-Relevant Work Experience
-2-5 Years
+Lensa partners with DirectEmployers to promote this job for SpaceX.
+Full Stack Software Engineer (Starshield)
+Hawthorne, CA
+Apply
+SpaceX was founded under the belief that a future where humanity is out exploring the stars is fundamentally more exciting than one where we are not. Today SpaceX is actively developing the technologies to make this possible, with the ultimate goal of enabling human life on Mars.
+FULL STACK SOFTWARE ENGINEER (STARSHIELD)
+Starshield leverages SpaceX’s Starlink technology and launch capability to support national security efforts. While Starlink is designed for consumer and commercial use, Starshield is designed for government use, with an initial focus on earth observation, communications, and hosted payloads.
+The Starshield software team is building highly reliable in-space mesh networks, designing secure systems to guarantee access to space, designing next-gen communication and sensing software, and more. Aerospace experience is not required to be successful here-- we want our engineers to bring fresh ideas from all areas. We look for engineers who love solving problems and seek to make an impact on an inspiring mission. As we expand this team, we're looking for versatile, motivated, and collaborative engineers.
+Our team is involved in designing the vehicle systems at every phase of development. We build tools that enable us to work more efficiently, and that help us build software systems that are secure, reliable, and autonomous. Our software engineers are responsible for the life cycle of the software they create, including development, testing, and operational support.
+Responsibilities
+- Create highly reliable software systems that task remote sensor payloads on hundreds of satellites in low earth orbit and process the collected information 
+- Apply creativity to build an immersive earth observation experience for users whether they are in offices or in the field 
+- See your software through from start-to-finish: from figuring out the core needs to prototyping, developing, and testing; to production rollout and beyond 
+Basic Qualifications
+- Bachelor’s degree in computer science, data science, physics, mathematics, or a STEM discipline; OR 2+ years of professional experience in full stack software engineering in lieu of a degree 
+- Development experience in C# and Typescript, or full stack software development experience 
+Preferred Skills And Experience
+- Developing software that has been used real-world applications and projects 
+- Knowledge of web services and networks 
+- Experience with AWS or building inside of cloud environments 
+- Experience with developing within Linux server environments, SSH, scripting, and configuration 
+- Experience with Kubernetes or similar container orchestration frameworks 
+- Experience with Service Workers and IndexedDB 
+- Experience with PostgreSQL or implementing highly performant databases 
+- Experience with image data processing and machine learning 
+- Experience with graphics-intensive web application development 
+- Ability to obtain and maintain a Top Secret or Top Secret SCI clearance 
+Additional Requirements
+- Note that an active clearance may provide the opportunity for you to work on sensitive SpaceX missions; if so, you will be subject to pre-employment drug and random drug and alcohol testing 
+- Must be willing to work extended hours and weekends as needed 
+Compensation And Benefits
+Pay range:
+Software Engineer/Level I: $120,000.00 - $145,000.00/per year
+Software Engineer/Level II: $140,000.00 - $170,000.00/per year
+Your actual level and base salary will be determined on a case-by-case basis and may vary based on the following considerations: job-related knowledge and skills, education, and experience.
+Base salary is just one part of your total rewards package at SpaceX. You may also be eligible for long-term incentives, in the form of company stock, stock options, or long-term cash awards, as well as potential discretionary bonuses and the ability to purchase additional stock at a discount through an Employee Stock Purchase Plan. You will also receive access to comprehensive medical, vision, and dental coverage, access to a 401(k) retirement plan, short & long-term disability insurance, life insurance, paid parental leave, and various other discounts and perks. You may also accrue 3 weeks of paid vacation & will be eligible for 10 or more paid holidays per year. Exempt employees are eligible for 5 days of sick leave per year.
+Itar Requirements
+- To conform to U.S. Government export regulations, applicant must be a (i) U.S. citizen or national, (ii) U.S. lawful, permanent resident (aka green card holder), (iii) Refugee under 8 U.S.C.
+- 1157, or (iv) Asylee under 8 U.S.C.
+- 1158, or be eligible to obtain the required authorizations from the U.S. Department of State. Learn more about the ITARhere (https://www.pmddtc.state.gov/?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987) .
+SpaceX is an Equal Opportunity Employer; employment with SpaceX is governed on the basis of merit, competence and qualifications and will not be influenced in any manner by race, color, religion, gender, national origin/ethnicity, veteran status, disability status, age, sexual orientation, gender identity, marital status, mental or physical disability or any other legally protected status.
+Applicants wishing to view a copy of SpaceX’s Affirmative Action Plan for veterans and individuals with disabilities, or applicants requiring reasonable accommodation to the application/interview process should reach out to EEOCompliance@spacex.com.
+If you have questions about this posting, please contact support@lensa.com
                 
             
                             

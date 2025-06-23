@@ -101,9 +101,10 @@ def initialize_database():
     )
     """) # 
 
-    # --- NEW: user_resume_data table ---
+    # In the initialize_database function, modify the CREATE TABLE for user_resume_data
+
     cursor.execute("""
-       CREATE TABLE IF NOT EXISTS user_resume_data (
+    CREATE TABLE IF NOT EXISTS user_resume_data (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER UNIQUE NOT NULL,
         name TEXT,
@@ -117,10 +118,11 @@ def initialize_database():
         projects TEXT, -- Storing as JSON 
         skills TEXT, -- Storing as JSON 
         activities TEXT, -- Storing as JSON 
+        custom_sections TEXT, -- <<< ADD THIS LINE
         last_updated DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users (id)
     )
-    """) # 
+    """)
 
     # Your existing table initializations
     cursor.execute("""
@@ -380,6 +382,26 @@ def parse_form_data(form):
             db_key = 'activities' # 
         data[db_key] = json.dumps(items) # 
 
+    # In the parse_form_data function, before the `return data` line
+
+    custom_items = []
+    # Find all custom section titles submitted with the form
+    custom_section_keys = [k for k in form if k.startswith('custom_title_')]
+    if custom_section_keys:
+        # Get the unique index numbers from the keys
+        indices = sorted(list(set(key.split('_')[-1] for key in custom_section_keys)))
+
+        for index in indices:
+            title = form.get(f'custom_title_{index}')
+            points_str = form.get(f'custom_points_{index}')
+            # Only add the section if it has a title and some content
+            if title and points_str:
+                points = [p.strip() for p in points_str.split('\n') if p.strip()]
+                if points:
+                    custom_items.append({'title': title, 'points': points})
+    # Save the result as a JSON string
+    data['custom_sections'] = json.dumps(custom_items)
+
     return data
 
 @app.route('/profile', methods=['GET', 'POST'])
@@ -394,15 +416,17 @@ def profile():
             cursor.execute("""
                 UPDATE user_resume_data SET
                     name = ?, email = ?, phone = ?, linkedin = ?, github = ?, summary = ?,
-                     education = ?, experience = ?, projects = ?, skills = ?, activities = ?,
+                    education = ?, experience = ?, projects = ?, skills = ?, activities = ?,
+                    custom_sections = ?, -- <<< ADD THIS
                     last_updated = CURRENT_TIMESTAMP
                 WHERE user_id = ?""", (
                 resume_data['name'], resume_data['email'], resume_data['phone'],
-                 resume_data['linkedin'], resume_data['github'], resume_data['summary'], # 
-                resume_data['education'], resume_data['experience'], resume_data['projects'], # 
+                resume_data['linkedin'], resume_data['github'], resume_data['summary'],
+                resume_data['education'], resume_data['experience'], resume_data['projects'],
                 resume_data['skills'], resume_data['activities'],
+                resume_data.get('custom_sections', '[]'), # <<< ADD THIS
                 current_user.id
-            )) # 
+            ))
             conn.commit()
             flash('Your profile has been updated successfully!', 'success')
         except Exception as e: # 
@@ -420,18 +444,19 @@ def profile():
         return redirect(url_for('home'))
 
     resume_data = {
-        'name': user_data_row['name'],
-        'email': user_data_row['email'],
-        'phone': user_data_row['phone'],
-        'linkedin': user_data_row['linkedin'],
-        'github': user_data_row['github'],
-        'summary': user_data_row['summary'],
-        'education': json.loads(user_data_row['education'] or '[]'), # 
-        'experience': json.loads(user_data_row['experience'] or '[]'), # 
-        'projects': json.loads(user_data_row['projects'] or '[]'), # 
-        'skills': json.loads(user_data_row['skills'] or '{}'), # 
-        'activities': json.loads(user_data_row['activities'] or '[]') # 
-    }
+    'name': user_data_row['name'],
+    'email': user_data_row['email'],
+    'phone': user_data_row['phone'],
+    'linkedin': user_data_row['linkedin'],
+    'github': user_data_row['github'],
+    'summary': user_data_row['summary'],
+    'education': json.loads(user_data_row['education'] or '[]'),
+    'experience': json.loads(user_data_row['experience'] or '[]'),
+    'projects': json.loads(user_data_row['projects'] or '[]'),
+    'skills': json.loads(user_data_row['skills'] or '{}'),
+    'activities': json.loads(user_data_row['activities'] or '[]'),
+    'custom_sections': json.loads(user_data_row['custom_sections'] or '[]') # <<< ADD THIS
+}
 
     return render_template('profile.html', data=resume_data)
 

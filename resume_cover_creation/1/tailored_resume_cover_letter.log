@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.7)  23 JUN 2025 03:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.7)  23 JUN 2025 05:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -481,8 +481,21 @@ available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
 n input line 48.
 
+! You can't use `macro parameter character #' in horizontal mode.
+l.61 ...r a secure satellite mesh network using C#
+                                                   and Typescript, handling ...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
 
-Package hyperref Warning: Suppressing link with empty target on input line 49.
+! You can't use `macro parameter character #' in horizontal mode.
+l.64 ...rience, combined with my proficiency in C#
+                                                  , Typescript, and Java, ma...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
@@ -515,19 +528,19 @@ anged.
 Here is how much of TeX's memory you used:
  14062 strings out of 474486
  246180 string characters out of 5743756
- 1934542 words of memory out of 5000000
+ 1936542 words of memory out of 5000000
  36196 multiletter control sequences out of 15000+600000
  560546 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,950b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,751b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome5
 /FontAwesome5Brands-Regular.pfb><C:/Users/yashw/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb><C:/Users/yashw/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ya
 shw/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on tailored_resume_cover_letter.pdf (1 page, 53559 bytes).
+Output written on tailored_resume_cover_letter.pdf (1 page, 56027 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 40 PDF objects out of 1000 (max. 8388607)
  2 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

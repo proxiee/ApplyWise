@@ -116,16 +116,17 @@ def generate_cover_letter_body(model, full_resume_data, job_desc):
     }
     
     prompt = f"""
-    You are an expert career advisor writing a compelling cover letter body.
+    You are an expert career advisor writing a compelling cover letter body. Always use text to say numbers like (Fifteen percent) and never use numericals.
     **Task:** Write the body of a cover letter. Your output MUST start with the date and recipient and end with the closing (e.g., "Sincerely,"). DO NOT include the user's header, \\documentclass, \\begin{{document}}, or \\end{{document}}.
 
     **Instructions:**
     1.  **Start with the Date and Recipient:** Begin with today's date: {datetime.now().strftime('%B %d, %Y')}. Below that, add the recipient's details. If a specific person is not mentioned in the job description, address it to "Hiring Manager".
-    2.  **Write a Compelling Body:** Create a three to four paragraph body that is perfectly tailored to the job description.
+    2.  **Write a Compelling Body:** If you ever mentioned a number specify the percentage symbol beside it and immediately followed by the impact it created in what part of the success, for example efficiency, development time, user engagement, cost reduction, or revenue.Do not ever mention where the Job is posted, just say as posted on your job board. Create a three to four paragraph body that is perfectly tailored to the job description.
     3.  **Integrate Achievements:** Weave in specific, quantifiable achievements from the "TAILORED RESUME CONTEXT" (especially from the 'experience' and 'projects' sections) as concrete evidence of skills.
-    4.  **Mirror Language:** Use keywords and mirror the tone from the job description.
-    5.  **End with a Professional Closing:** Conclude with "Sincerely," followed by a few blank lines for a signature, and then the user's typed name: {full_resume_data.get('name')}.
-    6.  **Output Raw Text/LaTeX:** Your response must ONLY be the text and LaTeX for the letter's content, ready to be placed inside a LaTeX document. Ensure all special characters are properly escaped for LaTeX.
+    4.  **Quantify and Specify Impact:** Every number write it in text form and add percent impact it created in the efficiency, revenue or anything that is concerned.
+    5.  **Mirror Language and Specify Impact:** Reflect the tone, keywords, and priorities found in the job description. Align your phrasing with the company’s voice and highlight achievements that relate directly to their stated needs. End every paragraph with a period(.).
+    6.  **End with a Professional Closing:** Conclude with "Sincerely," followed by a signature, and then the user's typed name: {full_resume_data.get('name')}.
+    7.  **Output Raw Text/LaTeX:** Your response must ONLY be the text and LaTeX for the letter's content, ready to be placed inside a LaTeX document. Ensure all special characters are properly escaped for LaTeX.
 
     ---
     **1. TAILORED RESUME CONTEXT (for achievements):**

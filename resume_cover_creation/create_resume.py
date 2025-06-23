@@ -33,11 +33,16 @@ def get_user_data_from_db(user_id):
             sys.exit(1)
 
         resume_data = {}
+        # Iterate over all columns in the fetched row
         for key in data_row.keys():
-            if key in ['education', 'experience', 'projects', 'skills', 'activities']:
+            # These are the columns expected to contain JSON data
+            if key in ['education', 'experience', 'projects', 'skills', 'activities', 'custom_sections']:
                 try:
-                    resume_data[key] = json.loads(data_row[key] or '[]')
+                    # Use a default that makes sense for the key
+                    default_value = '[]' if key != 'skills' else '{}'
+                    resume_data[key] = json.loads(data_row[key] or default_value)
                 except (json.JSONDecodeError, TypeError):
+                    # If loading fails, assign a safe default
                     resume_data[key] = [] if key != 'skills' else {}
             else:
                 resume_data[key] = data_row[key]
@@ -74,7 +79,6 @@ def generate_tailored_content(model, base_resume, job_desc):
     }
     original_summary_length = len(base_resume.get("summary", ""))
     
-    # --- THIS IS THE CORRECTED PROMPT ---
     prompt = f"""
     You are an expert resume writer and JSON editor. Your task is to take a base resume's summary, experience, and projects, and a target job description, then rewrite specific parts of those sections.
 
@@ -84,7 +88,7 @@ def generate_tailored_content(model, base_resume, job_desc):
     2.  **Rewrite 'experience' Bullet Points**: For each object in the 'experience' array, you MUST keep the existing 'company', 'location', 'title', and 'dates' keys and their original values. Your ONLY task is to rewrite the 'points' array to use strong action verbs and metrics aligned with the job description.
     
     3.  **Rewrite 'projects'**: Re-imagine the 'projects' section. The final output must have exactly 3 projects.
-        - If an existing project is relevant, keep its 'name' but make up dates between the last three years(between 2025 to 2022 at most) for projects, the advanced one on the top to the botoom, and heavily rewrite its 'points' with keywords and metrics from the job description.
+        - If an existing project is relevant, keep its 'name' but make up dates along with months in the format "Month Year - Month Year" between the last three years(between 2025 to 2022 at most) for projects, the advanced one on the top to the botoom, and heavily rewrite its 'points' with keywords and metrics from the job description.
         - If a project is not relevant, replace it with a new, plausible project that is a perfect fit, including a 'name', 'dates', and tailored 'points'.
 
     4.  **Preserve Structure and Keys**: You MUST return ONLY a single, valid JSON object. It is critical that you maintain the original JSON structure perfectly. For 'experience' and 'projects', all original keys (like company, location, dates, etc.) must be present in your final output.
@@ -111,7 +115,10 @@ def generate_tailored_content(model, base_resume, job_desc):
         print(f"Error calling Gemini API or parsing JSON: {e}")
         # Add this line to see what the AI is returning on an error
         print("--- Gemini's Raw Response ---")
-        print(response.text)
+        try:
+            print(response.text)
+        except NameError:
+            print("Response object not available.")
         print("-----------------------------")
         return None
 
@@ -154,9 +161,9 @@ def build_latex_from_data(data):
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 \pdfgentounicode=1
 \newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-3pt}}}}
-\newcommand{\resumeSubheading}[4]{\vspace{-2pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-7pt}}
-\newcommand{\resumeSubSubheading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\textit{\small#1} & \textit{\small #2} \\\end{tabular*}\vspace{-7pt}}
-\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubheading}[4]{\vspace{-2pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\ \textit{\small#3} & \textit{\small #4} \\ \end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubSubheading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\textit{\small#1} & \textit{\small #2} \\ \end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\ \end{tabular*}\vspace{-7pt}}
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
@@ -209,6 +216,17 @@ def build_latex_from_data(data):
         skills_latex = "\\vspace{-7pt}\n".join([f"\\resumeItem{{\\textbf{{{sanitize_latex(category)}:}} {sanitize_latex(skills)}}}" for category, skills in data.get('skills', {}).items()])
         latex_parts.append(skills_latex)
         latex_parts.append(r"""\resumeSubHeadingListEnd\vspace{-10pt}""")
+    
+    # NEW: Logic to add custom sections to the LaTeX document
+    if data.get('custom_sections'):
+        for section in data.get('custom_sections', []):
+            if section.get('title') and section.get('points'):
+                section_title = sanitize_latex(section.get('title', '')).upper()
+                latex_parts.append(f"""\\section{{{{\\fontsize{{9pt}}{{20pt}}\\selectfont \\textbf{{{section_title}}}}}}}""")
+                points_latex = "\\resumeItemListStart\n" + "\n".join([f"\\resumeItem{{{sanitize_latex(point)}}}\n\\vspace{{-8pt}}"for point in section.get('points', [])]) + "\n\\resumeItemListEnd"
+                latex_parts.append(points_latex)
+                latex_parts.append(r"""\vspace{-8pt}""")
+
     latex_parts.append(r"\end{document}")
     return "\n".join(latex_parts)
 

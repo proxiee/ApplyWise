@@ -8,6 +8,7 @@
 <hr>
 
 <form method="POST" action="{{ url_for('profile') }}" id="profile-form">
+    <!-- Personal Information Card -->
     <div class="card mb-4">
         <div class="card-header">
             <h3>Personal Information</h3>
@@ -38,6 +39,7 @@
         </div>
     </div>
 
+    <!-- Professional Summary Card -->
     <div class="card mb-4">
         <div class="card-header">
             <h3>Professional Summary</h3>
@@ -48,6 +50,7 @@
         </div>
     </div>
 
+    <!-- Work Experience Card -->
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h3>Work Experience</h3>
@@ -55,7 +58,7 @@
         </div>
         <div class="card-body" id="experience-container">
             {% for item in data.experience %}
-            <div class="experience-item card mb-3">
+            <div class="experience-item item-card card mb-3">
                 <div class="card-body">
                     <div class="d-flex justify-content-end">
                          <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
@@ -73,6 +76,7 @@
         </div>
     </div>
     
+    <!-- Projects Card -->
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h3>Projects</h3>
@@ -80,7 +84,7 @@
         </div>
         <div class="card-body" id="project-container">
              {% for item in data.projects %}
-            <div class="project-item card mb-3">
+            <div class="project-item item-card card mb-3">
                 <div class="card-body">
                      <div class="d-flex justify-content-end">
                          <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
@@ -96,6 +100,7 @@
         </div>
     </div>
 
+    <!-- Education Card -->
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h3>Education</h3>
@@ -103,7 +108,7 @@
         </div>
         <div class="card-body" id="education-container">
             {% for item in data.education %}
-             <div class="education-item card mb-3">
+             <div class="education-item item-card card mb-3">
                 <div class="card-body">
                     <div class="d-flex justify-content-end">
                          <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
@@ -121,6 +126,7 @@
         </div>
     </div>
     
+    <!-- Skills Card -->
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h3>Skills</h3>
@@ -128,7 +134,7 @@
         </div>
         <div class="card-body" id="skill-container">
              {% for category, value in data.skills.items() %}
-             <div class="skill-item row mb-3 align-items-center">
+             <div class="skill-item item-card row mb-3 align-items-center">
                 <div class="col-md-4">
                     <label class="form-label">Category (e.g., Languages)</label>
                     <input type="text" class="form-control" name="skill_category_{{ loop.index0 }}" value="{{ category }}">
@@ -144,19 +150,51 @@
              {% endfor %}
         </div>
     </div>
+
+    <!-- NEW: Custom Sections Card -->
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h3>Custom Sections</h3>
+            <button type="button" class="btn btn-success btn-sm" onclick="addItem('custom')">Add Custom Section</button>
+        </div>
+        <div class="card-body" id="custom-container">
+            {% for item in data.custom_sections %}
+            <div class="custom-item item-card card mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Section Title (e.g., Certifications, Awards)</label>
+                            <input type="text" class="form-control" name="custom_title_{{ loop.index0 }}" value="{{ item.title or '' }}">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Content (One point per line)</label>
+                            <textarea class="form-control" name="custom_points_{{ loop.index0 }}" rows="3">{{ (item.points | join('\n')) or '' }}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
     
-    <div class="d-grid">
+    <div class="d-grid mb-5">
         <button type="submit" class="btn btn-primary btn-lg">Save Profile</button>
     </div>
 </form>
 
+{% endblock %}
+
+{% block scripts %}
 <script>
 // JavaScript for dynamically adding and removing form items
 
 function getTemplate(section, index) {
     if (section === 'experience') {
         return `
-        <div class="experience-item card mb-3">
+        <div class="experience-item item-card card mb-3">
             <div class="card-body">
                  <div class="d-flex justify-content-end">
                      <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
@@ -173,7 +211,7 @@ function getTemplate(section, index) {
     }
      if (section === 'project') {
         return `
-        <div class="project-item card mb-3">
+        <div class="project-item item-card card mb-3">
             <div class="card-body">
                 <div class="d-flex justify-content-end">
                      <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
@@ -188,7 +226,7 @@ function getTemplate(section, index) {
     }
     if (section === 'education') {
          return `
-        <div class="education-item card mb-3">
+        <div class="education-item item-card card mb-3">
             <div class="card-body">
                 <div class="d-flex justify-content-end">
                      <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
@@ -205,7 +243,7 @@ function getTemplate(section, index) {
     }
     if (section === 'skill') {
         return `
-        <div class="skill-item row mb-3 align-items-center">
+        <div class="skill-item item-card row mb-3 align-items-center">
             <div class="col-md-4">
                 <label class="form-label">Category</label>
                 <input type="text" class="form-control" name="skill_category_${index}">
@@ -219,23 +257,59 @@ function getTemplate(section, index) {
             </div>
         </div>`;
     }
+    // NEW: Template for a custom section
+    if (section === 'custom') {
+        return `
+        <div class="custom-item item-card card mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Section Title (e.g., Certifications, Awards)</label>
+                        <input type="text" class="form-control" name="custom_title_${index}">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Content (One point per line)</label>
+                        <textarea class="form-control" name="custom_points_${index}" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    }
     return '';
 }
 
 function addItem(section) {
     const container = document.getElementById(`${section}-container`);
-    const itemCount = container.querySelectorAll(`.${section}-item`).length;
+    const itemCount = container.querySelectorAll(`.item-card`).length; // Use a common class for all items
     const template = getTemplate(section, itemCount);
     const div = document.createElement('div');
     div.innerHTML = template;
-    container.appendChild(div.firstElementChild);
+    // Animate the new item appearing
+    const newItem = div.firstElementChild;
+    newItem.style.opacity = 0;
+    newItem.style.transform = 'translateY(-10px)';
+    container.appendChild(newItem);
+    setTimeout(() => {
+        newItem.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        newItem.style.opacity = 1;
+        newItem.style.transform = 'translateY(0)';
+    }, 10);
 }
 
 function removeItem(button) {
-    // For most sections, the button is inside a .card-body which is inside the item wrapper
-    let itemWrapper = button.closest('.experience-item, .project-item, .education-item, .skill-item');
+    let itemWrapper = button.closest('.item-card');
     if (itemWrapper) {
-        itemWrapper.remove();
+        // Animate the item disappearing
+        itemWrapper.style.transition = 'opacity 0.3s ease, transform 0.3s ease, height 0.3s ease 0.3s';
+        itemWrapper.style.opacity = 0;
+        itemWrapper.style.transform = 'scale(0.95)';
+        itemWrapper.style.height = '0px';
+        setTimeout(() => {
+            itemWrapper.remove();
+        }, 600);
     }
 }
 </script>

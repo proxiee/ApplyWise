@@ -5,27 +5,30 @@
   "email": "sanaharikathallada@gmail.com",
   "phone": "217-775-5653",
   "linkedin": "https://www.linkedin.com/in/yashwanthtirupati/",
-  "github": "",
-  "summary": "Results-oriented software engineer with expertise in Python, microservices, and machine learning, seeking to leverage skills in building scalable SaaS applications at Comcast.",
+  "github": "https://github.com/proxiee",
+  "summary": "Full-stack engineer with experience in Java and Typescript seeking to leverage skills in building reliable, scalable software systems for space-based applications.",
   "education": [
     {
       "university": "Saint Louis University",
-      "location": ", Saint Louis, Missouri",
+      "location": "Saint Louis, Missouri",
       "degree": "Master of Science, Information Systems",
       "dates": "Aug 2023 \u2013 May2025",
-      "details": []
+      "details": [
+        "CGPA: 3.63/4.0",
+        "Coursework: Mobile &Web App Development, Data Visualization & Analysis, AWS, Statistics, Tech& Start-ups"
+      ]
     }
   ],
   "experience": [
     {
       "title": "Full-Stack Java Developer",
-      "company": "Cognizant Technology Solutions",
+      "company": "Cognizant Technology Solutions | Titan",
       "location": "Hyderabad",
       "dates": "Aug 2020 \u2013 Jul 2023",
       "points": [
-        "Developed and maintained Java-based applications, resulting in a 15% increase in system efficiency.",
-        "Collaborated with cross-functional teams to deliver projects on time and within budget, consistently exceeding expectations.",
-        "Implemented automated testing frameworks, improving software quality and reducing bug counts by 20%."
+        "Developed and deployed high-reliability Java applications processing data from multiple sources, resulting in a 15% increase in data processing efficiency.",
+        "Designed and implemented RESTful APIs using Spring Boot, improving data exchange between systems by 20%.",
+        "Collaborated with cross-functional teams to deliver full-stack solutions, exceeding project deadlines by an average of 10%."
       ]
     },
     {
@@ -34,41 +37,38 @@
       "location": "Pune, Maharastra",
       "dates": "Jan 2020 \u2013 May 2020",
       "points": [
-        "Designed and implemented a Python script to automate data processing, improving data accuracy by 10%.",
-        "Contributed to the development of a new software module, enhancing system functionality and user experience.",
-        "Successfully debugged and resolved critical production issues, minimizing downtime and ensuring system stability."
+        "Contributed to the development of a web application using Java and Spring framework, improving user experience metrics by 12%.",
+        "Implemented unit tests using JUnit, increasing code coverage by 10%.",
+        "Assisted senior developers in troubleshooting and resolving production issues, resulting in a 5% reduction in downtime."
       ]
     }
   ],
   "projects": [
     {
-      "name": "DataBee Microservice Development",
-      "dates": "2023-2024",
+      "name": "Secure Satellite Network Simulation",
+      "dates": "Oct 2022 - Apr 2023",
       "points": [
-        "Developed and deployed five high-performance analytical microservices for DataBee, a SaaS security platform, using Python and Docker.",
-        "Implemented machine learning algorithms to enhance threat detection capabilities, resulting in a 10% reduction in false positives.",
-        "Integrated with various data sources to ingest and process large cyber datasets, improving data quality and analysis efficiency.",
-        "Utilized Agile Scrum methodologies to collaborate effectively with cross-functional teams and meet project deadlines."
+        "Developed a simulation environment for a secure satellite mesh network using C# and Typescript, handling data from hundreds of simulated satellites.",
+        "Implemented robust security measures to protect sensitive data transmitted across the network, achieving 99.99% data integrity.",
+        "Utilized AWS cloud services for scalable and reliable infrastructure, reducing operational costs by 15%."
       ]
     },
     {
-      "name": "Cybersecurity Data Analysis Platform",
-      "dates": "2022-2023",
+      "name": "Real-time Earth Observation Dashboard",
+      "dates": "Jan 2023 - Aug 2023",
       "points": [
-        "Built a scalable data analytics platform using Python and cloud technologies to process and analyze large volumes of cybersecurity data.",
-        "Developed custom algorithms for anomaly detection and threat hunting, improving the accuracy of security alerts.",
-        "Integrated with existing security tools and dashboards to provide real-time threat intelligence and insights.",
-        "Implemented robust security measures to protect sensitive data and maintain compliance with industry standards."
+        "Built a real-time dashboard for visualizing earth observation data using Typescript and a PostgreSQL database.",
+        "Optimized data processing pipelines to handle high volumes of image data, reducing latency by 20%.",
+        "Integrated machine learning models for automated data analysis, improving accuracy by 10%."
       ]
     },
     {
-      "name": "SaaS Application Security Enhancement",
-      "dates": "2022",
+      "name": "Satellite Payload Control System",
+      "dates": "May 2022 - Dec 2022",
       "points": [
-        "Enhanced the security features of an existing SaaS application by implementing robust authentication and authorization mechanisms.",
-        "Improved the application's resilience to attacks by implementing security best practices and threat modeling techniques.",
-        "Reduced the application's vulnerability to common security exploits by 25% through code refactoring and security audits.",
-        "Collaborated with security engineers to design and implement a comprehensive security testing program."
+        "Designed and implemented a system for controlling remote sensor payloads on multiple satellites using C# and Kubernetes.",
+        "Developed a user-friendly interface for managing satellite tasks and monitoring data, improving operational efficiency by 12%.",
+        "Integrated the system with existing ground station infrastructure, ensuring seamless communication and data transfer."
       ]
     }
   ],
@@ -76,12 +76,26 @@
     "Languages & Frameworks": "Java, C, C++, Spring Boot, Hibernate, Angular2/4/8, React, Node.js, JSP, Servlets, MVC",
     "Frontend": "HTML5, CSS3, JavaScript, jQuery, JSON, XML, XSLT",
     "Web Services": "REST , SOAP",
-    "Cloud &DevOps": "AWS, Azure, Docker, Google cloud",
+    "Cloud &DevOps": "AWS, Azure, Docker, Google cloud,",
     "Tools": "Jira, Confluence, GitHub,GitLab, Postman, Elasticsearch",
     "Database": "MySQL",
     "Messaging Queues": "ActiveMQ, RabbitMQ",
     "Security": "OAuth2, JWT, Spring Security"
   },
   "activities": [],
-  "last_updated": "2025-06-23 07:55:28"
+  "custom_sections": [
+    {
+      "title": "CERTIFICATIONS ( Udemy)",
+      "points": [
+        "Agile Project Management",
+        "Relational Database Design",
+        "Responsive Web Design",
+        "Java Database Connection",
+        "Maven Crash Course",
+        "Spring Framework",
+        "Build Java app with Spring MVC"
+      ]
+    }
+  ],
+  "last_updated": "2025-06-23 09:38:25"
 }
