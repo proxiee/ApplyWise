@@ -9,7 +9,7 @@
     "IndeedScraperUSAEng_01df12877f1c1496": {
         "company": "Red Hat, Inc.",
         "description": "Basic knowledge of software development life cycle tools, like GitHub and Jenkins. Passion for learning new technologies, building elegant software sy..",
-        "post_date": "2025-06-21",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Ansible Software Engineer"
     },
@@ -29,10 +29,24 @@
     },
     "IndeedScraperUSAEng_0fdadb30215d1973": {
         "company": "University of North Carolina at Chapel Hill",
-        "description": "Ability to communicate complex data insights in a clear and actionable manner. Analyze potential prospects’ performance data to prepare in-depth profi..",
-        "post_date": "2025-06-21",
+        "description": "Ability to communicate complex data insights in a clear and actionable manner. Analyze potential prospectsâ€™ performance data to prepare in-depth profi..",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Data Analyst"
+    },
+    "IndeedScraperUSAEng_10518344ea767eb1": {
+        "company": "Newell Brands",
+        "description": "The Manager, Creative delivers the creative strategy and manages execution for one or more brands and/or product groupings within a brand, from projec..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Manager, Creative"
+    },
+    "IndeedScraperUSAEng_12f682a79b341529": {
+        "company": "Bekhealth Corp",
+        "description": "Title: Research Nurse Specialist Location: Remote About Us BEKhealth is a leading clinical technology company operating an AI-powered patient-matching..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Research Nurse Specialist"
     },
     "IndeedScraperUSAEng_157a7f470eb4dc0c": {
         "company": "Pay Tel Communications, Inc.",
@@ -40,6 +54,34 @@
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Senior Software Engineer"
+    },
+    "IndeedScraperUSAEng_19d96ab2210cd2a9": {
+        "company": "UBS",
+        "description": "Help with revision & implementation of Silver Publisher User Stories e.g. Interfaces, Reports. Implement according to approved solution design. Comple..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Service Now Developer"
+    },
+    "IndeedScraperUSAEng_1bfefb562fa41cb5": {
+        "company": "Ameriprise Financial",
+        "description": "Participate in code reviews, testing, and debugging to ensure software quality. Collaborate with UI/UX designers, backend developers, and product team..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Mobile App Developer (Remote)"
+    },
+    "IndeedScraperUSAEng_2630cfff6d3e1d8f": {
+        "company": "State of North Carolina - Administrative Office of the Courts",
+        "description": "Determine requirements and business needs for projects. Knowledge of: project plan development; project implementation; digital and web technologies, ..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Web Specialist"
+    },
+    "IndeedScraperUSAEng_2c26c7c2a704ef0d": {
+        "company": "Lifetime Waterproofing Sealant",
+        "description": "Develop and manage a defined territory, introducing our Lifetime™ Sealant to high-impact buyers in commercial, public sector, and industrial markets. ..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Protective Coatings Sales Specialist"
     },
     "IndeedScraperUSAEng_302f3ddcbe8fca52": {
         "company": "Piper Companies",
@@ -62,16 +104,30 @@
         "status": "NEW",
         "title": "Principal Software Engineer"
     },
+    "IndeedScraperUSAEng_3dda98b65b54c7f4": {
+        "company": "LexisNexis",
+        "description": "The Director, Communications and Global Content Marketing will develop and implement a comprehensive, integrated communications plan to support the Le..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Director of Communications - Global Content Marketing North America & UK"
+    },
     "IndeedScraperUSAEng_4923b8df9d9c515a": {
         "company": "Piper Companies",
         "description": "Keywords: Senior Java Developer, Java 17, Spring Boot, Microservices, RESTful APIs, API orchestration, Docker, Kubernetes, AWS, Cloud technologies, Ja..",
-        "post_date": "2025-06-21",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Senior Java Developer"
     },
+    "IndeedScraperUSAEng_4e3993c1b351c00c": {
+        "company": "Advance Auto Business Support (300)",
+        "description": "The Sr. HR Operations Analyst will be responsible for managing work intake, gathering requirements, stakeholder management, and drafting user stories ..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Sr. HR Operations Analyst"
+    },
     "IndeedScraperUSAEng_4f5bc435f5125e04": {
         "company": "WakeMed Health & Hospitals",
-        "description": "Overview: The Data Analytics Project Manager will lead and coordinate data-driven projects across the organization. This role bridges the gap between ..",
+        "description": "Responsibilities include: lead cross-functional teams to deliver data analytics projects, including dashboards, predictive models, and data infrastruc..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Project Manager II, IS-Data Analytics"
@@ -82,6 +138,13 @@
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Full Stack Engineer"
+    },
+    "IndeedScraperUSAEng_50c6e4e27cecf8ae": {
+        "company": "Wells Fargo",
+        "description": "The principal engineer must be able to perform gap analysis of the application and also implement alerting, alarming observability. The principal engi..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Principal Engineer"
     },
     "IndeedScraperUSAEng_5716ecfdb9faaaf7": {
         "company": "Piper Companies",
@@ -113,10 +176,24 @@
     },
     "IndeedScraperUSAEng_6dfc705211fdb2f8": {
         "company": "PRO IT Inc.",
-        "description": "Java Backend w/Terraform8 or more years’ experience developing Java\\J2EE Microservice applications. Have Experience in developing and consuming REST a..",
+        "description": "Java Backend w/Terraform8 or more yearsâ€™ experience developing Java\\J2EE Microservice applications. Have Experience in developing and consuming REST a..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Java Backend Developer (GC & USC only)"
+    },
+    "IndeedScraperUSAEng_723c0df5da351da4": {
+        "company": "Accenture",
+        "description": "Accenture is seeking a seasoned and highly analytical Compensation professional to join our Americas Total Rewards Team. This role is ideal for someon..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Compensation Advisor Associate Manager"
+    },
+    "IndeedScraperUSAEng_771cb8ccb1b67cc1": {
+        "company": "UBS",
+        "description": "Professional with a career reflecting tech leadership abilities coupled with \"hands on\" experience in a diverse range of software projects. Work as a ..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Senior Full Stack UI and Java developer"
     },
     "IndeedScraperUSAEng_7a570c1086535ca8": {
         "company": "Pay Tel Communications, Inc.",
@@ -125,24 +202,115 @@
         "status": "NEW",
         "title": "Software Engineer"
     },
+    "IndeedScraperUSAEng_7b825fcaa77d831f": {
+        "company": "Signalscape, Inc.",
+        "description": "User Requirement Analysis: *Analyze user requirements to derive software designs for new applications or modifications to existing software, ensuring ..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Software Engineer"
+    },
+    "IndeedScraperUSAEng_7c61fb23d7ac8701": {
+        "company": "MetLife",
+        "description": "The Sr Enterprise Infrastructure Engineer is responsible for the design and implementation of application platform solutions, with an initial focus on..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Senior Enterprise Infrastructure Engineer"
+    },
+    "IndeedScraperUSAEng_7dc7dbd208359dfc": {
+        "company": "Iowa City Community School District",
+        "description": "Hertford County Schools, as part of the SparkNC initiative, seeks to hire a creative, innovative individual to support students across a network of No..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Spark NC Lab Leader"
+    },
+    "IndeedScraperUSAEng_83864172c4dac6d7": {
+        "company": "Amentum",
+        "description": "Amentum is seeking a Solution Architect with 3+ years’ experience leading large-scale IT modernization, cloud integration, and cybersecurity initiativ..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Solution Architect"
+    },
+    "IndeedScraperUSAEng_89e5b067960b7a7a": {
+        "company": "Iowa City Community School District",
+        "description": "We are seeking a dynamic, learner-centered educator to serve as the SparkLab Facilitator . This individual will guide and support students as they exp..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Spark Teacher 1/2 Time"
+    },
+    "IndeedScraperUSAEng_8a8f68cf025906f0": {
+        "company": "State of North Carolina",
+        "description": "Knowledge of: project plan development; project implementation; digital and web technologies, development, and best practices; mobile and web-based ap..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Web Specialist"
+    },
+    "IndeedScraperUSAEng_9068030e1b1247fd": {
+        "company": "Compass Technology",
+        "description": "Compass Technology is a dedicated internal team for Compass Group delivering enterprise-wide initiatives that support our diverse customer base and en..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "PRODUCT MANAGER- HYBRID"
+    },
+    "IndeedScraperUSAEng_9201c1036641f6cf": {
+        "company": "Accenture",
+        "description": "We Are The beginning of a new Data & AI decade that will reshape work and society has begun. Accenture is stepping boldly into this future with a clea..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Advance AI Agent Test Lead"
+    },
+    "IndeedScraperUSAEng_9a1b1c61453f2331": {
+        "company": "Accenture",
+        "description": "System Architecture and Environment Sizing: Utilize software vendor software guidelines to define the hardware and software components needed to suppo..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Industry X - Engineering Digitization & PLM - Teamcenter Architect"
+    },
+    "IndeedScraperUSAEng_9b6f6b2e16a99e46": {
+        "company": "Western Governors University",
+        "description": "If you’re passionate about building a better future for individuals, communities, and our country—and you’re committed to working hard to play your pa..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Associate Assessment Developer"
+    },
     "IndeedScraperUSAEng_a0134c048dc9d5af": {
         "company": "School of Government Services",
-        "description": "The Finance and Operations Information Technology (FOIT) Department provides innovative, and responsive technology services to the University's busine..",
+        "description": "Progressive to extensive SQL programming skills and knowledge of data analysis tools to optimize query and process performance while maintaining data ..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "IT Analyst"
     },
+    "IndeedScraperUSAEng_a564b20deff0dfed": {
+        "company": "Accenture",
+        "description": "An experienced Agent Test Lead profession with experience leading testing efforts, implementations and execution of testing processes that incorporate..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Advance AI Agent Test Lead"
+    },
     "IndeedScraperUSAEng_a5edeab05db12eaa": {
         "company": "Piper Companies",
         "description": "Deep understanding of SQL and relational databases for data management. Keywords: Full Stack Engineer, Node.js, Java 8+, SQL, relational databases, Re..",
-        "post_date": "2025-06-21",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Full Stack Engineer - Hybrid"
+    },
+    "IndeedScraperUSAEng_a86e76b386ef6705": {
+        "company": "Wells Fargo",
+        "description": "Wells Fargo is seeking a Technology Director to lead Customer Service Management (CSM) within Branch Systems and Transformation Technology (BSTT). In ..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Technology Director - Customer Service Management"
+    },
+    "IndeedScraperUSAEng_a9a245688afe11fc": {
+        "company": "Wells Fargo",
+        "description": "The Lead Scrum Master within the Corporate Risk Portfolio will drive the successful delivery of complex, high-impact initiatives across a Scaled Agile..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Lead Scrum Master"
     },
     "IndeedScraperUSAEng_ad29a767dfb0caf1": {
         "company": "Royal Bank of Canada",
         "description": "Build and maintain a repository of reusable requirements to support future projects and knowledge sharing. Experience working on agile projects, or a ..",
-        "post_date": "2025-06-21",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Senior Business Analyst"
     },
@@ -155,10 +323,17 @@
     },
     "IndeedScraperUSAEng_b25baf51c2d1d035": {
         "company": "Truist Bank",
-        "description": "Deep knowledge and experience with two or more of the following: Solid foundation in data structures, algorithms, and software design with strong anal..",
+        "description": "Ability to lead complex projects. Deep knowledge and experience with two or more of the following: Solid foundation in data structures, algorithms, an..",
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Software Engineer IV"
+    },
+    "IndeedScraperUSAEng_bdf72d81d19a2638": {
+        "company": "Arbor Acres United Methodist Retirement Community Inc",
+        "description": "Position and Company: We pay additional shift and weekend differentials. Our CNAs help residents with daily living activities and assist nursing staff..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "CNA 11a - 11p FT EOW AV AI"
     },
     "IndeedScraperUSAEng_c1ae9257dfb9552d": {
         "company": "Piper Companies",
@@ -167,6 +342,20 @@
         "status": "NEW",
         "title": "Java Engineer"
     },
+    "IndeedScraperUSAEng_c2c570189ee21b15": {
+        "company": "Provectus",
+        "description": "Staffing & Resource Management: Manage project staffing, collaborate with talent acquisition, and optimize resource utilization across projects. Quali..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Python Full stack Practice Leader/ Engineering manager"
+    },
+    "IndeedScraperUSAEng_c3074b9c45d834e7": {
+        "company": "Amentum",
+        "description": "Amentum is seeking a Solution Architect with 3+ years’ experience leading large-scale IT modernization, cloud integration, and cybersecurity initiativ..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Solution Architect"
+    },
     "IndeedScraperUSAEng_cb78f7f273293f5d": {
         "company": "Piper Companies",
         "description": "Leverage strong knowledge of software design and architecture patterns to guide solution development and technical decision-making. Keywords: UI/UX en..",
@@ -174,12 +363,68 @@
         "status": "NEW",
         "title": "Frontend UI Engineer"
     },
+    "IndeedScraperUSAEng_d011ef9c1dc65df6": {
+        "company": "AdvanceTEC",
+        "description": "AdvanceTEC is a leader in cleanroom and critical environment construction, serving top-tier clients in the biotech, pharmaceutical, and advanced techn..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Executive Assitant"
+    },
+    "IndeedScraperUSAEng_da2b07ee7059001e": {
+        "company": "Iowa City Community School District",
+        "description": "Click here to view job description MINIMUN OF 10 YEARS OF MILITARY EXPERIENCE OR RETIRED…",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "HIGH SCHOOL ARMY JROTC INSTRUCTOR - AI"
+    },
+    "IndeedScraperUSAEng_db67b6cba30f0755": {
+        "company": "accel bi corporation",
+        "description": "Collaborate with technical architects, developers, and analysts to translate business requirements into technical specifications. Integrate the portal..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Sitefinity Web Portal Developer"
+    },
     "IndeedScraperUSAEng_dd3bc7f537a137fa": {
         "company": "Piper Companies",
         "description": "Apply project management methodologies and system development lifecycle processes to complex IT projects. Elicit requirements from stakeholders to ens..",
-        "post_date": "2025-06-21",
+        "post_date": "2025-06-20",
         "status": "NEW",
         "title": "Full Stack Engineer"
+    },
+    "IndeedScraperUSAEng_df285c8fe4e47737": {
+        "company": "Accenture",
+        "description": "Thrives in large, complex, challenging global organizations. Communicates clearly and confidently with stakeholders at all levels, including senior le..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Compensation Advisor Associate Manager"
+    },
+    "IndeedScraperUSAEng_e0ee2ca1458efa60": {
+        "company": "UBS",
+        "description": "10+ years of experience building large-scale software applications. UBS is the worldâ€™s largest and the only truly global wealth manager. Develop new f..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Full Stack Java Engineer"
+    },
+    "IndeedScraperUSAEng_e108083671a6b218": {
+        "company": "Deloitte",
+        "description": "You'll work alongside talented professionals reimagining and re-engineering operations and processes that are critical to businesses. Your contributio..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "AI & Data Manager - Life Sciences Commercial Operations"
+    },
+    "IndeedScraperUSAEng_e724276a47ed0ca9": {
+        "company": "State of North Carolina - Adult Correction",
+        "description": "This position will perform any other duties as assigned by a manager. Ability to assist the supervisor in training, overseeing work, and special proje..",
+        "post_date": "2025-06-20",
+        "status": "NEW",
+        "title": "Release Management Specialist"
+    },
+    "IndeedScraperUSAEng_eb3651a0012e7ddb": {
+        "company": "Nerdy",
+        "description": "Enjoy three full days off every week while working just four 10-hour shifts—more time to relax, travel, or focus on what you love, all while keeping a..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Educational Sales Representative (Work from Home)"
     },
     "IndeedScraperUSAEng_f436649bb31be4c1": {
         "company": "Xsolla",
@@ -201,5 +446,19 @@
         "post_date": "2025-06-21",
         "status": "NEW",
         "title": "Senior Front-end Engineer"
+    },
+    "IndeedScraperUSAEng_f900070a2ea279ce": {
+        "company": "Compass Technology",
+        "description": "Compass Technology is a dedicated internal team for Compass Group delivering enterprise-wide initiatives that support our diverse customer base and en..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "PRODUCT OWNER- HYBRID"
+    },
+    "IndeedScraperUSAEng_fede9487e1833ccc": {
+        "company": "RELX",
+        "description": "The Director, Communications and Global Content Marketing will develop and implement a comprehensive, integrated communications plan to support the Le..",
+        "post_date": "2025-06-21",
+        "status": "NEW",
+        "title": "Director of Communications - Global Content Marketing North America & UK"
     }
 }

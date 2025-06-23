@@ -1,0 +1,39 @@
+We’re partnering with a stealth-mode client building the next frontier in spatial computing—and they’re hiring a Full-Stack Lead Engineer to help architect and scale the foundation of the Spatial Internet. This is a full-time role with competitive comp + equity, available remotely but only for candidates based in Los Angeles.
+What You’ll Build
+You’ll lead development across three core products:
+- Bubblzz – A real-time spatial logic engine that coordinates objects, content, users, and
+behaviors across physical locations.
+- AirScene – A creation platform for designing, scripting, and deploying interactive
+environments using spatial and event-driven logic.
+- LightPlay – A mobile/web interface for users to experience and interact with these
+programmable environments in real time.
+You will help define how relationships between objects, users, environments, and events are
+modeled and executed at scale—forming the programmable structure of the spatial internet.
+What We're Looking For
+Required:
+- 5+ years in full-stack development
+- Experience with distributed systems
+- Proficiency in JavaScript/TypeScript, Node.js, and React
+- REST & WebSocket API design for real-time apps
+- Backend experience with SQL or NoSQL databases
+- Strong architectural thinking and leadership experience
+- Familiarity with dynamic interaction systems (e.g. behaviors, permissions, environments)
+Nice to Have:
+- Graph databases (Neo4j, AWS Neptune, etc.)
+- Geospatial data or 3D modeling knowledge
+- Event-driven/pub-sub systems (Kafka, Redis, MQTT)
+- Experience in AR, simulations, or multiplayer systems
+- Real-time collaboration and user permissions
+- Web3 identity systems (DIDs, wallets, etc.)
+- DevOps: Docker, Kubernetes, CI/CD
+Why Join 
+- Founding-level equity + direct product ownership
+- Work on patented infrastructure already adopted by global partners
+- Help define a new computing paradigm
+- See your work deployed in arenas, theaters, festivals, and cities
+- Join a visionary team shaping the future of real-world interactivity
+🎯 Note: Applicants must be based in Los Angeles, even though the role is remote.
+If you're excited about building tools that blur the line between the digital and physical worlds—let’s talk.        
+            
+                            
+            

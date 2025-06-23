@@ -1,129 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unified Job Board</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-</head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header-container">
-            <h1>My Job Feed</h1>
-            <span id="job-count"></span>
+{% extends "base.html" %}
+
+{% block title %}My Job Feed{% endblock %}
+
+{% block content %}
+{# Font Awesome is used for the magic wand icon. Ideally, place this in your base.html <head> tag. #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    /* Styles for the special "magical" tab */
+    .magic-tab {
+        position: relative;
+        overflow: hidden;
+        border-color: #9d78ff !important;
+        color: #fff !important;
+        font-weight: bold;
+        background: linear-gradient(45deg, #6a3093, #a044ff, #7c5cff, #a044ff, #6a3093);
+        background-size: 400% 400%;
+        animation: gradient-animation 8s ease infinite, pulse-glow 2.5s infinite ease-in-out;
+        transition: all 0.3s ease;
+    }
+
+    .magic-tab:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(160, 68, 255, 0.4);
+    }
+
+    @keyframes gradient-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes pulse-glow {
+        0% { box-shadow: 0 0 5px rgba(160, 68, 255, 0.2), 0 0 10px rgba(160, 68, 255, 0.1); }
+        50% { box-shadow: 0 0 20px rgba(160, 68, 255, 0.6), 0 0 30px rgba(160, 68, 255, 0.4); }
+        100% { box-shadow: 0 0 5px rgba(160, 68, 255, 0.2), 0 0 10px rgba(160, 68, 255, 0.1); }
+    }
+
+    /* Simple star/glitter effect */
+    .magic-tab::after {
+        content: '✨';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        font-size: 1.2rem;
+        opacity: 0;
+        animation: sparkle-up 3s infinite;
+        text-shadow: 0 0 5px #fff;
+    }
+
+    @keyframes sparkle-up {
+        0% { transform: translateY(20px) scale(0.5); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(-20px) scale(1.2) rotate(360deg); opacity: 0; }
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="header-container d-flex justify-content-between align-items-center mb-3">
+        <h1>My Job Feed</h1>
+        <span id="job-count" class="badge bg-secondary fs-5"></span>
+    </div>
+
+    <div class="controls-container card mb-4">
+        <div class="card-header">
+            Scrape Controls
         </div>
-
-        <!-- Stats -->
-        <div id="stats-container" class="stats-container">Loading stats...</div>
-
-        <!-- Scrape Controls -->
-        <div class="controls-container">
-            <fieldset>
-                <legend>Scrape Controls</legend>
-                <div class="controls-grid">
-                    <div class="control-group">
-                        <label for="source-select">Source:</label>
-                        <select id="source-select" onchange="updateTimeUnitOptions()">
-                            <option value="all" selected>All Sources</option>
-                            <option value="linkedin">LinkedIn Only</option>
-                            <option value="indeed">Indeed Only</option>
-                        </select>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-3">
+                    <label for="source-select" class="form-label">Source:</label>
+                    <select id="source-select" class="form-select" onchange="updateTimeUnitOptions()">
+                        <option value="all" selected>All Sources</option>
+                        <option value="linkedin">LinkedIn Only</option>
+                        <option value="indeed">Indeed Only</option>
+                    </select>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <label for="time-value" class="form-label">Time Period:</label>
+                    <div class="input-group">
+                        <input type="number" id="time-value" value="7" min="1" class="form-control" />
+                        <select id="time-unit" class="form-select"></select>
                     </div>
-                    <div class="control-group">
-                        <label for="time-value">Time Period:</label>
-                        <input type="number" id="time-value" value="7" min="1" />
-                        <select id="time-unit"></select>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <label for="scrape-location" class="form-label">Location:</label>
+                    <input type="text" id="scrape-location" class="form-control" placeholder="e.g., New York, NY" />
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <label for="scrape-keywords" class="form-label">Keywords:</label>
+                    <input type="text" id="scrape-keywords" class="form-control" placeholder="e.g., Python Developer" />
+                </div>
+            </div>
+            <div class="row g-3 mt-3">
+                <div class="col-12">
+                    <label class="form-label">Scrape Mode:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="mode-add" name="scrape-mode" value="add" checked />
+                        <label class="form-check-label" for="mode-add">Add to Inbox</label>
                     </div>
-                    <div class="control-group">
-                        <label>Scrape Mode:</label>
-                        <div class="radio-group">
-                            <input type="radio" id="mode-add" name="scrape-mode" value="add" checked />
-                            <label for="mode-add">Add to Inbox</label>
-                            <input type="radio" id="mode-archive" name="scrape-mode" value="archive" />
-                            <label for="mode-archive">Archive Inbox & Add</label>
-                            <input type="radio" id="mode-delete" name="scrape-mode" value="delete" />
-                            <label for="mode-delete">Clear Inbox & Add</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="mode-archive" name="scrape-mode" value="archive" />
+                        <label class="form-check-label" for="mode-archive">Archive Inbox & Add</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="mode-delete" name="scrape-mode" value="delete" />
+                        <label class="form-check-label" for="mode-delete">Clear Inbox & Add</label>
+                    </div>
+                </div>
+            </div>
+            <div class="scrape-action-bar text-center mt-3">
+                <button id="scrape-button" class="btn btn-primary" onclick="startScrape()">Scrape New Jobs</button>
+                <span id="scrape-status" class="ms-3">Status: Idle</span>
+            </div>
+        </div>
+    </div>
+    
+    <ul class="nav nav-tabs mb-3" id="main-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" id="inbox-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="inbox">Inbox</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="want_to_apply-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="want_to_apply">Want to Apply</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="applied-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="applied">Applied</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="archived-tab" data-bs-toggle="tab" data-bs-target="#jobs-pane" type="button" role="tab" data-status="archived">Archived</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link magic-tab" id="resume-creator-tab" data-bs-toggle="tab" data-bs-target="#resume-creator-pane" type="button" role="tab"><i class="fas fa-magic me-2"></i>Create Resume/CV</button></li>
+    </ul>
+
+    <div class="tab-content" id="main-tab-content">
+        <div class="tab-pane fade show active" id="jobs-pane" role="tabpanel">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Source</th>
+                            <th>Date Posted</th>
+                            <th>Title & Company</th>
+                            <th>Experience Snippet</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jobs-tbody"></tbody>
+                </table>
+            </div>
+            <div id="loading-spinner" class="spinner-border text-primary" role="status" style="display: none;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        
+        <div class="tab-pane fade" id="resume-creator-pane" role="tabpanel">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Create Resume and Cover Letter</h2>
+                    <input type="hidden" id="resume-job-id" value="">
+                    <div class="mb-2"><small>Job to tailor for: <span id="resume-job-title-display" class="fw-bold">None selected. Select a job and click 'Generate'.</span></small></div>
+                    <textarea id="job-description-input" class="form-control mb-3" placeholder="Job description will be auto-filled here." rows="8"></textarea>
+                    <button id="generate-resume-cv-button" class="btn btn-success">Generate Documents</button>
+                    <div id="resume-creator-status" class="mt-3"></div>
+                    <div id="pdf-preview-area" class="mt-3" style="display: none;">
+                        <div class="row" style="height: 600px;">
+                            <div class="col-md-6 h-100"><iframe id="resume-preview-iframe" class="w-100 h-100 border"></iframe></div>
+                            <div class="col-md-6 h-100"><iframe id="cv-preview-iframe" class="w-100 h-100 border"></iframe></div>
                         </div>
                     </div>
                 </div>
-                <div class="scrape-action-bar">
-                    <button id="scrape-button" onclick="startScrape()">Scrape New Jobs</button>
-                    <span id="scrape-status">Status: Idle</span>
-                </div>
-            </fieldset>
-        </div>
-
-        <!-- Tabs -->
-        <div class="tab-container">
-            <button class="tab-link active" onclick="openTab('inbox')">Inbox</button>
-            <button class="tab-link" onclick="openTab('want_to_apply')">Want to Apply</button>
-            <button class="tab-link" onclick="openTab('applied')">Applied</button>
-            <button class="tab-link" onclick="openTab('archived')">Archived</button>
-        </div>
-
-        <!-- Jobs -->
-        <div id="jobs-content">
-            <table id="jobs-table">
-                <thead>
-                    <tr>
-                        <th class="index-col">#</th>
-                        <th>Source</th>
-                        <th>Date Posted</th>
-                        <th>Date Scraped</th>
-                        <th>Title & Company</th>
-                        <th>Location</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="jobs-tbody"></tbody>
-            </table>
-            <div id="loading-spinner" class="spinner"></div>
+            </div>
         </div>
     </div>
+</div>
+{% endblock %}
 
+
+{% block scripts %}
 <script>
-    let currentTab = 'inbox';
+    // Global variable to hold the current view's status
+    let currentJobStatus = 'inbox';
     let statusInterval;
     const timeUnitSelect = document.getElementById('time-unit');
-
     const timeOptions = {
-        full: `
-            <option value="seconds">Seconds</option>
-            <option value="minutes">Minutes</option>
-            <option value="hours">Hours</option>
-            <option value="days" selected>Days</option>
-            <option value="weeks">Weeks</option>
-            <option value="months">Months</option>
-        `,
-        indeed: `
-            <option value="days" selected>Days</option>
-            <option value="weeks">Weeks</option>
-            <option value="months">Months</option>
-        `
+        full: `<option value="seconds">Seconds</option><option value="minutes">Minutes</option><option value="hours">Hours</option><option value="days" selected>Days</option><option value="weeks">Weeks</option><option value="months">Months</option>`,
+        indeed: `<option value="days" selected>Days</option><option value="weeks">Weeks</option><option value="months">Months</option>`
     };
+
     function updateTimeUnitOptions() {
         const source = document.getElementById('source-select').value;
         timeUnitSelect.innerHTML = (source === 'indeed') ? timeOptions.indeed : timeOptions.full;
     }
 
-    function fetchStats() {
-        fetch('/get_stats')
-            .then(res => res.json())
-            .then(stats => {
-                document.getElementById('stats-container').innerHTML = `<strong>Jobs Scraped in Last 24 Hours:</strong> ${stats.jobs_last_24_hours}`;
-            })
-            .catch(err => {
-                document.getElementById('stats-container').textContent = 'Could not load stats.';
-                console.error('Error fetching stats:', err);
-            });
+    function openResumeCreatorTab(jobId, jobTitle, jobDescription) {
+        document.getElementById('resume-job-id').value = jobId;
+        document.getElementById('job-description-input').value = jobDescription;
+        document.getElementById('resume-job-title-display').textContent = jobTitle || `Job ID: ${jobId}`;
+        document.getElementById('resume-creator-status').textContent = '';
+        document.getElementById('pdf-preview-area').style.display = 'none';
+        const tab = new bootstrap.Tab(document.getElementById('resume-creator-tab'));
+        tab.show();
     }
-
-    function openTab(status) {
-        currentTab = status;
-        document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
-        document.querySelector(`.tab-link[onclick="openTab('${status}')"]`).classList.add('active');
-        fetchJobs(status);
+    
+    function getHighlightedDescription(fullDescription) {
+        if (!fullDescription) return 'No full description available.';
+        // Basic sanitization to prevent HTML injection from the description content
+        const a = document.createElement('a');
+        a.textContent = fullDescription;
+        return a.innerHTML.replace(/\n/g, '<br>');
     }
 
     function fetchJobs(status) {
@@ -139,91 +217,161 @@
             .then(res => res.json())
             .then(jobs => {
                 spinner.style.display = 'none';
-                jobCountSpan.textContent = `(${jobs.length} jobs)`;
+                jobCountSpan.textContent = `(${jobs.length})`;
+                const totalTableColumns = 7;
+
                 if (!jobs || jobs.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7">No jobs in this category.</td></tr>';
+                    tbody.innerHTML = `<tr><td colspan="${totalTableColumns}" class="text-center">No jobs in this category.</td></tr>`;
                     return;
                 }
 
                 jobs.forEach((job, index) => {
-                    const row = document.createElement('tr');
-                    row.id = `job-row-${job.id}`;
+                    const mainRow = document.createElement('tr');
+                    mainRow.id = `job-main-row-${job.id}`;
+                    mainRow.style.cursor = 'pointer';
 
-                    let actionButtons = '';
+                    const descriptionRow = document.createElement('tr');
+                    descriptionRow.id = `job-description-row-${job.id}`;
+                    descriptionRow.style.display = 'none';
+
+                    mainRow.onclick = function(event) {
+                        if (event.target.closest('.actions')) return;
+                        descriptionRow.style.display = descriptionRow.style.display === 'table-row' ? 'none' : 'table-row';
+                    };
+                    
+                    const sanitizedJobDescription = (job.job_description || '').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/"/g, '&quot;');
+                    const sanitizedJobTitle = (job.title || 'No Title').replace(/'/g, "\\'");
+                    
+                    let actionButtons = `<button class="btn btn-sm btn-outline-primary" onclick="event.stopPropagation(); openResumeCreatorTab(${job.id}, '${sanitizedJobTitle}', '${sanitizedJobDescription}')">Generate</button>`;
+
                     if (status === 'inbox') {
-                        actionButtons = `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
+                        actionButtons += `<button class="btn btn-sm btn-secondary ms-1" onclick="event.stopPropagation(); updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
                     } else if (status === 'want_to_apply') {
-                        actionButtons = `<button class="action-btn applied" onclick="updateJobStatus(${job.id}, 'applied')">Mark Applied</button>`;
-                    } else if (status === 'archived') {
-                        actionButtons = `<button class="action-btn want-to-apply" onclick="updateJobStatus(${job.id}, 'want_to_apply')">Bookmark</button>`;
+                        actionButtons += `<button class="btn btn-sm btn-success ms-1" onclick="event.stopPropagation(); updateJobStatus(${job.id}, 'applied')">Mark Applied</button>`;
                     } else if (status === 'applied') {
-                        actionButtons = '<span>-</span>';
+                        actionButtons = `
+                            <select class="form-select form-select-sm" style="width: auto; display: inline-block;" onclick="event.stopPropagation();" onchange="updateJobStatus(${job.id}, this.value)">
+                                <option value="applied" ${job.status === 'applied' ? 'selected' : ''}>Applied</option>
+                                <option value="interviewing" ${job.status === 'interviewing' ? 'selected' : ''}>Interviewing</option>
+                                <option value="offer" ${job.status === 'offer' ? 'selected' : ''}>Offer</option>
+                                <option value="rejected" ${job.status === 'rejected' ? 'selected' : ''}>Rejected</option>
+                                <option value="archived" ${job.status === 'archived' ? 'selected' : ''}>Archive</option>
+                            </select>` + actionButtons;
                     }
+                    else if (status === 'archived') {
+    actionButtons += `<button class="btn btn-sm btn-info ms-1" onclick="event.stopPropagation(); updateJobStatus(${job.id}, 'want_to_apply')">Bookmark'</button>`;
+}
 
-                    const sourceBadge = job.source === 'LinkedIn' ? '<span class="badge linkedin">LI</span>' : '<span class="badge indeed">IN</span>';
+                    const sourceBadge = job.source === 'LinkedIn' ? '<span class="badge bg-primary">LI</span>' : '<span class="badge bg-info text-dark">IN</span>';
                     let displayDate = 'N/A';
-                    if (job.date) {
-                        const parsedDate = new Date(job.date);
-                        if (!isNaN(parsedDate)) {
-                            displayDate = parsedDate.toLocaleDateString();
-                        }
+                    if (job.date && !isNaN(new Date(job.date))) {
+                        displayDate = new Date(job.date).toLocaleDateString();
                     }
-                    let scrapedDate = 'N/A';
-                    if (job.date_loaded) {
-                        const parsedScrapedDate = new Date(job.date_loaded);
-                        if (!isNaN(parsedScrapedDate)) {
-                            scrapedDate = parsedScrapedDate.toLocaleString();
+                    
+                    function getExperienceSnippet(jobDescription) {
+                        if (!jobDescription) return 'N/A';
+                        const keywords = ['experience', 'years of', 'bachelor', 'degree', 'master', 'phd'];
+                        const lowerDesc = jobDescription.toLowerCase();
+                        for (const keyword of keywords) {
+                            const index = lowerDesc.indexOf(keyword);
+                            if (index !== -1) {
+                                let start = Math.max(0, index - 20);
+                                let end = Math.min(jobDescription.length, index + keyword.length + 60);
+                                return '...' + jobDescription.substring(start, end).replace(/\n/g, ' ') + '...';
+                            }
                         }
+                        return jobDescription.substring(0, 80).replace(/\n/g, ' ') + '...';
                     }
+                    const jdExperienceSnippet = getExperienceSnippet(job.job_description);
 
-                    row.innerHTML = `
-                        <td class="index-col">${index + 1}</td>
+                    mainRow.innerHTML = `
+                        <td>${index + 1}</td>
                         <td>${sourceBadge}</td>
                         <td>${displayDate}</td>
-                        <td>${scrapedDate}</td>
                         <td>
-                            <a href="${job.job_url || '#'}" target="_blank">${job.title || 'No Title'}</a>
-                            <div class="company-name">${job.company || 'No Company'}</div>
+                            <a href="${job.job_url || '#'}" target="_blank" class="fw-bold" onclick="event.stopPropagation()">${job.title || 'No Title'}</a>
+                            <div class="text-muted">${job.company || 'No Company'}</div>
                         </td>
+                        <td><div class="jd-experience-snippet small text-muted">${jdExperienceSnippet}</div></td>
                         <td>${job.location || 'No Location'}</td>
-                        <td class="actions">${actionButtons}</td>
+                        <td class="actions d-flex gap-1">${actionButtons}</td>
                     `;
-                    tbody.appendChild(row);
+                    tbody.appendChild(mainRow);
+
+                    descriptionRow.innerHTML = `
+                        <td colspan="${totalTableColumns}">
+                            <div class="p-3 bg-light border rounded">
+                                <h5>Full Job Description:</h5>
+                                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.9rem;">${getHighlightedDescription(job.job_description)}</pre>
+                            </div>
+                        </td>
+                    `;
+                    tbody.appendChild(descriptionRow);
                 });
             })
             .catch(err => {
                 spinner.style.display = 'none';
                 console.error('Error fetching jobs:', err);
-                tbody.innerHTML = '<tr><td colspan="7">Error fetching jobs.</td></tr>';
+                tbody.innerHTML = `<tr><td colspan="7" class="text-center">Error fetching jobs. Please check the console for details.</td></tr>`;
             });
     }
 
     function updateJobStatus(jobId, newStatus) {
+        const mainRow = document.getElementById(`job-main-row-${jobId}`);
+        const descriptionRow = document.getElementById(`job-description-row-${jobId}`);
+        
         fetch(`/update_job_status/${jobId}`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ status: newStatus })
         })
-        .then(res => res.json())
-        .then(() => {
-            const row = document.getElementById(`job-row-${jobId}`);
-            if (row) {
-                row.style.opacity = '0';
-                setTimeout(() => fetchJobs(currentTab), 300);
+        .then(response => {
+            if (!response.ok) throw new Error('Server failed to update status');
+            return response.json();
+        })
+        .then(data => {
+            if (mainRow) {
+                mainRow.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+                mainRow.style.opacity = '0';
+                mainRow.style.transform = 'translateX(-30px)';
+                
+                if (descriptionRow) {
+                    descriptionRow.style.transition = 'opacity 0.4s ease-out';
+                    descriptionRow.style.opacity = '0';
+                }
+                
+                setTimeout(() => {
+                    mainRow.remove();
+                    if (descriptionRow) descriptionRow.remove();
+                    
+                    const jobCountSpan = document.getElementById('job-count');
+                    const tbody = document.getElementById('jobs-tbody');
+                    const remainingRows = tbody.querySelectorAll('tr[id^="job-main-row-"]').length;
+                    jobCountSpan.textContent = `(${remainingRows})`;
+                    
+                    if (remainingRows === 0) {
+                         tbody.innerHTML = `<tr><td colspan="7" class="text-center">No jobs in this category.</td></tr>`;
+                    }
+                }, 400);
+            } else {
+                fetchJobs(currentJobStatus);
             }
         })
-        .catch(err => console.error('Error updating job status:', err));
+        .catch(err => {
+            console.error('Error updating job status:', err);
+            alert('Could not update job status. Please refresh the page and try again.');
+        });
     }
 
     function startScrape() {
-        const managementOption = document.querySelector('input[name="scrape-mode"]:checked').value;
-        const source = document.getElementById('source-select').value;
-        const timeValue = parseInt(document.getElementById('time-value').value, 10);
-        const timeUnit = timeUnitSelect.value;
-
-        let daysToScrape = timeValue;
-        if (timeUnit === 'weeks') daysToScrape *= 7;
-        if (timeUnit === 'months') daysToScrape *= 30;
+        const payload = {
+            source: document.getElementById('source-select').value,
+            days: parseInt(document.getElementById('time-value').value, 10),
+            management_option: document.querySelector('input[name="scrape-mode"]:checked').value,
+            location: document.getElementById('scrape-location').value,
+            keywords: document.getElementById('scrape-keywords').value,
+            time_period_str: `${document.getElementById('time-value').value} ${document.getElementById('time-unit').options[document.getElementById('time-unit').selectedIndex].text}`
+        };
 
         document.getElementById('scrape-button').disabled = true;
         document.getElementById('scrape-status').textContent = 'Status: Starting...';
@@ -232,9 +380,8 @@
         fetch('/scrape', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ source, days: daysToScrape, management_option: managementOption })
-        })
-        .catch(err => {
+            body: JSON.stringify(payload)
+        }).catch(err => {
             document.getElementById('scrape-status').textContent = `Error: ${err.message}`;
             document.getElementById('scrape-button').disabled = false;
             clearInterval(statusInterval);
@@ -250,22 +397,69 @@
                     clearInterval(statusInterval);
                     document.getElementById('scrape-button').disabled = false;
                     if (status.message.includes('complete')) {
-                        openTab('inbox');
-                        fetchStats();
+                        fetchJobs(currentJobStatus); 
                     }
                 }
-            })
-            .catch(() => {
-                clearInterval(statusInterval);
-                document.getElementById('scrape-button').disabled = false;
             });
     }
 
     document.addEventListener('DOMContentLoaded', function() {
         updateTimeUnitOptions();
-        fetchStats();
-        openTab(currentTab);
+
+        document.querySelectorAll('#main-tabs .nav-link[data-bs-toggle="tab"]').forEach(tab => {
+            if (tab.dataset.status) {
+                tab.addEventListener('shown.bs.tab', event => {
+                    currentJobStatus = event.target.dataset.status;
+                    fetchJobs(currentJobStatus);
+                });
+            }
+        });
+        
+        fetchJobs(currentJobStatus);
+
+        document.getElementById('generate-resume-cv-button').addEventListener('click', function() {
+            const jobDesc = document.getElementById('job-description-input').value;
+            const statusElement = document.getElementById('resume-creator-status');
+            const generateButton = this;
+            const pdfPreviewArea = document.getElementById('pdf-preview-area');
+            const jobId = document.getElementById('resume-job-id').value;
+
+            if (!jobDesc.trim()) {
+                statusElement.textContent = 'Job description is required.';
+                statusElement.className = 'alert alert-warning mt-3';
+                return;
+            }
+
+            statusElement.textContent = 'Generating documents... This may take up to 30 seconds.';
+            statusElement.className = 'alert alert-info mt-3';
+            generateButton.disabled = true;
+            pdfPreviewArea.style.display = 'none';
+
+            fetch('/generate_documents', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ job_description: jobDesc, job_id: jobId ? parseInt(jobId, 10) : null }),
+            })
+            .then(response => response.json().then(data => ({ ok: response.ok, data })))
+            .then(({ ok, data }) => {
+                if (ok && data.success) {
+                    document.getElementById('resume-preview-iframe').src = data.resume_pdf_url;
+                    document.getElementById('cv-preview-iframe').src = data.cover_letter_pdf_url;
+                    pdfPreviewArea.style.display = 'block';
+                    statusElement.textContent = 'Documents generated successfully!';
+                    statusElement.className = 'alert alert-success mt-3';
+                } else {
+                    throw new Error(data.details || data.error || 'An unknown error occurred.');
+                }
+            })
+            .catch(error => {
+                statusElement.textContent = `Request failed: ${error.message}`;
+                statusElement.className = 'alert alert-danger mt-3';
+            })
+            .finally(() => {
+                generateButton.disabled = false;
+            });
+        });
     });
 </script>
-</body>
-</html>
+{% endblock %}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.7)  21 JUN 2025 00:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.7)  22 JUN 2025 23:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -363,108 +363,22 @@ Package color Info: Driver file: pdftex.def on input line 149.
 
 (C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+! Interruption.
+l.300 
+              {\the\ht\@tempboxa}%
+? 
+! Emergency stop.
+l.300 
+      
+End of file on the terminal!
 
-(C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count279
-\scratchdimen=\dimen154
-\scratchbox=\box52
-\nofMPsegments=\count280
-\nofMParguments=\count281
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count282
-\MPscratchDim=\dimen155
-\MPnumerator=\count283
-\makeMPintoPDFobject=\count284
-\everyMPtoPDFconversion=\toks20
-))
-(C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
-)
-Package hyperref Info: Link coloring ON on input line 25.
- (tailored_resume_cover_letter.out) (tailored_resume_cover_letter.out)
-\@outlinefile=\write3
-\openout3 = `tailored_resume_cover_letter.out'.
-
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 3
-5.
-
-(C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
-File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-35.
-
-(C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 35.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   L
-l.51 ... Obtain from Job Description if available]
-                                                   \\
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   L
-l.51 ... Obtain from Job Description if available]
-                                                   \\
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.51 ...tain from Job Description if available] \\
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[1
-
-{C:/Users/yashw/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/yash
-w/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/yashw/Ap
-pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
-(tailored_resume_cover_letter.aux)
- ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-01-04>
- ***********
-Package rerunfilecheck Info: File `tailored_resume_cover_letter.out' has not ch
-anged.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 12809 strings out of 474486
- 226361 string characters out of 5743756
- 1936542 words of memory out of 5000000
- 34978 multiletter control sequences out of 15000+600000
- 570450 words of font info for 42 fonts, out of 8000000 for 9000
+ 12332 strings out of 474486
+ 219028 string characters out of 5743756
+ 1924542 words of memory out of 5000000
+ 34531 multiletter control sequences out of 15000+600000
+ 561312 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,1058b,448s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
-b><C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
-b><C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
-><C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb
->
-Output written on tailored_resume_cover_letter.pdf (1 page, 96425 bytes).
-PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 2 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 75i,0n,79p,311b,154s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

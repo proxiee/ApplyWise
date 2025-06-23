@@ -4,6 +4,7 @@ import yaml
 import os
 import time as tm
 import json
+import traceback # Added for more detailed error logging
 
 def cleanse_jobfunnel_json_files(config):
     """
@@ -32,38 +33,55 @@ def standardize_indeed_data(df, config):
     """
     Renames columns and adds missing ones to match the main database schema.
     """
+    print("\nIndeed: Inside standardize_indeed_data")
+    print(f"Indeed: DataFrame columns BEFORE renaming: {df.columns.tolist()}")
+
     column_mapping = {
-        'title': 'title', 'company': 'company', 'location': 'location',
-        'date': 'date', 'link': 'job_url', 'blurb': 'job_description'
+        'title': 'title',
+        'company': 'company',
+        'location': 'location',
+        'date': 'date', # This might need further date parsing if format differs
+        'link': 'job_url',
+        'blurb': 'job_description',
     }
     df.rename(columns=column_mapping, inplace=True)
+
+    # Add 'source' column
     df['source'] = 'Indeed'
-    placeholder_columns = {
-        'applied': 0, 'hidden': 0, 'interview': 0, 'rejected': 0,
-        'cover_letter': '', 'resume': ''
-    }
-    for col, default_value in placeholder_columns.items():
+
+    # List of columns expected by app.py's commit_jobs_to_db
+    # Based on jobs.db schema: title, company, location, date, job_url, job_description, source
+    required_cols_for_db = [
+        'title', 'company', 'location', 'date', 'job_url', 'job_description', 'source'
+    ]
+
+    for col in required_cols_for_db:
         if col not in df.columns:
-            df[col] = default_value
-    required_cols = ['title', 'company', 'location', 'date', 'job_url', 'job_description', 'source']
-    for col in required_cols:
-        if col not in df.columns:
-            df[col] = ''
-    final_cols = [col for col in required_cols + list(placeholder_columns.keys()) if col in df.columns]
-    return df[final_cols]
+            df[col] = None # Or an appropriate default value like '' for TEXT fields
+            print(f"Indeed: Added missing column '{col}' with None values.")
+
+    # Select and reorder columns to match the expected input for commit_jobs_to_db
+    final_cols = [col for col in required_cols_for_db if col in df.columns]
+    df_final = df[final_cols]
+
+    print(f"Indeed: DataFrame columns AFTER renaming and selection: {df_final.columns.tolist()}")
+    print(f"Indeed: Standardized DataFrame head:\n{df_final.head()}")
+    return df_final
 
 
 def scrape_indeed(config, existing_urls=set()):
     """
     Main function to scrape Indeed using the JobFunnel command-line tool.
+    Returns a Pandas DataFrame of new jobs.
     """
-    print("--- Starting Indeed Scraper (JobFunnel) ---")
+    print("\n--- Starting Indeed Scraper (JobFunnel) ---")
     start_time = tm.perf_counter()
 
     cfg = config['indeed_settings']
     output_csv_path = cfg['master_csv_file']
 
-    # --- NEW STRATEGY: Cleanse the JSON files before every run ---
+    os.makedirs(os.path.dirname(output_csv_path), exist_ok=True)
+
     cleanse_jobfunnel_json_files(config)
 
     jobfunnel_config = {
@@ -77,46 +95,77 @@ def scrape_indeed(config, existing_urls=set()):
     with open(temp_yaml_path, 'w') as f:
         yaml.dump(jobfunnel_config, f)
 
+    df_standardized = pd.DataFrame() # Initialize with an empty DataFrame to ensure a return value
+
     print("Indeed: Running JobFunnel process...")
     try:
-        # We must also run the subprocess with UTF-8 encoding to handle all characters
-        subprocess.run(
+        # IMPORTANT CHANGE: Removed check=True to prevent CalledProcessError on non-zero exit
+        # We will handle the return code manually.
+        process_result = subprocess.run(
             ['funnel', 'load', '-s', temp_yaml_path],
-            check=True, capture_output=True, text=True, encoding='utf-8'
+            capture_output=True, text=True, encoding='utf-8'
         )
-        print("Indeed: JobFunnel process completed successfully.")
+        print(f"Indeed: JobFunnel process finished with return code: {process_result.returncode}")
+        print(f"Indeed: JobFunnel stdout:\n{process_result.stdout}")
+        if process_result.stderr:
+            print(f"Indeed: JobFunnel stderr:\n{process_result.stderr}")
+
+        if process_result.returncode != 0:
+            print(f"Indeed: WARNING - JobFunnel exited with non-zero code {process_result.returncode}. This might indicate a soft error, no jobs found based on filters, or a captcha. Attempting to read CSV anyway.")
+
+        # --- Attempt to read CSV and process, regardless of JobFunnel's return code ---
+        if os.path.exists(output_csv_path):
+            try:
+                df = pd.read_csv(output_csv_path, encoding='utf-8')
+                print(f"Indeed: Successfully read CSV from '{output_csv_path}'. Total rows: {len(df)}")
+                print(f"Indeed: Raw CSV columns: {df.columns.tolist()}")
+                print(f"Indeed: Raw CSV head:\n{df.head()}")
+
+                if 'link' not in df.columns:
+                    print("ERROR: The CSV file from JobFunnel does not contain the expected 'link' column. Cannot process Indeed jobs.")
+                    return pd.DataFrame() # Return empty if critical column missing
+
+                # Filter out jobs that are already in the database
+                print(f"Indeed: Number of existing URLs passed from app.py: {len(existing_urls)}")
+                if existing_urls:
+                    print(f"Indeed: Sample existing URLs: {list(existing_urls)[:5]}")
+                
+                df_new = df[~df['link'].isin(existing_urls)].copy()
+                print(f"Indeed: Found {len(df_new)} new jobs (not in existing_urls) from CSV.")
+                if not df_new.empty:
+                    print(f"Indeed: New jobs (from CSV) head before standardization:\n{df_new.head()}")
+
+                if df_new.empty:
+                    print("Indeed: No new jobs to add to the database after filtering against existing URLs.")
+                else:
+                    df_standardized = standardize_indeed_data(df_new, config)
+
+            except pd.errors.EmptyDataError:
+                print(f"Indeed: CSV file '{output_csv_path}' is empty or contains no data. No jobs to process.")
+            except Exception as e:
+                print(f"Indeed: Error processing output CSV: {e}")
+                traceback.print_exc() # Print full traceback for more details
+        else:
+            print(f"Indeed: Output CSV file '{output_csv_path}' not found after JobFunnel run. No jobs were scraped.")
+
     except FileNotFoundError:
-        print("\nERROR: The 'funnel' command was not found.")
-        os.remove(temp_yaml_path)
-        return pd.DataFrame()
-    except subprocess.CalledProcessError as e:
-        print(f"Indeed: An error occurred while running JobFunnel.")
-        print(f"STDERR: {e.stderr}")
-        os.remove(temp_yaml_path)
-        return pd.DataFrame()
+        print("\nFATAL ERROR: The 'funnel' command was not found. Please ensure JobFunnel is installed and in your PATH.")
+        # If 'funnel' command itself is not found, we cannot proceed with Indeed scraping
+    except Exception as e: # Catch any other unexpected errors during the subprocess call or initial file handling
+        print(f"Indeed: An unexpected error occurred during JobFunnel execution or initial file handling: {e}")
+        traceback.print_exc()
 
-    os.remove(temp_yaml_path)
+    finally:
+        # This finally block will always run to ensure cleanup
+        if os.path.exists(temp_yaml_path):
+            os.remove(temp_yaml_path)
+            print(f"Indeed: Cleaned up temporary YAML file: {temp_yaml_path}")
+        # Ensure CSV is cleaned up regardless of whether it was processed or not,
+        # but only if it exists.
+        if os.path.exists(output_csv_path):
+            os.remove(output_csv_path)
+            print(f"Indeed: Cleaned up temporary CSV file: {output_csv_path}")
 
-    if not os.path.exists(output_csv_path):
-        print("Indeed: Output CSV file not found. No jobs were scraped.")
-        return pd.DataFrame()
-
-    df = pd.read_csv(output_csv_path)
-    print(f"Indeed: Found {len(df)} total jobs in the CSV file.")
-    print(f"Indeed CSV columns: {df.columns.tolist()}")
-
-    if 'link' not in df.columns:
-        print("ERROR: The CSV file from JobFunnel does not contain the expected 'link' column.")
-        return pd.DataFrame()
-
-    df_new = df[~df['link'].isin(existing_urls)].copy()
-    print(f"Indeed: Found {len(df_new)} new jobs to add.")
-
-    if df_new.empty:
-        print("Indeed: No new jobs to add to the database.")
-        return pd.DataFrame()
-
-    df_standardized = standardize_indeed_data(df_new, config)
     end_time = tm.perf_counter()
     print(f"--- Indeed scraping finished in {end_time - start_time:.2f} seconds ---")
-    return df_standardized
+    return df_standardized # Return the DataFrame (could be empty if no jobs or error)

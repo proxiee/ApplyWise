@@ -8,3 +8,7 @@ pysocks
 openai
 pdfminer.six
 flask_cors
+Flask-Login
+Flask-Bcrypt
+gunicorn # for vercel
+psycopg2-binary

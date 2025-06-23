@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Job Application Dashboard{% endblock %}
+
+{% block content %}
+<div class="container-fluid" id="dashboard-container">
+    <h1 class="mb-4 text-center">Job Application Dashboard</h1>
+
+    <!-- Motivational Quote -->
+    <div id="motivationalQuote" class="mb-4 alert alert-info text-center" role="alert">
+        Loading motivational quote...
+    </div>
+
+    <!-- KPI Cards Row -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mb-4 text-center">
+        <!-- Jobs Scraped (24h) -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-uppercase text-muted small">Jobs Scraped (24h)</h5>
+                    <p class="card-text fs-2 fw-bold text-primary mb-0" id="jobsScraped24h">0</p>
+                </div>
+            </div>
+        </div>
+        <!-- Pending Applications -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-uppercase text-muted small">Pending Applications</h5>
+                    <p class="card-text fs-2 fw-bold text-warning mb-0" id="jobsToBeApplied">0</p>
+                </div>
+            </div>
+        </div>
+        <!-- Total Applications -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-uppercase text-muted small">Total Applications</h5>
+                    <p class="card-text fs-2 fw-bold text-secondary mb-0" id="totalApplications">0</p>
+                </div>
+            </div>
+        </div>
+        <!-- Total Resumes/CVs Generated -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-uppercase text-muted small">Total Resumes/CVs</h5>
+                    <p class="card-text fs-2 fw-bold text-success mb-0" id="totalDocumentsGenerated">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row g-4 mt-1">
+    <div class="col-lg-12">
+        <div class="card shadow-sm">
+           <div class="card-header d-flex justify-content-between align-items-center fw-bold">
+    <span>Weekly Application Progress</span>
+    <button id="resetWeeklyProgressBtn" class="btn btn-sm btn-outline-danger" title="Reset Weekly Count">
+        <i class="fas fa-sync-alt"></i> Reset
+    </button>
+</div>
+            <div class="card-body">
+                <div id="weekly-goal-progress-container" class="progress" style="height: 30px; font-size: 1rem;" data-goal="{{ weekly_goal }}">
+                    <div id="weekly-goal-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ weekly_goal }}">
+                        Loading...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Charts Row -->
+    <div class="row g-4">
+        <!-- Application Status Chart -->
+        <div class="col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header fw-bold">Application Status Breakdown</div>
+                <div class="card-body"><canvas id="applicationStatusChart"></canvas></div>
+            </div>
+        </div>
+        <!-- Applications by Source Chart -->
+        <div class="col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header fw-bold">Applications by Source</div>
+                <div class="card-body"><canvas id="applicationsBySourceChart"></canvas></div>
+            </div>
+        </div>
+        <!-- Applications Over Time Chart -->
+        <div class="col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header fw-bold">Applications (Last 7 Days)</div>
+                <div class="card-body"><canvas id="applicationsOverTimeChart"></canvas></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Link to your external dashboard.js file or place the script from the canvas above here -->
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}
+```
+I have now updated both the JavaScript logic and the corresponding HTML structure to reflect your request for a combined "Total Resumes/CVs" metr

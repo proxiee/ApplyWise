@@ -1,55 +1,803 @@
-/* --- Styles for Phase 3 --- */
+/* General Body and Container Styles */
+:root {
+    --primary-color: #4A90E2; /* A pleasant blue */
+    --secondary-color: #6B7C8F; /* A darker grey for text */
+    --accent-color: #F5A623; /* A warm orange for highlights */
+    --background-light: #F9FAFB; /* Very light grey for main background */
+    --background-card: #FFFFFF; /* White for cards/sections */
+    --border-color: #E2E8F0; /* Light border */
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+
+    --font-family-primary: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-family-monospace: 'Fira Code', 'Lucida Console', Monaco, monospace;
+
+    /* NEW: Magical Colors */
+    --magical-purple: #8A2BE2; /* Amethyst */
+    --magical-pink: #FF69B4; /* Hot Pink */
+    --magical-blue: #1E90FF; /* Dodger Blue */
+    --magical-gold: #FFD700; /* Gold */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: var(--font-family-primary);
+    background-color: var(--background-light);
+    color: var(--secondary-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-card);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-container h1 {
+    color: #333;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 0;
+}
+
+#job-count {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
 
 /* Stats Container */
 .stats-container {
     text-align: center;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #e9ecef;
-    border-radius: 6px;
-    font-size: 14px;
-    color: #495057;
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: #EBF3FC; /* A very light blue */
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--primary-color);
+    font-weight: 600;
+    border: 1px solid #D2E4F7;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
 }
 
-/* Enhanced Controls Container */
+/* Scrape Controls Section */
 .controls-container fieldset {
-    border: 1px solid #dee2e6;
-    border-radius: 6px;
-    padding: 15px;
-    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: var(--background-card);
+    box-shadow: 0 5px 15px var(--shadow-light);
 }
 
 .controls-container legend {
-    font-weight: bold;
-    padding: 0 10px;
+    font-weight: 600;
+    padding: 0 15px;
     margin-left: 10px;
+    font-size: 1.1em;
+    color: #333;
 }
 
 .controls-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    align-items: flex-start; /* Align groups at the top */
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.control-group label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.control-group input[type="text"],
+.control-group input[type="number"],
+.control-group select {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    color: #444;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.control-group input[type="text"]:focus,
+.control-group input[type="number"]:focus,
+.control-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
 }
 
 .radio-group label {
-    margin-right: 15px;
-    font-weight: normal;
+    margin-bottom: 0; /* Override default label margin */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400; /* Adjust for radio labels */
 }
 
 .scrape-action-bar {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #e9ecef;
+    gap: 25px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
 }
 
-/* Styling for the new Scraped On column */
-.scraped-on-col {
-    font-size: 13px;
-    color: #6c757d;
-    white-space: nowrap; /* Prevents the date from wrapping to a new line */
+#scrape-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2);
 }
+
+#scrape-button:hover:not(:disabled) {
+    background-color: #3A7BBF;
+    transform: translateY(-1px);
+}
+
+#scrape-button:disabled {
+    background-color: #A0BBD8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#scrape-status {
+    font-size: 1em;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+/* Tabs */
+.tab-container {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    gap: 5px; /* Small gap between tabs */
+}
+
+.tab-link {
+    background-color: transparent;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--secondary-color);
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    text-decoration: none; /* For the dashboard link */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.tab-link:hover:not(.active) {
+    color: var(--primary-color);
+    background-color: #F0F5FA;
+}
+
+.tab-link.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    background-color: var(--background-card); /* Keep tab background consistent if it's over container */
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.05); /* Subtle shadow for active tab */
+    padding-bottom: 15px; /* Adjust padding for active tab */
+    margin-bottom: -2px; /* Pull it slightly over the border */
+}
+
+/* NEW: Magical Style for "Create Resume/CV" Tab */
+.tab-link[onclick="openResumeCreatorTab()"] {
+    background: linear-gradient(135deg, var(--magical-purple) 0%, var(--magical-blue) 50%, var(--magical-pink) 100%);
+    color: white;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    border: none; /* Remove default border */
+    position: relative;
+    overflow: hidden;
+    z-index: 0; /* Ensure content is above pseudo-elements */
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4); /* Purple shadow */
+    animation: sparkleBorder 3s infinite alternate; /* Border animation */
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]::before,
+.tab-link[onclick="openResumeCreatorTab()"]::after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    pointer-events: none;
+    z-index: -1; /* Place behind text */
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]::before {
+    width: 20px; height: 20px;
+    top: 10%; left: 15%;
+    animation: fadeInOutSparkle 2s infinite ease-in-out;
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]::after {
+    width: 15px; height: 15px;
+    bottom: 20%; right: 10%;
+    animation: fadeInOutSparkle 2.5s infinite ease-in-out reverse;
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.6); /* More prominent shadow on hover */
+    background: linear-gradient(135deg, var(--magical-pink) 0%, var(--magical-purple) 50%, var(--magical-blue) 100%); /* Shift gradient on hover */
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]:hover::before,
+.tab-link[onclick="openResumeCreatorTab()"]:hover::after {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.tab-link[onclick="openResumeCreatorTab()"].active {
+    /* Override standard active styles for the magical tab */
+    background: linear-gradient(135deg, var(--magical-pink) 0%, var(--magical-blue) 50%, var(--magical-purple) 100%);
+    border-bottom: 3px solid var(--magical-gold); /* Gold underline for active */
+    color: white;
+    box-shadow: 0 -2px 10px rgba(138, 43, 226, 0.5), 0 0 20px rgba(255, 215, 0, 0.7); /* Glow effect */
+    padding-bottom: 15px;
+    margin-bottom: -2px;
+}
+
+/* Keyframes for animations */
+@keyframes sparkleBorder {
+    0% { border-color: var(--magical-purple); }
+    50% { border-color: var(--magical-gold); }
+    100% { border-color: var(--magical-pink); }
+}
+
+@keyframes fadeInOutSparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 0.8; transform: scale(1); }
+}
+
+
+/* Job Table */
+#jobs-table {
+    width: 100%;
+    border-collapse: separate; /* For rounded corners */
+    border-spacing: 0; /* Remove space between cells */
+    margin-top: 15px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    border-radius: 10px;
+    overflow: hidden; /* Ensures rounded corners are applied */
+}
+
+#jobs-table th,
+#jobs-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #F0F5FA; /* Lighter separator */
+}
+
+#jobs-table thead {
+    background-color: #EBF3FC; /* Light blue header */
+    color: var(--primary-color);
+}
+
+#jobs-table th {
+    font-weight: 600;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Keep header visible on scroll */
+}
+
+/* Base style for main job row - make it clickable */
+#jobs-table tbody .job-main-row {
+    background-color: var(--background-card);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer; /* Indicate clickability */
+}
+
+#jobs-table tbody .job-main-row:hover {
+    background-color: #F9FAFB;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* More prominent shadow on hover */
+    z-index: 2; /* Bring hovered row to front */
+}
+
+#jobs-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.index-col {
+    width: 30px; /* Fixed width for the index column */
+    font-weight: 600;
+    color: #777;
+    text-align: center;
+}
+
+/* Job Details within Table */
+#jobs-table td a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05em;
+    transition: color 0.2s ease;
+}
+
+#jobs-table td a:hover {
+    text-decoration: underline;
+    color: #3A7BBF;
+}
+
+.company-name {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    margin-top: 3px;
+}
+
+/* Job Description Summary Styling */
+.job-description-summary {
+    font-size: 0.85em;
+    color: #666;
+    max-height: 2.8em; /* Approximate 2 lines (1.4em line-height * 2) */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    word-wrap: break-word; /* Ensure long words wrap */
+    line-height: 1.4em; /* Define line height for consistent 2-line display */
+    margin-top: 5px; /* Small spacing from title/company */
+}
+
+/* JD Experience Snippet Styling (client-side search) */
+.jd-experience-snippet {
+    font-size: 0.8em; /* Slightly smaller for detailed snippet */
+    color: #444;
+    max-height: 2.4em; /* Adjust to fit 2 lines if needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    line-height: 1.2em; /* Slightly tighter line height */
+    background-color: #f0f8ff; /* Light background for visibility */
+    padding: 3px 5px;
+    border-radius: 4px;
+    border: 1px solid #e0efff;
+}
+
+/* Highlight for keyword (used in snippet and full description) */
+.highlight-keyword {
+    background-color: #FFFF00; /* Bright yellow highlight */
+    font-weight: bold;
+    padding: 0 2px;
+    border-radius: 2px;
+    color: #333; /* Ensure text is readable over yellow */
+}
+
+/* Source Badges */
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.badge.linkedin {
+    background-color: #0077B5; /* LinkedIn Blue */
+}
+
+.badge.indeed {
+    background-color: #216F66; /* Indeed Green */
+}
+
+/* Action Buttons */
+.actions {
+    white-space: nowrap;
+    min-width: 180px; /* Ensure buttons have enough space */
+}
+
+.action-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin-right: 8px; /* Spacing between buttons */
+}
+
+.action-btn:last-child {
+    margin-right: 0;
+}
+
+.action-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 3px 8px rgba(74, 144, 226, 0.2);
+}
+
+/* Specific button colors for status updates */
+.action-btn.want-to-apply {
+    color: #FF8C00; /* Orange */
+    border-color: #FF8C00;
+}
+.action-btn.want-to-apply:hover {
+    background-color: #FF8C00;
+    color: white;
+}
+
+.action-btn.applied {
+    color: #28a745; /* Green */
+    border-color: #28a745;
+}
+.action-btn.applied:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.action-btn.generate-resume {
+    color: #6f42c1; /* Purple */
+    border-color: #6f42c1;
+}
+.action-btn.generate-resume:hover {
+    background-color: #6f42c1;
+    color: white;
+}
+
+/* Dropdown for applied statuses */
+select {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 0.9em;
+    color: #444;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 50px auto;
+    display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Resume Creator Section */
+#resume-creator-content {
+    background-color: var(--background-card);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    margin-top: 20px;
+}
+
+#resume-creator-content h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#resume-job-title-display {
+    font-weight: 500;
+    color: #555;
+    font-size: 0.95em;
+}
+
+#job-description-input {
+    width: calc(100% - 20px);
+    min-height: 200px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: var(--font-family-monospace);
+    resize: vertical;
+    margin-bottom: 15px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#job-description-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+#generate-resume-cv-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+#generate-resume-cv-button:hover:not(:disabled) {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+#generate-resume-cv-button:disabled {
+    background-color: #90EE90;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#resume-creator-status {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #D32F2F;
+    font-weight: 500;
+}
+
+/* PDF Preview Area */
+#pdf-preview-area {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+#pdf-preview-area > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 70vh;
+    max-height: 800px;
+}
+
+#resume-preview-iframe,
+#cv-preview-iframe {
+    width: 50%;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+/* NEW: Expandable Row Styles */
+.job-description-detail-row {
+    display: none; /* Hidden by default */
+    background-color: #f8f8f8;
+    transition: background-color 0.2s ease;
+}
+
+.job-description-detail-row td {
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.full-job-description-content {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.05);
+    max-height: 400px; /* Max height for the expandable content */
+    overflow-y: auto; /* Enable scrolling for long descriptions */
+    /* NEW ALIGNMENT STYLES */
+    /* Calculate padding-left to align after '#' column */
+    /* '#' column width (30px) + td padding-left (15px) = 45px */
+    padding-left: calc(30px + 15px); /* Adjusted for td padding */
+    /* Adjust padding-right to account for original td padding and div padding */
+    padding-right: 15px; /* Revert to standard padding as width:100% handles the rest */
+    box-sizing: border-box; /* Include padding in width calculation */
+    width: 100%; /* Ensure it uses all available space within its colspan-ed TD */
+}
+
+.full-job-description-content h5 {
+    color: #333;
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+}
+
+.full-job-description-content pre {
+    white-space: pre-wrap; /* Preserve line breaks and wrap text */
+    word-wrap: break-word; /* Break long words */
+    font-family: var(--font-family-monospace);
+    font-size: 0.95em;
+    color: #333;
+    margin: 0; /* Remove default margin from pre */
+}
+
+/* Utility / Responsive adjustments */
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .header-container h1 {
+        font-size: 1.8em;
+    }
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+    .tab-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .tab-link {
+        border-radius: 6px;
+        margin-bottom: 5px;
+    }
+    .tab-link.active {
+        padding-bottom: 12px;
+        margin-bottom: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    #jobs-table thead {
+        display: none;
+    }
+    #jobs-table tbody .job-main-row { /* Apply to main row on mobile */
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 15px;
+        width: 100%; /* Ensure it takes full width */
+        box-sizing: border-box; /* Include padding in width */
+    }
+    /* Style for the reference resume image on the profile page */
+#reference-resume-image {
+  /* This tells the image to take up the full width of its container */
+  width: 100%; 
+
+  /* You can set a max-width to prevent it from becoming too large on big screens.
+     Increase this value to make the image bigger. Try a value like 400px or 500px. */
+  max-width: 450px; 
+
+  /* This ensures the image's height scales correctly without stretching or squishing */
+  height: auto; 
+}
+    #jobs-table tbody .job-description-detail-row {
+        width: 100%;
+        display: block !important; /* Force block on mobile for display toggle */
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    #jobs-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: none;
+    }
+    #jobs-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        color: #777;
+        flex: 1;
+        padding-right: 10px;
+    }
+    #jobs-table td:first-child {
+        padding-top: 0;
+    }
+    #jobs-table td:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    .index-col {
+        display: none;
+    }
+    /* Add data-label attributes to your HTML <td> elements for this to work */
+    /* Example: <td data-label="Source">{{ job.source }}</td> */
+    .actions {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+    }
+    .action-btn {
+        margin-right: 0 !important;
+        width: 100%;
+    }
+    .full-job-description-content {
+        padding: 0; /* Remove padding for content within mobile row */
+    }
+    #pdf-preview-area > div {
+        flex-direction: column;
+        height: auto;
+    }
+    #resume-preview-iframe,
+    #cv-preview-iframe {
+        width: 100%;
+        height: 400px;
+    }
+
+    
+}
+
