@@ -10,3 +10,4 @@ pdfminer.six
 flask_cors
 Flask-Login
 Flask-Bcrypt
+gunicorn # for vercel
