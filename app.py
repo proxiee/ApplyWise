@@ -140,14 +140,15 @@ def initialize_database():
       CREATE TABLE IF NOT EXISTS jobs (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT, company TEXT, location TEXT, date TEXT,
-        job_url TEXT UNIQUE, job_description TEXT, source TEXT,
+        job_url TEXT, job_description TEXT, source TEXT,
         status TEXT DEFAULT 'inbox',
         date_loaded DATETIME,
         application_date DATETIME,
         scrape_history_id INTEGER,
         user_id INTEGER NOT NULL,
         FOREIGN KEY (user_id) REFERENCES users (id), 
-        FOREIGN KEY (scrape_history_id) REFERENCES scrape_history(id)
+        FOREIGN KEY (scrape_history_id) REFERENCES scrape_history(id),
+        UNIQUE(job_url, user_id)           
     )
     """) # 
     cursor.execute("""

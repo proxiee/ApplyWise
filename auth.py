@@ -57,10 +57,10 @@ def register():
             # The 'experience', 'projects', 'education', 'skills' columns store JSON text
             cursor.execute(
                 """
-                INSERT INTO user_resume_data (user_id, name, email, phone, linkedin, github, summary, experience, projects, education, skills, activities)
+                INSERT INTO user_resume_data (user_id, name, email, phone, linkedin, github, summary, experience, projects, education, skills, activities, custom_sections)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
-                (user_id, '', email, '', '', '', '', '[]', '[]', '[]', '{}', '[]')
+                (user_id, '', email, '', '', '', '', '[]', '[]', '[]', '{}', '[]', '[]')
             )
             # -----------------------------------------------------------
 
