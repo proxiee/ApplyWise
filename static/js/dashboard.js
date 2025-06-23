@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let applicationStatusChartInstance = null;
 
     const chartColors = [
-        'rgba(255, 99, 132, 0.7)',
-        'rgba(54, 162, 235, 0.7)',
-        'rgba(255, 206, 86, 0.7)',
-        'rgba(75, 192, 192, 0.7)',
-        'rgba(153, 102, 255, 0.7)',
-        'rgba(255, 159, 64, 0.7)',
+        'rgba(255, 99, 132, 0.7)', // Red
+        'rgba(54, 162, 235, 0.7)', // Blue
+        'rgba(255, 206, 86, 0.7)', // Yellow
+        'rgba(75, 192, 192, 0.7)', // Green (used for line chart)
+        'rgba(153, 102, 255, 0.7)', // Purple
+        'rgba(255, 159, 64, 0.7)', // Orange
         'rgba(199, 199, 199, 0.7)', // Grey for 'inbox' or 'archived'
-        'rgba(83, 102, 83, 0.7)'    // Another color if more statuses
+        'rgba(83, 102, 83, 0.7)'    // Dark Green
     ];
 
     const chartBorderColors = [
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
+                console.log('Received dashboard data:', data); // Log the full data object
                 if (data) {
                     updateKPIs(data);
                     updateCharts(data);
@@ -179,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
         labels: ['No Data'],
         datasets: [{
             label: label,
-            data: [1], // Chart.js needs at least one data point to render
+            data: [1], // Chart.js needs at least one data point to render for pie/doughnut default
             backgroundColor: ['rgba(200, 200, 200, 0.2)'],
             borderColor: ['rgba(200, 200, 200, 1)'],
             borderWidth: 1
@@ -189,12 +190,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCharts(data) {
         // Applications Over Time Chart
         const ctxTime = document.getElementById('applicationsOverTimeChart').getContext('2d');
-        const timeLabels = data.applications_last_7_days && data.applications_last_7_days.length > 0
-            ? data.applications_last_7_days.map(item => item.date.substring(5)) // MM-DD format
-            : ['No Data'];
-        const timeData = data.applications_last_7_days && data.applications_last_7_days.length > 0
-            ? data.applications_last_7_days.map(item => item.count)
-            : [0]; // Provide 0 for "No Data" to avoid chart errors
+        let timeLabels = [];
+        let timeData = [];
+
+        if (data.applications_last_7_days && data.applications_last_7_days.length > 0) {
+            timeLabels = data.applications_last_7_days.map(item => item.date.substring(5)); // MM-DD format
+            timeData = data.applications_last_7_days.map(item => item.count);
+        } else {
+            // Provide empty arrays if no actual data to prevent drawing 'No Data' point
+            console.warn("No applications_last_7_days data found, chart will show empty lines.");
+            // Or you could set a placeholder:
+            // timeLabels = ['Today', 'Yesterday', '2 Days Ago', '3 Days Ago', '4 Days Ago', '5 Days Ago', '6 Days Ago'];
+            // timeData = [0, 0, 0, 0, 0, 0, 0];
+        }
+
+        console.log("Line Chart Labels:", timeLabels);
+        console.log("Line Chart Data:", timeData);
+
 
         if (applicationsOverTimeChartInstance) {
             applicationsOverTimeChartInstance.destroy();
@@ -209,7 +221,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     borderColor: 'rgb(75, 192, 192)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                     tension: 0.1,
-                    fill: true
+                    fill: true,
+                    // Hide the dataset if data is truly empty, Chart.js handles empty arrays gracefully
+                    hidden: timeData.length === 0
                 }]
             },
             options: {
@@ -221,11 +235,20 @@ document.addEventListener('DOMContentLoaded', function() {
                             stepSize: 1,
                             precision: 0 // Ensure y-axis shows whole numbers for counts
                         }
+                    },
+                    x: {
+                        // Ensure X-axis labels are always displayed, even if no data points
+                        grid: {
+                            display: false
+                        }
                     }
                 },
                 plugins: {
                     legend: {
-                        display: timeLabels[0] !== 'No Data' // Hide legend if no data
+                        display: timeLabels.length > 0 // Only show legend if there are actual labels
+                    },
+                    tooltip: {
+                        enabled: timeLabels.length > 0 // Only enable tooltip if there is actual data
                     }
                 }
             }
@@ -295,7 +318,29 @@ document.addEventListener('DOMContentLoaded', function() {
     function setDefaultCharts() {
         const ctxTime = document.getElementById('applicationsOverTimeChart').getContext('2d');
         if (applicationsOverTimeChartInstance) applicationsOverTimeChartInstance.destroy();
-        applicationsOverTimeChartInstance = new Chart(ctxTime, { type: 'line', data: noDataConfig('Applications per Day'), options: {...defaultChartOptions, scales: { y: { beginAtZero: true, ticks: { stepSize: 1, precision: 0 }}}, plugins: { legend: { display: false }}} });
+        applicationsOverTimeChartInstance = new Chart(ctxTime, {
+            type: 'line',
+            data: {
+                labels: ['Today', 'Yesterday', '2 Days Ago', '3 Days Ago', '4 Days Ago', '5 Days Ago', '6 Days Ago'],
+                datasets: [{
+                    label: 'Applications per Day',
+                    data: [0, 0, 0, 0, 0, 0, 0], // All zeros for default
+                    borderColor: 'rgb(75, 192, 192)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    tension: 0.1,
+                    fill: true,
+                    hidden: false // Ensure it's not hidden
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                scales: {
+                    y: { beginAtZero: true, ticks: { stepSize: 1, precision: 0 }},
+                    x: { grid: { display: false }}
+                },
+                plugins: { legend: { display: true }, tooltip: { enabled: true } }
+            }
+        });
 
         const ctxSource = document.getElementById('applicationsBySourceChart').getContext('2d');
         if (applicationsBySourceChartInstance) applicationsBySourceChartInstance.destroy();

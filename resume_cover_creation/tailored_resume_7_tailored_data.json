@@ -1,0 +1,51 @@
+{
+  "summary": "Full-stack software engineer with 2+ years of experience building and deploying AI-driven features. Proven ability to design and implement robust backend systems using Python and modern front-end frameworks (React, TypeScript).  Expertise in optimizing on-device performance and improving model accuracy.  Eager to leverage AI/ML skills in a fast-paced, product-focused environment.",
+  "experience": [
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Software Developer",
+      "dates": "March 2023 - Aug 2023",
+      "points": [
+        "Developed and deployed full-stack features for enterprise systems using Spring Boot (Java) and modern front-end frameworks, resulting in 15% faster API response times.",
+        "Collaborated with product stakeholders to translate user requirements into technical specifications within an Agile environment, delivering robust, high-quality code."
+      ]
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Programmer Analyst Intern",
+      "dates": "March 2022-Sept 2022",
+      "points": [
+        "Identified and fixed bugs in enterprise applications, reducing reported issues by 10% for key modules.",
+        "Improved code quality and reliability by authoring technical documentation and enhancing test automation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI-Powered Workflow Automation Tool",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Developed a full-stack application using Python (FastAPI backend), React, and TypeScript frontend to automate a key workflow, resulting in a 20% increase in user efficiency.",
+        "Integrated an LLM-based natural language processing component to enhance user interaction, improving task completion time by 15%."
+      ]
+    },
+    {
+      "name": "Real-time Hand Tracking & Gesture Recognition for AR",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Developed a C++ and PyTorch deep learning model for high-fidelity hand tracking, achieving 98.5% accuracy on a dataset of 50 complex gestures.",
+        "Optimized the model for on-device performance, reducing latency by 30% to enable 90 FPS performance."
+      ]
+    },
+    {
+      "name": "Data Processing Pipeline with ETL",
+      "dates": "Sep 2023-Dec 2023",
+      "points": [
+        "Designed and implemented an ETL pipeline using Python to process and transform large datasets for a machine learning model, increasing data processing speed by 3x.",
+        "Utilized PostgreSQL for data storage and Docker for containerization, improving data reliability and scalability."
+      ]
+    }
+  ]
+}

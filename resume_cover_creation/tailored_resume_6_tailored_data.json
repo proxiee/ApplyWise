@@ -1,0 +1,52 @@
+{
+  "summary": "Highly skilled full-stack engineer with 2+ years of experience in Java and modern front-end frameworks, seeking to leverage expertise in developing and optimizing scalable applications. Proven ability to translate user requirements into robust, high-performance solutions, improving API response times and system reliability.  Eager to contribute to a fast-paced team environment, collaborating effectively on complex projects and adhering to best practices.",
+  "experience": [
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Software Developer",
+      "dates": "March 2023 - Aug 2023",
+      "points": [
+        "Developed and deployed full-stack features for enterprise systems using Spring Boot (Java) and modern front-end frameworks, resulting in extensible and maintainable code.",
+        "Collaborated in an Agile team to deliver robust solutions, improving API response times by 15% and exceeding stakeholder expectations."
+      ]
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Programmer Analyst Intern",
+      "dates": "March 2022-Sept 2022",
+      "points": [
+        "Identified and resolved bugs in enterprise applications, reducing reported issues by 10% for key modules.",
+        "Improved code quality and reliability by authoring technical documentation and enhancing test automation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Scalable E-commerce Platform using Java and React",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Developed a high-performance e-commerce platform using Java (Spring Boot), Node.js, and React, supporting 10,000 concurrent users with <200ms average response time.",
+        "Implemented RESTful APIs and microservices architecture for improved scalability and maintainability, resulting in a 30% reduction in infrastructure costs.",
+        "Integrated with a SQL database and implemented robust caching mechanisms for enhanced performance and user experience."
+      ]
+    },
+    {
+      "name": "Real-time Hand Tracking & Gesture Recognition for AR",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Developed a deep learning model (C++, PyTorch) for high-fidelity hand tracking in a simulated AR environment, achieving 98.5% accuracy on a 50-gesture dataset.",
+        "Engineered a lightweight architecture, reducing latency by 30% and increasing model robustness by 25% to enable 90 FPS on-device performance."
+      ]
+    },
+    {
+      "name": "Microservices-based Streaming Service",
+      "dates": "Sep 2023-Dec 2023",
+      "points": [
+        "Designed and implemented a microservices-based streaming service using Node.js and a NoSQL database, handling 500 concurrent streams with minimal latency.",
+        "Developed robust API endpoints using RESTful principles for seamless integration with other systems, resulting in a 20% increase in user engagement."
+      ]
+    }
+  ]
+}

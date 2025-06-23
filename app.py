@@ -42,10 +42,11 @@ def load_config(file_name="config.json"):
         print(f"Error: Configuration file '{file_name}' not found. Please ensure it exists.")
         # Provide a default config or exit if critical
         return {
-            "app_settings": {"db_path": "data/jobs.db", "jobs_tablename": "jobs"},
-            "linkedin_settings": {"timespan": "r604800", "days_to_scrape": 7, "search_queries": [], "desc_exclude": [], "title_exclude": [], "title_include": [], "languages": [], "company_exclude": []},
+            "app_settings": {"db_path": "data/jobs.db", "jobs_tablename": "jobs", "proxies": [], "headers": {}},
+            "linkedin_settings": {"timespan": "r604800", "days_to_scrape": 7, "search_queries": [], "desc_exclude": [], "title_exclude": [], "title_include": [], "languages": [], "company_exclude": [], "pages_to_scrape": 1},
             "indeed_settings": {"search_config": {"max_listing_days": 7}, "master_csv_file": "data/indeed_results.csv", "cache_folder": "data/cache", "log_file": "data/log.log", "block_list_file": "data/indeed_block_list.json", "duplicates_list_file": "data/indeed_duplicates.json", "delay_config": {}},
-            "dashboard_settings": {"daily_application_goal": 10, "weekly_application_goal": 50} # Default for dashboard
+            "dashboard_settings": {"daily_application_goal": 10, "weekly_application_goal": 50}, # Default for dashboard
+            "resume_settings": {"base_output_name": "tailored_resume"} # Default for resume generation
         } # Basic default
     except json.JSONDecodeError:
         print(f"Error: Configuration file '{file_name}' is not valid JSON.")
@@ -145,49 +146,83 @@ def initialize_database():
 
 def commit_jobs_to_db(conn, df, history_id):
     table_name = config.get('app_settings', {}).get('jobs_tablename', 'jobs')
+    print(f"\n--- commit_jobs_to_db called ---")
+    print(f"DataFrame passed to commit_jobs_to_db has {len(df)} rows.")
     if df.empty:
+        print("DataFrame is empty. No jobs to commit.")
         return 0
 
     cursor = conn.cursor()
     cursor.execute(f"SELECT job_url FROM {table_name}")
     existing_urls = {row[0] for row in cursor.fetchall()}
-    
+    print(f"Found {len(existing_urls)} existing job URLs in the database.")
+    if existing_urls:
+        print(f"Sample existing URLs (first 5): {list(existing_urls)[:5]}")
+
+    # Filter out jobs that already exist by their URL
+    # Ensure 'job_url' column exists in the DataFrame before filtering
+    if 'job_url' not in df.columns:
+        print("ERROR: 'job_url' column missing in DataFrame passed to commit_jobs_to_db. Cannot filter duplicates.")
+        return 0
+
     new_jobs_df = df[~df['job_url'].isin(existing_urls)].copy()
 
+    print(f"After filtering existing URLs, {len(new_jobs_df)} truly new jobs remain to be inserted.")
     if new_jobs_df.empty:
+        print("No truly new jobs to insert after duplicate check.")
         return 0
         
     new_jobs_df['date_loaded'] = pd.to_datetime('now').strftime("%Y-%m-%d %H:%M:%S")
     new_jobs_df['status'] = 'inbox'
     new_jobs_df['scrape_history_id'] = history_id
-    new_jobs_df['application_date'] = None
+    new_jobs_df['application_date'] = None # Explicitly set for new insertions
     
-    columns_to_insert = ['title', 'company', 'location', 'date', 'job_url', 
-                         'job_description', 'source', 'status', 'date_loaded',
-                         'application_date', 'scrape_history_id']
+    columns_to_insert = [
+        'title', 'company', 'location', 'date', 'job_url', 
+        'job_description', 'source', 'status', 'date_loaded',
+        'application_date', 'scrape_history_id'
+    ]
     
     # Ensure only columns that exist in the DataFrame are used and in correct order for to_sql
+    # And ensure the order matches the target table
     df_to_insert = new_jobs_df[[col for col in columns_to_insert if col in new_jobs_df.columns]]
     
-    df_to_insert.to_sql(table_name, conn, if_exists='append', index=False)
+    print(f"DataFrame prepared for insertion (head):\n{df_to_insert.head()}")
+    print(f"Columns in DataFrame prepared for insertion: {df_to_insert.columns.tolist()}")
+
+    try:
+        df_to_insert.to_sql(table_name, conn, if_exists='append', index=False)
+        print(f"Successfully inserted {len(df_to_insert)} new jobs into '{table_name}'.")
+    except Exception as e:
+        print(f"ERROR: Failed to insert jobs into database: {e}")
+        import traceback
+        traceback.print_exc() # Print full traceback for insertion error
+        return 0
     return len(df_to_insert)
 
 
 def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scrape, management_option, location, keywords): # ADD location, keywords
     global scraping_status
     scraping_status['is_running'] = True
+    print(f"\n--- Initiating scraping task for source: {source} ---")
+    print(f"Management Option: {management_option}")
+    print(f"Location: {location}, Keywords: {keywords}")
     
     try:
         conn = get_db_connection()
         
         if management_option == 'archive':
             scraping_status['message'] = "Archiving old jobs..."
+            print("Archiving 'inbox' jobs...")
             conn.execute("UPDATE jobs SET status = 'archived' WHERE status = 'inbox'")
             conn.commit()
+            print("Archiving complete.")
         elif management_option == 'delete':
             scraping_status['message'] = "Deleting old jobs..."
+            print("Deleting 'inbox' jobs...")
             conn.execute("DELETE FROM jobs WHERE status = 'inbox'")
             conn.commit()
+            print("Deletion complete.")
 
         scraping_status['message'] = "Creating scrape history record..."
         history_cursor = conn.cursor()
@@ -197,14 +232,16 @@ def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scr
         )
         history_id = history_cursor.lastrowid
         conn.commit()
+        print(f"Scrape history record created with ID: {history_id}")
         
         cursor = conn.cursor()
         cursor.execute(f"SELECT job_url FROM jobs") # Assuming table name is 'jobs'
         existing_urls = {row[0] for row in cursor.fetchall()}
+        print(f"Fetched {len(existing_urls)} existing URLs from DB for pre-filtering.")
         
         local_config = copy.deepcopy(config) # Ensure we modify a copy, not the global config
 
-        # --- ADDITION/MODIFICATION HERE: Apply location and keywords to local_config ---
+        # --- Apply location and keywords to local_config ---
         # For LinkedIn
         if source in ['linkedin', 'all']:
             if 'linkedin_settings' in local_config:
@@ -217,54 +254,64 @@ def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scr
                 if location:
                     local_config['linkedin_settings']['search_queries'][0]['location'] = location
                 
-                # Also update timespan and days_to_scrape as before
                 local_config['linkedin_settings']['timespan'] = f"r{timespan_seconds}"
                 local_config['linkedin_settings']['days_to_scrape'] = days_to_scrape
+                print(f"LinkedIn settings applied in local_config: {local_config['linkedin_settings']}")
 
         # For Indeed
         if source in ['indeed', 'all']:
             if 'indeed_settings' in local_config and 'search_config' in local_config['indeed_settings']:
                 if keywords:
-                    # Split keywords by comma and strip whitespace for Indeed's list format
                     local_config['indeed_settings']['search_config']['keywords'] = [k.strip() for k in keywords.split(',') if k.strip()]
                 if location:
-                    # For simplicity, mapping location directly to Indeed's city.
-                    # More advanced parsing might be needed for province_or_state.
                     local_config['indeed_settings']['search_config']['city'] = location
                 
-                # Also update max_listing_days as before
                 local_config['indeed_settings']['search_config']['max_listing_days'] = days_to_scrape
-        # --- END ADDITION/MODIFICATION ---
+                print(f"Indeed settings applied in local_config: {local_config['indeed_settings']}")
 
         all_new_jobs_df_list = []
 
         if source in ['linkedin', 'all']:
             scraping_status['message'] = "Scraping LinkedIn..."
+            print("Calling LinkedIn scraper...")
             linkedin_df = scrape_linkedin(local_config, existing_urls)
             if not linkedin_df.empty:
+                print(f"LinkedIn scraper returned {len(linkedin_df)} jobs.")
                 all_new_jobs_df_list.append(linkedin_df)
+            else:
+                print("LinkedIn scraper returned an empty DataFrame.")
 
         if source in ['indeed', 'all']:
             scraping_status['message'] = "Scraping Indeed..."
+            print("Calling Indeed scraper...")
             indeed_df = scrape_indeed(local_config, existing_urls)
             if not indeed_df.empty:
+                print(f"Indeed scraper returned {len(indeed_df)} jobs.")
                 all_new_jobs_df_list.append(indeed_df)
+            else:
+                print("Indeed scraper returned an empty DataFrame.")
 
         num_added = 0
         if all_new_jobs_df_list:
             scraping_status['message'] = "Combining and saving new jobs..."
+            print(f"Combining {len(all_new_jobs_df_list)} DataFrames.")
             final_df = pd.concat(all_new_jobs_df_list, ignore_index=True).drop_duplicates(subset=['job_url'])
+            print(f"Combined DataFrame has {len(final_df)} unique jobs by URL.")
             num_added = commit_jobs_to_db(conn, final_df, history_id)
-        
+        else:
+            print("No jobs found by any scraper to combine and save.")
+            
         conn.execute("UPDATE scrape_history SET new_jobs_found = ? WHERE id = ?", (num_added, history_id))
         conn.commit()
         
         scraping_status['message'] = f"Scraping complete. Added {num_added} new jobs."
+        print(f"Scraping completed. Total new jobs added to DB: {num_added}.")
         conn.close()
         time.sleep(3)
 
     except Exception as e:
         scraping_status['message'] = f"An error occurred: {e}"
+        print(f"An unexpected error occurred during scraping: {e}")
         import traceback
         traceback.print_exc()
         time.sleep(5)
@@ -272,8 +319,11 @@ def perform_scraping_task(source, time_period_str, timespan_seconds, days_to_scr
     finally:
         scraping_status['is_running'] = False
         scraping_status['message'] = "Idle"
+        print("Scraping task finished (idle).")
+
 
 # --- FLASK ROUTES ---
+# (Rest of your app.py remains unchanged)
 
 @app.route('/')
 def home():
@@ -615,9 +665,9 @@ def serve_pdf(filename):
     # More specific check for PDF files from the resume creation folder
     # This check might be too restrictive if other PDFs are ever served, but good for now.
     if not (safe_filename.startswith(config.get('resume_settings',{}).get('base_output_name', 'tailored_resume')) and (safe_filename.endswith(".pdf") or safe_filename.endswith(".docx"))):
-          if hasattr(app, 'logger') and app.logger:
-            app.logger.warning(f"Attempt to access non-resume/cover_letter PDF/DOCX: {filename}")
-          # return jsonify({"error": "Invalid filename format for document"}), 400 # Commenting out for now to allow original functionality if needed
+             if hasattr(app, 'logger') and app.logger:
+                app.logger.warning(f"Attempt to access non-resume/cover_letter PDF/DOCX: {filename}")
+            # return jsonify({"error": "Invalid filename format for document"}), 400 # Commenting out for now to allow original functionality if needed
 
     if hasattr(app, 'logger') and app.logger:
         app.logger.info(f"Serving PDF: {safe_filename} from {RESUME_CREATION_FOLDER}")
