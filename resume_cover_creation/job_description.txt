@@ -1,49 +1,24 @@
-We're seeking a Full Stack Software Engineer to help build AI-driven products that streamline complex workflows. You'll work closely with a small, senior team to design and deploy features that blend intuitive UI, reliable backend systems, and AI automation. This role offers high autonomy, direct product ownership, and the chance to work on something technically challenging and genuinely helpful.
-Please note- No work visa sponsorship is available; no C2C, thank you.
-Worksite Location: 
-100% Remote
-Salary Range:
- $130–175K/year DOE:
+At Jobright, we help high-growth startups hire top talent for their key roles.
+About NewsBreak
+NewsBreak is redefining the way users interact with local news and their communities. By bridging local users, local content creators, and local businesses, our mission is to foster safer, more vibrant, and authentically connected lives. Through robust collaborations with thousands of local publishers and businesses across the nation, NewsBreak is revolutionizing how a new wave of readers access and engage with essential, locally sourced content & information.
+Since our inception in 2015, our trajectory has been nothing short of remarkable. We proudly stand as the nation’s premier local news app.
+Responsibilities
+- Develop highly scalable tools leveraging machine learning models to solve problems such as classification, clustering, topic modeling, natural language processing and recommendation
+- Develop in-house machine learning tools and pipelines to support fast experimentation of machine learning models
+- Work with other engineers to identify and solve machine learning problems
+Requirements
+- Experience in one or more of the following areas: machine learning, recommendation systems, deep learning, feed, relevance and data mining.
+- Expert knowledge in Java or Scala
+- Experience with scripting languages such as Perl, Python, and shell scripts
+- MS degree in Computer Science or related quantitative field
+- Experience with machine learning frameworks such as TensorFlow, PyTorch or MxNet
 Benefits
-- Unlimited PTO 
-- Equity participation 
-- Healthcare coverage (medical, dental, vision) 
-- Home office stipend 
-- Flexible hours 
-- No work visa sponsorship is available 
-Roles & Responsibilities
-- Build and maintain full-stack features using Python (primarily), along with React, TypeScript, and FastAPI 
-- Design and implement AI-driven functionality that improves user efficiency and experience 
-- Take ownership from concept to production—collaborating across product, design, and engineering 
-- Write clean, maintainable code and participate in regular code reviews 
-- Contribute to infrastructure, deployment processes, and system reliability 
-- Stay informed on the latest in AI tooling and help apply it meaningfully to the product 
-Required Skills & Experience
-- 4+ years of experience in software development, with strong hands-on Python experience 
-- Experience building backend APIs and services (FastAPI preferred) 
-- Familiarity with modern frontend frameworks like React and TypeScript 
-- Experience with PostgreSQL and containerized environments (Docker) 
-- Interest in or exposure to AI concepts like LLMs or Retrieval-Augmented Generation (RAG) 
-- Ability to thrive in fast-paced, startup-style environments 
-- Bonus: Experience with Redis, ETL processes, or GUI-heavy apps 
-About Versique
-Versique: /ver-seek/ 
-adj. being both versatile and unique; n. a high-performance recruiting firm specializing in executive leadership search, direct hire, and interim hiring solutions. 
-Versique Executive, Professional, & Interim Recruiting
- is a locally owned and operated hiring and placement firm based in the Twin Cities of Minnesota. With specialized practice areas across our three divisions, Versique delivers tailored expertise to a wide range of industries. What sets us apart is our team of recruiters—seasoned professionals who have worked in the very fields they now hire for, providing unmatched industry insight and connections.
-We believe people are more than just resumes—they are transformative, unlocking the potential for organizational growth and success.
-Versique is proud to be award-winning, earning recognition on the 
-Inc. 5000
- list of fastest-growing private companies and the 
-Minneapolis-St. Paul Business Journal's Fast 50
- list for 2023. We are also consistently recognized as a 
-Star Tribune Top Workplace
- and were named a 
-Best Place to Work
- in 2022 by the Minneapolis/St. Paul Business Journal.
-Let's find your people, together.
-Versique is an equal opportunity employer committed to creating a diverse workforce. We consider all qualified applicants regardless of race, religion, color, sex, national origin, age, sexual orientation, gender identity, disability, or veteran status.
-Please note- No work visa sponsorship is available; no C2C, thank you.        
+We offer a competitive benefits package:
+- Health, dental, and vision care for you and your family (100% coverage for employee)
+- Top-tier 401(K) plan with company matching
+- Paid time off and paid holidays
+- FSA, HSA and commuter benefits programs
+- Team activity budget        
             
                             
             

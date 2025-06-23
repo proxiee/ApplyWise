@@ -34,7 +34,7 @@ def generate_tailored_cover_letter_latex(model, base_letter_content, resume_data
     **Key Instructions:**
     1.  **Analyze all inputs:** Read the base LaTeX template, the tailored resume data (for achievements), and the job description (for company info, keywords, and tone).
     2.  **Replace Header Information:**
-        * In the LaTeX template, find the recipient's details (name, company, location) and replace them with the correct information from the job description. If no specific person is named, use "Hiring Manager".
+        * In the LaTeX template, find the recipient's details (name, company, location) and replace them with the correct information from the job description. If no specific person is named, use "Hiring Manager", and if the company or location is not mentioned just dont add anything.
         
     3.  **Completely Rewrite the Body:**
         * Add the percentage sign (%) where ever necessary for as seen in the resume.
@@ -44,7 +44,7 @@ def generate_tailored_cover_letter_latex(model, base_letter_content, resume_data
         * Discard the original body text.
         * Write a new, compelling body that is perfectly tailored for the job.
         * **Crucially, you MUST integrate the key achievements from the provided "TAILORED RESUME DATA" (especially from the 'projects' and 'experience' sections) as evidence of your skills.** This creates a cohesive application.
-        * The new body must be of a similar length to the original to ensure the cover letter remains a single page.
+        * The new body must be of a similar length, around 2300 characters to the original to ensure the cover letter remains a single page.
     4.  **Output a Complete LaTeX File:** Your response MUST be ONLY the full, final, and valid LaTeX code for the cover letter, ready for compilation. Do not include any other text, comments, or explanations, and do not wrap it in markdown backticks.
 
     ---

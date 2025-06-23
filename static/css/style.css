@@ -11,6 +11,12 @@
 
     --font-family-primary: 'Inter', 'Helvetica Neue', Arial, sans-serif;
     --font-family-monospace: 'Fira Code', 'Lucida Console', Monaco, monospace;
+
+    /* NEW: Magical Colors */
+    --magical-purple: #8A2BE2; /* Amethyst */
+    --magical-pink: #FF69B4; /* Hot Pink */
+    --magical-blue: #1E90FF; /* Dodger Blue */
+    --magical-gold: #FFD700; /* Gold */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -148,7 +154,6 @@ body {
     font-weight: 400; /* Adjust for radio labels */
 }
 
-
 .scrape-action-bar {
     display: flex;
     justify-content: flex-end;
@@ -232,6 +237,78 @@ body {
     margin-bottom: -2px; /* Pull it slightly over the border */
 }
 
+/* NEW: Magical Style for "Create Resume/CV" Tab */
+.tab-link[onclick="openResumeCreatorTab()"] {
+    background: linear-gradient(135deg, var(--magical-purple) 0%, var(--magical-blue) 50%, var(--magical-pink) 100%);
+    color: white;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    border: none; /* Remove default border */
+    position: relative;
+    overflow: hidden;
+    z-index: 0; /* Ensure content is above pseudo-elements */
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4); /* Purple shadow */
+    animation: sparkleBorder 3s infinite alternate; /* Border animation */
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]::before,
+.tab-link[onclick="openResumeCreatorTab()"]::after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    pointer-events: none;
+    z-index: -1; /* Place behind text */
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]::before {
+    width: 20px; height: 20px;
+    top: 10%; left: 15%;
+    animation: fadeInOutSparkle 2s infinite ease-in-out;
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]::after {
+    width: 15px; height: 15px;
+    bottom: 20%; right: 10%;
+    animation: fadeInOutSparkle 2.5s infinite ease-in-out reverse;
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.6); /* More prominent shadow on hover */
+    background: linear-gradient(135deg, var(--magical-pink) 0%, var(--magical-purple) 50%, var(--magical-blue) 100%); /* Shift gradient on hover */
+}
+
+.tab-link[onclick="openResumeCreatorTab()"]:hover::before,
+.tab-link[onclick="openResumeCreatorTab()"]:hover::after {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.tab-link[onclick="openResumeCreatorTab()"].active {
+    /* Override standard active styles for the magical tab */
+    background: linear-gradient(135deg, var(--magical-pink) 0%, var(--magical-blue) 50%, var(--magical-purple) 100%);
+    border-bottom: 3px solid var(--magical-gold); /* Gold underline for active */
+    color: white;
+    box-shadow: 0 -2px 10px rgba(138, 43, 226, 0.5), 0 0 20px rgba(255, 215, 0, 0.7); /* Glow effect */
+    padding-bottom: 15px;
+    margin-bottom: -2px;
+}
+
+/* Keyframes for animations */
+@keyframes sparkleBorder {
+    0% { border-color: var(--magical-purple); }
+    50% { border-color: var(--magical-gold); }
+    100% { border-color: var(--magical-pink); }
+}
+
+@keyframes fadeInOutSparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 0.8; transform: scale(1); }
+}
+
 
 /* Job Table */
 #jobs-table {
@@ -266,12 +343,14 @@ body {
     z-index: 1; /* Keep header visible on scroll */
 }
 
-#jobs-table tbody tr {
+/* Base style for main job row - make it clickable */
+#jobs-table tbody .job-main-row {
     background-color: var(--background-card);
-    transition: background-color 0.2s ease, transform 0.2s ease, opacity 0.3s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer; /* Indicate clickability */
 }
 
-#jobs-table tbody tr:hover {
+#jobs-table tbody .job-main-row:hover {
     background-color: #F9FAFB;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* More prominent shadow on hover */
@@ -283,7 +362,7 @@ body {
 }
 
 .index-col {
-    width: 30px;
+    width: 30px; /* Fixed width for the index column */
     font-weight: 600;
     color: #777;
     text-align: center;
@@ -309,7 +388,7 @@ body {
     margin-top: 3px;
 }
 
-/* NEW: Job Description Summary Styling */
+/* Job Description Summary Styling */
 .job-description-summary {
     font-size: 0.85em;
     color: #666;
@@ -324,6 +403,32 @@ body {
     margin-top: 5px; /* Small spacing from title/company */
 }
 
+/* JD Experience Snippet Styling (client-side search) */
+.jd-experience-snippet {
+    font-size: 0.8em; /* Slightly smaller for detailed snippet */
+    color: #444;
+    max-height: 2.4em; /* Adjust to fit 2 lines if needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    line-height: 1.2em; /* Slightly tighter line height */
+    background-color: #f0f8ff; /* Light background for visibility */
+    padding: 3px 5px;
+    border-radius: 4px;
+    border: 1px solid #e0efff;
+}
+
+/* Highlight for keyword (used in snippet and full description) */
+.highlight-keyword {
+    background-color: #FFFF00; /* Bright yellow highlight */
+    font-weight: bold;
+    padding: 0 2px;
+    border-radius: 2px;
+    color: #333; /* Ensure text is readable over yellow */
+}
 
 /* Source Badges */
 .badge {
@@ -418,7 +523,6 @@ select:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
-
 
 /* Loading Spinner */
 .spinner {
@@ -534,6 +638,53 @@ select:focus {
     box-shadow: 0 5px 15px var(--shadow-light);
 }
 
+/* NEW: Expandable Row Styles */
+.job-description-detail-row {
+    display: none; /* Hidden by default */
+    background-color: #f8f8f8;
+    transition: background-color 0.2s ease;
+}
+
+.job-description-detail-row td {
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.full-job-description-content {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.05);
+    max-height: 400px; /* Max height for the expandable content */
+    overflow-y: auto; /* Enable scrolling for long descriptions */
+    /* NEW ALIGNMENT STYLES */
+    /* Calculate padding-left to align after '#' column */
+    /* '#' column width (30px) + td padding-left (15px) = 45px */
+    padding-left: calc(30px + 15px); /* Adjusted for td padding */
+    /* Adjust padding-right to account for original td padding and div padding */
+    padding-right: 15px; /* Revert to standard padding as width:100% handles the rest */
+    box-sizing: border-box; /* Include padding in width calculation */
+    width: 100%; /* Ensure it uses all available space within its colspan-ed TD */
+}
+
+.full-job-description-content h5 {
+    color: #333;
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+}
+
+.full-job-description-content pre {
+    white-space: pre-wrap; /* Preserve line breaks and wrap text */
+    word-wrap: break-word; /* Break long words */
+    font-family: var(--font-family-monospace);
+    font-size: 0.95em;
+    color: #333;
+    margin: 0; /* Remove default margin from pre */
+}
+
 /* Utility / Responsive adjustments */
 @media (max-width: 1200px) {
     .container {
@@ -567,12 +718,23 @@ select:focus {
     #jobs-table thead {
         display: none;
     }
-    #jobs-table tbody tr {
+    #jobs-table tbody .job-main-row { /* Apply to main row on mobile */
         display: block;
         margin-bottom: 15px;
         border: 1px solid var(--border-color);
         border-radius: 8px;
         padding: 15px;
+        width: 100%; /* Ensure it takes full width */
+        box-sizing: border-box; /* Include padding in width */
+    }
+    #jobs-table tbody .job-description-detail-row {
+        width: 100%;
+        display: block !important; /* Force block on mobile for display toggle */
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 15px;
+        box-sizing: border-box;
     }
     #jobs-table td {
         display: flex;
@@ -610,6 +772,9 @@ select:focus {
     .action-btn {
         margin-right: 0 !important;
         width: 100%;
+    }
+    .full-job-description-content {
+        padding: 0; /* Remove padding for content within mobile row */
     }
     #pdf-preview-area > div {
         flex-direction: column;

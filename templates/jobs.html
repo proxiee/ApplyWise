@@ -77,7 +77,8 @@
                         <th>Date Posted</th>
                         <th>Date Scraped</th>
                         <th>Title & Company</th>
-                        <th>Description</th> <th>Location</th>
+                        <th>Description</th>
+                        <th>JD Experience Snippet</th> <th>Location</th>
                         <th>Applied Date</th>
                         <th>Actions</th>
                     </tr>
@@ -93,7 +94,7 @@
             <textarea id="job-description-input" placeholder="Job description will be auto-filled if you use 'Generate Resume/CV' from a job row." style="width: 98%; height: 150px; margin-bottom: 10px;"></textarea>
             <button id="generate-resume-cv-button">Generate Documents</button>
             <div id="resume-creator-status" style="margin-top: 10px; margin-bottom: 10px;"></div>
-            <div id="pdf-preview-area" style="display: none; margin-top: 10px;">
+            <div id="pdf-preview-area" style="display: none;">
                 <div style="display: flex; justify-content: space-between; height: 600px;">
                     <iframe id="resume-preview-iframe" style="width: 49%; height: 100%; border: 1px solid #ccc;"></iframe>
                     <iframe id="cv-preview-iframe" style="width: 49%; height: 100%; border: 1px solid #ccc;"></iframe>
@@ -106,6 +107,7 @@
     let currentTab = 'inbox';
     let statusInterval;
     const timeUnitSelect = document.getElementById('time-unit');
+    let loadedJobsData = [];
 
     const timeOptions = {
         full: `
@@ -142,10 +144,7 @@
     function openTab(status) {
         currentTab = status;
 
-        // Hide resume creator section
         document.getElementById('resume-creator-content').style.display = 'none';
-
-        // Show other content sections
         document.getElementById('jobs-content').style.display = 'block';
         document.getElementById('stats-container').style.display = 'block';
         document.querySelector('.controls-container').style.display = 'block';
@@ -158,35 +157,40 @@
     function openResumeCreatorTab(jobId = null, jobTitle = null, jobDescription = null) {
         currentTab = 'resume_creator';
 
-        // Hide other content sections
         document.getElementById('jobs-content').style.display = 'none';
         document.getElementById('stats-container').style.display = 'none';
         document.querySelector('.controls-container').style.display = 'none';
 
-        // Show resume creator section
         document.getElementById('resume-creator-content').style.display = 'block';
 
-        // Update tab active states
         document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
         const resumeTabButton = Array.from(document.querySelectorAll('.tab-link')).find(el => el.textContent.includes('Create Resume/CV'));
         if (resumeTabButton) {
             resumeTabButton.classList.add('active');
         }
 
-        // Pre-fill if job details are provided
         if (jobId && jobDescription) {
             document.getElementById('resume-job-id').value = jobId;
             document.getElementById('job-description-input').value = jobDescription;
             document.getElementById('resume-job-title-display').textContent = jobTitle || `Job ID: ${jobId}`;
         } else {
             document.getElementById('resume-job-id').value = '';
-            document.getElementById('job-description-input').value = ''; // Clear if no specific job
+            document.getElementById('job-description-input').value = '';
             document.getElementById('resume-job-title-display').textContent = 'None selected. Paste job description below or select a job.';
         }
 
-        // Clear any previous status and hide PDF preview
         document.getElementById('resume-creator-status').textContent = '';
         document.getElementById('pdf-preview-area').style.display = 'none';
+    }
+
+    function getHighlightedDescription(fullDescription) {
+        if (!fullDescription) return 'No full description available.';
+        const keyword = 'experience';
+        let textToHighlight = fullDescription;
+
+        const highlightedText = textToHighlight.replace(new RegExp(keyword, 'gi'), `<span class="highlight-keyword">${keyword}</span>`);
+        
+        return highlightedText;
     }
 
     function fetchJobs(status) {
@@ -201,22 +205,35 @@
         fetch(`/get_jobs?status=${status}`)
             .then(res => res.json())
             .then(jobs => {
+                loadedJobsData = jobs;
                 spinner.style.display = 'none';
                 jobCountSpan.textContent = `(${jobs.length} jobs)`;
+                
+                // Total number of columns after removing 'Experience Required'
+                const totalTableColumns = 10; // (old 11 - 1 removed)
+
                 if (!jobs || jobs.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="9">No jobs in this category.</td></tr>'; // Changed colspan to 9
+                    tbody.innerHTML = `<tr><td colspan="${totalTableColumns}">No jobs in this category.</td></tr>`;
                     return;
                 }
 
                 jobs.forEach((job, index) => {
-                    const row = document.createElement('tr');
-                    row.id = `job-row-${job.id}`;
+                    // Main Job Row
+                    const mainRow = document.createElement('tr');
+                    mainRow.id = `job-row-${job.id}`;
+                    mainRow.classList.add('job-main-row');
+
+                    mainRow.onclick = function() {
+                        const descriptionRow = document.getElementById(`job-description-row-${job.id}`);
+                        if (descriptionRow) {
+                            descriptionRow.style.display = descriptionRow.style.display === 'table-row' ? 'none' : 'table-row';
+                        }
+                    };
 
                     let actionButtons = '';
                     if (status === 'inbox' || status === 'want_to_apply') {
-                        // Sanitize job description for use in JS function call
-                        const sanitizedJobDescription = job.job_description.replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/"/g, '&quot;');
-                        actionButtons += `<button class="action-btn generate-resume" onclick="openResumeCreatorTab(${job.id}, '${job.title.replace(/'/g, "\\'")}', '${sanitizedJobDescription}')">Generate Resume/CV</button>`;
+                        const sanitizedJobDescriptionForResume = job.job_description.replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/"/g, '&quot;');
+                        actionButtons += `<button class="action-btn generate-resume" onclick="openResumeCreatorTab(${job.id}, '${job.title.replace(/'/g, "\\'")}', '${sanitizedJobDescriptionForResume}')">Generate Resume/CV</button>`;
                     }
 
                     if (status === 'inbox') {
@@ -262,13 +279,33 @@
                         }
                     }
 
-                    // Prepare job description summary (first 2 lines)
                     const jobDescriptionSummary = job.job_description ?
                         job.job_description.split('\n').slice(0, 2).join(' ').trim() :
                         'No description provided.';
+                    
+                    // Removed 'experienceRequiredText' as the column is gone
+                    
+                    function getExperienceSnippetForCell(jobDescription) {
+                        if (!jobDescription) return 'No description to search.';
+                        const keyword = 'experience';
+                        const lowerDesc = jobDescription.toLowerCase();
+                        const index = lowerDesc.indexOf(keyword);
+                        if (index === -1) {
+                            return 'Keyword not found';
+                        }
+                        const contextBefore = 20;
+                        const contextAfter = 50;
+                        let start = Math.max(0, index - contextBefore);
+                        let end = Math.min(jobDescription.length, index + keyword.length + contextAfter);
+                        let snippet = jobDescription.substring(start, end);
+                        if (start > 0) snippet = '...' + snippet;
+                        if (end < jobDescription.length) snippet = snippet + '...';
+                        snippet = snippet.replace(new RegExp(keyword, 'gi'), `<span class="highlight-keyword">${keyword}</span>`);
+                        return snippet;
+                    }
+                    const jdExperienceSnippet = getExperienceSnippetForCell(job.job_description);
 
-
-                    row.innerHTML = `
+                    mainRow.innerHTML = `
                         <td class="index-col">${index + 1}</td>
                         <td>${sourceBadge}</td>
                         <td>${displayDate}</td>
@@ -277,17 +314,35 @@
                             <a href="${job.job_url || '#'}" target="_blank">${job.title || 'No Title'}</a>
                             <div class="company-name">${job.company || 'No Company'}</div>
                         </td>
-                        <td><div class="job-description-summary">${jobDescriptionSummary}</div></td> <td>${job.location || 'No Location'}</td>
+                        <td><div class="job-description-summary">${jobDescriptionSummary}</div></td>
+                        <td><div class="jd-experience-snippet">${jdExperienceSnippet}</div></td> <td>${job.location || 'No Location'}</td>
                         <td>${applicationDateStr}</td>
                         <td class="actions">${actionButtons}</td>
                     `;
-                    tbody.appendChild(row);
+                    tbody.appendChild(mainRow);
+
+                    const descriptionRow = document.createElement('tr');
+                    descriptionRow.id = `job-description-row-${job.id}`;
+                    descriptionRow.classList.add('job-description-detail-row');
+                    descriptionRow.style.display = 'none';
+
+                    const fullHighlightedDescription = getHighlightedDescription(job.job_description);
+
+                    descriptionRow.innerHTML = `
+                        <td colspan="${totalTableColumns}">
+                            <div class="full-job-description-content">
+                                <h5>Full Job Description:</h5>
+                                <pre>${fullHighlightedDescription}</pre>
+                            </div>
+                        </td>
+                    `;
+                    tbody.appendChild(descriptionRow);
                 });
             })
             .catch(err => {
                 spinner.style.display = 'none';
                 console.error('Error fetching jobs:', err);
-                tbody.innerHTML = '<tr><td colspan="9">Error fetching jobs.</td></tr>'; // Changed colspan to 9
+                tbody.innerHTML = `<tr><td colspan="${totalTableColumns}">Error fetching jobs.</td></tr>`;
             });
     }
 
@@ -299,11 +354,7 @@
         })
         .then(res => res.json())
         .then(() => {
-            const row = document.getElementById(`job-row-${jobId}`);
-            if (row) {
-                row.style.opacity = '0';
-                setTimeout(() => fetchJobs(currentTab), 300);
-            }
+            fetchJobs(currentTab);
             sessionStorage.setItem('dashboardNeedsRefresh', 'true');
         })
         .catch(err => console.error('Error updating job status:', err));
