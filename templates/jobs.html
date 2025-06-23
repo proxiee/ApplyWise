@@ -258,6 +258,9 @@
                                 <option value="archived" ${job.status === 'archived' ? 'selected' : ''}>Archive</option>
                             </select>` + actionButtons;
                     }
+                    else if (status === 'archived') {
+    actionButtons += `<button class="btn btn-sm btn-info ms-1" onclick="event.stopPropagation(); updateJobStatus(${job.id}, 'want_to_apply')">Bookmark'</button>`;
+}
 
                     const sourceBadge = job.source === 'LinkedIn' ? '<span class="badge bg-primary">LI</span>' : '<span class="badge bg-info text-dark">IN</span>';
                     let displayDate = 'N/A';

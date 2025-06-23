@@ -1,15 +1,39 @@
-Job Details
-Description
-Finance of America Holdings LLC, is seeking Python Developer II in Plano TX. Telecommuting permitted.
-Summary of Duties: 
-Participate in the optimization and continuous improvement of the software development process. Contribute to an analytics program by developing new and enhancing existing applications. Participate in evaluating and improving existing systems and their documentations. Experiment and implement new technologies and techniques in the cloud. Develop and maintain software in Python. Write re-usable, testable and efficient code. Resolve problems with software functionality and suggest improvements. Work closely with junior members of the team and provide feedback on their work. Telecommuting permitted.
-Qualifications:
- Bachelor’s degree in Computer Science or a closely related field of study and three (3) years of experience in the job offered or as a Data Scientist, Software Engineer or related. In the alternative, the employer will accept a Master’s degree in Computer Science or a closely related field of study and one (1) year of experience in the job offered or as a Data Scientist, Software Engineer or related.
-Position also requires one (1) year of experience with: Object Oriented Programming in Python and JavaScript; Scalable data application design; Containerization including Docker and Kubernetes; Integration with CICD pipelines; Testing frameworks including PyTest; Data libraries including Pandas, NumPy and scikit-learn; AWS Cloud Compute including ECS and Lambda; Databases including PostgreSQL and MSSQL; Rest APIs; and Microservice architecture.
-To apply, please e-mail your resume to Humanresources@financeofamerica.com and include Python Developer II – [
-REQ CODE:PYTHO006423
-] in the subject line of your e-mail.
-                
+We’re partnering with a stealth-mode client building the next frontier in spatial computing—and they’re hiring a Full-Stack Lead Engineer to help architect and scale the foundation of the Spatial Internet. This is a full-time role with competitive comp + equity, available remotely but only for candidates based in Los Angeles.
+What You’ll Build
+You’ll lead development across three core products:
+- Bubblzz – A real-time spatial logic engine that coordinates objects, content, users, and
+behaviors across physical locations.
+- AirScene – A creation platform for designing, scripting, and deploying interactive
+environments using spatial and event-driven logic.
+- LightPlay – A mobile/web interface for users to experience and interact with these
+programmable environments in real time.
+You will help define how relationships between objects, users, environments, and events are
+modeled and executed at scale—forming the programmable structure of the spatial internet.
+What We're Looking For
+Required:
+- 5+ years in full-stack development
+- Experience with distributed systems
+- Proficiency in JavaScript/TypeScript, Node.js, and React
+- REST & WebSocket API design for real-time apps
+- Backend experience with SQL or NoSQL databases
+- Strong architectural thinking and leadership experience
+- Familiarity with dynamic interaction systems (e.g. behaviors, permissions, environments)
+Nice to Have:
+- Graph databases (Neo4j, AWS Neptune, etc.)
+- Geospatial data or 3D modeling knowledge
+- Event-driven/pub-sub systems (Kafka, Redis, MQTT)
+- Experience in AR, simulations, or multiplayer systems
+- Real-time collaboration and user permissions
+- Web3 identity systems (DIDs, wallets, etc.)
+- DevOps: Docker, Kubernetes, CI/CD
+Why Join 
+- Founding-level equity + direct product ownership
+- Work on patented infrastructure already adopted by global partners
+- Help define a new computing paradigm
+- See your work deployed in arenas, theaters, festivals, and cities
+- Join a visionary team shaping the future of real-world interactivity
+🎯 Note: Applicants must be based in Los Angeles, even though the role is remote.
+If you're excited about building tools that blur the line between the digital and physical worlds—let’s talk.        
             
                             
             

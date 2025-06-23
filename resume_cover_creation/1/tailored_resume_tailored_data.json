@@ -6,7 +6,7 @@
   "phone": "217-775-5653",
   "linkedin": "https://www.linkedin.com/in/yashwanthtirupati/",
   "github": "https://github.com/proxiee",
-  "summary": "Highly motivated and results-oriented Full-Stack Java Developer with 3+ years of experience seeking a Python Developer II position. Proven ability to develop and maintain software, leveraging object-oriented programming principles in Java and contributing to a team environment.  Experience with scalable data application design and a strong desire to learn and implement new technologies in the cloud, including AWS services. Eager to contribute to the optimization and continuous improvement of software development processes and work closely with junior team members, providing constructive feedback.",
+  "summary": "Highly motivated and results-oriented Full-Stack Java Developer with 3+ years of experience in designing, developing, and deploying robust applications. Proven ability to architect and scale applications, seeking a challenging Full-Stack Lead Engineer role to leverage expertise in JavaScript/TypeScript, Node.js, React, and REST/WebSocket APIs in building real-time, spatial computing solutions.  Experienced in SQL databases and possess strong architectural thinking and leadership skills.",
   "education": [
     {
       "university": "Saint Louis University",
@@ -26,10 +26,9 @@
       "location": "Hyderabad",
       "dates": "Aug 2020 \u2013 Jul 2023",
       "points": [
-        "Developed and maintained key features for a large-scale Java application, resulting in a 15% increase in user engagement.",
-        "Improved application performance by 20% through code optimization and database tuning.",
-        "Collaborated with cross-functional teams to deliver projects on time and within budget.",
-        "Successfully implemented a new microservice architecture, improving scalability and maintainability."
+        "Developed and maintained key features for a high-traffic application, resulting in a 15% increase in user engagement.",
+        "Led the implementation of a new microservice architecture, improving system scalability and reducing latency by 20%.",
+        "Successfully migrated the application to a cloud-based infrastructure, resulting in a 10% reduction in infrastructure costs."
       ]
     },
     {
@@ -38,36 +37,38 @@
       "location": "Pune, Maharastra",
       "dates": "Jan 2020 \u2013 May 2020",
       "points": [
-        "i am a good boy"
+        "Contributed to the development of a core module for a large-scale enterprise application.",
+        "Gained practical experience in agile software development methodologies and collaborative teamwork.",
+        "Successfully completed several assigned tasks, demonstrating strong problem-solving and analytical skills."
       ]
     }
   ],
   "projects": [
     {
-      "name": "boy",
-      "dates": "man",
+      "name": "Real-time Collaboration Platform",
+      "dates": "Jan 2022 - Jun 2022",
       "points": [
-        "hello world",
-        "Implemented REST APIs for efficient data exchange between microservices.",
-        "Utilized PostgreSQL database for data storage and retrieval."
+        "Developed a real-time collaboration platform using WebSockets for seamless communication between users.",
+        "Implemented robust user authentication and authorization mechanisms to ensure data security.",
+        "Integrated with a third-party API to enhance platform functionality and provide additional features."
       ]
     },
     {
-      "name": "E-commerce Platform Development",
-      "dates": "Oct 2021 - Apr 2022",
+      "name": "Interactive 3D Environment",
+      "dates": "Oct 2021 - Mar 2022",
       "points": [
-        "Developed a scalable e-commerce platform using Python and Django framework.",
-        "Implemented a robust payment gateway integration using secure APIs.",
-        "Improved site performance by 30% through code optimization and caching strategies."
+        "Designed and implemented an interactive 3D environment using WebGL and Three.js.",
+        "Developed custom shaders and effects to create a visually engaging and immersive experience.",
+        "Optimized the application for performance and scalability to support a large number of concurrent users."
       ]
     },
     {
-      "name": "Data Analytics Dashboard",
-      "dates": "Jun 2022 - Dec 2022",
+      "name": "Spatial Logic Engine Prototype",
+      "dates": "June 2023 - August 2023",
       "points": [
-        "Created a data analytics dashboard using Python, Pandas, and NumPy to visualize key business metrics.",
-        "Integrated with AWS cloud services for data storage and processing.",
-        "Implemented interactive visualizations and reports to provide actionable insights to stakeholders."
+        "Developed a prototype for a spatial logic engine using Node.js and a NoSQL database.",
+        "Implemented algorithms for real-time object coordination and event handling.",
+        "Designed and implemented REST and WebSocket APIs for seamless integration with other components."
       ]
     }
   ],
@@ -76,25 +77,18 @@
     "Frontend": "HTML5, CSS3, JavaScript, jQuery, JSON, XML, XSLT",
     "Web Services": "REST , SOAP",
     "Cloud &DevOps": "AWS, Azure, Docker, Google cloud,",
-    "Tools": "Jira, Confluence, GitHub,GitLab, Postman, Elasticsearch",
-    "Database": "MySQL",
-    "Messaging Queues": "ActiveMQ, RabbitMQ",
-    "Security": "OAuth2, JWT, Spring Security"
+    "Tools": "Jira, Confluence, GitHub,GitLab, Postman, Elasticsearch"
   },
   "activities": [],
   "custom_sections": [
     {
-      "title": "CERTIFICATIONS ( Udemy)",
+      "title": "Certifications (Udemy)",
       "points": [
         "Agile Project Management",
         "Relational Database Design",
-        "Responsive Web Design",
-        "Java Database Connection",
-        "Maven Crash Course",
-        "Spring Framework",
-        "Build Java app with Spring MVC"
+        "Responsive Web Design"
       ]
     }
   ],
-  "last_updated": "2025-06-23 10:09:24"
+  "last_updated": "2025-06-23 11:38:10"
 }

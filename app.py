@@ -465,7 +465,7 @@ def profile():
 def dashboard_page():
     dash_config = config.get('dashboard_settings', {})
     daily_goal = dash_config.get('daily_application_goal', 10)
-    weekly_goal = dash_config.get('weekly_application_goal', 50)
+    weekly_goal = dash_config.get('weekly_application_goal', 75)
     return render_template('dashboard.html', daily_goal=daily_goal, weekly_goal=weekly_goal) # 
 
 @app.route('/get_jobs')
@@ -605,6 +605,48 @@ def api_dashboard_stats():
 
     conn.close()
     return jsonify(stats)
+
+@app.route('/api/reset_weekly_progress', methods=['POST'])
+@login_required
+def reset_weekly_progress():
+    """
+    Resets the weekly application count by setting recent application_date to NULL.
+    """
+    conn = get_db_connection()
+    try:
+        # Define the start of the 7-day window
+        seven_days_ago_str = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')
+
+        # These are the statuses that count as an "application"
+        applied_statuses = ('applied', 'interviewing', 'offer', 'rejected', 'rejected_after_interview', 'offer_declined')
+        status_placeholders = ', '.join(['?'] * len(applied_statuses))
+
+        query = f"""
+            UPDATE jobs
+            SET application_date = NULL
+            WHERE user_id = ?
+            AND status IN ({status_placeholders})
+            AND application_date >= ?
+        """
+
+        # Build the parameters tuple
+        params = (current_user.id, *applied_statuses, seven_days_ago_str)
+
+        cursor = conn.cursor()
+        cursor.execute(query, params)
+        conn.commit()
+
+        app.logger.info(f"Reset weekly progress for user_id: {current_user.id}. {cursor.rowcount} rows affected.")
+
+        return jsonify({"success": True, "message": f"{cursor.rowcount} application dates have been reset."})
+
+    except Exception as e:
+        conn.rollback()
+        app.logger.error(f"Error resetting weekly progress for user_id {current_user.id}: {e}")
+        return jsonify({"success": False, "message": "An error occurred while resetting progress."}), 500
+    finally:
+        conn.close()
+
 
 @app.route('/api/quote')
 def get_motivational_quote():
