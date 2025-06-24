@@ -1,4 +1,4 @@
-import sqlite3
+import psycopg2 # Changed from sqlite3
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, login_required, current_user
 from flask_bcrypt import Bcrypt
@@ -34,7 +34,7 @@ def register():
         cursor = conn.cursor()
 
         # Check if email or username already exists
-        cursor.execute("SELECT * FROM users WHERE email = ? OR username = ?", (email, username))
+        cursor.execute("SELECT * FROM users WHERE email = %s OR username = %s", (email, username))
         existing_user = cursor.fetchone()
 
         if existing_user:
@@ -47,18 +47,19 @@ def register():
 
         # Insert new user
         try:
+            # For PostgreSQL, use RETURNING id to get the new user's ID
             cursor.execute(
-                "INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)",
+                "INSERT INTO users (username, email, password_hash) VALUES (%s, %s, %s) RETURNING id",
                 (username, email, hashed_password)
             )
-            user_id = cursor.lastrowid
+            user_id = cursor.fetchone()['id'] # Get the returned ID
             
             # --- CRITICAL STEP: Create the empty resume data profile ---
             # The 'experience', 'projects', 'education', 'skills' columns store JSON text
             cursor.execute(
                 """
                 INSERT INTO user_resume_data (user_id, name, email, phone, linkedin, github, summary, experience, projects, education, skills, activities, custom_sections)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """,
                 (user_id, '', email, '', '', '', '', '[]', '[]', '[]', '{}', '[]', '[]')
             )
@@ -68,7 +69,7 @@ def register():
             flash('Registration successful! Please log in.', 'success')
             conn.close()
             return redirect(url_for('auth.login'))
-        except sqlite3.IntegrityError:
+        except psycopg2.errors.UniqueViolation: # Changed from sqlite3.IntegrityError
             flash('An error occurred. It is likely the email or username was taken.', 'danger')
             conn.close()
             return redirect(url_for('auth.register'))
@@ -91,7 +92,7 @@ def login():
         
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM users WHERE email = ?", (email,))
+        cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
         user_row = cursor.fetchone()
         conn.close()
 
