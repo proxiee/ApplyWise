@@ -1,6 +1,5 @@
 {
   "app_settings": {
-    "db_path": "data/jobs.db",
     "jobs_tablename": "jobs",
     "filtered_jobs_tablename": "filtered_jobs",
     "proxies": {},
