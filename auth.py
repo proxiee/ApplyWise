@@ -103,7 +103,7 @@ def login():
             
             # Redirect to the page they were trying to access, or dashboard
             next_page = request.args.get('next')
-            return redirect(next_page or url_for('dashboard_page'))
+            return redirect(next_page or url_for('home'))
         else:
             flash('Login failed. Check your email and password.', 'danger')
             return redirect(url_for('auth.login'))
