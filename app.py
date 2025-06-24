@@ -31,7 +31,8 @@ except ImportError as e:
 scraping_status = {"is_running": False, "message": "Idle"}
 
 # --- Constants ---
-RESUME_CREATION_FOLDER = 'resume_cover_creation'
+# Use a temporary directory for resume creation, suitable for Heroku
+RESUME_CREATION_FOLDER = os.path.join(os.environ.get('TMPDIR', '/tmp'), 'resume_cover_creation')
 
 # --- App Initialization ---
 app = Flask(__name__)

@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.env
+.venv/
+venv/
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+celerybeat-schedule
+local_settings.py
+*.log
+*.sqlite3
+*.db
+
+# Flask
+instance/
+.webassets-cache/
+migrations/
+
+# Project specific
+resume_cover_creation/
+data/cache/
+*.pdf
+*.docx
+*.tex
+*.aux
+*.out
+job_description.txt
+json_command.txt
+config.json
+# (config.json should ideally be managed via environment variables for sensitive data or environment-specific settings)
