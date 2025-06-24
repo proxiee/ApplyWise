@@ -58,7 +58,7 @@ def register():
             cursor.execute(
                 """
                 INSERT INTO user_resume_data (user_id, name, email, phone, linkedin, github, summary, experience, projects, education, skills, activities, custom_sections)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (user_id, '', email, '', '', '', '', '[]', '[]', '[]', '{}', '[]', '[]')
             )
